@@ -1,0 +1,471 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainContenedor {
+    width: 100%;
+    background-color: #E6E6E6;
+    margin: auto;
+    margin-top: 50px;
+    padding: 100px 20px 100px 0px;
+    min-height: 100vh;
+
+}
+
+.contenedor-registro {
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.contenedorDatosRegistro {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    width: 650px;
+    margin-top: 14px;
+    margin: 0px auto;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.contenedorDatosRegistro h2 {
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    padding-top: 20px;
+    color: #2B6797;
+    text-align: center;
+    padding-top: 40px;
+
+}
+
+.contenedorDatosRegistro h4 {
+    margin-bottom: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 12px;
+    color: #2B6797;
+    text-align: left;
+}
+
+.contenedorDatosRegistro hr {
+    margin-top: 14px;
+    margin-left: 11%;
+    width: 82%;
+    height: 2px;
+    border: 0;
+    background-color: rgb(88, 88, 88);
+    border-color: inherit;
+    margin-bottom: 8px;
+}
+
+.containerDatosPersonales {
+    height: 500px;
+    margin-top: 6px;
+    font-size: 1em;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.containerDatosPersonales label {
+    color: #2B6797;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.Cedula-Carnet,
+.Nombre,
+.Apellidos,
+.InfoPersonal {
+    display: flex;
+    margin-bottom: 10px;
+    height: 100px;
+    min-width: 100%;
+    flex-direction: row;
+}
+
+
+.Cedula,
+.Carnet,
+.Nombre1,
+.Apellido1,
+.Nombre2,
+.Apellido2,
+.fecha {
+    margin-right: 80px;
+    width: 50%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+    padding-top: 0px;
+}
+
+.campos {
+    margin-left: 1%;
+    margin-top: 2px;
+    outline: none;
+    height: 2.4em;
+    border-radius: 2px;
+    width: 200px;
+    border: 1.5px solid #0000006e;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 4px;
+}
+
+.fecha input {
+    margin-top: -16px;
+    outline: none;
+    height: 2.2em;
+    width: 150px;
+}
+
+.Telefono {
+    margin-left: 0px;
+    width: 250px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0px;
+}
+
+.Telefono .campos {
+    margin-top: -20px;
+}
+
+.Sexo {
+    margin-top: 10px;
+    width: 280px;
+}
+
+.seleccion {
+    display: flex;
+    flex-direction: row;
+    margin-top: -4px;
+}
+
+.sexo_m,
+.sexo_f,
+.otro {
+    margin-right: 8px;
+    margin-top: 4px;
+    display: flex;
+    width: 100px;
+    justify-content: center;
+}
+
+.sexo_f,
+.sexo_m {
+    font-size: 16px;
+}
+
+.checkbox {
+    margin-left: 10px;
+    margin-right: 6px;
+    margin-top: 1px;
+    width: 16px;
+    height: 20px;
+}
+
+/*Datos de inicio de sesion*/
+
+.containerDatosdeSesion {
+    height: 350px;
+    margin-top: 6px;
+    font-size: 1em;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.DatosSesion {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 280px;
+    margin-top: 1px;
+}
+
+.Correo,
+.Password,
+.confirmar_Password {
+    margin-right: 52px;
+    width: 250px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.campos_sesion {
+    margin-left: 1%;
+    margin-top: 2px;
+    outline: none;
+    height: 2.4em;
+    border-radius: 2px;
+    width: 260px;
+    border: 1.5px solid #0000006e;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding-left: 4px;
+    text-align: center;
+}
+
+
+.containerDatosdeSesion label {
+    color: #2B6797;
+    font-size: 16px;
+    padding-left: 4px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Abajo*/
+.abajoRegistro {
+    display: flex;
+    padding-top: 2px;
+    padding-bottom: 24px;
+    margin-top: 30px;
+    flex-direction: column;
+}
+
+.divbtnregistro {
+    padding-bottom: 14px;
+    display: flex;
+    padding-left: 260px;
+}
+
+.botonregistro {
+    margin: 2px;
+    width: 180px;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-color: #00C0F3;
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 36px;
+    padding: 0 16px;
+    text-transform: capitalize;
+    vertical-align: middle;
+    border: 1px solid #00C0F3;
+}
+
+.abajoRegistro hr {
+    margin-top: 14px;
+    width: 300px;
+    height: 2px;
+    border: 0;
+    background-color: #00C0F3;
+    border-color: inherit;
+    margin-bottom: 8px;
+    width: 60%;
+    margin-left: 20%;
+}
+
+.UCR-OO_1 {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    color: #737677;
+    width: 80%;
+    padding-left: 150px;
+}
+
+.mensajes {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: black;
+    display: flex;
+    font-weight: bold;
+    width: 350px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width:700px) {
+
+    .contenedor-registro {
+        padding-left: 20px;
+        padding-right: 0px;
+    }
+
+    .contenedorDatosRegistro {
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .contenedorDatosRegistro h2 {
+        font-size: 20px;
+        padding-top: 20px;
+    }
+
+    .contenedorDatosRegistro h4 {
+        font-size: 16px;
+        width: 180px;
+        padding-left: 10px;
+    }
+
+    .contenedorDatosRegistro hr {
+        margin-top: 14px;
+        margin-left: 1%;
+        width: 80%;
+        margin-bottom: 1px;
+    }
+
+    .containerDatosPersonales {
+        height: 840px;
+        margin-top: 6px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        padding-left: 0px;
+        padding-right: 0px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .containerDatosPersonales label {
+        width: 220px;
+        padding-left: 10px;
+    }
+
+    .Cedula-Carnet,
+    .Nombre,
+    .Apellidos,
+    .InfoPersonal {
+        height: 200px;
+        width: 100%;
+        margin-top: 4px;
+        margin-bottom: 0px;
+        flex-wrap: wrap;
+    }
+
+    .Cedula,
+    .Carnet,
+    .Nombre1,
+    .Apellido1,
+    .Nombre2,
+    .Apellido2,
+    .fecha {
+        margin-right: 20px;
+        width: 220px;
+        height: 74px;
+        margin-bottom: 6px;
+        padding-top: 6px;
+    }
+
+    .campos {
+        margin-left: 12px;
+        width: 180px;
+        margin-top: -5px;
+        height: 2.2em;
+    }
+
+    .fecha input {
+        margin-left: 14px;
+        margin-top: -26px;
+    }
+
+    .Telefono .campos {
+        margin-left: 12px;
+        margin-top: -28px;
+    }
+
+    .seleccion {
+        flex-direction: column;
+        margin-top: -26px;
+        padding-left: 14px;
+    }
+
+    .Sexo {
+        margin-top: -10px;
+        width: 250px;
+        margin-left: 0px
+    }
+
+    .sexo_m,
+    .sexo_f,
+    .otro {
+        margin-right: 0px;
+        margin-top: 2px;
+    }
+
+    .checkbox {
+        margin-left: 0px;
+    }
+
+    /*Datos de inicio de sesion*/
+    .DatosSesion {
+        display: flex;
+        width: 250px;
+        margin-top: 8px;
+        margin-bottom: 10px;
+        flex-direction: column;
+    }
+
+    .containerDatosdeSesion {
+        padding-left: 32px;
+        padding-right: 0px;
+        padding-top: 10px;
+        height: 350px;
+        margin: 0 auto;
+    }
+
+    .campos_sesion {
+
+        height: 2.2em;
+        width: 200px;
+    }
+
+    .containerDatosdeSesion label {
+        padding-left: 2px;
+        width: 200px;
+    }
+
+    .Correo,
+    .Password,
+    .confirmar_Password {
+        margin-right: 0px;
+        width: 250px;
+    }
+
+    /*Abajo*/
+
+    .divbtnregistro {
+        padding-bottom: 14px;
+        padding-left: 0px;
+    }
+
+    .botonregistro {
+        width: 150px;
+        margin: 0 auto;
+
+    }
+
+    .abajoRegistro hr {
+        margin-left: 10px;
+        width: 98%;
+        margin-right: 20px;
+        margin-bottom: 6px;
+
+    }
+
+    .UCR-OO_1 {
+        font-size: .6em;
+        width: 100%;
+        padding-left: 12px;
+    }
+}

@@ -1,0 +1,286 @@
+.modal {
+    position: fixed;
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 50px;
+    right: 0;
+    display: flex;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    z-index: 1;
+    overflow: auto;
+
+}
+
+.modal_contenido {
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgb(33 41 52 / 75%);
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 450px;
+    min-width: 250px !important;
+    position: relative;
+    padding: 2rem;
+    font-size: 1.3rem;
+    overflow: auto;
+    max-height: 500px;
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.modal-header h2 {
+    background-color: white;
+    width: 100%;
+    height: 80%;
+    font-size: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.modal_body h2 {
+    margin-bottom: 28px;
+    margin-top: 24px;
+    font-family: 'EB Garamond';
+    font-weight: 600;
+}
+
+.modal_body {
+    margin-bottom: 20px;
+}
+
+/*--------------ESTILOS MODAL TRABAJO------------*/
+
+.form_trabajo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+.contenido {
+    margin-bottom: 20px;
+}
+
+/*--------------ESTILOS MODAL BECA------------*/
+.form_beca {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px
+}
+
+.contenido_beca_modal {
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+
+/*--------------ESTILOS MODAL CONTENEDORES, LABELS Y CAMPOS DE TEXTO------------*/
+
+.datos_modals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    margin-bottom: 16px;
+    margin-top: 14px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.campos_modals {
+    width: 200px;
+    height: 42px;
+    border-radius: 2px;
+    border: 1.5px solid #0000006e;
+    font-size: 16px;
+    font-family: 'Poppins';
+    text-align: center;
+    margin-left: 2%;
+
+}
+
+#cierra_modal {
+    color: black;
+}
+
+.etiqueta_modals {
+    font-size: 18px;
+    width: auto;
+    padding-top: 6px;
+}
+
+/*--------------BOTONES MODAL------------*/
+.botones_modal {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: 50px;
+    height: 50px;
+    justify-content: space-evenly;
+}
+
+.botonagregatrabajo,
+.botonCerrarModal {
+
+    width: 120px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: #00C0F3;
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 6px;
+    height: 38px;
+    padding: 0 16px;
+    text-transform: capitalize;
+    border: 1px solid #00C0F3;
+}
+
+.botonCerrarModal {
+    padding: 8px 20px;
+}
+
+.botonCerrarModal:hover {
+    text-decoration: none;
+    color: white;
+}
+
+/*--------------ESTILOS MODAL GRUPO FAMILIAR------------*/
+.btn-agrega_grupo-familiar {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 40px;
+}
+
+.botonAgregar_Persona_GF {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 200px;
+    padding: 8px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.botonAgregar_Persona_GF:hover {
+    text-decoration: none;
+}
+
+/*--------------ESTILOS MODAL NUEVA PERSONA GRUPO FAMILIAR------------*/
+.modal_agregar_persona_gf {
+    z-index: -1;
+    position: fixed;
+
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.80);
+    display: block;
+}
+
+
+.form_grupo_familiar_add_person {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.Nombre_grupo_familiar,
+.Parentesco,
+.Edad,
+.Ocupacion {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Poppins';
+    font-size: 16px;
+    background-color: bisque;
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+}
+
+.form_grupo_familiar_add_person label {
+    padding-left: 20px;
+    width: 30%;
+}
+
+.campos_grupo_familiar {
+    width: 250px;
+    height: 42px;
+    border-radius: 2px;
+    border: 1.5px solid #0000006e;
+    font-size: 14px;
+    font-family: 'Poppins';
+    text-align: center;
+
+}
+
+
+@media screen and (max-width:580px) {
+
+    .modal_contenido {
+        padding: 1em;
+    }
+
+    .datos_modals {
+        height: 90px;
+        padding-left: 20px;
+        margin-bottom: 2px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .etiqueta_modals {
+        width: 240px;
+        text-align: start;
+        font-size: 16px;
+    }
+
+    .campos_modals {
+        width: 220px;
+        margin-left: -14px;
+        height: 36px;
+    }
+
+    .botonagregatrabajo,
+    .botonCerrarModal {
+        width: 100px;
+        font-size: 14px;
+    }
+
+    .botonCerrarModal {
+        padding: 8px 0px;
+    }
+
+    .modal-header h2 {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ContenedorNuevacontra {
+    width: 100%;
+    background-color: #2B6797;
+    margin: 0 auto;
+    padding: 100px 60px;
+    border-top: 4px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.contenedor-newpw {
+    background-color: white;
+    border-radius: 10px;
+    width: 370px;
+    height: 500px;
+    margin-top: 40px;
+    box-shadow: 6px 2px 16px 0px rgba(136, 165, 191, 0.48), 1px 2px 2px 0px rgba(255, 255, 255, 0.8);
+}
+
+.contenedor-newpw h3 {
+    height: 28px;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    padding-top: 34px;
+    text-align: center;
+
+}
+
+.container_new_contra {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.container-todo_nuevacontra {
+    padding-top: 14px;
+    padding-bottom: 16px;
+    width: 90%;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.containerCorreo_,
+.containerPassword_ {
+    height: 70px;
+    padding: 10px;
+    font-size: 1em;
+    width: 250px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.containerCorreo_ ::placeholder,
+.containerPassword_ ::placeholder {
+    font-size: .8em;
+    color: rgba(27, 25, 25, 0.5);
+}
+
+.input_cambio_password {
+    height: 38px;
+    font-size: 1em;
+    box-shadow: none;
+    margin-top: 5px;
+    width: 220px;
+    text-align: center;
+    border: 1.5px solid #0000006e;
+    background-color: #05060f0a;
+    border-radius: .2rem;
+}
+
+.divbtnrecuperar_cuenta {
+    padding-bottom: 20px;
+    padding-top: 24px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.botonrecuperar_pw {
+    margin: 2px;
+    width: 220px;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: #00C0F3;
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 40px;
+    padding: 0 12px;
+    text-transform: capitalize;
+    vertical-align: middle;
+    border: 1px solid #00C0F3;
+}
+
+.contenedor-newpw hr {
+    width: 76%;
+    height: 2px;
+    border: none;
+    margin: 4px 0px 4px 40px;
+    background-color: #2B6797;
+}
+
+.UCR-OO_nc {
+    font-size: .62em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    color: #737677;
+    padding-left: 40px;
+}
+
+/*Interfaz con capacidad de respuesta*/
+/*800px*/
+@media screen and (max-width:800px) {
+
+
+    .ContenedorNuevacontra {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: (1, 1fr);
+        padding-top: 150px;
+    }
+
+    .contenedor-newpw {
+        margin-top: 20px;
+    }
+
+    .contenedor-newpw h3 {
+        margin-bottom: 24px;
+        font-size: 17px;
+        padding-top: 24px;
+        padding-left: 0px;
+    }
+
+    .divbtnrecuperar_cuenta {
+        padding-top: 22px;
+        width: 250px;
+        margin: 0 auto;
+    }
+
+    .botonrecuperar_pw {
+
+        font-size: 14px;
+
+    }
+
+    .contenedor-newpw hr {
+        margin-left: 14%;
+    }
+
+    .UCR-OO_nc {
+        padding-left: 45px;
+    }
+
+}
+
+@media screen and (max-width:400px) {
+    .ContenedorNuevacontra {
+        display: grid;
+        grid-template-columns: (1, 1fr);
+        grid-gap: 20px;
+        padding-top: 150px;
+    }
+
+    .container_new_contra {
+        padding-top: 14px;
+        padding-bottom: 16px;
+    }
+
+    .contenedor-newpw {
+        max-width: 320px;
+        min-width: 250px;
+        margin-top: 30px;
+
+    }
+
+    .contenedor-newpw h3 {
+        height: 28px;
+        margin-bottom: 26px;
+        font-size: 16px;
+        padding-top: 28px;
+        text-align: center;
+        padding-left: 0;
+
+    }
+
+    .container-todo_nuevacontra {
+        width: 100%;
+    }
+
+    .containerCorreo_,
+    .containerPassword_ {
+        padding-left: 20px;
+        width: 220px;
+        height: 72px;
+
+    }
+
+    .divbtnrecuperar_cuenta {
+        padding-top: 22px;
+        width: 210px;
+        padding-left: 20px;
+    }
+
+    .botonrecuperar_pw {
+
+        font-size: 14px;
+
+    }
+
+    .contenedor-newpw hr {
+        margin-left: 16%;
+    }
+
+    .UCR-OO_nc {
+        padding-left: 50px;
+        font-size: .6em;
+    }
+
+
+}

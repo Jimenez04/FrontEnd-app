@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Contenedor_editar_perfil {
+    width: 100%;
+    margin: auto;
+    padding: 100px 100px;
+    background-color: #ECECEC;
+
+    /*background-color: #E6E6E6;background-color: #2B6797;*/
+}
+
+.contenedor_editar_perfil {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+
+}
+
+.foto_perfil {
+    height: 240px;
+    border-radius: 10px;
+    width: 380px;
+    margin: 0 100px;
+    margin-top: 18px;
+    background: #ffffff;
+    margin-bottom: 40px;
+    /* border-top: 4px solid #000000;
+    margin-bottom: 40px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding: 10px;border: .14em solid #000000;*/
+
+    justify-content: center;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+
+}
+
+.image {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    display: inline-block;
+    padding: 3px;
+    border: 3px solid #d2d6de;
+    margin-top: 12px;
+    display: flex;
+
+}
+
+.username {
+    font-size: 18px;
+    margin-top: 18px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.foto_perfil a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Montserrat';
+
+}
+
+.btn_editarfoto {
+    margin: 0 auto;
+    padding: 6px 12px;
+    text-align: center;
+    cursor: pointer;
+    touch-action: manipulation;
+    margin-top: 14px;
+    width: 180px;
+    height: 32px;
+    border-radius: 1em;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    display: block;
+}
+
+.container_informacion {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    width: 760px;
+    margin: 0 100px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    /*border: .2em solid #000000;*/
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.titulo {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 24px;
+}
+
+.titulo h3 {
+    height: 28px;
+    margin-bottom: 26px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    padding-top: 10px;
+    width: 350px;
+
+}
+
+.contenedor_nombres,
+.contenedor_apellidos,
+.contenedor_infocontacto {
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+    width: 90%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.container_nombre1,
+.container_nombre2,
+.container_apellido1,
+.container_apellido2,
+.contenedor_email,
+.container_telefono {
+    height: 100px;
+    border-bottom: none;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: -16px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.container_nombre1 label,
+.container_nombre2 label,
+.container_apellido1 label,
+.container_apellido2 label,
+.contenedor_email label,
+.container_telefono label {
+    margin-bottom: 0px;
+    font-family: 'EB Garamond';
+    font-size: 16px;
+    font-weight: bold;
+    height: 20px;
+    padding-left: 6px;
+}
+
+.container_nombre1 input,
+.container_nombre2 input,
+.container_apellido1 input,
+.container_apellido2 input{
+    height: 38px;
+    font-size: 1em;
+    margin-top: -14px;
+    width: 220px;
+    text-align: center;
+    border: 0;
+    background-color: #E6E6E6;
+}
+.contenedor_email input,
+.container_telefono input {
+    height: 38px;
+    font-size: 1em;
+    margin-top: -14px;
+    width: 220px;
+    text-align: center;
+    border: 1.5px solid #0000006e;
+    background-color: #05060f0a;
+    border-radius: .5rem;
+
+}
+
+.divbtnGuardar {
+    padding-bottom: 20px;
+    margin-top: 66px;
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.botonGuardarcambios {
+    margin: 2px;
+    width: 220px;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-color: #00C0F3;
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 40px;
+    padding: 0 16px;
+    text-transform: capitalize;
+    border: 1px solid #00C0F3;
+    margin-bottom: 18px;
+    margin-top: -20px;
+}
+
+@media screen and (max-width:800px) {
+    .foto_perfil {
+        height: 210px;
+        width: 220px;
+        margin: 0 80px;
+        margin-top: 14px;
+        margin-bottom: 34px;
+    }
+
+    .username {
+        font-size: 14px;
+    }
+
+    .btn_editarfoto {
+        text-align: center;
+        cursor: pointer;
+        margin-top: 8px;
+        width: 150px;
+    }
+
+    .container_informacion {
+        width: 340px;
+        margin: 0 50px;
+        margin-top: 16px;
+
+    }
+
+    .titulo {
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .titulo h3 {
+        height: 26px;
+        margin-bottom: 22px;
+        font-size: 18px;
+        padding-top: 10px;
+        width: 100%;
+    }
+
+    .contenedor_nombres,
+    .contenedor_apellidos,
+    .contenedor_infocontacto {
+        display: flex;
+        gap: 0px;
+        padding-top: 10px;
+        height: 200px;
+        margin-top: -16px;
+        align-content: center;
+    }
+
+    .container_nombre1,
+    .container_nombre2,
+    .container_apellido1,
+    .container_apellido2,
+    .contenedor_email,
+    .container_telefono {
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .container_nombre1 label,
+    .container_nombre2 label,
+    .container_apellido1 label,
+    .container_apellido2 label,
+    .contenedor_email label,
+    .container_telefono label {
+        font-size: 16px;
+    }
+
+    .container_nombre1 input,
+    .container_nombre2 input,
+    .container_apellido1 input,
+    .container_apellido2 input,
+    .contenedor_email input,
+    .container_telefono input {
+        height: 34px;
+        margin-top: -10px;
+        width: 166px;
+        text-align: center;
+    }
+
+    .divbtnGuardar {
+        padding-bottom: 20px;
+        margin-top: 46px;
+        display: flex;
+        margin-bottom: 30px;
+        justify-content: center;
+    }
+
+    .botonGuardarcambios {
+        margin: 0px;
+        width: 164px;
+        font-size: 14px;
+        height: 40px;
+        padding: 0 0px;
+        margin-bottom: 10px;
+        margin-top: -30px;
+        margin-left: 12px;
+    }
+}

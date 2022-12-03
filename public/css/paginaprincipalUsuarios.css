@@ -1,0 +1,514 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.PrincipalEstudiante,
+.PrincipalAdmi {
+    width: 100%;
+    background-color: #ECECEC;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 100px 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_oculta {
+    width: 90%;
+    margin: 100px 40px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+#error {
+    color: black;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding-top: 10px;
+    margin-top: -120px;
+}
+
+.containerEstudiante h2,
+.containerAdmi h2 {
+    color: #2B6797;
+    font-family: 'Poppins', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.containerEstudiante, .containerAdmi {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0;
+    min-height: 100vh;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.SolicitudesEstudiante span,
+.GestionDeSolicitudes span {
+    color: #2B6797;
+    font-family: "EB Garamond";
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.GestionDeSolicitudes,
+.SolicitudesEstudiante {
+    width: 100%;
+    column-gap: 20px;
+    row-gap: 40px;
+    padding: 10px 20px 10px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 0 auto;
+    margin-top: 0px;
+    height: 100%;
+    justify-items: center;
+}
+.Card {
+   
+    padding-top: 36px;
+    height: 172px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Card:hover {
+    text-decoration: none;
+}
+
+.Contenedor_arriba {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100px;
+    background-color: #2B6797;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    width: 300px;
+    justify-content: space-evenly;
+}
+
+.Logos {
+    margin-bottom: 10px;
+    padding-top: 20px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.Logos img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedortext {
+    width: 160px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.contenedortext label {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: white;
+    text-transform: capitalize;
+    font-family: "EB Garamond";
+}
+
+.contenedortext label:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*abajo*/
+.info_abajo {
+    background-color: white;
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    padding-top: 8px;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-top: none;
+}
+
+.info_abajo span {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 0px;
+    height: 22px;
+    text-decoration: none;
+    padding-left: 6px;
+    padding-right: 3px;
+}
+
+.SolicitudesEstudiante a:hover,
+.GestionDeSolicitudes a:hover {
+    text-decoration: none;
+}
+
+/*BOTONES DE LOS MODALES TRABAJO Y BECA*/
+.datos_generales_est {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 10px;
+    margin-top: 80px;
+    height: 150px;
+}
+
+.divbotones_est {
+    height: 60px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.botones_est {
+    width: 180px;
+    font-weight: normal;
+    font-size: 16px;
+    background-color: #2B6797;
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 40px;
+    padding-top: 4px;
+    text-transform: capitalize;
+    border: 1px solid #2B6797;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.datos_generales_est hr {
+    width: 80%;
+    border: 1px solid gray;
+
+}
+
+.botones_est:hover {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+/*RESPONSIVE DE PÁGINAS PRINCIPALES(ESTUDIANTE Y ADMINISTRADOR)*/
+
+@media screen and (max-width:1080px) {
+
+    .PrincipalEstudiante {
+        padding: 100px 50px;
+    }
+
+    .PrincipalAdmi {
+        padding: 100px 40px;
+    }
+
+    .PrincipalEstudiante h3 {
+        font-size: 20px;
+        padding-top: 6px;
+        padding-left: 0px;
+        display: flex;
+        margin-top: -16px;
+        padding-bottom: 12px;
+    }
+
+    .containerEstudiante {
+        align-items: center;
+        padding-bottom: 20px;
+        padding-top: 0;
+        margin: 0;
+    }
+
+    .containerAdmi {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .containerEstudiante h2,
+    .containerAdmi h2 {
+        font-size: 24px;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .GestionDeSolicitudes,
+    .SolicitudesEstudiante {
+        column-gap: 0;
+        row-gap: 0;
+
+    }
+
+
+    .SolicitudesEstudiante span {
+        font-size: 16px;
+    }
+
+    .Card {
+        margin-top: 12px;
+        margin-right: 6px;
+        height: 200px;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Contenedor_arriba {
+        width: 280px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+    }
+
+    .contenedortext {
+        margin-left: 20px;
+        text-align: center;
+        margin-right: 16px;
+        padding-top: 14px;
+    }
+
+    .Logos {
+        width: 36%;
+        margin-top: 0px;
+    }
+
+    .contenedortext label {
+        font-size: 16px;
+    }
+
+    /*contenedor abajo*/
+    .info_abajo {
+        margin-top: 0px;
+        height: 54px;
+        padding-top: 2px;
+        width: 280px;
+    }
+
+    .datos_generales_est {
+        height: 200px;
+        margin-top: 10px;
+        padding-top: 0;
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .datos_generales_est hr {
+        width: 100%;
+
+    }
+
+    .divbotones_est {
+        height: auto;
+        padding: 20px;
+        max-width: 100%;
+        margin-top: 0;
+        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .botones_est {
+        margin: 0 auto;
+    }
+
+}
+
+@media screen and(max-width:760px) {
+
+    .GestionDeSolicitudes {
+        display: grid;
+        justify-items: center;
+    }
+
+    .PrincipalAdmi {
+        width: 100%;
+        margin-top: 80px;
+        padding: 100px 10px
+    }
+
+    .containerAdmi {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .containerAdmi h2,
+    .containerEstudiante h2 {
+        font-size: 20px;
+        padding-top: 30px;
+        text-align: center;
+    }
+
+
+    .containerEstudiante {
+        align-items: center;
+        padding-bottom: 0;
+        padding-top: 0;
+        margin: 0;
+        width: 100%;
+        margin-bottom: 50px;
+        margin-bottom: 50px;
+        background-color: brown;
+    }
+
+}
+
+@media screen and (max-width:400px) {
+    .PrincipalEstudiante {
+        padding: 100px 0px;
+        width: 100%;
+    }
+
+    .PrincipalAdmi {
+        width: 100%;
+        margin-top: 20px;
+        padding: 100px 0px 80px 0px;
+    }
+
+    .PrincipalEstudiante h3,
+    .containerAdmi h3 {
+        font-size: 18px;
+        padding-top: 6px;
+        padding-left: 0px;
+        display: flex;
+        margin-top: -16px;
+        padding-bottom: 12px;
+    }
+
+    .containerAdmi {
+        padding-top: 0;
+    }
+
+    .containerEstudiante h2,
+    .containerAdmi h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .SolicitudesEstudiante {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .GestionDeSolicitudes {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .SolicitudesEstudiante span {
+        font-size: 16px;
+    }
+
+    .Contenedor_todoPAI,
+    .Contenedor_todoAdecuacion {
+        max-width: 280px;
+        background-color: burlywood;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Card {
+        margin-top: 24px;
+        margin-right: 6px;
+        padding: 0;
+        height: 160px;
+        width: 240px;
+        display: flex;
+        padding-top: 0px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Contenedor_arriba {
+        height: 100px;
+        padding-top: 0;
+        padding-left: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: 100%;
+    }
+
+    .contenedortext {
+        margin-left: 20px;
+        text-align: center;
+        margin-right: 16px;
+        padding-top: 14px;
+    }
+
+    .Logos {
+        width: 36%;
+        margin-top: 0px;
+
+    }
+
+    .contenedortext label {
+        font-size: 16px;
+    }
+
+    /*contenedor abajo*/
+    .info_abajo {
+        margin-top: 0px;
+        height: 54px;
+        padding-top: 2px;
+        width: 100%;
+    }
+
+    .datos_generales_est {
+        height: 200px;
+        margin-top: 20px;
+        padding-top: 10px;
+    }
+
+    .divbotones_est {
+        height: auto;
+        padding: 20px;
+        max-width: 100%;
+        margin-top: 20px;
+        gap: 20px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .botones_est {
+        width: 180px;
+        border-radius: 10px;
+        height: 40px;
+        padding-top: 4px;
+        text-transform: capitalize;
+        margin-left: 40px;
+    }
+    .datos_generales_est hr {
+        width: 90%;
+    }
+}

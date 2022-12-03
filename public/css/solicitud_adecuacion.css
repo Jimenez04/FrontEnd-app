@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.PrincipalAdecuacion {
+    width: 100%;
+    background-color: #ECECEC;
+    /* background-image: radial-gradient(circle at 43.84% 48.91%, #3290d4 0, #2b6697 50%, #1f405e 100%);
+  background-image: radial-gradient(circle at 50% 50%, #328acb 0, #2b6697 50%, #214566 100%);*/
+    margin-top: 50px;
+    padding: 80px 80px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_principal_Adecuacion {
+    width: 100%;
+    max-width: 1000px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: .6em;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}
+
+.Contenedor_lista_Solicitud_Adecuacion {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.titulo_lista {
+    width: 100%;
+    text-align: center;
+    height: 60px;
+    padding-top: 4px;
+    margin-top: 10px;
+}
+
+.titulo_lista h2 {
+    padding: 10px;
+    text-align: center;
+    font-family: 'EB Garamond';
+    font-weight: 600;
+}
+
+.Solicitud_lista {
+    width: 100%;
+    display: flex;
+    height: 90%;
+    flex-direction: column;
+}
+
+.divbtn_nueva_solicitud {
+    width: 180px;
+    height: 80px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+.boton_new_adecuacion {
+    width: 150px;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: #2B6797;
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 36px;
+    /* padding: 0 16px; */
+    text-transform: capitalize;
+    padding-top: 6px;
+    border: 1px solid #2B6797;
+    margin-bottom: 6px;
+
+}
+
+.boton_new_adecuacion:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.divtabla {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.tabla_adecuacion {
+    background-color: white;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.14);*/
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.tabla_adecuacion caption {
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 600px;
+    margin: 8px 0px;
+}
+
+.tabla_adecuacion tr {
+    border: 1 px solid #ccc;
+}
+
+.tabla_adecuacion th,
+.tabla_adecuacion td {
+    border-bottom: 1px solid gray;
+    padding: 12px;
+    text-align: center;
+}
+
+.tabla_adecuacion thead th {
+    background-color: #2B6797;
+    color: white;
+    text-transform: capitalize;
+}
+
+.tabla_adecuacion td {
+    letter-spacing: 1px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.tabla_adecuacion tr:hover {
+    background-color: #E6E6E6;
+}
+
+.tabla_adecuacion td a {
+    text-decoration: none;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 2px;
+}
+
+.divbotonVolver {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+    padding-top: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/*Interfaz con capacidad de respuesta*/
+
+@media screen and (max-width:720px) {
+
+    .container_principal_Adecuacion {
+        padding: 26px;
+        margin: 0 auto;
+    }
+
+    .Contenedor_lista_Solicitud_Adecuacion {
+        padding: 0px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .titulo_lista h2 {
+        padding: 20px;
+        text-align: center;
+        font-size: 22px;
+        word-break: break-word;
+    }
+
+    .Solicitud_lista {
+        width: 100%;
+        height: 100%;
+        margin-top: 20px;
+    }
+
+    .divbtn_nueva_solicitud {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+    }
+
+    .boton_new_adecuacion {
+        margin-left: 0;
+    }
+
+    .divtabla {
+        margin-top: 10px;
+    }
+
+    .tabla_adecuacion {
+        border: 0px;
+    }
+
+    .tabla_adecuacion thead {
+        display: none;
+    }
+
+    .tabla_adecuacion tr {
+        margin-bottom: 8px;
+        border-bottom: 4px solid #ccc;
+        display: block;
+        background-color: #f8f8f8;
+    }
+
+    .tabla_adecuacion td,
+    .tabla_adecuacion th {
+        letter-spacing: 0;
+        font-size: 14px;
+    }
+
+    .tabla_adecuacion td {
+        text-align: right;
+        display: block;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .tabla_adecuacion td[data-label]::before {
+        content: attr(data-label);
+        font-weight: bold;
+        float: left;
+    }
+
+}
+
+@media screen and (max-width:520px) {
+
+    .PrincipalAdecuacion {
+        padding: 80px 20px;
+    }
+
+    .titulo_lista h2 {
+        font-size: 1.4em;
+        padding: 0;
+    }
+
+    .Solicitud_lista {
+        margin: 0;
+    }
+
+    .divtabla {
+        margin-top: 10px;
+    }
+
+    .tabla_adecuacion {
+        width: 100%;
+        overflow: auto;
+        font-size: 1em;
+        padding: 0;
+    }
+
+    .tabla_adecuacion td {
+        display: flex;
+        flex-direction: column;
+        letter-spacing: 1px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .tabla_adecuacion th,
+    .tabla_adecuacion td {
+        text-align: center;
+        font-size: .9em;
+    }
+
+    .tabla_adecuacion thead {
+        display: none;
+    }
+
+    .tabla_adecuacion tr {
+        margin-bottom: 8px;
+        border: 2px solid #6c757d82;
+        display: block;
+        background-color: #f8f8f8
+    }
+
+    .tabla_adecuacion td[data-label]::before {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+}

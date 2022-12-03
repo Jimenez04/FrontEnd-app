@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.PrincipalBitacora {
+    width: 100%;
+    background-color: #ECECEC;
+    min-height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.PrincipalBitacora h2 {
+    text-align: center;
+    padding-top: 36px;
+    color: #2B6797;
+    padding-bottom: 34px;
+}
+
+.Contenedor_Bitacora {
+    width: 92%;
+    min-height: 100vh;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+
+.buscador {
+    max-width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-bottom: 10px;
+}
+
+.busqueda {
+    width: 50%;
+    display: inline-block;
+    padding-left: 20px;
+    font-size: 16px;
+    font-family: 'Poppins';
+    height: 40px;
+}
+
+.input_buscar {
+    font-size: 14px;
+    text-align: center;
+    height: 32px;
+    width: 180px;
+    margin-left: 6px;
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0 0.2rem #dfd9d9;
+    cursor: pointer;
+
+}
+
+.input_buscar:focus {
+    outline-color: rgba(0, 0, 0, 0.6);
+}
+
+.ordena {
+    width: 50%;
+    text-align: end;
+    margin-right: 60px;
+    font-family: 'Poppins';
+    font-size: 16px;
+}
+
+.label_ordena {
+    text-decoration: none;
+    height: 24px;
+    border-radius: 4px;
+    width: 100px;
+    text-align: center;
+}
+
+.label_ordena:hover {
+    background-color: #cccccc;
+
+}
+
+.Contenedor_Carpetas {
+    max-width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    gap: 8px;
+    border-radius: 4px;
+    display: grid;
+   /* grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 60px 60px 60px 60px;*/
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding-top: 20px;
+    padding-left: 10px;
+    justify-items: center;
+    overflow: auto;
+}
+
+.carpetas {
+    background-color: white;
+    height: 50px;
+    width: 240px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins';
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%), inset 0 -1px 0 rgb(0 0 0 / 7%);
+    border: 1px solid #cccccc;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.img_carpeta {
+    width: 56px;
+    height: 48px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.img_carpeta img {
+    height: fit-content;
+}
+
+.titulo_carpetas {
+    width: 180px;
+}
+
+.Titulo_carpeta {
+    color: black;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 160px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.carpetas:hover {
+    background-color: #cccccc;
+}
+
+/*Interfaz con capacidad de respuesta*/
+@media screen and (max-width:800px) {
+
+
+    .Contenedor_Bitacora {
+        width: 92%;
+    }
+
+    .PrincipalBitacora h2 {
+        padding-top: 40px;
+        padding-bottom: 30px;
+    }
+
+    .buscador {
+
+        max-width: 800px;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        padding-bottom: 10px;
+    }
+
+    .busqueda {
+        width: 50%;
+        display: flex;
+        height: 100%;
+    }
+
+
+    .label_buscar {
+        width: 56px;
+        height: 100%;
+        padding-top: 10px;
+        padding-right: 6px;
+    }
+
+    .input_buscar {
+        margin-top: 6px;
+        height: 28px;
+    }
+
+    .ordena {
+        width: 50%;
+        text-align: end;
+        margin-right: 60px;
+        font-family: 'Poppins';
+        font-size: 16px;
+    }
+    .label_ordena {
+        margin-top: 8px;
+        height: 100%;
+    }
+
+    .Contenedor_Carpetas {
+        max-width: 100%;
+        padding-top: 30px;
+        display: grid;
+        /*grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 60px 60px 60px 60px 60px;*/
+        height: 100vh;
+    }
+
+    .carpetas {
+        width: 200px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-left: 12px;
+        margin-bottom: 12px;
+    }
+
+    .img_carpeta {
+        width: 60px;
+        padding-left: 16px;
+    }
+
+    .titulo_carpetas {
+        max-width: 150px;
+    }
+
+    .Titulo_carpeta {
+        color: black;
+        padding-top: 10px;
+        width: 130px;
+    }
+}
+
+@media screen and (max-width:520px) {
+
+
+    .Contenedor_Bitacora {
+        width: 94%;
+    }
+
+    .PrincipalBitacora h2 {
+        padding-top: 40px;
+        padding-bottom: 30px;
+    }
+
+    .buscador {
+        max-width: 400px;
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .busqueda {
+        width: 70%;
+        display: flex;
+        margin-right: 4px;
+    }
+
+    .label_buscar {
+        width: 56px;
+        height: 100%;
+        padding-top: 16px;
+    }
+
+    .input_buscar {
+        margin-top: 14px;
+        width: 140px;
+        height: 24px;
+        
+    }
+
+    .ordena {
+        width: 30%;
+        text-align: end;
+        margin-right: 20px;
+        font-family: 'Poppins';
+        font-size: 16px;
+    }
+
+    .Contenedor_Carpetas {
+        max-width: 100%;
+        padding-top: 20px;
+        margin-top: 10px;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .carpetas {
+        width: 220px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-left: 12px;
+        margin-bottom: 12px;
+        margin-top: 10px;
+    }
+
+    .img_carpeta {
+        width: 60px;
+        padding-left: 16px;
+    }
+
+    .titulo_carpetas {
+        max-width: 150px;
+    }
+
+    .Titulo_carpeta {
+        color: black;
+        padding-top: 10px;
+        width: 130px;
+    }
+}

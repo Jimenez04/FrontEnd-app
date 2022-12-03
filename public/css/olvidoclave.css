@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ContenedorOlvidocontra {
+    width: 100%;
+    background-color: #2B6797;
+    margin: auto;
+    padding: 100px 80px;
+    border-top: 4px;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-olvidopw {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    width: 360px;
+    height: 450px;
+    margin: 0 auto;
+    margin-top: 20px;
+    box-shadow: 6px 4px 16px 0px rgba(136, 165, 191, 0.48), 2px 2px 2px 0px rgba(255, 255, 255, 0.8)
+}
+
+.contenedor-olvidopw h3 {
+    height: 28px;
+    margin-bottom: 38px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    padding-top: 34px;
+
+}
+.container_olvido_contra {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+.contenedor-correoalter,
+.container_carnet, .container_cedula {
+    height: 70px;
+    padding: 10px;
+    font-size: 1em;
+    width: 250px;
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.campos_recuperar_cuenta{
+    height: 38px;
+    font-size: 1em;
+    box-shadow: none;
+    margin-top: 5px;
+    width: 224px;
+    text-align: center;
+    border: 1.5px solid #0000006e;
+    background-color: #05060f0a;
+    border-radius: .2rem;
+
+}
+
+.divbtnrecuperar {
+    padding-bottom: 2px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 220px;
+}
+
+.botonrecuperar {
+    margin: 2px;
+    width: 200px;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-color: #00C0F3;
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 40px;
+    padding: 0 16px;
+    text-transform: capitalize;
+    vertical-align: middle;
+    border: 1px solid #00C0F3;
+    margin-bottom: 18px;
+}
+
+.contenedor-olvidopw hr {
+    width: 98%;
+    height: 2px;
+    border: none;
+    background-color: #2B6797;
+}
+
+.UCR-OO_oc {
+    font-size: .7em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    color: #737677;
+    margin-top: -10px;
+    padding-left: 0;
+}
+
+/*Interfaz con capacidad de respuesta*/
+/*800px*/
+@media screen and (max-width:800px) {
+    .ContenedorOlvidocontra {
+        display: grid;
+        grid-template-columns: (1, 1fr);
+        grid-gap: 20px;
+        padding-top: 150px;
+    }
+
+    .container_olvido_contra {
+        padding-top: 10px;
+        padding-bottom: 20px;
+
+    }
+
+    .contenedor-olvidopw {
+        min-width: 280px;
+        max-width: 360px;
+        height: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+
+    }
+
+    .contenedor-olvidopw h3 {
+        height: 40px;
+        font-size: 16px;
+        padding-bottom: 10px;
+
+    }
+
+    .contenedor-correoalter,
+    .container_carnet, .container_cedula {
+        width: 250px;
+        height: 70px;
+    }
+
+    .contenedor-correoalter input,
+    .container_carnet input, .container_cedula input {
+        width: 220px;
+        font-size: 14px;
+
+    }
+
+    .divbtnrecuperar {
+        padding-top: 10px;
+        padding-bottom: 8px;
+        margin-top: 10px;
+        padding-left: 0px;
+    }
+
+    .botonrecuperar {
+
+        font-size: 14px;
+
+    }
+
+    .contenedor-olvidopw hr {
+        margin-left: 4%;
+        width: 82%;
+    }
+
+    .UCR-OO_oc {
+        padding-left: 12px;
+        font-size: .6em;
+    }
+
+}
+@media screen and (max-width:400px) {
+    .ContenedorOlvidocontra {
+        display: grid;
+        grid-template-columns: (1, 1fr);
+        grid-gap: 20px;
+        padding-top: 150px;
+    }
+
+    .container_olvido_contra {
+        padding-top: 14px;
+        padding-bottom: 16px;
+    }
+
+    .contenedor-olvidopw {
+        max-width: 320px;
+        min-width: 250px;
+        margin-top: 30px;
+
+    }
+
+    .contenedor-olvidopw h3 {
+        height: 28px;
+        margin-bottom: 26px;
+        font-size: 16px;
+        padding-top: 28px;
+        text-align: center;
+        padding-left: 0;
+
+    }
+
+
+    .contenedor-correoalter,
+    .container_carnet, .container_cedula{
+        padding-left: 20px;
+        width: 220px;
+        height: 72px;
+
+    }
+
+     .divbtnrecuperar {
+        padding-top: 22px;
+        width: 210px;
+        padding-left: 10px;
+    }
+
+    .botonrecuperar  {
+
+        font-size: 14px;
+
+    }
+
+    .contenedor-olvidopw hr {
+        margin-left: 0;
+        width: 90%;
+    }
+
+    .UCR-OO_oc {
+        padding-left: 0px;
+        font-size: .6em;
+    }
+
+
+}

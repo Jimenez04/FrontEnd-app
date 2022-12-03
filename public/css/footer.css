@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pie_de_paginaUCR {
+    background-color: #323232 !important;
+    width: 100%;
+    bottom: 0;
+    height: 182px;
+    position: relative;
+}
+
+.contenedorfooter {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.column1 {
+    padding-left: 6px;
+    width: 170px;
+    margin-left: 30px;
+}
+
+.column1 .row {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.Contenedor-centro {
+    width: 396px;
+    height: 120px;
+    margin-top: 50px;
+    margin-left: 24px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.column2,
+.column3 {
+    padding-left: 10px;
+    width: 160px;
+}
+
+.column2 .row,
+.column3 .row {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.Informacion-copyright {
+    display: flex;
+    flex-direction: column;
+    height: 182px;
+}
+
+.Contenedor-informacion {
+    width: 236px;
+    height: 130px;
+    padding-top: 50px;
+}
+
+.row2 {
+    margin-top: 10px;
+    display: flex;
+}
+
+.Contenedor-informacion h3 {
+    margin-top: -10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: white;
+}
+
+.row2 label {
+    margin-top: 2px;
+    font-size: 14px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.row2 span {
+    margin-left: 10px;
+    margin-top: 3px;
+    font-size: 14px;
+    color: white;
+    font-family: 'Montserrat';
+}
+
+.ucr-copyright {
+    color: white;
+    font-size: 12px;
+    padding-top: 22px;
+    font-family: 'Montserrat';
+    height: 60px;
+}
+
+/*Responsive*/
+@media screen and (max-width:800px) {
+
+    .pie_de_paginaUCR {
+        height: 650px;
+        margin: 0;
+    }
+
+    .contenedorfooter {
+        display: grid;
+        grid-template-columns: (1, 1fr);
+        grid-gap: 10px;
+        padding: 0;
+        width: 100%;
+        justify-items: center;
+        height: 650px;
+    }
+
+    .column1 {
+        width: 100%;
+        display: flex;
+        height: 160px;
+        padding-left: 0px;
+        padding-top: 40px;
+        margin-left: 0px;
+    }
+
+    .column1 .row {
+        margin: 0 auto;
+    }
+
+    .Contenedor-centro {
+        width: 100%;
+        height: 300px;
+        display: grid;
+        grid-template-columns: (1, 1fr);
+        padding-left: 10px;
+        margin-top: 10px;
+        padding-top: 20px;
+
+    }
+
+    .column2 {
+        margin-bottom: 0px;
+        height: 100px;
+        margin: 0 auto;
+    }
+
+    .column3 {
+        margin-bottom: 0px;
+        height: 100px;
+    }
+
+    .Informacion-copyright {
+        width: 100%;
+        height: 150px;
+        margin-top: -22px;
+    }
+
+    .Contenedor-informacion {
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        padding-left: 40px;
+    }
+
+    .Contenedor-informacion h3 {
+        visibility: hidden;
+        padding-top: 10px;
+        margin-top: -70px;
+    }
+
+    .row2 {
+        font-size: 14px;
+
+    }
+    .row2 .telefono{
+        padding-left: 40px;
+    }
+    .ucr-copyright {
+        margin: 0 auto;
+        width: 100%;
+        font-size: 14px;
+        padding-top: 20px;
+        padding-left: 44px;
+        height: 80px;
+
+    }
+}
+
+@media screen and (max-width:380px) {
+
+    .pie_de_paginaUCR {
+        height: auto;
+        margin: 0;
+    }
+    .Contenedor-centro {
+        width: 100%;
+        height: 300px;
+        display: grid;
+        grid-template-columns: (1, 1fr);
+        padding-left: 10px;
+        margin: 0;
+        padding-top: 20px;
+
+    }
+
+   
+    .Contenedor-informacion {
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        padding-left: 20px;
+    }
+
+    .row2 .telefono{
+        padding-left: 20px;
+    }
+    .ucr-copyright {
+        margin: 0 auto;
+        width: 260px;
+        font-size: 14px;
+        padding-top: 20px;
+        padding-left: 10px;
+        height: 80px;
+
+    }
+}

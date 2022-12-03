@@ -1,0 +1,351 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ContenedorInicioSesion {
+    width: 100%;
+    background-color: #2B6797;
+    margin: auto;
+    padding: 100px 60px;
+    border-top: 4px;
+    display: flex;
+    justify-content: center;
+    /*background-color: #ECECEC;*/
+}
+
+.container-todo {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-login {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    max-width: 374px;
+    height: 420px;
+    margin: 50px 100px 20px 100px;
+    box-shadow: 6px 2px 16px 0px rgba(136, 165, 191, 0.48), 1px 2px 2px 0px rgba(255, 255, 255, 0.8);
+}
+
+.Titulo {
+    margin-bottom: 10px;
+    width: 350px;
+    padding-top: 10px;
+
+}
+
+.Titulo h3 {
+    height: 28px;
+    margin-bottom: 24px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    padding-top: 20px;
+    padding-left: 34px;
+    width: 350px;
+   
+}
+.alertas{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: black;
+    display: flex;
+    font-weight: bold;
+    width: 350px;
+    justify-content: center;
+}
+
+.linea {
+    width: 85%;
+    height: 2px;
+    border: none;
+    margin: 4px 0px 10px 26px;
+    background-color: #2B6797;
+}
+
+.containerCorreo,
+.containerPassword {
+    height: 68px;
+    border-bottom: none;
+    padding: 10px;
+    font-size: 1em;
+    overflow: inherit;
+    padding-left: 28px;
+    width: 310px;
+
+}
+
+.containerCorreo input,
+.containerPassword input {
+    border-radius: 2px;
+    height: 38px;
+    font-size: 1em;
+    box-shadow: none;
+    margin-top: 14px;
+    margin-bottom: 10px;
+    width: 250px;
+    margin-left: 10px;
+    text-align: center;
+    border: 1.5px solid #0000006e;
+    background-color: #05060f0a;
+    border-radius: .2rem;
+
+}
+
+.containerCorreo ::placeholder,
+.containerPassword ::placeholder {
+    color: rgba(27, 25, 25, 0.774);
+    font-size: 15px;
+}
+
+.divbtnlogin {
+    padding-bottom: 20px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    width: 334px;
+}
+
+.botonLogin {
+    margin: 2px;
+    width: 250px;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    background-color: #00C0F3;
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 40px;
+    padding: 0 14px;
+    text-transform: capitalize;
+    vertical-align: middle;
+    border: 1px solid #00C0F3;
+}
+.contenedor_opciones_user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0px;
+}
+.Recuperarcontrasena, .Registrarse {
+    padding-bottom: 6px;
+    display: flex;
+    justify-content: center;
+    margin-left: 0px;
+    padding-top: 0px;
+
+}
+.OlvidoPassword, .Registro{
+    
+    color: #2B6797;
+    font-size: 15px;
+    text-decoration: none;
+    font-family: 'EB Garamond', sans-serif;
+}
+
+.UCR-OO {
+    font-size: .7em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    color: #737677;
+    padding-left: 28px;
+    padding-top: -14px;
+}
+
+/*Interfaz con capacidad de respuesta*/
+
+@media screen and (max-width:800px) {
+    .ContenedorInicioSesion {
+        display: grid;
+        grid-template-columns: (1, 1fr);
+        grid-gap: 20px;
+        padding-top: 150px;
+    }
+
+    .container-todo {
+        padding-top: 14px;
+        padding-bottom: 16px;
+        width: 90%;
+        align-items: center;
+    }
+
+    .contenedor-login {
+        min-width: 280px;
+        max-width: 360px;
+        height: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+
+    }
+
+    .Titulo {
+        margin-bottom: 6px;
+        width: 300px;
+        padding-top: 10px;
+    }
+
+    .Titulo h3 {
+        margin-bottom: 16px;
+        padding-top: 6px;
+      padding-left: 40px;
+    }
+    .alertas{
+        width: 280px;
+    }
+    .containerCorreo,
+    .containerPassword {
+        padding-left: 36px;
+        width: 250px;
+        height: 74px;
+
+    }
+
+    .containerCorreo ::placeholder,
+    .containerPassword ::placeholder {
+        font-size: .8em;
+        color: rgba(27, 25, 25, 0.54);
+    }
+
+    .containerCorreo input,
+    .containerPassword input {
+
+        height: 2.5rem;
+        font-size: 1em;
+        margin-top: 8px;
+        width: 220px;
+        margin-left: 0px;
+        text-align: center;
+        border: 1px solid #0000006e;
+
+    }
+
+    .divbtnlogin {
+        padding-top: 22px;
+        width: 260px;
+        padding-left: 36px;
+
+    }
+
+    .botonLogin {
+
+        font-size: 14px;
+    }
+
+    .contenedor_opciones_user{
+        padding-left: 36px;
+    }
+    .Recuperarcontrasena, .Registrarse {
+        padding-bottom: 8px;
+        margin-left: 10px;
+
+    }
+
+    .OlvidoPassword, .Registro {
+        font-size: 12px;
+    }
+
+    .contenedor-login hr {
+        margin-left: 12%;
+    }
+
+    .UCR-OO {
+        padding-left: 32px;
+        font-size: .56em
+    }
+}
+
+@media screen and (max-width:400px) {
+
+    .ContenedorInicioSesion {
+        display: grid;
+        grid-template-columns: (1, 1fr);
+        grid-gap: 20px;
+        padding-top: 150px;
+    }
+
+    .container-todo {
+        padding-top: 14px;
+        padding-bottom: 16px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .contenedor-login {
+        overflow: auto;
+        max-width: 280px;
+        height: 100%;
+        margin: 0 auto;
+        margin-top: 10px;
+
+    }
+
+    .Titulo {
+        margin-bottom: 6px;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .Titulo h3 {
+        margin-bottom: 16px;
+        padding-top: 6px;
+        padding-left: 10px;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .containerCorreo,
+    .containerPassword {
+        padding-left: 30px;
+        width: 250px;
+        height: 80px;
+
+    }
+
+    .containerCorreo ::placeholder,
+    .containerPassword ::placeholder {
+        font-size: .8em;
+    }
+
+    .containerCorreo input,
+    .containerPassword input {
+
+        height: 2.5rem;
+        font-size: 1em;
+        margin-top: 8px;
+        width: 200px;
+        border: 1px solid #0000006e;
+        margin-left: 0px;
+
+    }
+
+  
+
+    .contenedor_opciones_user{
+        padding-left: 0px;
+    }
+    .Recuperarcontrasena, .Registrarse {
+        padding-bottom: 10px;
+        margin-left: 2px;
+
+    }
+
+    .OlvidoPassword, .Registro {
+        font-size: 12px;
+    }
+
+    .contenedor-login hr {
+        margin-left: 12%;
+    }
+
+    .UCR-OO {
+        padding-left: 34px;
+        font-size: .51em;
+    }
+}

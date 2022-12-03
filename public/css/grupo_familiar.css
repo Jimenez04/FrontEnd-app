@@ -1,0 +1,148 @@
+
+.lista_familiares{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ddd;
+    padding-bottom: 40px;
+}
+.divbtn_agrega_familiar {
+    width: 180px;
+    height: 80px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+.boton_agregar_familiar {
+    width: 150px;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: #2B6797;
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 36px;
+    /* padding: 0 16px; */
+    text-transform: capitalize;
+    padding-top: 6px;
+    border: 1px solid #2B6797;
+    margin-bottom: 6px;
+}
+.boton_agregar_familiar:hover {
+text-decoration: none;
+color: white;
+}
+
+.tabla_grupo_familiar {
+    background-color: white;
+    border-collapse: collapse;
+    width: 90%;
+    table-layout: fixed;
+    font-size: 1em;
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Poppins';
+    /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.14);*/
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.tabla_grupo_familiar caption{
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 600px;
+    margin: 8px 0px;
+}
+.tabla_grupo_familiar tr{
+    border: 1 px solid #ccc;
+}
+.tabla_grupo_familiar th,
+.tabla_grupo_familiar td {
+    border-bottom: 1px solid gray;
+    padding: 12px;
+    text-align: center;
+}
+
+.tabla_grupo_familiar thead th {
+    background-color: #2B6797;
+    color: white;
+    text-transform: capitalize;
+}
+
+.tabla_grupo_familiar td {
+    letter-spacing: 1px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.tabla_grupo_familiar tr:hover {
+    background-color: #E6E6E6;
+}
+.tabla_grupo_familiar td a {
+    text-decoration: none;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 2px;
+}
+
+@media screen and (max-width:720px) {
+
+    .lista_familiares{
+        height: 100%;
+        margin-top: 20px;
+    }
+    .divbtn_agrega_familiar {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        padding-top: 20px;
+    }
+
+    .boton_agregar_familiar {
+        margin-left: 0;
+    }
+    .divtabla {
+        margin-top: 10px;
+    }
+
+    .tabla_grupo_familiar {
+        border: 0px;
+    }
+
+    .tabla_grupo_familiar thead {
+        display: none;
+    }
+
+    .tabla_grupo_familiar tr {
+        margin-bottom: 8px;
+        border-bottom: 4px solid #ccc;
+        display: block;
+        background-color: #f8f8f8;
+    }
+
+    .tabla_grupo_familiar td,
+    .tabla_grupo_familiar th {
+        letter-spacing: 0;
+        font-size: 14px;
+    }
+
+    .tabla_grupo_familiar td {
+        text-align: right;
+        display: block;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .tabla_grupo_familiar td[data-titulo]::before {
+        content: attr(data-titulo);
+        font-weight: bold;
+        float: left;
+    }
+
+}

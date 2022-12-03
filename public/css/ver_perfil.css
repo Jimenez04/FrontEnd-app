@@ -1,0 +1,322 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Contenedor_ver_perfil {
+    width: 100%;
+    padding: 120px 20px;
+    background-color: #ECECEC;
+
+}
+
+.contenedor_userporfile {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
+
+}
+
+.informacion_usuario {
+    height: 140px;
+    border-radius: 10px;
+    width: 100%;
+    padding-left: 10px;
+    margin-left: 10px;
+    background: #ffffff;
+    margin-bottom: 40px;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.user_image {
+    margin: 0 40px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    display: inline-block;
+    padding: 3px;
+    border: 3px solid #d2d6de;
+    margin-top: 12px;
+    display: flex;
+}
+
+.nombre_usuario {
+    font-size: 28px;
+    margin-top: 16px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    color: #333;
+
+}
+
+.detalles_de_usuario {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    width: 100%;
+    margin: 0 100px;
+    margin-left: 116px;
+    margin-top: -22px;
+    display: flex;
+    padding-left: 36px;
+    height: 400px;
+    flex-direction: row;
+    /*border: .2em solid #000000;*/
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.titulo_user {
+    display: flex;
+    width: 100%;
+    margin-top: 34px;
+    margin-bottom: 24px;
+    padding-left: 12px;
+}
+
+.titulo_user h3 {
+    height: 28px;
+    margin-bottom: 26px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    padding-top: 10px;
+    width: 350px;
+
+}
+
+.datos_usuario {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+}
+
+.container_useremail,
+.container_usercarnet,
+.container_usertelefono {
+    height: 76px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 22px;
+    width: 250px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 10px;
+    margin-top: -10px;
+    margin-bottom: 18px;
+
+}
+
+.container_useremail label,
+.container_usercarnet label,
+.container_usertelefono label {
+    margin-bottom: 0px;
+    font-family: 'EB Garamond';
+    font-size: 16px;
+    font-weight: bold;
+    height: 20px;
+    padding-left: 6px;
+    padding-top: 10px;
+}
+
+.container_useremail input,
+.container_usercarnet input,
+.container_usertelefono input {
+    height: 38px;
+    font-size: 1em;
+    margin-top: -14px;
+    width: 220px;
+    text-align: center;
+    border: 0;
+    background-color: #E6E6E6;
+
+}
+
+.divbtnGuardar {
+    padding-bottom: 20px;
+    margin-top: 66px;
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.contenedorbtn_solicitudes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 50%;
+    /*background-color: orange;*/
+    padding-left: 40px;
+}
+
+.divbtnAdecuacion,
+.divbtnPAI {
+    width: 50%;
+    padding-right: 40px;
+    /*margin-left: 50px;*/
+}
+
+.botonSolicitudesAdecuacion,
+.botonSolicitudesPAI {
+    margin: 2px;
+    width: 200px;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-color: #00C0F3;
+    text-decoration: none;
+    color: #FFFFFF;
+    text-align: center;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 40px;
+    padding: 0 16px;
+    text-transform: capitalize;
+    border: 1px solid #00C0F3;
+    margin-bottom: 18px;
+    margin-top: -20px;
+}
+
+/* margin: 0 20px;*/
+@media screen and (max-width:1080px) {
+    .detalles_de_usuario {
+        margin-left: 110px;
+        margin-top: 0px;
+    }
+
+    .user_image {
+        margin: 0 20px;
+    }
+
+    .nombre_usuario {
+        font-size: 24px;
+        margin-right: -18px;
+        width: 140px;
+    }
+
+    .titulo_user {
+        width: 250px;
+        padding-left: 30px;
+    }
+
+    .titulo_user h3 {
+        font-size: 18px;
+    }
+
+    .contenedorbtn_solicitudes {
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        margin: 0 auto;
+        padding-left: 0px;
+
+    }
+
+    .divbtnAdecuacion,
+    .divbtnPAI {
+        margin-left: -40px;
+        padding-top: 40px;
+        padding-bottom: 10px;
+        width: 50%;
+    }
+
+    .botonSolicitudesAdecuacion,
+    .botonSolicitudesPAI {
+
+        width: 200px;
+        font-size: 14px;
+
+
+    }
+
+}
+
+
+
+@media screen and (max-width:670px) {
+    .detalles_de_usuario {
+        margin-left: 110px;
+        margin-top: 0px;
+        height: 620px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .user_image {
+        margin: 0 20px;
+    }
+
+    .nombre_usuario {
+        font-size: 24px;
+        margin-right: -18px;
+        width: 140px;
+    }
+
+    .titulo_user {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .titulo_user h3 {
+        font-size: 18px;
+        padding-right: 0px;
+    }
+
+    .datos_usuario {
+        align-items: center;
+        width: 100%;
+        margin-bottom: 16px;
+
+    }
+
+    .container_useremail input,
+    .container_usercarnet input,
+    .container_usertelefono input {
+        width: 200px;
+
+    }
+
+    .contenedorbtn_solicitudes {
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding-right: 0px;
+        margin: 0 auto;
+        padding-left:0px;
+        padding-right: 30px;
+
+    }
+
+    .divbtnAdecuacion,
+    .divbtnPAI {
+        margin-left: 0px;
+        padding-top: 40px;
+        padding-bottom: 10px;
+        width: 200px;
+    }
+
+    .botonSolicitudesAdecuacion,
+    .botonSolicitudesPAI {
+
+        width: 200px;
+        font-size: 14px;
+
+
+    }
+
+}

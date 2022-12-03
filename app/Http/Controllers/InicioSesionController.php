@@ -1,0 +1,102 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\LoginRequest;
+use GuzzleHttp\Client;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+
+class InicioSesionController extends Controller
+{
+    public function index()
+    {
+        return redirect()->route('login');
+    }
+
+    //Muestra la vista del Login
+    public function login($mensaje = null)
+    {
+        return view('Usuario.login', compact('mensaje'));
+    }
+
+    public function loginApi(LoginRequest $request)
+    {
+        try {
+            $request->validated();
+
+            $email = $request['email'];
+            $password = $request['password'];
+
+            $response = Http::withHeaders([
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json'
+            ])->post( env('API_URL') . 'login', [
+                'email' => $email,
+                'password_' => $password,
+            ]);
+            $resultado = json_decode($response->getBody(), true);
+            
+            if(array_key_exists("errors", $resultado) || array_key_exists("error", $resultado)){
+                 return redirect()->route('login', ['mensaje' => "Email o contraseña invalidos"])->withInput();
+            }
+            if(!$resultado['status'] && array_key_exists("message", $resultado)){
+                return redirect()->route('login', ['mensaje' => $resultado['message']])->withInput();
+            }
+           
+            $resultado = json_decode($response->getBody(), true);
+            session(['token' => $resultado['token']]);
+
+            session(['login' => true]);
+
+            return $this->mi_usuario();
+        } catch (\Throwable $e) {
+
+            return redirect()->route('login')->with('error', 'Verifique los campos')->onlyInput('email');
+        }
+    }
+    public function mi_usuario()
+    {
+       try {
+                $response = Http::withHeaders([
+                    'Accept' => 'application/json',
+                    'Content-Type' => 'application/json',
+                    'Authorization' => 'Bearer ' . session('token'),
+                ])->get( env('API_URL') . 'obtener-usuario');
+                
+                $resultado = json_decode($response->getBody(), true);
+
+                //obtengo el rol del usuario logueado
+                $userRole = $resultado['user']['role_id'];
+                session(['roleuser' => $resultado['user']['role_id']]);
+                session(['name' => $resultado['user']['email']]);
+
+                if ($userRole == 1) {
+                    return redirect()->route('Admin');
+                } elseif ($userRole == 2) {
+                    return redirect()->route('Student');
+                }
+        } catch (\Throwable $th) {
+            return redirect()->route('login');
+       }
+    }
+
+    public function logout()
+    {
+       try {
+        $response = Http::withHeaders([
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json',
+            'Authorization' => 'Bearer ' . session('token'),
+        ])->get( env('API_URL') . 'usuario/salir');
+
+        $resultado = json_decode($response->getBody(), true);
+
+        session()->flush();
+
+        return redirect()->route('login');
+       } catch (\Throwable $th) {
+        return back();
+       }
+    }
+}

@@ -32,11 +32,9 @@ function openModal(ver) {
 
   if (ver == botonopenModal) {
     $('#modal_trabajo').fadeIn();
-  
   }
    if (ver == botonopenModalEnfermedad) {
-    $('#modal_enfermedad').fadeIn();
-  
+     $('#modal_enfermedad').fadeIn();
   }
   if (ver == botonopenModalBeca) {
     $('#modal_beca').fadeIn();
@@ -139,5 +137,10 @@ function beca_participacion(beca_participacion) {
   } 
 
 }
+
+
+
+
+  
 
 

@@ -25,6 +25,7 @@ class ViewsUserCRUD_Controller extends Controller
             ]
         );
         $resultado = json_decode($response->getBody(), true);
+        //  dd($resultado);
         $resultado = $resultado['data'];
         // dd($resultado);
 

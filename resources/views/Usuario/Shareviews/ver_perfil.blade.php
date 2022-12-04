@@ -21,7 +21,7 @@
 
                         <label for="carnet">Carnet</label>
                         <br>
-                        <input type="text" name="nombre" value=" {{$resultado['carnet']}}" readonly>
+                        <input type="text" name="nombre" value=" {{ array_key_exists('carnet' , $resultado) ? $resultado['carnet'] : 'No aplica'}}" readonly>
                     </div>
                     <div class="container_useremail">
 
@@ -36,7 +36,7 @@
 
                         <label for="telefono">Teléfono</label>
                         <br>
-                        <input type="tel" name="Telefono" value="{{ $resultado['persona']['contacto'] != null ? $resultado['persona']['contacto']['numero']  : 'No contiene'}}" readonly>
+                        <input type="tel" name="Telefono" value="{{ array_key_exists('numero' , $resultado['persona']['contacto'])  ? $resultado['persona']['contacto']['numero']  : 'No contiene'}}" readonly>
                     </div>
 
                 </div>

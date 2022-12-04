@@ -69,7 +69,7 @@
 
                         <button type="button" class="botones_est" id="beca_modal" onclick="openModal(this)">Añadir
                             Beca</button>
-                        <button type="button" onclick="openModal(this)" class="botones_est" id="trabajo_modal">Añadir
+                        <button type="button" onclick="openModal_Trabajo(this)" class="botones_est" id="trabajo_modal">Añadir
                             Trabajo</button>
 
                     </div>

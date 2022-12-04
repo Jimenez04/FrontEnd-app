@@ -50,15 +50,15 @@ Route::get('/principal-est',[Student_MainFunctions_Controller::class,'principalE
 Route::get('/principal_admi',[Admin_Funciones_Controller::class,'principalAdmi'])->name('Admin')->middleware('verificartoken');;
 //todo bien
 //--------------------------------CRUD PERSONA ---------------------------------------
-//--------------------------------TRABAJO ---------------------------------------
+
+//--------------------------------TRABAJO ---------------------------------------  
 Route::get('/trabajo',[Persona_CRUD_Controller::class,'viewTrabajo'])->name('Trabajo');
 Route::get('/obtener_trabajo',[Persona_CRUD_Controller::class,'getTrabajo'])->name('get_Trabajo');
 Route::post('/agrega_trabajo',[Persona_CRUD_Controller::class,'AgregaTrabajo'])->name('Nuevo_Trabajo');
 
-
 //vistas CRUD del usuario
 //--------------------------------VISTAS COMPARTIDAS---------------------------------------
-Route::get('/mi_perfil',[ViewsUserCRUD_Controller::class,'perfil_usuario']); //funciona
+Route::get('/mi_perfil',[ViewsUserCRUD_Controller::class,'perfil_usuario'])->middleware('verificartoken'); //funciona
 Route::get('/mi_perfil2',[ViewsUserCRUD_Controller::class,'muestraejemplo']);
 Route::get('/editar_perfil',[ViewsUserCRUD_Controller::class,'editar_perfil']);
 Route::get('/lista',[ViewsUserCRUD_Controller::class,'listar_usuarios']);

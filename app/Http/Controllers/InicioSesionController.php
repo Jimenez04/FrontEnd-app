@@ -70,7 +70,7 @@ class InicioSesionController extends Controller
                 $userRole = $resultado['user']['role_id'];
                 session(['roleuser' => $resultado['user']['role_id']]);
                 session(['name' => $resultado['user']['email']]);
-
+                session(['cedula' => $resultado['user']['persona']['cedula']]);
                 if ($userRole == 1) {
                     return redirect()->route('Admin');
                 } elseif ($userRole == 2) {

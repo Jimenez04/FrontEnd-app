@@ -20,6 +20,9 @@
 
             @if (session('login'))
                 <nav class="contenedoropciones">
+                    <li><a class="user_logueado" href="">Home
+                        <i class="fa fa-home"></i></a></li>
+
                     <li><a class="user_logueado" id="usuario">{{ session('name') }}</a>
                         <ul class="submenu_User">
 
@@ -40,55 +43,5 @@
     </div>
 
 
-
-
-
-    <!--
-        <div class="opciones_inicio" id="inicio_menu">
-            @csrf
-            <nav class="contenedoropciones">
-
-                <li>
-                    <a id="registro" href="/registrarse">Registrarse</a>
-                </li>
-
-                <li><a id="ayuda" href="#">Ayuda</a></li>
-                
-                <li><a href="{{ route('logout') }}">Salir</a>
-                    <i class="fa-regular fa-arrow-right-from-bracket"></i>
-                </li>
-            </nav>
-        </div>
-         <div class="opciones_logueado" id="logueado_menu">
-            <nav class="opciones_principal">
-                <li> <a class="user">{{ auth()->user() }}</a>
-                    <ul class="submenu_User">
-
-                        <li><a href="/editar_perfil">Editar Perfil</a>
-
-                        <li><a href="{{ route('logout') }}">Salir</a>
-                            <i class="fa-regular fa-arrow-right-from-bracket"></i>
-                        </li>
-                    </ul>
-                </li>
-            </nav>
-        </div>
-    
-    <div class="opciones_inicio" id="logueado_menu">
-                <nav class="opciones_principal">
-                    <li> <a class="user">{{ session('email') }}</a>
-                        <ul class="submenu_User">
-
-                            <li><a href="/editar_perfil">Editar Perfil</a>
-
-                            <li><a href="{{ route('logout') }}">Salir</a>
-                                <i class="fa-regular fa-arrow-right-from-bracket"></i>
-                            </li>
-                        </ul>
-                    </li>
-                </nav>
-            </div>
-    
-    </div> -->
 
 </header>

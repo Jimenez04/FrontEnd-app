@@ -1,4 +1,4 @@
-*{
+* {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -30,7 +30,7 @@
 }
 
 
-.divbotones_{
+.divbotones_ {
     margin-top: 30px;
     display: flex;
     justify-content: space-around;
@@ -41,8 +41,9 @@
     margin-bottom: 20px;
     padding-top: 50px;
     font-family: 'Poppins', sans-serif;
-    
+
 }
+
 .boton_opciones {
     width: 100px;
     font-weight: normal;
@@ -70,7 +71,7 @@
 }
 
 
-.divbotonRegresar{
+.divbotonRegresar {
     margin-top: 40px;
     display: flex;
     justify-content: center;
@@ -79,8 +80,9 @@
     padding-bottom: 40px;
     margin-bottom: 20px;
     padding-top: 50px;
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Poppins', sans-serif;
 }
+
 .boton_regresar {
     width: 100px;
     font-weight: normal;
@@ -99,43 +101,46 @@
     text-transform: capitalize;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
-.boton_regresar:hover{
+
+.boton_regresar:hover {
     text-decoration: none;
     background-color: #ddd;
     color: black;
 
 }
+
 @media screen and (max-width:800px) {
     .divbtnlogin {
         padding-top: 22px;
         width: 260px;
         padding-left: 36px;
-    
+
     }
-    
+
     .botonLogin {
-    
+
         font-size: 14px;
     }
 
 }
 
 @media screen and (max-width:400px) {
- 
-.divbtnlogin {
-    padding-top: 22px;
-    width: 210px;
-    padding-left: 10px;
 
-}
+    .divbtnlogin {
+        padding-top: 10px;
+        width: 180px;
+        padding-left: 0;
+    }
 
-.botonLogin {
-    width: 100%;
-    padding-left: 10px;
-}
-.boton_opciones{
-    width: 80px;
-    font-size: 12px;
-    height: 32px;
-}
+    .botonLogin {
+        width: 100%;
+        text-align: center;
+        height: 36px;
+    }
+
+    .boton_opciones {
+        width: 80px;
+        font-size: 12px;
+        height: 32px;
+    }
 }

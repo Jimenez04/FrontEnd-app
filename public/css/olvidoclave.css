@@ -9,9 +9,12 @@
     background-color: #2B6797;
     margin: auto;
     padding: 100px 80px;
+    height: 100vh;
+    max-height: 2160px;
+    min-height: 720px;
     border-top: 4px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .contenedor-olvidopw {
@@ -20,31 +23,33 @@
     width: 360px;
     height: 450px;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 80px;
     box-shadow: 6px 4px 16px 0px rgba(136, 165, 191, 0.48), 2px 2px 2px 0px rgba(255, 255, 255, 0.8)
 }
 
 .contenedor-olvidopw h3 {
     height: 28px;
-    margin-bottom: 38px;
+    margin-bottom: 30px;
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
-    padding-top: 34px;
+    padding-top: 30px;
 
 }
+
 .container_olvido_contra {
     padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 
 }
 
 .contenedor-correoalter,
-.container_carnet, .container_cedula {
+.container_carnet,
+.container_cedula {
     height: 70px;
     padding: 10px;
     font-size: 1em;
@@ -55,9 +60,9 @@
     align-items: center;
 }
 
-.campos_recuperar_cuenta{
+.campos_recuperar_cuenta {
     height: 38px;
-    font-size: 1em;
+    font-size: calc(0.80em + 0.2vmin);
     box-shadow: none;
     margin-top: 5px;
     width: 224px;
@@ -65,7 +70,6 @@
     border: 1.5px solid #0000006e;
     background-color: #05060f0a;
     border-radius: .2rem;
-
 }
 
 .divbtnrecuperar {
@@ -98,14 +102,14 @@
 }
 
 .contenedor-olvidopw hr {
-    width: 98%;
+    width: 90%;
     height: 2px;
     border: none;
     background-color: #2B6797;
 }
 
 .UCR-OO_oc {
-    font-size: .7em;
+    font-size: .72em;
     font-family: 'Poppins', sans-serif;
     font-weight: normal;
     color: #737677;
@@ -117,10 +121,10 @@
 /*800px*/
 @media screen and (max-width:800px) {
     .ContenedorOlvidocontra {
-        display: grid;
-        grid-template-columns: (1, 1fr);
-        grid-gap: 20px;
-        padding-top: 150px;
+        margin-top: 50px;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
     }
 
     .container_olvido_contra {
@@ -130,31 +134,32 @@
     }
 
     .contenedor-olvidopw {
-        min-width: 280px;
-        max-width: 360px;
+        max-width: 350px;
         height: 100%;
+        max-height: 450px;
         margin: 0 auto;
-        margin-top: 10px;
+        margin-top: 16px;
 
     }
 
     .contenedor-olvidopw h3 {
-        height: 40px;
+        height: 20px;
         font-size: 16px;
-        padding-bottom: 10px;
+        padding-bottom: 0;
 
     }
 
     .contenedor-correoalter,
-    .container_carnet, .container_cedula {
+    .container_carnet,
+    .container_cedula {
         width: 250px;
         height: 70px;
     }
 
     .contenedor-correoalter input,
-    .container_carnet input, .container_cedula input {
+    .container_carnet input,
+    .container_cedula input {
         width: 220px;
-        font-size: 14px;
 
     }
 
@@ -178,16 +183,15 @@
 
     .UCR-OO_oc {
         padding-left: 12px;
-        font-size: .6em;
+        font-size: .66em;
     }
 
 }
+
 @media screen and (max-width:400px) {
     .ContenedorOlvidocontra {
-        display: grid;
-        grid-template-columns: (1, 1fr);
-        grid-gap: 20px;
-        padding-top: 150px;
+        margin-top: 90px;
+        padding: 50px;
     }
 
     .container_olvido_contra {
@@ -196,8 +200,7 @@
     }
 
     .contenedor-olvidopw {
-        max-width: 320px;
-        min-width: 250px;
+        max-width: 280px;
         margin-top: 30px;
 
     }
@@ -205,8 +208,8 @@
     .contenedor-olvidopw h3 {
         height: 28px;
         margin-bottom: 26px;
-        font-size: 16px;
-        padding-top: 28px;
+        font-size: 1em;
+        padding-top: 20px;
         text-align: center;
         padding-left: 0;
 
@@ -214,20 +217,32 @@
 
 
     .contenedor-correoalter,
-    .container_carnet, .container_cedula{
+    .container_carnet,
+    .container_cedula {
         padding-left: 20px;
         width: 220px;
         height: 72px;
 
     }
 
-     .divbtnrecuperar {
+    .contenedor-correoalter input,
+    .container_carnet input,
+    .container_cedula input {
+        width: 100%;
+    }
+
+    .campos_recuperar_cuenta {
+        font-size: calc(0.75em + 0.2vmin);
+    }
+
+
+    .divbtnrecuperar {
         padding-top: 22px;
         width: 210px;
         padding-left: 10px;
     }
 
-    .botonrecuperar  {
+    .botonrecuperar {
 
         font-size: 14px;
 
@@ -239,8 +254,58 @@
     }
 
     .UCR-OO_oc {
-        padding-left: 0px;
-        font-size: .6em;
+        padding-left: 0;
+        font-size: .51em;
+    }
+
+
+}
+
+@media screen and (max-width:320px) {
+
+    .contenedor-olvidopw {
+        max-width: 220px;
+        margin-top: 20px;
+
+    }
+
+    .contenedor-olvidopw h3 {
+        font-size: .88em;
+        padding-top: 20px;
+        text-align: center;
+        padding-left: 0;
+
+    }
+
+    .contenedor-correoalter,
+    .container_carnet,
+    .container_cedula {
+        padding-left: 20px;
+        width: 200px;
+
+    }
+
+    .contenedor-correoalter input,
+    .container_carnet input,
+    .container_cedula input {
+        width: 100%;
+    }
+
+
+    .divbtnrecuperar {
+        padding-top: 22px;
+        width: 180px;
+        padding-left: 10px;
+    }
+
+    .botonrecuperar {
+        height: 36px;
+        margin-bottom: 10px;
+    }
+
+    .UCR-OO_oc {
+        padding-left: 0;
+        font-size: .45em;
     }
 
 

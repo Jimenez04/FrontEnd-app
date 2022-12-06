@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .cabecera_UCR {
-    /*background-color:#00C0F3 !important; /* gris-ucr*/
     width: 100%;
     background-color: white;
     position: absolute;
@@ -21,23 +20,22 @@
 
 .logo-container {
     position: absolute;
-    top: -8px;
-    height: 70px;
+    top: 0;
+    height: 60px;
     width: 450px;
     display: flex;
     align-items: center;
     padding-left: 40px;
     padding-top: 10px;
-
 }
 
 .opciones_inicio {
-    width: 360px;
+    width: 450px;
     position: absolute;
-    top: 1px;
-    height: 66px;
+    top: 0;
     display: flex;
     right: 20px;
+    height: 100%;
     align-items: center;
 }
 
@@ -61,7 +59,7 @@
     text-decoration: none;
     color: black;
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-size: calc(1em + 0.2vmin);
     height: 36px;
     padding: 10px;
 }
@@ -106,7 +104,7 @@
     padding: 10px;
     color: black;
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: calc(0.78em + 0.2vmin);
     text-decoration: none;
     width: 200px;
 }
@@ -176,16 +174,17 @@
     .contenedoropciones>li {
         color: white;
     }
+
     .contenedoropciones>li>a {
         font-size: .7em;
         color: white;
     }
-    
+
     .submenu_User li a {
         display: block;
         padding: 6px;
         font-size: 12px;
         width: 150px;
     }
-    
+
 }

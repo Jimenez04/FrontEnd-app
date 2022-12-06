@@ -66,7 +66,7 @@
                             <div class="seleccion">
                                 <br>
                                 <div class="sexo_m">
-                                    <input class="checkbox"  type="checkbox" name="sexo_id" id="check_male" value="1"  checked
+                                    <input class="checkbox"  type="checkbox" name="sexo_id" id="check_male" value="1"
                                         onclick="Seleccionar(this)">
                                     <label class="checkbox_label">Hombre</label>
                                 </div>

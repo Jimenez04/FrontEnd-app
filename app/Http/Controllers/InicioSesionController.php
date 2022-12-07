@@ -74,6 +74,7 @@ class InicioSesionController extends Controller
                 if ($userRole == 1) {
                     return redirect()->route('Admin');
                 } elseif ($userRole == 2) {
+                    session(['carnet' => $resultado['user']['persona']['estudiante']['carnet']]);
                     return redirect()->route('Student');
                 }
         } catch (\Throwable $th) {

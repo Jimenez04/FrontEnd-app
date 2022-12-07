@@ -67,7 +67,7 @@
                     <hr>
                     <div class="divbotones_est">
 
-                        <button type="button" class="botones_est" id="beca_modal" onclick="openModal(this)">Añadir
+                        <button type="button" class="botones_est" id="beca_modal" onclick="openModal_Beca(this)">Añadir
                             Beca</button>
                         <button type="button" onclick="openModal_Trabajo(this)" class="botones_est" id="trabajo_modal">Añadir
                             Trabajo</button>
@@ -75,6 +75,10 @@
                     </div>
                 </div>
             </div>
+            <input type="hidden" name="" id="url" value="{{env('API_URL')}}">
+            <input type="hidden" name="" id="token" value="{{session('token')}}">
+            <input type="hidden" name="" id="cedula" value="{{session('cedula')}}">
+            <input type="hidden" name="" id="carnet" value="{{session('carnet')}}">
         @endif
 
         @include('modals.agregar_trabajo')

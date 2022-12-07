@@ -66,8 +66,8 @@ Route::get('/lista',[ViewsUserCRUD_Controller::class,'listar_usuarios']);
 
 
 //--------------------------------SOLICITUD ADECUACIÓN---------------------------------------
-Route::get('/solicitud-adecuacion',[Solicitud_Adecuacion_Views_Controller::class,'viewAdecuacion'])->name('Adecuacion');
-Route::get('/nueva-adecuacion',[Solicitud_Adecuacion_Views_Controller::class,'viewNuevaAdecuacion'])->name('Nueva_Adecuacion');
+Route::get('/solicitud-adecuacion',[Solicitud_Adecuacion_Views_Controller::class,'viewAdecuacion'])->name('Adecuacion')->middleware('verificartoken');
+Route::get('/nueva-adecuacion',[Solicitud_Adecuacion_Views_Controller::class,'viewNuevaAdecuacion'])->name('Nueva_Adecuacion')->middleware('verificartoken');
 
 //--------------------------------NECESIDAD Y APOYO ---------------------------------------
 Route::get('/necesidad-apoyo',[Solicitud_Adecuacion_Views_Controller::class,'viewNecesidad'])->name('Necesidad');

@@ -20,7 +20,7 @@
 
             @if (session('login'))
                 <nav class="contenedoropciones">
-                    <li><a class="user_logueado" href="">Home
+                    <li><a class="user_logueado" href="/principal-est">Home
                         <i class="fa fa-home"></i></a></li>
 
                     <li><a class="user_logueado" id="usuario">{{ session('name') }}</a>

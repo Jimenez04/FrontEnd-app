@@ -38,11 +38,12 @@
                                  <a href="#" class="botonCerrarModal" id="cerrar_modal_trabajo"
                                      onclick="closeModal(this)">Regresar
                                  </a>
+                                 <a href="#" class="botonCerrarModal" id="btn_delete_job"
+                                     onclick="delete_job(this)">Eliminar
+                                 </a>
                                  <input class="botonagregatrabajo" id="btn_add_job"  type="submit" value="Agregar">
                              </div>
-                             <input type="hidden" name="" id="url" value="{{env('API_URL')}}">
-                             <input type="hidden" name="" id="token" value="{{session('token')}}">
-                             <input type="hidden" name="" id="cedula" value="{{session('cedula')}}">
+                            
                             </form>
    
                         </div>

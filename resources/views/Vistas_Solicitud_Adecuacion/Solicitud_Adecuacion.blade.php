@@ -29,29 +29,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-
-                                <tr>
-                                    <td data-label="N° Solicitud"scope="row">AS123HSJA789ASKA2910ASC</th>
-                                    <td data-label="Estado">Aprobada</td>
-                                    <td data-label="Fecha">12/10/2020</td>
-                                </tr>
-                                <tr>
-                                    <td data-label="N° Solicitud"scope="row">AS123HSJA789ASKA2910ASC</th>
-                                    <td data-label="Estado">Aprobada</td>
-                                    <td data-label="Fecha">12/10/2020</td>
-                                </tr>
-                                <tr>
-                                    <td data-label="N° Solicitud"scope="row">AS123HSJA789ASKA2910ASC</th>
-                                    <td data-label="Estado">Aprobada</td>
-                                    <td data-label="Fecha">12/10/2020</td>
-                                </tr>
-                                <tr>
-                                    <td data-label="N° Solicitud"scope="row">AS123HSJA789ASKA2910ASC</th>
-                                    <td data-label="Estado">Aprobada</td>
-                                    <td data-label="Fecha">12/10/2020</td>
-                                </tr>
-
-
+                                @foreach ( $datos as  $item)
+                                <tr style="cursor:pointer " onclick="window.location='/{{$item['id']}}';" >
+                                        <td data-label="N° Solicitud"scope="row"> {{ $item['numero_solicitud']}} </th>
+                                        <td data-label="Estado">{{$item['estado']}}</td>
+                                        <td data-label="Fecha">{{$item['fecha']}}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -72,3 +56,11 @@
         </div>
     </div>
 @endsection
+<script>
+    jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        alert('hey');
+        window.location = $(this).data("href");
+    });
+});
+</script>

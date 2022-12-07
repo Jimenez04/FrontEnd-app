@@ -90,53 +90,8 @@ function mostrar_formtrabajo(trabajo) {
     document.getElementById("trabajo").style.display = "none";
   }
 }
-function mostrar_inputbeca(beca) {
 
-  if (beca == "1") {
-    document.getElementById("tipo_beca").style.display = "flex";
-  }
-  if (beca == "0") {
-    document.getElementById("tipo_beca").style.display = "none";
-  }
-}
-function beca_socioeconomica(beca_socioeconomica) {
 
-  if (beca_socioeconomica == "1") {
-    document.getElementById("categoria_beca").style.display = "flex";
-  }
-  if (beca_socioeconomica == "0") {
-    document.getElementById("categoria_beca").style.display = "none";
-  }
-}
-
-function categoria_beca(categoria) {
-  if (categoria == "1") {
-
-  }
-  if (categoria == "2") {
-
-  }
-  if (categoria == "3") {
-
-  }
-  if (categoria == "4") {
-
-  }
-  if (categoria == "5") {
-
-  }
-
-}
-
-function beca_participacion(beca_participacion) {
-  if (beca_participacion == "1") {
-    document.getElementById("beca_participacion").style.display = "flex";
-  }
-  if (beca_participacion == "0") {
-    document.getElementById("beca_participacion").style.display = "none";
-  } 
-
-}
 
 
 

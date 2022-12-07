@@ -35,6 +35,39 @@ function consultartrabajos(){
               });
 }
 
+function delete_job() { 
+    var id_trabajo = document.getElementById("id_trabajo").value;
+    if (id_trabajo > 0) {
+        fetch(urlapi + 'user/eliminar/trabajo/' + id_trabajo, {
+            method: 'delete',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + token,
+            },
+        })
+           
+            .then((response) => response.json())
+            .then((data) => {
+                if (data) {
+                    alert("Trabajo eliminado.");
+                    document.getElementById("id_trabajo").value = "";
+                    document.getElementById("actividad_Que_Desempena").value = "";
+                    document.getElementById("lugar_De_Trabajo").value = "";
+                    document.getElementById("horario_Laboral").value = "";
+                    $('#modal_trabajo').fadeOut();
+                } else {
+                    alert("Error");
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    } else {
+        alert("No tiene ningún trabajo");
+     }
+}
+
 async function addjob() {
 var btn_form = document.getElementById("btn_add_job").value;
 var actividad_Que_Desempena = document.getElementById("actividad_Que_Desempena").value;
@@ -45,7 +78,7 @@ var url;
 var method;
 var data = ""; 
     var cedula = document.getElementById("cedula").value;
-    if (btn_form = 'Actualizar') { 
+    if (btn_form == 'Actualizar') { 
         url = urlapi + 'user/editar/trabajo';
          method = 'PATCH';
          data = {  cedula: cedula, id: id_trabajo ,actividad_Que_Desempena: actividad_Que_Desempena , lugar_De_Trabajo: lugar_De_Trabajo, horario_Laboral: horario_Laboral  };

@@ -20,7 +20,7 @@ function accion_btn_atras() {
     }
 }
 function accion_btn_siguiente() { 
-    if (contador < 3) {
+    if (contador < 5) {
         document.getElementById('btn_Siguiente').hidden = false;
         document.getElementById('Siguiente').hidden = true;
     } else { 
@@ -59,12 +59,13 @@ function cambio_Ventanas() {
             ventana_InfoSolicitud();
             break;
         case 2:
+            ventana_InstitucionProcedencia();
             break;
         case 3:
-            
+            ventana_necesidad_Apoyo();
             break;
         case 4:
-            
+            ventana_GrupoFamiliar();
             break;
         case 5:
             
@@ -85,6 +86,11 @@ function ventana_InfoSolicitud() {
     var cuerpohtml = document.getElementById('form_contenedor');
     var contenido_nueva_adecuacion = document.createElement('div');
     contenido_nueva_adecuacion.classList.add('contenido_nueva_adecuacion');
+    //
+    var titulocontenedor = document.createElement('h3');
+    titulocontenedor.textContent = "Datos Solicitud";
+    contenido_nueva_adecuacion.append(titulocontenedor); 
+    //
     //Input Razon solicitud
         var datos_adecuacion = document.createElement('div');
         datos_adecuacion.classList.add('datos_adecuacion');
@@ -119,7 +125,7 @@ function ventana_InfoSolicitud() {
             etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
             datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
             var campos_adecuacion = document.createElement('input');
-            campos_adecuacion.type = "text"
+            campos_adecuacion.type = "date"
             campos_adecuacion.setAttribute('id','input_AnoIngresoCarreraEmpadronada');
             campos_adecuacion.classList.add('campos_adecuacion');
             datos_adecuacion.append(campos_adecuacion); 
@@ -253,46 +259,324 @@ contenido_nueva_adecuacion.append(datos_adecuacion);
 cuerpohtml.append(contenido_nueva_adecuacion);
 }
 
-function ventana_InfoSolicitud1() {
-    var Listacategorias = "";
-      var cuerpohtml =  document.getElementById('form_contenedor');
-      var contenedor = document.createElement('div');
-      contenedor.setAttribute("onclick","window.location='Descrip_Peli.html?id="+1 +"';");
-      contenedor.classList.add('contenedor_principal_movie');
-          var etiq_a = document.createElement('div');
-                  etiq_a.classList.add('image_movie');
-                  //var etiq_img = document.createElement('img');
-                  var etiq_img = document.createElement('img');
-                  etiq_img.src = '';
-                  etiq_img.alt = "Error al cargar";
-          etiq_a.append(etiq_img); 
-          var etiq_div_circle = document.createElement('a');
-          etiq_div_circle.classList.add('circle');
-              var etiq_i = document.createElement('i');
-              etiq_i.append("w");
-          etiq_div_circle.append(etiq_i); 
-          var etiq_coontenedor_secun = document.createElement('div');
-          etiq_coontenedor_secun.classList.add('contenedor_secundario_movie');
-              var etiq_div_title_movie = document.createElement('div');
-              etiq_div_title_movie.classList.add("title_movie","bold");
-                  var etiq_text_name = document.createElement('label');
-                  etiq_text_name.textContent = "d";
-              etiq_div_title_movie.append(etiq_text_name);
-              var etiq_div_clasification_movie = document.createElement('div');
-              etiq_div_clasification_movie.classList.add("classification_movie");
-                 
-              var etiq_div_duration_movie = document.createElement('div');
-              etiq_div_duration_movie.classList.add("duration_movie");
-                  var etiq_text_duration = document.createElement('label');
-                  etiq_text_duration.append(12 + " min");   
-              etiq_div_duration_movie.append(etiq_text_duration);
-              var etiq_div_description_movie = document.createElement('div');
-              etiq_div_description_movie.classList.add("description_movie");
-                  var etiq_text_descrip = document.createElement('p');
-                  etiq_text_descrip.textContent = 22;
-              etiq_div_description_movie.append(etiq_text_descrip);
-              etiq_coontenedor_secun.append(etiq_div_title_movie, etiq_div_clasification_movie, etiq_div_duration_movie,
-              etiq_div_description_movie);
-      contenedor.append(etiq_a, etiq_div_circle, etiq_coontenedor_secun);  
-      cuerpohtml.append(contenedor);
-  }
+function ventana_InstitucionProcedencia() { 
+    var cuerpohtml = document.getElementById('form_contenedor');
+    var contenido_nueva_adecuacion = document.createElement('div');
+    contenido_nueva_adecuacion.classList.add('contenido_nueva_adecuacion');
+ //Titulo//////////////////////////////////////////////////////////////////////////////////
+ var titulocontenedor = document.createElement('h3');
+ titulocontenedor.textContent = "Datos acádemicos";
+ contenido_nueva_adecuacion.append(titulocontenedor); 
+ ////////////////////////////////////////////////////////////////////////////////////
+ // Nombre de la Institución/////////////////////////////////////////////////////////////////////////
+ var datos_adecuacion = document.createElement('div');
+ datos_adecuacion.classList.add('datos_adecuacion');
+    //label
+     var etiqueta_solicitud_adecuacion = document.createElement('label');
+     etiqueta_solicitud_adecuacion.textContent = "Nombre de la Institución";
+     etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
+    datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
+    //input
+     var campos_adecuacion = document.createElement('input');
+     campos_adecuacion.type = "text"
+     campos_adecuacion.setAttribute('id','input_InstitucionProcedencia');
+     campos_adecuacion.classList.add('campos_adecuacion');
+     datos_adecuacion.append(campos_adecuacion); 
+ contenido_nueva_adecuacion.append(datos_adecuacion); 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Año de egreson/////////////////////////////////////////////////////////////////////////
+ var datos_adecuacion = document.createElement('div');
+ datos_adecuacion.classList.add('datos_adecuacion');
+    //label
+     var etiqueta_solicitud_adecuacion = document.createElement('label');
+     etiqueta_solicitud_adecuacion.textContent = "Año de egreso";
+     etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
+    datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
+    //input
+     var campos_adecuacion = document.createElement('input');
+     campos_adecuacion.type = "date"
+     campos_adecuacion.setAttribute('id','input_Año_Egreso');
+     campos_adecuacion.classList.add('campos_adecuacion');
+     datos_adecuacion.append(campos_adecuacion); 
+ contenido_nueva_adecuacion.append(datos_adecuacion); 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       // Año de egreso/////////////////////////////////////////////////////////////////////////
+ var datos_adecuacion = document.createElement('div');
+ datos_adecuacion.classList.add('datos_adecuacion');
+    //label
+     var etiqueta_solicitud_adecuacion = document.createElement('label');
+     etiqueta_solicitud_adecuacion.textContent = "Año de ingreso a la universidad";
+     etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
+    datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
+    //input
+     var campos_adecuacion = document.createElement('input');
+     campos_adecuacion.type = "date"
+     campos_adecuacion.setAttribute('id','input_Año_ingreso_Universidad');
+     campos_adecuacion.classList.add('campos_adecuacion');
+     datos_adecuacion.append(campos_adecuacion); 
+ contenido_nueva_adecuacion.append(datos_adecuacion); 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    cuerpohtml.append(contenido_nueva_adecuacion);
+}
+
+function ventana_necesidad_Apoyo() { 
+    var cuerpohtml = document.getElementById('form_contenedor');
+    var contenido_nueva_adecuacion = document.createElement('div');
+    contenido_nueva_adecuacion.classList.add('contenido_nueva_adecuacion');
+ //Titulo//////////////////////////////////////////////////////////////////////////////////
+ var titulocontenedor = document.createElement('h3');
+ titulocontenedor.textContent = "Necesidad Y Apoyo";
+ contenido_nueva_adecuacion.append(titulocontenedor); 
+ ////////////////////////////////////////////////////////////////////////////////////
+ // Dianostico/////////////////////////////////////////////////////////////////////////
+ var datos_adecuacion = document.createElement('div');
+ datos_adecuacion.classList.add('datos_adecuacion');
+    //label
+     var etiqueta_solicitud_adecuacion = document.createElement('label');
+     etiqueta_solicitud_adecuacion.textContent = "Diágnostico";
+     etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
+    datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
+    //input
+     var campos_adecuacion = document.createElement('input');
+     campos_adecuacion.type = "text"
+     campos_adecuacion.setAttribute('id','input_Diagnostico');
+     campos_adecuacion.classList.add('campos_adecuacion');
+     datos_adecuacion.append(campos_adecuacion); 
+ contenido_nueva_adecuacion.append(datos_adecuacion); 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Área, profesional que diagnostica/////////////////////////////////////////////////////////////////////////
+ var datos_adecuacion = document.createElement('div');
+ datos_adecuacion.classList.add('datos_adecuacion');
+    //label
+     var etiqueta_solicitud_adecuacion = document.createElement('label');
+     etiqueta_solicitud_adecuacion.textContent = "Área, profesional que diagnostica";
+     etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
+    datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
+    //input
+     var campos_adecuacion = document.createElement('input');
+     campos_adecuacion.type = "text"
+     campos_adecuacion.setAttribute('id','input_ProfesionalDiagnostica');
+     campos_adecuacion.classList.add('campos_adecuacion');
+     datos_adecuacion.append(campos_adecuacion); 
+ contenido_nueva_adecuacion.append(datos_adecuacion); 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       // Año de egreso/////////////////////////////////////////////////////////////////////////
+ var datos_adecuacion = document.createElement('div');
+ datos_adecuacion.classList.add('datos_adecuacion');
+    //label
+     var etiqueta_solicitud_adecuacion = document.createElement('label');
+     etiqueta_solicitud_adecuacion.textContent = "Año de ingreso a la universidad";
+     etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
+    datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
+    //input
+     var campos_adecuacion = document.createElement('input');
+     campos_adecuacion.type = "date"
+     campos_adecuacion.setAttribute('id','input_Año_ingreso_Universidad');
+     campos_adecuacion.classList.add('campos_adecuacion');
+     datos_adecuacion.append(campos_adecuacion); 
+ contenido_nueva_adecuacion.append(datos_adecuacion); 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////Section ¿Recibe atención y tratamiento por parte de algún especialista?
+          //primer div principal
+            var datos_adecuacion = document.createElement('div');
+            datos_adecuacion.classList.add('Atencion');
+            //label titulo
+                var etiqueta_solicitud_adecuacion = document.createElement('label');
+                etiqueta_solicitud_adecuacion.textContent = "¿Recibe atención y tratamiento por parte de algún especialista?";
+                etiqueta_solicitud_adecuacion.classList.add('etiqueta_atencion');
+    datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
+    //segundo div principal
+                    var seleccion_atencion = document.createElement('div');
+                    seleccion_atencion.classList.add('seleccion_atencion');
+                    //check 1
+                            var Check = document.createElement('div');
+                            Check.classList.add('Check');
+                                var label_radio = document.createElement('label');
+                                label_radio.textContent = "Si";
+                                label_radio.classList.add('label_radio');
+                            Check.append(label_radio);
+                                var radio_buttom = document.createElement('input');
+                                radio_buttom.setAttribute('type','radio');
+                                radio_buttom.setAttribute('name','seleccion_atencion');
+                                radio_buttom.setAttribute('id','checksi_atencion');
+                                radio_buttom.setAttribute('onchange','mostrar_atencion(this.value);');
+                                radio_buttom.setAttribute('value','1');
+                                radio_buttom.classList.add('radio_buttom');
+                            Check.append(radio_buttom);
+                            seleccion_atencion.append(Check);
+                            var Check = document.createElement('div');
+                    //check 2
+                            Check.classList.add('Check');
+                                var label_radio = document.createElement('label');
+                                label_radio.textContent = "No";
+                                label_radio.classList.add('label_radio');
+                            Check.append(label_radio);
+                                var radio_buttom = document.createElement('input');
+                                radio_buttom.setAttribute('type','radio');
+                                radio_buttom.setAttribute('name','seleccion_atencion');
+                                radio_buttom.setAttribute('id','check_noatencion');
+                                radio_buttom.setAttribute('onchange','mostrar_atencion(this.value);');
+                                radio_buttom.setAttribute('value','0');
+                                radio_buttom.classList.add('radio_buttom');
+                            Check.append(radio_buttom);
+                            seleccion_atencion.append(Check);
+                    datos_adecuacion.append(seleccion_atencion); 
+                    //fin check
+                    //div magico
+                    var Segunda_carrera = document.createElement('div');
+                    Segunda_carrera.classList.add('Descripcion');
+                    Segunda_carrera.setAttribute('id', 'descripcion_atencion' );
+                        var etiqueta_solicitud_adecuacion = document.createElement('label');
+                        etiqueta_solicitud_adecuacion.textContent = "Tipo de atención o seguimiento";
+                        etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
+                    Segunda_carrera.append(etiqueta_solicitud_adecuacion);
+                        var campos_adecuacion = document.createElement('textarea');
+                        campos_adecuacion.type = "text"
+                        campos_adecuacion.classList.add('campos_text_area');
+                        campos_adecuacion.setAttribute('id','descripcion_atencion');
+                        campos_adecuacion.setAttribute('rows','4');
+                        campos_adecuacion.setAttribute('cols','30');
+                    Segunda_carrera.append(campos_adecuacion);
+            datos_adecuacion.append(Segunda_carrera);
+    contenido_nueva_adecuacion.append(datos_adecuacion); 
+    /////////////////////////////////////////////////////////
+////Section Condición de salud actual
+var titulocontenedor = document.createElement('h5');
+titulocontenedor.textContent = "Condición de salud actual";
+contenido_nueva_adecuacion.append(titulocontenedor); 
+          //primer div principal
+          var datos_adecuacion = document.createElement('div');
+          datos_adecuacion.classList.add('Atencion');
+          //label titulo
+              var etiqueta_solicitud_adecuacion = document.createElement('label');
+              etiqueta_solicitud_adecuacion.textContent = "¿Padece de alguna enfermedad que afecta su    desempeño?";
+              etiqueta_solicitud_adecuacion.classList.add('etiqueta_atencion');
+  datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
+  //segundo div principal
+                  var seleccion_atencion = document.createElement('div');
+                  seleccion_atencion.classList.add('seleccion_atencion');
+                  //check 1
+                          var Check = document.createElement('div');
+                          Check.classList.add('Check');
+                              var label_radio = document.createElement('label');
+                              label_radio.textContent = "Si";
+                              label_radio.classList.add('label_radio');
+                          Check.append(label_radio);
+                              var radio_buttom = document.createElement('input');
+                              radio_buttom.setAttribute('type','radio');
+                              radio_buttom.setAttribute('name','seleccion_enfermedad');
+                              radio_buttom.setAttribute('id','checksi_enfemerdad');
+                              radio_buttom.setAttribute('onchange','mostrar_datos_enfermedad(this.value);');
+                              radio_buttom.setAttribute('value','1');
+                              radio_buttom.classList.add('radio_buttom');
+                          Check.append(radio_buttom);
+                          seleccion_atencion.append(Check);
+                          var Check = document.createElement('div');
+                  //check 2
+                          Check.classList.add('Check');
+                              var label_radio = document.createElement('label');
+                              label_radio.textContent = "No";
+                              label_radio.classList.add('label_radio');
+                          Check.append(label_radio);
+                              var radio_buttom = document.createElement('input');
+                              radio_buttom.setAttribute('type','radio');
+                              radio_buttom.setAttribute('name','seleccion_enfermedad');
+                              radio_buttom.setAttribute('id','checkno_enfemerdad');
+                              radio_buttom.setAttribute('onchange','mostrar_datos_enfermedad(this.value);');
+                              radio_buttom.setAttribute('value','0');
+                              radio_buttom.classList.add('radio_buttom');
+                          Check.append(radio_buttom);
+                          seleccion_atencion.append(Check);
+                  datos_adecuacion.append(seleccion_atencion); 
+                  //fin check
+                  //div magico 1
+                  var Segunda_carrera = document.createElement('div');
+                  Segunda_carrera.classList.add('datos_enfermedad');
+                  Segunda_carrera.setAttribute('id', 'campos_info_enfermedad' );
+                      var etiqueta_solicitud_adecuacion = document.createElement('label');
+                      etiqueta_solicitud_adecuacion.textContent = "¿Cúal?";
+                      etiqueta_solicitud_adecuacion.classList.add('etiqueta_padecimiento');
+                  Segunda_carrera.append(etiqueta_solicitud_adecuacion);
+                      var campos_adecuacion = document.createElement('input');
+                      campos_adecuacion.type = "text"
+                      campos_adecuacion.classList.add('campos_enfermedad');
+                      campos_adecuacion.setAttribute('id','input_Cual_enfermedad');
+                  Segunda_carrera.append(campos_adecuacion);
+                    datos_adecuacion.append(Segunda_carrera);
+                contenido_nueva_adecuacion.append(datos_adecuacion); 
+                //div magico 2
+                    var Segunda_carrera = document.createElement('div');
+                    Segunda_carrera.classList.add('datos_enfermedad');
+                    Segunda_carrera.setAttribute('id', 'campos_info_tratamiento' );
+                        var etiqueta_solicitud_adecuacion = document.createElement('label');
+                        etiqueta_solicitud_adecuacion.textContent = "Tratamiento médico utilizado";
+                        etiqueta_solicitud_adecuacion.classList.add('etiqueta_padecimiento');
+                    Segunda_carrera.append(etiqueta_solicitud_adecuacion);
+                        var campos_adecuacion = document.createElement('input');
+                        campos_adecuacion.type = "text"
+                        campos_adecuacion.classList.add('campos_enfermedad');
+                        campos_adecuacion.setAttribute('id','input_Tratamiento_enfermedad');
+                    Segunda_carrera.append(campos_adecuacion);
+                datos_adecuacion.append(Segunda_carrera);
+                contenido_nueva_adecuacion.append(datos_adecuacion); 
+    //fin
+    cuerpohtml.append(contenido_nueva_adecuacion);
+}
+function ventana_GrupoFamiliar() { 
+    var cuerpohtml = document.getElementById('form_contenedor');
+    var contenido_nueva_adecuacion = document.createElement('div');
+    contenido_nueva_adecuacion.classList.add('contenido_nueva_adecuacion');
+ //Titulo//////////////////////////////////////////////////////////////////////////////////
+ var titulocontenedor = document.createElement('h3');
+ titulocontenedor.textContent = "Grupo Familiar";
+ contenido_nueva_adecuacion.append(titulocontenedor); 
+ ////////////////////////////////////////////////////////////////////////////////////
+ // Primer div principal/////////////////////////////////////////////////////////////////////////
+ var datos_adecuacion = document.createElement('div');
+ datos_adecuacion.classList.add('lista_familiares'); 
+    // div agregar
+        var datos_adecuacion = document.createElement('div');
+        datos_adecuacion.classList.add('divbtn_agrega_familiar');
+                var campos_adecuacion = document.createElement('a');
+                campos_adecuacion.setAttribute('id','btn_agregar_Pariente');
+                campos_adecuacion.classList.add('boton_agregar_familiar');
+                campos_adecuacion.textContent = "Agregar Familiar";
+                datos_adecuacion.append(campos_adecuacion); 
+    // Segundo div principal/////////////////////////////////////////////////////////////////////////
+    var tabla = document.createElement('div');
+    tabla.classList.add('divtabla'); 
+
+    //tabla
+    var table = document.createElement('table');
+    table.classList.add('tabla_grupo_familiar');
+        //fila uno
+                var thead = document.createElement('thead');
+                        var tr = document.createElement('tr');
+                                var th_tipoPariente = document.createElement('th');
+                                th_tipoPariente.setAttribute('scope','col');
+                                th_tipoPariente.appendChild(document.createTextNode('Tipo de pariente'));
+                            tr.append(th_tipoPariente);
+                                var th_Discapacidad = document.createElement('th');
+                                th_Discapacidad.setAttribute('scope','col');
+                                th_Discapacidad.appendChild(document.createTextNode('Discapacidad'))
+                            tr.append(th_Discapacidad);
+                                var th_Cedula = document.createElement('th');                            
+                                th_Cedula.setAttribute('scope','col');
+                                th_Cedula.appendChild(document.createTextNode('Cedula'))
+                            tr.append(th_Cedula)
+                    thead.append(tr);
+            table.append(thead);
+            var tbody = document.createElement('tbody');
+            tbody.setAttribute('id', 'cuerpotabla');
+            table.append(tbody);
+        tabla.append(table);
+    
+datos_adecuacion.append(tabla); 
+        //
+    
+contenido_nueva_adecuacion.append(datos_adecuacion);
+    
+ cuerpohtml.append(contenido_nueva_adecuacion);
+}

@@ -20,9 +20,9 @@
                         <a class="AdecuacionAdmi" href="/">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
-                                    <a href=" ">
-                                        <img height="56px" src="{{ URL::asset('/img/apunte.png') }}">
-                                    </a>
+
+                                    <img height="56px" src="{{ URL::asset('/img/apunte.png') }}">
+
                                 </div>
                                 <div class="contenedortext">
                                     <label>Solicitudes de adecuación
@@ -39,9 +39,9 @@
                         <a class="PAIAdmi" href="/">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
-                                    <a href=" ">
-                                        <img height="56px" src="{{ URL::asset('/img/documentos.png') }}">
-                                    </a>
+
+                                    <img height="56px" src="{{ URL::asset('/img/documentos.png') }}">
+
                                 </div>
                                 <div class="contenedortext">
                                     <label>Solicitudes PAI </label>
@@ -54,12 +54,12 @@
                     </div>
 
                     <div class="Card">
-                        <a class="AdecuacionAdmi" href="/">
+                        <a class="AdecuacionAdmi" href="/bitacora">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
-                                    <a href="">
-                                        <img height="56px" src="{{ URL::asset('/img/cuaderno.png') }}">
-                                    </a>
+
+                                    <img height="56px" src="{{ URL::asset('/img/cuaderno.png') }}">
+
                                 </div>
                                 <div class="contenedortext">
                                     <label>Bitácora </label>
@@ -75,12 +75,12 @@
 
 
                     <div class="Card">
-                        <a class="AdecuacionAdmi" href="/">
+                        <a class="AdecuacionAdmi" href="/lista">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
-                                    <a href="">
-                                        <img height="56px" src="{{ URL::asset('/img/estudiantes.png') }}">
-                                    </a>
+
+                                    <img height="56px" src="{{ URL::asset('/img/estudiantes.png') }}">
+
                                 </div>
                                 <div class="contenedortext">
                                     <label>Estudiantes </label>
@@ -96,9 +96,9 @@
                         <a class="AdecuacionAdmi" href="/">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
-                                    <a href="">
-                                        <img height="56px" src="{{ URL::asset('/img/estadisticas.png') }}">
-                                    </a>
+
+                                    <img height="56px" src="{{ URL::asset('/img/estadisticas.png') }}">
+
                                 </div>
                                 <div class="contenedortext">
                                     <label>Reportes</label>
@@ -111,12 +111,12 @@
                     </div>
 
                     <div class="Card">
-                        <a class="AdecuacionAdmi" href="/">
+                        <a class="AdecuacionAdmi" href="/mi_perfil">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
-                                    <a href="">
-                                        <img height="56px" src="{{ URL::asset('/img/usuario_cuenta.png') }}">
-                                    </a>
+
+                                    <img height="56px" src="{{ URL::asset('/img/usuario_cuenta.png') }}">
+
                                 </div>
                                 <div class="contenedortext">
                                     <label>Mi cuenta </label>

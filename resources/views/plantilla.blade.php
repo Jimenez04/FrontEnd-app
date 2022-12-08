@@ -9,12 +9,15 @@
     <link rel="image_src" href="https://www.ucr.ac.cr/plantillas/ucr_4/imagenes/firma-ucr-ico.png">
     <link rel="icon" href="https://www.ucr.ac.cr/plantillas/ucr_4/imagenes/favicon.png" type="image/png">
     <link rel="shortcut icon" type="image/x-icon" href="https://www.ucr.ac.cr/plantillas/ucr_4/imagenes/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 
     <script type="text/javascript" src="{{ asset('js/checkbox.js') }}"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/funciones.js') }}"></script>
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' type='text/javascript'></script>
+    
+    
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 
@@ -48,8 +51,7 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
         crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
-    {{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
+    
     <title>@yield('title')</title>
 </head>
 

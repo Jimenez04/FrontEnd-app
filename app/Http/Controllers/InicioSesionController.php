@@ -14,6 +14,7 @@ class InicioSesionController extends Controller
         return redirect()->route('login');
     }
 
+   
     //Muestra la vista del Login
     public function login($mensaje = null)
     {
@@ -81,6 +82,10 @@ class InicioSesionController extends Controller
        }
     }
 
+     public function Home()
+    {
+       
+    }
     public function logout()
     {
        try {

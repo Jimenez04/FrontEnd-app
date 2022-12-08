@@ -54,13 +54,20 @@ class ViewsUserCRUD_Controller extends Controller
 
                 ],
             ]
-        );
+            );
         $listado_usuarios = json_decode($response->getBody(), true);
-      //  dd($listado_usuarios);
 
-        return view('Usuario.Admin.lista_usuarios', compact('listado_usuarios'));
-        // return view('Usuario.Admin.lista_usuarios');
+        $listado_usuarios  = $listado_usuarios['data'];
+   
+
+        //  dd($listado_usuarios);
+
+        //    return view('Usuario.Admin.lista_usuarios')->with('listado_usuarios', $listado_usuarios);
+        return view('Usuario.Admin.lista_usuarios', ['listado_usuarios' => collect($listado_usuarios)->paginate(6)]);
+       
     }
+
+
     public function lista_usuarios_registrados()
     {
 
@@ -81,13 +88,9 @@ class ViewsUserCRUD_Controller extends Controller
             ]
         );
         $resultado = json_decode($response->getBody(), true);
+
         //dd($resultado);
 
         return view('Usuario.Admin.lista_usuarios', compact('resultado'));
-    }
-
-    public function muestraejemplo()
-    {
-        return view('Usuario.Shareviews.ver_perfil');
     }
 }

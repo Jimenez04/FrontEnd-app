@@ -6,7 +6,7 @@
 
 .Main_lista_usuarios {
     width: 100%;
-    background-color: #ECECEC;
+    background-color: #ddd;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -18,10 +18,12 @@
 .Contenido_Lista_usuarios h2 {
     text-align: center;
     text-transform: capitalize;
-    margin-bottom: 24px;
-    margin-top: 18px;
+    margin-bottom: 6px;
+    margin-top: 10px;
+    padding-top: 20px;
     font-family: 'EB Garamond', sans-serif;
     color: #005da4;
+    font-weight: 600;
 }
 
 .Contenido_Lista_usuarios {
@@ -31,19 +33,21 @@
     max-width: 1000px;
     margin: 0 auto;
     background-color: white;
-    height: 80vh;
-    margin-top: 80px;
+    height: 100%;
+    margin-top: 100px;
     border-radius: 10px;
-    box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px, rgb(0 0 0 / 30%) 0px 7px 13px -3px, rgb(0 0 0 / 20%) 0px -3px 0px inset;
+    box-shadow: rgb(0 0 0 / 10%) 0px 2px 4px, rgb(0 0 0 / 10%) 0px 7px 13px -3px, rgb(0 0 0 / 20%) 0px -2px 0px inset;
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .contenedor_tabla {
-    width: 90%;
+    width: 92%;
+    max-width: 1000px;
     margin: 0 auto;
-    height: 90%;
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,7 +55,8 @@
 
 .divbtnregistro_admin {
     margin-bottom: 10px;
-    margin-left: 4px;
+    padding-left: 50px;
+    padding-top: 4px;
 }
 
 .botonregistro_admi {
@@ -76,17 +81,19 @@
     color: white;
     width: 160px;
 }
-.botonregistro_admi:hover{
-cursor: pointer;
-text-decoration: none;
-color: white;
-    
+
+.botonregistro_admi:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+
 }
+
 .usertabla {
 
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
-    height: 80%;
+    height: 400px;
     padding-top: 20px;
     overflow: auto;
 }
@@ -95,8 +102,8 @@ color: white;
     background-color: white;
     text-align: center;
     border-collapse: collapse;
-    width: 96%;
-    font-size: 1em;
+    width: 98%;
+    font-size: calc(1em + 0.2vmin);
     margin: 0 auto;
     font-family: 'Poppins';
     /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.14);*/
@@ -129,7 +136,6 @@ color: white;
 
 }
 
-
 .tabla_usuarios td a {
     text-decoration: none;
     padding-left: 0px;
@@ -137,37 +143,39 @@ color: white;
     padding-bottom: 2px;
 }
 
+.pagination {
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.pagination li {
+    margin-left: .25rem;
+    margin-right: .25rem;
+}
+
+.pagination li .page-link {
+    border-radius: .25rem;
+    border: none;
+    min-width: 2.25rem;
+    text-align: center;
+    color: #4f5464;
+}
+
+.pagination li.active .page-link,
+.pagination li .page-link:hover {
+    background-color: #005da4;
+    color: #fff;
+    font-weight: bold;
+}
 
 
-@media screen and (max-width:720px) {
+@media screen and (max-width:800px) {
 
     .Main_lista_usuarios {
         padding-left: 20px;
         padding-right: 20px;
+        overflow: auto;
 
-    }
-    .Main_lista_usuarios h2 {
-        font-size: 1.4em;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .usertabla{
-        font-size: 16px;
-     padding: 10px;
-    
-    }
-    .botonregistro_admi a:hover{
-        text-decoration: none;
-        color: white;
-    }
-}
-
-
-@media screen and (max-width:380px) {
-
-    .Main_lista_usuarios {
-        padding-left: 10px;
-        padding-right: 10px;
     }
 
     .Main_lista_usuarios h2 {
@@ -177,10 +185,101 @@ color: white;
     }
 
     .usertabla {
-        max-width: 100%;
-        overflow: auto;
-        font-size: .9em;
+        padding: 10px;
+    }
+
+    .contenedor_tabla {
+        width: 100%;
+    }
+
+    .botonregistro_admi {
+        font-size: 0.76em;
+        width: 140px;
+        height: 32px;
+    }
+
+    .botonregistro_admi a:hover {
+        text-decoration: none;
+        color: white;
+    }
+
+    .tabla_usuarios {
+        font-size: calc(0.7em + 0.4vmin);
+        width: 100%;
+        margin: 0;
+    }
+}
+
+
+@media screen and (max-width:540px) {
+
+
+    .Main_lista_usuarios h2 {
+        font-size: 1.2em;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .contenedor_tabla {
+        width: 100%;
         padding: 0;
+    }
+
+    .divbtnregistro_admin {
+        padding-left: 34px;
+    }
+
+    .botonregistro_admi {
+        font-size: 0.72em;
+        width: 130px;
+        height: 30px;
+    }
+
+    .tabla_usuarios {
+        font-size: calc(0.6em + 0.2vmin);
+        width: 100%;
+        margin: 0;
+    }
+
+    .tabla_usuarios tbody {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width:350px) {
+
+    .Main_lista_usuarios {
+        min-height: 100vh;
+        overflow: auto;
+        padding: 0;
+    }
+
+    .Main_lista_usuarios h2 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .Contenido_Lista_usuarios {
+        height: 100%;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: transparent;
+        box-shadow: unset;
+    }
+
+    .usertabla {
+        overflow: auto;
+        padding: 0;
+        margin: 0 auto;
+        height: 50%;
+
+    }
+
+    .contenedor_tabla {
+        width: 100%;
+        height: 100%;
+
     }
 
     .tabla_usuarios {
@@ -188,18 +287,25 @@ color: white;
         margin-left: 0px;
         padding-left: 0px;
         padding-bottom: 100px;
-        font-size: .9em;
+        width: 100%;
+        font-size: calc(1em+ 0.4vmin);
+        padding: 0;
+        background-color: transparent;
+        background-color: white;
     }
 
-    .tabla_usuarios tr {
-        border-bottom: 2px solid #ddd;
 
-    }
-    .divbtnregistro_admin{
+    .divbtnregistro_admin {
         margin-left: 0;
+        padding-left: 12px;
     }
+
     .botonregistro_admi {
-        height: 34px;
-        font-size: .9em;
+        height: 28px;
+        width: 100px;
+        display: flex;
+        padding: 0;
+        font-size: .6em;
+        justify-content: center;
     }
 }

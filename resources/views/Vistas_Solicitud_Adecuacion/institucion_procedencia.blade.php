@@ -13,6 +13,7 @@
                     <form action="" method="post" enctype="multipart/form-data">
                         @csrf
                         <h3>Datos Acádemicos</h3>
+                        
                         <div class="contenido_nueva_adecuacion">
                             <div class="datos_adecuacion">
                                 <label class="etiqueta_solicitud_adecuacion">Nombre de la Institucion</label>

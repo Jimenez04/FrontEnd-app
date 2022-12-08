@@ -27,6 +27,7 @@
                             <div class="Atencion">
                                 <label class="etiqueta_atencion">¿Recibe atención y tratamiento por parte de algún
                                     especialista?</label>
+
                                 <div class="seleccion_atencion">
                                     <br>
                                     <div class="Check">
@@ -35,6 +36,7 @@
                                             id="checksi_atencion" value="1" onchange="mostrar_atencion(this.value)">
 
                                     </div>
+
                                     <div class="Check">
                                         <label class="label_radio">No</label>
                                         <input class="radio_buttom" type="radio" name="seleccion_atencion"
@@ -48,10 +50,12 @@
                                     <textarea class="campos_text_area" id="descripcion_atencion" name="atencion" rows="4" cols="30"></textarea>
                                 </div>
                             </div>
+
                             <div class="Atencion">
                                 <h5>Condición de salud actual</h5>
                                 <label class="etiqueta_atencion">¿Padece de alguna enfermedad que afecta su
                                     desempeño?</label>
+                                    
                                 <div class="seleccion_atencion">
                                     <br>
                                     <div class="Check">
@@ -80,6 +84,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="divbotones_">
 
                             <input class="boton_opciones" id="Cancelar" type="submit" value="Cancelar">

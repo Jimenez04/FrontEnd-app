@@ -3,13 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class Solicitud_Adecuacion_Views_Controller extends Controller
 {
      //VISTA DE ADECUAICONES
      public function viewAdecuacion()
      {
-         return view('Vistas_Solicitud_Adecuacion.Solicitud_Adecuacion');
+        try {
+            $response = Http::withHeaders([
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . session('token'),
+            ])->get( env('API_URL') . 'user/persona/estudiante/adecuacion');
+            
+            $resultado = json_decode($response->getBody(), true);
+            $datos = $resultado['data'];
+             return view('Vistas_Solicitud_Adecuacion.Solicitud_Adecuacion', compact('datos'));
+        } catch (\Throwable $th) {
+            back();
+        }
+        
      }
  //VISTA NUEVA ADECUACION
      public function viewNuevaAdecuacion()

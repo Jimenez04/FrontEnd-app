@@ -14,7 +14,7 @@
         <div class="modal_body">
 
 
-            <form action="{{ route('registro') }}" method="post" enctype="multipart/form-data">
+            <form  action="javascript:agregarBeca(this)" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form_beca">
                     <div class="contenido_beca_modal">
@@ -29,7 +29,7 @@
                             </div>
                             <div class="Check">
                                 <label class="label_radio">No</label>
-                                <input class="radio_buttom" type="radio" name="seleccion_beca" id="check_no_becado"
+                                <input class="radio_buttom"  checked type="radio" name="seleccion_beca" id="check_no_becado"
                                     value="0" onchange="mostrar_inputbeca(this.value)">
                             </div>
                         </div>
@@ -62,35 +62,35 @@
                                         <label class="label_radio">1</label>
                                         <input class="radio_buttom" type="radio"
                                             name="seleccion_categoría_beca_socioeconomica"
-                                            id="check_categoria_beca_socioeconomica" value="1"
+                                            id="check_categoria_beca_socioeconomica1" value="1"
                                             onchange="categoria_beca(this.value)">
                                     </div>
                                     <div class="Check">
                                         <label class="label_radio">2</label>
                                         <input class="radio_buttom" type="radio"
                                             name="seleccion_categoría_beca_socioeconomica"
-                                            id="check_categoria_beca_socioeconomica" value="2"
+                                            id="check_categoria_beca_socioeconomica2" value="2"
                                             onchange="categoria_beca(this.value)">
                                     </div>
                                     <div class="Check">
                                         <label class="label_radio">3</label>
                                         <input class="radio_buttom" type="radio"
                                             name="seleccion_categoría_beca_socioeconomica"
-                                            id="check_categoria_beca_socioeconomica" value="3"
+                                            id="check_categoria_beca_socioeconomica3" value="3"
                                             onchange="categoria_beca(this.value)">
                                     </div>
                                     <div class="Check">
                                         <label class="label_radio">4</label>
                                         <input class="radio_buttom" type="radio"
                                             name="seleccion_categoría_beca_socioeconomica"
-                                            id="check_categoria_beca_socioeconomica" value="4"
+                                            id="check_categoria_beca_socioeconomica4" value="4"
                                             onchange="categoria_beca(this.value)">
                                     </div>
                                     <div class="Check">
                                         <label class="label_radio">5</label>
                                         <input class="radio_buttom" type="radio"
                                             name="seleccion_categoría_beca_socioeconomica"
-                                            id="check_categoria_beca_socioeconomica" value="5"
+                                            id="check_categoria_beca_socioeconomica5" value="5"
                                             onchange="categoria_beca(this.value)">
                                     </div>
                                 </div>
@@ -110,16 +110,12 @@
                                     <div class="Check">
                                         <label class="label_radio">No</label>
                                         <input class="radio_buttom" type="radio"
-                                            name="seleccion_beca_participacion" id="check_beca_participacion"
+                                            name="seleccion_beca_participacion" id="check_beca_participacion_null"
                                             value="0" onchange="beca_participacion(this.value)">
                                     </div>
                                 </div>
                             </div>
-                            <div class="info_beca_participacion" id="beca_participacion">
-                                <label class="etiqueta_modals">Actividad que
-                                    desempeña</label>
-                                <input class="campos_adecuacion" type="text" name="" value="">
-                            </div>
+                            
                         </div>
 
                     </div>
@@ -128,7 +124,7 @@
                         <a href="#" class="botonCerrarModal" id="cerrar_modal_beca"
                             onclick="closeModal(this)">Regresar
                         </a>
-                        <input class="botonagregatrabajo" type="submit" value="Agregar">
+                        <input class="botonagregatrabajo" id="btn_beca" type="submit" value="Agregar">
                     </div>
                 </div>
             </form>
@@ -137,3 +133,4 @@
 
     </div>
 </div>
+<script src="{{ asset('js/beca.js') }}"></script>

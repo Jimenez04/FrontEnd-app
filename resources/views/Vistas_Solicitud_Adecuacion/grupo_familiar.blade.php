@@ -12,6 +12,7 @@
                 <div class="Llenado_solicitud">
             
                     <h3>Grupo Familiar</h3>
+
                     <div class="lista_familiares">
                         <div class="divbtn_agrega_familiar">
                             <a class="boton_agregar_familiar" href="/">Agregar Familiar</a>
@@ -27,7 +28,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
                                     <tr>
                                         <td data-titulo="Tipo de Pariente" scope="row">Hermana</th>
                                         <td data-titulo="Discapacidad">le falta un tornillo</td>
@@ -43,7 +43,6 @@
                                         <td data-titulo="Discapacidad">le falta un tornillo</td>
                                         <td data-titulo="Cedula">123456789</td>
                                     </tr>
-
                                     <tr>
                                         <td data-titulo="Tipo de Pariente" scope="row">Hermana</th>
                                         <td data-titulo="Discapacidad">le falta un tornillo</td>
@@ -58,6 +57,7 @@
                             </table>
                         </div>
                     </div>
+
                     <div class="divbotones_">
 
                         <input class="boton_opciones" id="Cancelar" type="submit" value="Cancelar">

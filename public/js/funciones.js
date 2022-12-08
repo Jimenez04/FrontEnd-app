@@ -4,6 +4,8 @@ function closeModal(close) {
   var botoncloseIconX = document.getElementById("modal_trabajo_cierra");
   var botoncloseIcon = document.getElementById("cierra_x");
   var botoncerrarModalBeca = document.getElementById("cerrar_modal_beca");
+  var botoncierraIcon = document.getElementById("modal_familiar_cierra");
+  var botoncerrarModalPariente = document.getElementById("cerrar_modal_pariente");
   
   if (close == botoncloseModal) {
     $('#modal_trabajo').fadeOut();
@@ -20,6 +22,14 @@ function closeModal(close) {
   }
   if (close == botoncerrarModalBeca) {
     $('#modal_beca').fadeOut();
+  
+  }
+  if (close == botoncierraIcon ) {
+    $('#modal_pariente').fadeOut();
+  
+  }
+  if (close == botoncerrarModalPariente) {
+    $('#modal_pariente').fadeOut();
   
   }
  

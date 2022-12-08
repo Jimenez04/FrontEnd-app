@@ -71,7 +71,9 @@
                         <button type="button" onclick="openModal_Trabajo(this)" class="botones_est"
                             id="trabajo_modal">Añadir
                             Trabajo</button>
-
+                            <button type="button" onclick="openModal_NuevoPariente(this)" class="botones_est"
+                            id="pariente_modal">Añadir
+                            Pariente</button>
                     </div>
                 </div>
             </div>
@@ -83,6 +85,7 @@
 
         @include('modals.agregar_trabajo')
         @include('modals.agregar_beca')
+        @include('modals.agregar_pariente')
     </div>
 
 @endsection

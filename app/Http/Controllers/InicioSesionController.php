@@ -83,10 +83,6 @@ class InicioSesionController extends Controller
        }
     }
 
-     public function Home()
-    {
-       
-    }
     public function logout()
     {
        try {

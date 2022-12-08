@@ -68,7 +68,7 @@ function cambio_Ventanas() {
             ventana_GrupoFamiliar();
             break;
         case 5:
-            
+            ventana_Archivos() 
             break;
         case 6:
             
@@ -544,6 +544,7 @@ function ventana_GrupoFamiliar() {
                 campos_adecuacion.classList.add('boton_agregar_familiar');
                 campos_adecuacion.textContent = "Agregar Familiar";
                 datos_adecuacion.append(campos_adecuacion); 
+                
     // Segundo div principal/////////////////////////////////////////////////////////////////////////
     var tabla = document.createElement('div');
     tabla.classList.add('divtabla'); 
@@ -570,6 +571,66 @@ function ventana_GrupoFamiliar() {
             table.append(thead);
             var tbody = document.createElement('tbody');
             tbody.setAttribute('id', 'cuerpotabla');
+            table.append(tbody);
+        tabla.append(table);
+    
+datos_adecuacion.append(tabla); 
+        //
+    
+contenido_nueva_adecuacion.append(datos_adecuacion);
+    
+ cuerpohtml.append(contenido_nueva_adecuacion);
+}
+
+function ventana_Archivos() { 
+    var cuerpohtml = document.getElementById('form_contenedor');
+    var contenido_nueva_adecuacion = document.createElement('div');
+    contenido_nueva_adecuacion.classList.add('contenido_nueva_adecuacion');
+ //Titulo//////////////////////////////////////////////////////////////////////////////////
+ var titulocontenedor = document.createElement('h3');
+ titulocontenedor.textContent = "Archivos";
+ contenido_nueva_adecuacion.append(titulocontenedor); 
+ ////////////////////////////////////////////////////////////////////////////////////
+ // Primer div principal/////////////////////////////////////////////////////////////////////////
+ var datos_adecuacion = document.createElement('div');
+ datos_adecuacion.classList.add('lista_archivos'); 
+    // div agregar
+        var datos_adecuacion = document.createElement('div');
+        datos_adecuacion.classList.add('divbtn_agrega_archivo');
+                var campos_adecuacion = document.createElement('a');
+                campos_adecuacion.setAttribute('id','btn_agregar_archivo');
+                campos_adecuacion.classList.add('boton_agregar_archivo');
+                campos_adecuacion.textContent = "Agregar Archivo";
+                datos_adecuacion.append(campos_adecuacion); 
+    // Segundo div principal/////////////////////////////////////////////////////////////////////////
+    var tabla = document.createElement('div');
+    tabla.classList.add('divtabla'); 
+
+    //tabla
+    var table = document.createElement('table');
+    table.classList.add('tabla_archivos');
+        //fila uno
+                var thead = document.createElement('thead');
+                        var tr = document.createElement('tr');
+                                var th_Nombre_archivo = document.createElement('th');
+                                th_Nombre_archivo.setAttribute('scope','col');
+                                th_Nombre_archivo.appendChild(document.createTextNode('Tipo de pariente'));
+                            tr.append(th_Nombre_archivo);
+                                var th_Expedido = document.createElement('th');
+                                th_Expedido.setAttribute('scope','col');
+                                th_Expedido.appendChild(document.createTextNode('Discapacidad'))
+                            tr.append(th_Expedido);
+                                var th_Archivo = document.createElement('th');                            
+                                th_Archivo.setAttribute('scope','col');
+                                th_Archivo.appendChild(document.createTextNode('Cedula'))
+                            tr.append(th_Archivo)
+                    thead.append(tr);
+            table.append(thead);
+            
+            var tbody = document.createElement('tbody');
+            tbody.setAttribute('id', 'cuerpotabla');
+            var celdas = document.createElement("td");
+
             table.append(tbody);
         tabla.append(table);
     

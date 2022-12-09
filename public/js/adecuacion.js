@@ -528,6 +528,8 @@ function ventana_GrupoFamiliar() {
     var cuerpohtml = document.getElementById('form_contenedor');
     var contenido_nueva_adecuacion = document.createElement('div');
     contenido_nueva_adecuacion.classList.add('contenido_nueva_adecuacion');
+    contenido_nueva_adecuacion.style.cssText = 'width: auto;'
+
  //Titulo//////////////////////////////////////////////////////////////////////////////////
  var titulocontenedor = document.createElement('h3');
  titulocontenedor.textContent = "Grupo Familiar";
@@ -539,15 +541,17 @@ function ventana_GrupoFamiliar() {
     // div agregar
         var datos_adecuacion = document.createElement('div');
         datos_adecuacion.classList.add('divbtn_agrega_familiar');
-                var campos_adecuacion = document.createElement('a');
+                var campos_adecuacion = document.createElement('button');
                 campos_adecuacion.setAttribute('id','btn_agregar_Pariente');
+                campos_adecuacion.setAttribute('onclick','openModal_NuevoPariente(this);');
                 campos_adecuacion.classList.add('boton_agregar_familiar');
                 campos_adecuacion.textContent = "Agregar Familiar";
                 datos_adecuacion.append(campos_adecuacion); 
-                
+                datos_adecuacion.style.cssText = 'display: flex; flex-wrap: wrap; width: 100%; margin-left:0;'; 
     // Segundo div principal/////////////////////////////////////////////////////////////////////////
     var tabla = document.createElement('div');
     tabla.classList.add('divtabla'); 
+
 
     //tabla
     var table = document.createElement('table');
@@ -559,10 +563,14 @@ function ventana_GrupoFamiliar() {
                                 th_tipoPariente.setAttribute('scope','col');
                                 th_tipoPariente.appendChild(document.createTextNode('Tipo de pariente'));
                             tr.append(th_tipoPariente);
-                                var th_Discapacidad = document.createElement('th');
+                                var th_tipoPariente = document.createElement('th');
+                                th_tipoPariente.setAttribute('scope','col');
+                                th_tipoPariente.appendChild(document.createTextNode('Ocupación'));
+                            tr.append(th_tipoPariente);
+                                /* var th_Discapacidad = document.createElement('th');
                                 th_Discapacidad.setAttribute('scope','col');
                                 th_Discapacidad.appendChild(document.createTextNode('Discapacidad'))
-                            tr.append(th_Discapacidad);
+                            tr.append(th_Discapacidad); */
                                 var th_Cedula = document.createElement('th');                            
                                 th_Cedula.setAttribute('scope','col');
                                 th_Cedula.appendChild(document.createTextNode('Cedula'))
@@ -575,9 +583,23 @@ function ventana_GrupoFamiliar() {
         tabla.append(table);
     
 datos_adecuacion.append(tabla); 
-        //
+        
+        var discapacidad_grupo = document.createElement('div');
+        // discapacidad_grupo.classList.add('Descripcion');
+            var etiqueta_solicitud_adecuacion = document.createElement('label');
+            etiqueta_solicitud_adecuacion.textContent = "Discapacidad de grupo familiar";
+            etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
+            discapacidad_grupo.append(etiqueta_solicitud_adecuacion);
+            var campos_adecuacion = document.createElement('textarea');
+            campos_adecuacion.type = "text"
+            campos_adecuacion.classList.add('campos_text_area');
+            campos_adecuacion.setAttribute('id','discapacidad_grupo');
+            campos_adecuacion.setAttribute('rows','4');
+            campos_adecuacion.setAttribute('cols','30');
+            discapacidad_grupo.append(campos_adecuacion);
+        datos_adecuacion.append(discapacidad_grupo);
     
-contenido_nueva_adecuacion.append(datos_adecuacion);
+        contenido_nueva_adecuacion.append(datos_adecuacion);
     
  cuerpohtml.append(contenido_nueva_adecuacion);
 }

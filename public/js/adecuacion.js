@@ -528,7 +528,7 @@ function ventana_GrupoFamiliar() {
     var cuerpohtml = document.getElementById('form_contenedor');
     var contenido_nueva_adecuacion = document.createElement('div');
     contenido_nueva_adecuacion.classList.add('contenido_nueva_adecuacion');
-    contenido_nueva_adecuacion.style.cssText = 'width: auto;'
+   // contenido_nueva_adecuacion.style.cssText = 'width: auto;'
 
  //Titulo//////////////////////////////////////////////////////////////////////////////////
  var titulocontenedor = document.createElement('h3');
@@ -539,19 +539,21 @@ function ventana_GrupoFamiliar() {
  var datos_adecuacion = document.createElement('div');
  datos_adecuacion.classList.add('lista_familiares'); 
     // div agregar
-        var datos_adecuacion = document.createElement('div');
-        datos_adecuacion.classList.add('divbtn_agrega_familiar');
+        var div_boton = document.createElement('div');
+        div_boton.classList.add('divbtn_agrega_familiar');
+        //boton agregar pariente
                 var campos_adecuacion = document.createElement('button');
                 campos_adecuacion.setAttribute('id','btn_agregar_Pariente');
                 campos_adecuacion.setAttribute('onclick','openModal_NuevoPariente(this);');
                 campos_adecuacion.classList.add('boton_agregar_familiar');
                 campos_adecuacion.textContent = "Agregar Familiar";
-                datos_adecuacion.append(campos_adecuacion); 
                 datos_adecuacion.style.cssText = 'display: flex; flex-wrap: wrap; width: 100%; margin-left:0;'; 
+                div_boton.append(campos_adecuacion);
+                datos_adecuacion.append(div_boton); 
+                
     // Segundo div principal/////////////////////////////////////////////////////////////////////////
     var tabla = document.createElement('div');
     tabla.classList.add('divtabla'); 
-
 
     //tabla
     var table = document.createElement('table');
@@ -585,7 +587,7 @@ function ventana_GrupoFamiliar() {
 datos_adecuacion.append(tabla); 
         
         var discapacidad_grupo = document.createElement('div');
-        // discapacidad_grupo.classList.add('Descripcion');
+        discapacidad_grupo.classList.add('Descripcion_discapacidad');
             var etiqueta_solicitud_adecuacion = document.createElement('label');
             etiqueta_solicitud_adecuacion.textContent = "Discapacidad de grupo familiar";
             etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
@@ -600,6 +602,7 @@ datos_adecuacion.append(tabla);
         datos_adecuacion.append(discapacidad_grupo);
     
         contenido_nueva_adecuacion.append(datos_adecuacion);
+        
     
  cuerpohtml.append(contenido_nueva_adecuacion);
 }
@@ -617,13 +620,14 @@ function ventana_Archivos() {
  var datos_adecuacion = document.createElement('div');
  datos_adecuacion.classList.add('lista_archivos'); 
     // div agregar
-        var datos_adecuacion = document.createElement('div');
-        datos_adecuacion.classList.add('divbtn_agrega_archivo');
+        var div_boton_agregar_archivo = document.createElement('div');
+        div_boton_agregar_archivo.classList.add('divbtn_agrega_archivo');
                 var campos_adecuacion = document.createElement('a');
                 campos_adecuacion.setAttribute('id','btn_agregar_archivo');
                 campos_adecuacion.classList.add('boton_agregar_archivo');
                 campos_adecuacion.textContent = "Agregar Archivo";
                 datos_adecuacion.append(campos_adecuacion); 
+                datos_adecuacion.append(div_boton_agregar_archivo);
     // Segundo div principal/////////////////////////////////////////////////////////////////////////
     var tabla = document.createElement('div');
     tabla.classList.add('divtabla'); 

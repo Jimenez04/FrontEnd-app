@@ -1,18 +1,16 @@
 
 .lista_familiares{
-    width: 90%;
     display: flex;
     flex-direction: column;
-    border: 2px solid #ddd;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 .divbtn_agrega_familiar {
     width: 180px;
     height: 80px;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
-    margin-left: 30px;
+    margin-left: 26px;
 }
 .boton_agregar_familiar {
     width: 150px;
@@ -27,11 +25,8 @@
     cursor: pointer;
     border-radius: 10px;
     height: 36px;
-    /* padding: 0 16px; */
     text-transform: capitalize;
-    padding-top: 6px;
     border: 1px solid #2B6797;
-    margin-bottom: 6px;
 }
 .boton_agregar_familiar:hover {
 text-decoration: none;
@@ -50,12 +45,7 @@ color: white;
     /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.14);*/
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
-.tabla_grupo_familiar caption{
-    font-size: 18px;
-    text-transform: capitalize;
-    font-weight: 600px;
-    margin: 8px 0px;
-}
+
 .tabla_grupo_familiar tr{
     border: 1 px solid #ccc;
 }
@@ -88,21 +78,41 @@ color: white;
     padding-right: 0px;
     padding-bottom: 2px;
 }
-
+.Descripcion_discapacidad{
+    width: 100%;
+    height: 150px;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
+    margin-top: 14px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.Descripcion_discapacidad label{
+    padding-left: 20px;
+    width: auto;
+}
+.Descripcion_discapacidad textarea{
+    padding-left: 20px;
+    margin-left: 20px;
+    width: 300px;
+}
 @media screen and (max-width:720px) {
 
     .lista_familiares{
         height: 100%;
-        margin-top: 20px;
+        margin-top: 0;
     }
     .divbtn_agrega_familiar {
         width: 100%;
         height: 50px;
-        margin-bottom: 4px;
+        margin-bottom: 10px;
         display: flex;
         align-items: center;
-        margin-top: 10px;
-        padding-top: 20px;
+        margin-top: 0;
+        padding-top: 0;
     }
 
     .boton_agregar_familiar {
@@ -116,33 +126,76 @@ color: white;
         border: 0px;
     }
 
-    .tabla_grupo_familiar thead {
-        display: none;
+  
+}
+@media screen and (max-width:560px) {
+
+    .lista_familiares{
+        height: 100%;
+        margin-top: 0;
+    }
+    .divbtn_agrega_familiar {
+        margin-bottom: 10px;
+        margin-top: 0;
+        padding-top: 0;
+        margin-left: 12px;
+       
     }
 
-    .tabla_grupo_familiar tr {
-        margin-bottom: 8px;
-        border-bottom: 4px solid #ccc;
-        display: block;
-        background-color: #f8f8f8;
+    .boton_agregar_familiar {
+        margin-left: 0;
+        font-size: calc(0.8em + 0.2vmin);
+        height: 32px;
+    }
+    .divtabla {
+        margin-top: 10px;  
     }
 
-    .tabla_grupo_familiar td,
-    .tabla_grupo_familiar th {
-        letter-spacing: 0;
-        font-size: 14px;
+    .tabla_grupo_familiar {
+        border: 0;
+    }
+   
+    .tabla_grupo_familiar thead th {
+        font-size: 12px;
+    }
+    .Descripcion_discapacidad{
+        height: 100px;
+    }
+    .Descripcion_discapacidad label{
+        padding-left: 16px;
+        font-size: .9em;
+    }
+    .Descripcion_discapacidad textarea{
+
+        margin-left: 16px;
+        width: 220px;
+        height: 60px;
+    }
+  
+}
+@media screen and (max-width:400px) {
+
+    .boton_agregar_familiar {
+        margin-left: 0;
+        font-size: calc(0.76em + 0.2vmin);
     }
 
-    .tabla_grupo_familiar td {
-        text-align: right;
-        display: block;
-        border-bottom: 1px solid #ddd;
+    .tabla_grupo_familiar thead th {
+        font-size: calc(0.7em + 0.2vmin);
     }
-
-    .tabla_grupo_familiar td[data-titulo]::before {
-        content: attr(data-titulo);
-        font-weight: bold;
-        float: left;
+    .tabla_grupo_familiar th, .tabla_grupo_familiar td {
+   
+        padding: 10px;
     }
-
+    .Descripcion_discapacidad{
+        height: 120px;
+    }
+    .Descripcion_discapacidad label{
+        font-size: .86em;
+    }
+    .Descripcion_discapacidad textarea{
+        width: 180px;
+        height: 50px;
+    }
+  
 }

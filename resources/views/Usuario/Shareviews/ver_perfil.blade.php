@@ -6,10 +6,10 @@
         <div class="contenedor_userporfile">
             
             <div class="informacion_usuario">
-                <img class="user_image" src="{{ asset('img/user.png') }}" alt="" />
+                <img class="user_image" src="{{ asset('img/usuario32.png') }}" alt="" />
                 <h1 class="nombre_usuario">{{$resultado['persona']['nombre1'] . " " .$resultado['persona']['nombre2'] . " " . $resultado['persona']['apellido1'] . " " .$resultado['persona']['apellido2']  }}</h1>
             </div>
-            
+            <hr class="separador">
             <div class="detalles_de_usuario">
 
                 <div class="datos_usuario">
@@ -17,13 +17,13 @@
                         <h3>Información del Usuario</h3>
                     </div>
 
-                    <div class="container_usercarnet">
+                    <div class="container_datosperfil">
 
                         <label for="carnet">Carnet</label>
                         <br>
                         <input type="text" name="nombre" value=" {{ array_key_exists('carnet' , $resultado) ? $resultado['carnet'] : 'No aplica'}}" readonly>
                     </div>
-                    <div class="container_useremail">
+                    <div class="container_datosperfil">
 
                         <label for="email">Correo</label>
                         <br>
@@ -32,7 +32,7 @@
                       
                     </div>
 
-                    <div class="container_usertelefono">
+                    <div class="container_datosperfil">
 
                         <label for="telefono">Teléfono</label>
                         <br>
@@ -42,13 +42,18 @@
                 </div>
 
                 <div class="contenedorbtn_solicitudes">
-                    <div class="divbtnAdecuacion">
-                        <input class="botonSolicitudesAdecuacion" value="Solicitudes Adecuacion" type="button">
+
+                    <div class="divbtnPerfil">
+                        <input class="botonesperfil" value="Editar perfil" type="button">
+
+                </div>
+                    <div class="divbtnPerfil">
+                        <input class="botonesperfil" value="Solicitudes Adecuacion" type="button">
 
                     </div>
 
-                    <div class="divbtnPAI">
-                        <input class="botonSolicitudesPAI" value="Solicitudes PAI" type="button">
+                    <div class="divbtnPerfil">
+                        <input class="botonesperfil" value="Solicitudes PAI" type="button">
 
                     </div>
                 </div>

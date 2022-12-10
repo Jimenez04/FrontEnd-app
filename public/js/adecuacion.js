@@ -640,15 +640,15 @@ function ventana_Archivos() {
                         var tr = document.createElement('tr');
                                 var th_Nombre_archivo = document.createElement('th');
                                 th_Nombre_archivo.setAttribute('scope','col');
-                                th_Nombre_archivo.appendChild(document.createTextNode('Tipo de pariente'));
+                                th_Nombre_archivo.appendChild(document.createTextNode('Nombre'));
                             tr.append(th_Nombre_archivo);
                                 var th_Expedido = document.createElement('th');
                                 th_Expedido.setAttribute('scope','col');
-                                th_Expedido.appendChild(document.createTextNode('Discapacidad'))
+                                th_Expedido.appendChild(document.createTextNode('Expedido por'))
                             tr.append(th_Expedido);
                                 var th_Archivo = document.createElement('th');                            
                                 th_Archivo.setAttribute('scope','col');
-                                th_Archivo.appendChild(document.createTextNode('Cedula'))
+                                th_Archivo.appendChild(document.createTextNode('Archivo'))
                             tr.append(th_Archivo)
                     thead.append(tr);
             table.append(thead);

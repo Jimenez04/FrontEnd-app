@@ -6,7 +6,7 @@
         <div class="modal-header">
             <h2>Agregar Beca</h2>
 
-            <a href="#" id="cierra_x" onclick="closeModal(this)">
+            <a style="cursor: pointer;" id="cierra_x" onclick="closeModal(this)">
                 <i class="fa fa-close" id="cierra_modal"></i>
             </a>
         </div>
@@ -121,7 +121,7 @@
                     </div>
                     <div class="botones_modal">
 
-                        <a href="#" class="botonCerrarModal" id="cerrar_modal_beca"
+                        <a style="cursor: pointer;" class="botonCerrarModal" id="cerrar_modal_beca"
                             onclick="closeModal(this)">Regresar
                         </a>
                         <input class="botonagregatrabajo" id="btn_beca" type="submit" value="Agregar">

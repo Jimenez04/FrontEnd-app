@@ -21,7 +21,7 @@
 
                     <!--Solicitud de adecuacion-->
                     <div class="Card">
-                        <a class="Adecuacion" href="/solicitud-adecuacion">
+                        <a class="Adecuacion" href="{{route('Adecuacion')}}"> 
 
                             <div class="Contenedor_arriba">
                                 <div class="Logos">

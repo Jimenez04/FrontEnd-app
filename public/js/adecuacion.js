@@ -817,6 +817,10 @@ function eliminarArchivo(nombre) {
 }
 
 function finalizar() { 
+    if (array_archivos.length <= 0) { 
+        toastr['error']("Agrega al menos un archivo.");
+        return;
+    }
     toastr['success']('Ya casi estas listo');
     document.getElementById('Siguiente').hidden = true;
     data = {
@@ -844,7 +848,7 @@ function finalizar() {
             if (data.status) {
                 toastr['success']('Solicitud creada correctamente');
                 sleep(2000).then(() => {
-                    window.location.href = '/solicitud-adecuacion';
+                    window.location.href = route('Adecuacion');
                 })
                 //
             } else {

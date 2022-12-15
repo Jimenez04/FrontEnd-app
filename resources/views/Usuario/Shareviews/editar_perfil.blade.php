@@ -5,13 +5,6 @@
     <div class="Contenedor_editar_perfil">
         <form method="post" enctype="multipart/form-data">
 
-            <div class="contenedor_editar_perfil">
-                <div class="foto_perfil box-primary">
-                    <h3 class="username">Usuario.nombre</h3>
-                    <img class="image" src="{{ asset('img/user.png') }}" alt="" />
-                    <a href="" style="cursor: pointer" class="btn_editarfoto btn-primary"><b>Editar foto</b></a>
-                  </div>
-
                 <div class="container_informacion">
 
 

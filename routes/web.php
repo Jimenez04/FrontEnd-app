@@ -37,7 +37,7 @@ Route::get('/registrarse',[RegistroController::class,'registro'])->name('registr
 Route::post('/registroApi', [RegistroController::class,'registroApi'])->name('registro')->middleware('verificarsesionLogin');
 
 //--------------------------------Olvido Contraseña---------------------------------------
-Route::get('/recuperar',[ResetPasswordController::class,'olvidocontrasena'])->middleware('verificarsesionLogin');//muestra la vista
+Route::get('/recuperar',[ResetPasswordController::class,'olvidocontrasena'])->name('recuperarcontra')->middleware('verificarsesionLogin');//muestra la vista
 Route::post('/forget-password',[ResetPasswordController::class,'Recuperar_passwordApi'])->name('forgot-password')->middleware('verificarsesionLogin');//manda correo con contra alternativa
 Route::get('/change-password',[ResetPasswordController::class,'NuevaPassword'])->name('change-password')->middleware('verificartoken');// vista cambia la contra
 Route::post('/new-password',[ResetPasswordController::class,'NuevaPasswordApi'])->name('new-password')->middleware('verificartoken') ;
@@ -57,7 +57,7 @@ Route::post('/agrega_trabajo',[Persona_CRUD_Controller::class,'AgregaTrabajo'])-
 
 //vistas CRUD del usuario
 //--------------------------------VISTAS COMPARTIDAS---------------------------------------
-Route::get('/mi_perfil',[ViewsUserCRUD_Controller::class,'perfil_usuario'])->middleware('verificartoken'); //funciona
+Route::get('/mi_perfil',[ViewsUserCRUD_Controller::class,'perfil_usuario'])->name('perfil_usuario')->middleware('verificartoken'); //funciona
 Route::get('/mi_perfil2',[ViewsUserCRUD_Controller::class,'muestraejemplo']);
 Route::get('/editar_perfil',[ViewsUserCRUD_Controller::class,'editar_perfil']);
 Route::get('/lista',[ViewsUserCRUD_Controller::class,'listar_usuarios']);

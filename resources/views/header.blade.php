@@ -13,10 +13,10 @@
                     <li><a class="user_logueado" href="{{route('index')}}">Home
                         <i class="fa fa-home"></i></a></li>
                     <li>
-                        <a id="registro" href="/registrarse">Registrarse</a>
+                        <a id="registro" href="{{route('registrarse')}}">Registrarse</a>
                     </li>
 
-                    <li><a id="ayuda" href="#">Ayuda</a></li>
+                    <li><a id="ayuda" style="cursor: pointer;" href="">Ayuda</a></li>
                 </nav>
             @endif
 
@@ -33,9 +33,9 @@
                     <li><a class="user_logueado" id="usuario">{{ session('name') }}</a>
                         <ul class="submenu_User" id="submenu">
 
-                            <li><a href="/mi_perfil">Ver Perfil</a>
+                            <li><a href="{{route('perfil_usuario')}}">Ver Perfil</a>
 
-                            <li><a href="/change-password">Cambiar contraseña</a></li>
+                            <li><a href="{{route('change-password')}}">Cambiar contraseña</a></li>
                         </ul>
                     </li>
 

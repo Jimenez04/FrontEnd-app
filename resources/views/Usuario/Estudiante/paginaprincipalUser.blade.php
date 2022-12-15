@@ -43,7 +43,7 @@
                     <!--Solicitud PAI-->
 
                     <div class="Card">
-                        <a class="Adecuacion" href="/">
+                        <a class="Adecuacion" href="">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
                                     <img alt="LogoPAI" height="56px"

@@ -7,7 +7,7 @@
                      <div class="modal-header">
                          <h2>Agrega Pariente</h2>
 
-                         <a href="#" id="modal_familiar_cierra" onclick="closeModal(this)">
+                         <a style="cursor: pointer;" id="modal_familiar_cierra" onclick="closeModal(this)">
                              <i class="fa fa-close" id="cierra_modal"></i>
                          </a>
                      </div>
@@ -82,7 +82,7 @@
                             </div>
                              <div class="botones_modal">
 
-                                 <a href="#" class="botonCerrarModal" id="cerrar_modal_pariente"
+                                 <a style="cursor: pointer;" class="botonCerrarModal" id="cerrar_modal_pariente"
                                      onclick="closeModal(this)">Regresar
                                  </a>
 

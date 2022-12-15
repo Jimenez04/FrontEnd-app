@@ -17,7 +17,7 @@
                 <div class="GestionDeSolicitudes">
 
                     <div class="Card">
-                        <a class="AdecuacionAdmi" href="/">
+                        <a class="AdecuacionAdmi" href="">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
 
@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="Card">
-                        <a class="PAIAdmi" href="/">
+                        <a class="PAIAdmi" href="">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
 
@@ -54,7 +54,7 @@
                     </div>
 
                     <div class="Card">
-                        <a class="AdecuacionAdmi" href="/bitacora">
+                        <a class="AdecuacionAdmi" href="">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
 
@@ -75,7 +75,7 @@
 
 
                     <div class="Card">
-                        <a class="AdecuacionAdmi" href="/lista">
+                        <a class="AdecuacionAdmi" href="">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
 
@@ -93,7 +93,7 @@
                     </div>
 
                     <div class="Card">
-                        <a class="AdecuacionAdmi" href="/">
+                        <a class="AdecuacionAdmi" href="">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
 
@@ -111,7 +111,7 @@
                     </div>
 
                     <div class="Card">
-                        <a class="AdecuacionAdmi" href="/mi_perfil">
+                        <a class="AdecuacionAdmi" href="{{ route('perfil_usuario') }}">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
 

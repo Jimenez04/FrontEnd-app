@@ -6,7 +6,7 @@
                      <div class="modal-header">
                          <h2>Agregar Enfermedad</h2>
 
-                         <a href="#" id="cerrar_modal_enfermedad" onclick="closeModal(this)">
+                         <a style="cursor: pointer;" id="cerrar_modal_enfermedad" onclick="closeModal(this)">
                              <i class="fa fa-close" id="cierra_modal"></i>
                          </a>
                      </div>
@@ -45,7 +45,7 @@
 
                                  <div class="botones_modal">
 
-                                     <a href="#" class="botonCerrarModal" id="cerrar_modal_enfermedad"
+                                     <a style="cursor: pointer;" class="botonCerrarModal" id="cerrar_modal_enfermedad"
                                          onclick="closeModal(this)">Regresar
                                      </a>
                                      <input class="botonagregatrabajo" type="submit" value="Agregar">

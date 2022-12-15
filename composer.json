@@ -11,6 +11,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "symfony/http-foundation": "^6.2",
+        "tightenco/ziggy": "^1.5",
         "yoeunes/toastr": "^2.0"
     },
     "require-dev": {

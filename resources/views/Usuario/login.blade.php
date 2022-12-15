@@ -55,10 +55,10 @@
 
                     <div class="contenedor_opciones_user">
                         <div class="Registrarse">
-                            <a class="Registro" href="/registrarse">Registrarse</a>
+                            <a class="Registro" href="{{route('registrarse')}}">Registrarse</a>
                         </div>
                         <div class="Recuperarcontrasena">
-                            <a class="OlvidoPassword" href="/recuperar">Recuperar contraseña</a>
+                            <a class="OlvidoPassword" href="{{route('recuperarcontra')}}">Recuperar contraseña</a>
                         </div>
                     </div>
 

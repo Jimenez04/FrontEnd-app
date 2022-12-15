@@ -7,7 +7,7 @@
                      <div class="modal-header">
                          <h2>Trabajo</h2>
 
-                         <a href="#" id="modal_trabajo_cierra" onclick="closeModal(this)">
+                         <a style="cursor: pointer;" id="modal_trabajo_cierra" onclick="closeModal(this)">
                              <i class="fa fa-close" id="cierra_modal"></i>
                          </a>
                      </div>
@@ -35,10 +35,10 @@
                              </div>
                              <div class="botones_modal">
 
-                                 <a href="#" class="botonCerrarModal" id="cerrar_modal_trabajo"
+                                 <a style="cursor: pointer;" class="botonCerrarModal" id="cerrar_modal_trabajo"
                                      onclick="closeModal(this)">Regresar
                                  </a>
-                                 <a href="#" class="botonCerrarModal" id="btn_delete_job"
+                                 <a style="cursor: pointer;" class="botonCerrarModal" id="btn_delete_job"
                                      onclick="delete_job(this)">Eliminar
                                  </a>
                                  <input class="botonagregatrabajo" id="btn_add_job"  type="submit" value="Agregar">

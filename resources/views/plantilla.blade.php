@@ -55,6 +55,7 @@
 </head>
 
 <body>
+    @routes
     @include('header')
     @yield('content')
     @include('footer')

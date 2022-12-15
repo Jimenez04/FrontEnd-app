@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class ViewsUserCRUD_Controller extends Controller
 {
     public function perfil_usuario()
@@ -35,8 +36,28 @@ class ViewsUserCRUD_Controller extends Controller
 
     public function editar_perfil()
     {
-        return view('Usuario.Shareviews.editar_perfil');
+        $client = new \GuzzleHttp\Client();
+
+
+        $response = $client->get(
+            env('API_URL') . 'user/persona/estudiante/',
+            [
+                
+                'headers' => [
+                    'Authorization' => 'Bearer ' . session('token'),
+                    'Accept' => 'application/json',
+                    'Content-Type' => 'application/json'
+
+                ],
+            ]
+        );
+        $resultado = json_decode($response->getBody(), true);
+        //  dd($resultado);
+        $resultado = $resultado['data'];
+
+        return view('Usuario.Shareviews.editar_perfil', compact('resultado'));
     }
+    
     public function listar_usuarios()
     {
         $client = new \GuzzleHttp\Client();

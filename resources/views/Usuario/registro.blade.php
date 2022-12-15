@@ -25,40 +25,40 @@
                         <div class="Cedula-Carnet">
                             <div class="Cedula">
                                 <label>Cedula</label>
-                                <input class="campos" type="text" name="cedula" value="{{ old('cedula') }}" required>
+                                <input class="campos" type="text" name="cedula" value="{{ old('cedula') }}" title="Digite su cédula, 9 caracteres mínimo"required>
                                 
                             </div>
                             <div class="Carnet">
                                 <label>Carnet</label>
-                                <input class="campos" type="text" name="carnet" value="{{ old('carnet') }}" required>
+                                <input class="campos" type="text" name="carnet" value="{{ old('carnet') }}" title="Digite su carnet" required>
                             </div>
 
                         </div>
                         <div class="Nombre">
                             <div class="Nombre1">
                                 <label>Primer Nombre</label>
-                                <input class="campos" type="text" name="nombre1" value="{{ old('nombre1') }}" required>
+                                <input class="campos" type="text" name="nombre1" value="{{ old('nombre1') }}" title="Digite su nombre"required>
                             </div>
                             <div class="Nombre2">
                                 <label>Segundo Nombre</label>
-                                <input class="campos" type="text" name="nombre2" value="{{ old('nombre2') }}">
+                                <input class="campos" type="text" name="nombre2" value="{{ old('nombre2') }}" title="Digite su segundo nombre">
                             </div>
                         </div>
                         <div class="Apellidos">
                             <div class="Apellido1">
                                 <label>Primer Apellido</label>
-                                <input class="campos" type="text" name="apellido1" value="{{ old('apellido1') }}" required>
+                                <input class="campos" type="text" name="apellido1" value="{{ old('apellido1') }}" required title="Digite su primer apellido">
                             </div>
                             <div class="Apellido2">
                                 <label>Segundo Apellido</label>
-                                <input class="campos" type="text" name="apellido2" value="{{ old('apellido2') }}" required>
+                                <input class="campos" type="text" name="apellido2" value="{{ old('apellido2') }}" required title="Digite su segundo apellido">
                             </div>
                         </div>
                         <div class="InfoPersonal">
                             <div class="fecha">
                                 <label>Fecha de Nacimiento</label>
                                 <br>
-                                <input type="date" name="fecha_Nacimiento"  required value="{{ old('fecha_Nacimiento', '1999-06-01') }}">
+                                <input type="date" name="fecha_Nacimiento"  required value="{{ old('fecha_Nacimiento', '1999-06-01') }}" title="Digite su fecha de nacimiento">
                             </div>
                         </div>
                         <div class="Sexo">
@@ -88,17 +88,17 @@
                             <div class="Correo">
                                 <label>Correo </label>
                                 <input class="campos_sesion" type="email" name="email" value="{{ old('email') }}" required
-                                    placeholder="nombre.@ucr.ac.cr">
+                                    placeholder="nombre.@ucr.ac.cr" title="Correo institucional">
 
                             </div>
 
                             <div class="Password">
                                 <label>Contraseña </label>
-                                <input class="campos_sesion" type="password" name="password_" value="" required>
+                                <input class="campos_sesion" type="password" name="password_" value="" required title="Digite su contraseña, mínimo 6 caracteres">
                             </div>
                             <div class="confirmar_Password">
                                 <label>Confirmar Contraseña </label>
-                                <input class="campos_sesion" type="password" name="c_password" value="" required>
+                                <input class="campos_sesion" type="password" name="c_password" value="" required title="Digite su contraseña, mínimo 6 caracteres">
                             </div>
                         </div>
                     </div>

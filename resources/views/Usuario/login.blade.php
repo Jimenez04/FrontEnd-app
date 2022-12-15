@@ -38,13 +38,13 @@
                     <div class="containerCorreo">
 
                         <input type="email" name="email" id="email" placeholder="Correo Institucional"
-                            value="{{ old('email') }}" required>
+                            value="{{ old('email') }}" title="Digita tu correo" required>
                           
 
                     </div>
                   
                     <div class="containerPassword">
-                        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                        <input type="password" id="password" name="password" placeholder="Contraseña" title="La constraseña es requerida" required>
                         <!--required-->
 
                     </div>

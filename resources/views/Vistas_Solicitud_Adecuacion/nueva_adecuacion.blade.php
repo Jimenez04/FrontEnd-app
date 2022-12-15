@@ -21,7 +21,7 @@
                             <a class="boton_opciones" id="Cancelar" type="submit" value="Cancelar" href="{{ URL::previous() }}">Cancelar</a>
                             <a  hidden class="boton_opciones" id="btn_atras" onclick="atras(this)">Atras</a>
                             <a  class="boton_opciones" id="btn_Siguiente" onclick="siguiente(this)">Siguiente</a>
-                            <input class="boton_opciones" hidden id="Siguiente" type="submit" value="Finalizar">
+                            <a  hidden class="boton_opciones" id="Siguiente" onclick="finalizar(this)">Finalizar</a>
                         </div>
                     </form>
 
@@ -36,3 +36,4 @@
 @include('modals.agregar_pariente')
 @endsection
 <script src="{{ asset('js/adecuacion.js') }}"></script>
+<script src="{{ asset('js/validacionesS_Adecuacion.js') }}"></script>

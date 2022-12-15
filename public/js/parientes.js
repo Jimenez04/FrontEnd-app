@@ -23,7 +23,7 @@ function buscar() {
         document.getElementById('btn_buscar').disabled = true;
         busquedaPersona(cedula_pariente);
     } else { 
-        alert('Ingrese una cédula valida y mayor a 8 caracteres');
+        toastr['Warning']("Ingrese una cédula valida y mayor a 8 caracteres");
     }
 }
 
@@ -40,9 +40,9 @@ function busquedaPersona(cedula_pariente) {
         .then((data) => {
             estado_btn_campos(data.status);
             if (data.status) {
-                alert("Persona encontrada.");
+                toastr['info']("Persona encontrada.");
             } else { 
-                alert("La persona no existe en el sistema.");
+                toastr['info']("La persona no existe en el sistema.");
             }
             document.getElementById('btn_buscar').disabled = false;
         })
@@ -81,7 +81,7 @@ function agregarpersona() {
     if (estado_campos && (sexo_id == 1 || sexo_id == 2)) {
         let isValidDate = Date.parse(fecha_Nacimiento_pariente);
             if (isNaN(isValidDate)) {
-                return console.log("Not a valid date format.");
+                return toastr['error']("Fecha invalida.");
         }
             data = { cedula: cedula_pariente, nombre1: nombre1, nombre2: nombre2, apellido1: apellido1, apellido2 : apellido2, fecha_Nacimiento : fecha_Nacimiento_pariente, sexo_id : sexo_id };
                 fetch(urlapi + 'persona', {
@@ -95,15 +95,14 @@ function agregarpersona() {
                     })
                     .then((response) => response.json())
                     .then((data) => {
-                        console.log(data);
                         if (data.status) {
                             limpiarcampos();
-                            alert("Agregada correctamente.");
+                            toastr['success']("Agregada correctamente.");
                             estado_btn_campos(true);
                             document.getElementById('btn_buscar').disabled = false;
 
                         } else { 
-                            alert("Error al agregar.");
+                            toastr['error']("Error al agregar.");
                             document.getElementById('btn_buscar').disabled = false;
 
                         }
@@ -115,7 +114,7 @@ function agregarpersona() {
                     });
     } else { 
         document.getElementById('btn_buscar').disabled = false;
-        alert('Verifica los campos.');
+        toastr['error']("Verifica los campos.");
     }
 }
 
@@ -135,7 +134,6 @@ function validad_datos(array, largo) {
     array.forEach(element => {
         if ((element.trim() == " " || element == null) || element.trim().length < largo) {
             validacion = false;
-            console.log(validacion);
         }
         });
     if (!validacion) return false;
@@ -147,31 +145,49 @@ function agregarpariente() {
     var input_ocupacion_pariente = document.getElementById('input_ocupacion_pariente').value;
     var estado = validad_datos([input_tipo_pariente], 2);
     if (estado) {
-        if (validad_datos([input_ocupacion_pariente], 3)) {
-            array_parientes.push({ tipo: input_tipo_pariente, ocupacion: input_ocupacion_pariente, cedula: cedula_pariente });
-            
-            tbody = document.getElementById('cuerpotabla');
-                var tr = document.createElement('tr');
-                        var td_tipoPariente = document.createElement('td');
-                        td_tipoPariente.setAttribute('scope','col');
-                        td_tipoPariente.appendChild(document.createTextNode(input_tipo_pariente));
-                    tr.append(td_tipoPariente);
-                        var td_ocupacionPariente = document.createElement('td');
-                        td_ocupacionPariente.setAttribute('scope','col');
-                        td_ocupacionPariente.appendChild(document.createTextNode(input_ocupacion_pariente));
-                    tr.append(td_ocupacionPariente);
-                        var td_cedulaPariente = document.createElement('td');
-                        td_cedulaPariente.setAttribute('scope','col');
-                        td_cedulaPariente.appendChild(document.createTextNode(cedula_pariente));
-                    tr.append(td_cedulaPariente);
-            tbody.append(tr);
-
+        if (validad_datos([input_ocupacion_pariente], 4)) {
+            array_parientes.push({ tipo_Pariente: input_tipo_pariente, ocupacion: input_ocupacion_pariente, persona_cedula: cedula_pariente });
+            rellenarTablaParientes(array_parientes);
+            document.getElementById('container-tipo-pariente').setAttribute('Style', 'display:none');
+            document.getElementById('btn_add_pariente').hidden = true;
             document.getElementById('cedula_pariente').value = "";
+            toastr['success']("Pariente agregado.");
             limpiarcampos();
         } else {
-            alert('Verifica los datos');
+            toastr['error']("Verifica los campos.");
          }
     } else {
-        alert('Verifica los datos');
+        toastr['error']("Verifica los campos.");
      }
+}
+
+function rellenarTablaParientes(listaParientes) { 
+        tbody = document.getElementById('cuerpotabla');
+        while (tbody.firstChild) {
+            tbody.removeChild(tbody.firstChild);
+        }
+    listaParientes.forEach(pariente => {
+        var tr = document.createElement('tr');
+        tr.style.cssText = 'cursor:pointer'; 
+        tr.setAttribute('onclick', 'eliminarpariente(' + pariente['persona_cedula'] + ')');
+                var td_tipoPariente = document.createElement('td');
+                td_tipoPariente.setAttribute('scope','col');
+                td_tipoPariente.appendChild(document.createTextNode(pariente['tipo_Pariente']));
+            tr.append(td_tipoPariente);
+                var td_ocupacionPariente = document.createElement('td');
+                td_ocupacionPariente.setAttribute('scope','col');
+                td_ocupacionPariente.appendChild(document.createTextNode(pariente['ocupacion']));
+            tr.append(td_ocupacionPariente);
+                var td_cedulaPariente = document.createElement('td');
+                td_cedulaPariente.setAttribute('scope','col');
+                td_cedulaPariente.appendChild(document.createTextNode(pariente['persona_cedula']));
+            tr.append(td_cedulaPariente);
+    tbody.append(tr);
+    });
+}
+
+function eliminarpariente(cedula) { 
+    array_parientes = array_parientes.filter(person => person.cedula != cedula);
+    rellenarTablaParientes(array_parientes);
+    toastr['info']("Pariente eliminado.");
 }

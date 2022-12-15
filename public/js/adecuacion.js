@@ -1,10 +1,19 @@
 var contador = 1;
 //Listas
 var info_Solicitud;
+var eventoArchivo;
+var array_archivos = [];
+var array_DatosSolicitud = null;
+var array_DatosAcademicos = null;
+var array_AtencionSeguimiento = null;
+var array_grupoFamiliar = null;
+var array_Salud = null;
+var estadoventana;
 
 
 function siguiente() { 
     contador++;
+    estadoventana = true;
     accion_btn_atras();
     accion_btn_siguiente();
     cambio_Ventanas(); 
@@ -30,7 +39,10 @@ function accion_btn_siguiente() {
 }
 
 function atras() { 
-    contador--;
+    if (contador > 1) {
+        contador--;
+    }
+    estadoventana = false;
     accion_btn_atras();
     accion_btn_siguiente();
     cambio_Ventanas();
@@ -51,34 +63,56 @@ document.addEventListener("DOMContentLoaded", async function(){
     cambio_Ventanas();
 });
 
-
 function cambio_Ventanas() { 
-    removerhijos();
-    switch (contador) {
-        case 1:
-            ventana_InfoSolicitud();
-            break;
-        case 2:
-            ventana_InstitucionProcedencia();
-            break;
-        case 3:
-            ventana_necesidad_Apoyo();
-            break;
-        case 4:
-            ventana_GrupoFamiliar();
-            break;
-        case 5:
-            ventana_Archivos() 
-            break;
-        case 6:
-            
-            break;
-        case 7:
-            
-            break;
-    
-        default:
-            break;
+    if (validaciones_Ventanas()) {
+        removerhijos();
+        switch (contador) {
+            case 1:
+                ventana_InfoSolicitud();
+                break;
+            case 2:
+                ventana_InstitucionProcedencia();
+                break;
+            case 3:
+                ventana_necesidad_Apoyo();
+                break;
+            case 4:
+                ventana_GrupoFamiliar();
+                break;
+            case 5:
+                ventana_Archivos()
+                break;
+            default:
+                break;
+        }
+    } else { 
+        if (contador > 1) { 
+            contador--;
+        }
+        accion_btn_atras();
+        accion_btn_siguiente();
+    }
+}
+
+function validaciones_Ventanas() { 
+    if (estadoventana) {
+        switch (contador - 1) {
+            case 1:
+                return validarcampos_DatosSolicitud();
+            case 2:
+                return validarCampos_DatosAcademicos();
+            case 3:
+                return validarCampos_Necesidad_Y_Apoyo();
+            case 4:
+                return validarCampos_GrupoFamiliar();
+            case 5:
+            //ventana_Archivos() 
+               
+            default:
+                return true;
+        }
+    } else { 
+        return true;
     }
 }
 
@@ -100,6 +134,7 @@ function ventana_InfoSolicitud() {
             datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
             var campos_adecuacion = document.createElement('input');
             campos_adecuacion.setAttribute('id', 'input_RazonSolicitud');
+            campos_adecuacion.setAttribute('value', array_DatosSolicitud != null ?  array_DatosSolicitud['razon_Solicitud'] : "");
             campos_adecuacion.type = "text"
             campos_adecuacion.classList.add('campos_adecuacion');
             datos_adecuacion.append(campos_adecuacion); 
@@ -114,6 +149,7 @@ function ventana_InfoSolicitud() {
             var campos_adecuacion = document.createElement('input');
             campos_adecuacion.type = "text"
             campos_adecuacion.setAttribute('id','input_CarreraEmpadronada');
+            campos_adecuacion.setAttribute('value', array_DatosSolicitud != null ?  array_DatosSolicitud['carrera_Empadronada'] : "");
             campos_adecuacion.classList.add('campos_adecuacion');
             datos_adecuacion.append(campos_adecuacion); 
         contenido_nueva_adecuacion.append(datos_adecuacion); 
@@ -127,6 +163,7 @@ function ventana_InfoSolicitud() {
             var campos_adecuacion = document.createElement('input');
             campos_adecuacion.type = "date"
             campos_adecuacion.setAttribute('id','input_AnoIngresoCarreraEmpadronada');
+            campos_adecuacion.setAttribute('value', array_DatosSolicitud != null ?  array_DatosSolicitud['ano_ingreso_carrera'] : "");
             campos_adecuacion.classList.add('campos_adecuacion');
             datos_adecuacion.append(campos_adecuacion); 
         contenido_nueva_adecuacion.append(datos_adecuacion); 
@@ -138,6 +175,7 @@ function ventana_InfoSolicitud() {
             etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
             datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
             var campos_adecuacion = document.createElement('input');
+            campos_adecuacion.setAttribute('value', array_DatosSolicitud != null ?  array_DatosSolicitud['nivel_carrera'] : "");
             campos_adecuacion.type = "text"
             campos_adecuacion.setAttribute('id','input_Niveldecarrera');
             campos_adecuacion.classList.add('campos_adecuacion');
@@ -164,6 +202,7 @@ function ventana_InfoSolicitud() {
                             radio_buttom.setAttribute('id','check_si_2carrera');
                             radio_buttom.setAttribute('onchange','mostrar(this.value);');
                             radio_buttom.setAttribute('value','1');
+                            radio_buttom.checked =  array_DatosSolicitud != null ?  array_DatosSolicitud.hasOwnProperty('nombre_segunda_carrera')  ?  true : false : false;
                             radio_buttom.classList.add('radio_buttom');
                         Check.append(radio_buttom);
                 seleccion_carrera_simultanea.append(Check);
@@ -176,6 +215,7 @@ function ventana_InfoSolicitud() {
                             var radio_buttom = document.createElement('input');
                             radio_buttom.setAttribute('type','radio');
                             radio_buttom.setAttribute('name','seleccion_2carrera');
+                            radio_buttom.checked =  array_DatosSolicitud != null ?  array_DatosSolicitud.hasOwnProperty('nombre_segunda_carrera') ?  false : true : true;
                             radio_buttom.setAttribute('id','check_no_2carrera');
                             radio_buttom.setAttribute('onchange','mostrar(this.value);');
                             radio_buttom.setAttribute('value','0');
@@ -191,6 +231,8 @@ function ventana_InfoSolicitud() {
                     etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
                 Segunda_carrera.append(etiqueta_solicitud_adecuacion);
                     var campos_adecuacion = document.createElement('input');
+                    campos_adecuacion.setAttribute('id', "input_NombreSegundaCarrera");
+                    campos_adecuacion.setAttribute('value',array_DatosSolicitud != null ?  array_DatosSolicitud.hasOwnProperty('nombre_segunda_carrera') ?  array_DatosSolicitud['nombre_segunda_carrera'] : '' : '');
                     campos_adecuacion.type = "text"
                     campos_adecuacion.classList.add('campos_adecuacion');
                     // campos_adecuacion.setAttribute('id','nombreSegundaCarrera');
@@ -198,11 +240,11 @@ function ventana_InfoSolicitud() {
         datos_adecuacion.append(Segunda_carrera);
     contenido_nueva_adecuacion.append(datos_adecuacion); 
     // 
-    //Input Lleva una segunda carrera
+    //Input Traslado
     var Traslado = document.createElement('div');
     Traslado.classList.add('Traslado');
         var etiqueta_solicitud_adecuacion = document.createElement('label');
-        etiqueta_solicitud_adecuacion.textContent = "¿Lleva una segunda carrera?";
+        etiqueta_solicitud_adecuacion.textContent = "¿Realizo traslado de carrera? ";
         etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
         Traslado.append(etiqueta_solicitud_adecuacion); 
             var seleccion_traslado = document.createElement('div');
@@ -219,6 +261,7 @@ function ventana_InfoSolicitud() {
                         radio_buttom.setAttribute('id','check_si_2carrera');
                         radio_buttom.setAttribute('onchange','mostrar_traslado(this.value);');
                         radio_buttom.setAttribute('value','1');
+                        radio_buttom.checked =  array_DatosSolicitud != null ?  array_DatosSolicitud['realizo_Traslado_Carrera'] == 1 ?  true : false : false;
                         radio_buttom.classList.add('radio_buttom');
                     Check.append(radio_buttom);
                     seleccion_traslado.append(Check);
@@ -234,6 +277,7 @@ function ventana_InfoSolicitud() {
                         radio_buttom.setAttribute('id','check_no_2carrera');
                         radio_buttom.setAttribute('onchange','mostrar_traslado(this.value);');
                         radio_buttom.setAttribute('value','0');
+                        radio_buttom.checked =  array_DatosSolicitud != null ?  array_DatosSolicitud['realizo_Traslado_Carrera'] == 1 ?  false : true : true;
                         radio_buttom.classList.add('radio_buttom');
                     Check.append(radio_buttom);
                     seleccion_traslado.append(Check);
@@ -242,11 +286,13 @@ function ventana_InfoSolicitud() {
             Traslado_carrera.classList.add('Traslado_carrera');
             Traslado_carrera.setAttribute('id', 'Traslado_carrera' );
                 var etiqueta_solicitud_adecuacion = document.createElement('label');
-                etiqueta_solicitud_adecuacion.textContent = "Nombre la segunda carrera";
+                etiqueta_solicitud_adecuacion.textContent = "Carrera empadronada anterior";
                 etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
                 Traslado_carrera.append(etiqueta_solicitud_adecuacion);
                 var campos_adecuacion = document.createElement('input');
                 campos_adecuacion.type = "text"
+                campos_adecuacion.setAttribute('id', 'input_carrera_anterior');
+                campos_adecuacion.setAttribute('value',array_DatosSolicitud != null ?  array_DatosSolicitud.hasOwnProperty('carrera_empadronado_anterior') ?  array_DatosSolicitud['carrera_empadronado_anterior'] : '' : '');
                 campos_adecuacion.classList.add('campos_adecuacion');
                 // campos_adecuacion.setAttribute('id','nombreSegundaCarrera');
                 Traslado_carrera.append(campos_adecuacion);
@@ -257,6 +303,9 @@ contenido_nueva_adecuacion.append(Traslado);
 
 contenido_nueva_adecuacion.append(datos_adecuacion); 
 cuerpohtml.append(contenido_nueva_adecuacion);
+
+    mostrar_traslado(array_DatosSolicitud != null ?  array_DatosSolicitud['realizo_Traslado_Carrera'] == 1 ?  true : false : false);
+    mostrar(array_DatosSolicitud != null ?  array_DatosSolicitud.hasOwnProperty('nombre_segunda_carrera') ?  true : false : false);
 }
 
 function ventana_InstitucionProcedencia() { 
@@ -273,13 +322,14 @@ function ventana_InstitucionProcedencia() {
  datos_adecuacion.classList.add('datos_adecuacion');
     //label
      var etiqueta_solicitud_adecuacion = document.createElement('label');
-     etiqueta_solicitud_adecuacion.textContent = "Nombre de la Institución";
+     etiqueta_solicitud_adecuacion.textContent = "Nombre de la Institución de procedencia";
      etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
     datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
     //input
      var campos_adecuacion = document.createElement('input');
      campos_adecuacion.type = "text"
      campos_adecuacion.setAttribute('id','input_InstitucionProcedencia');
+     campos_adecuacion.setAttribute('value',array_DatosAcademicos != null ? array_DatosAcademicos['nombre'] : "");
      campos_adecuacion.classList.add('campos_adecuacion');
      datos_adecuacion.append(campos_adecuacion); 
  contenido_nueva_adecuacion.append(datos_adecuacion); 
@@ -295,7 +345,8 @@ function ventana_InstitucionProcedencia() {
     //input
      var campos_adecuacion = document.createElement('input');
      campos_adecuacion.type = "date"
-     campos_adecuacion.setAttribute('id','input_Año_Egreso');
+        campos_adecuacion.setAttribute('id', 'input_Año_Egreso');
+        campos_adecuacion.setAttribute('value',array_DatosAcademicos != null ? array_DatosAcademicos['ano_egreso'] : "");
      campos_adecuacion.classList.add('campos_adecuacion');
      datos_adecuacion.append(campos_adecuacion); 
  contenido_nueva_adecuacion.append(datos_adecuacion); 
@@ -311,7 +362,8 @@ function ventana_InstitucionProcedencia() {
     //input
      var campos_adecuacion = document.createElement('input');
      campos_adecuacion.type = "date"
-     campos_adecuacion.setAttribute('id','input_Año_ingreso_Universidad');
+    campos_adecuacion.setAttribute('id', 'input_Año_ingreso_Universidad');
+    campos_adecuacion.setAttribute('value', array_DatosAcademicos != null ? array_DatosAcademicos['ano_ingreso_universidad'] : "");
      campos_adecuacion.classList.add('campos_adecuacion');
      datos_adecuacion.append(campos_adecuacion); 
  contenido_nueva_adecuacion.append(datos_adecuacion); 
@@ -322,6 +374,9 @@ function ventana_InstitucionProcedencia() {
 }
 
 function ventana_necesidad_Apoyo() { 
+    // var array_AtencionSeguimiento = null;
+    // var array_Salud = null;
+    
     var cuerpohtml = document.getElementById('form_contenedor');
     var contenido_nueva_adecuacion = document.createElement('div');
     contenido_nueva_adecuacion.classList.add('contenido_nueva_adecuacion');
@@ -342,6 +397,7 @@ function ventana_necesidad_Apoyo() {
      var campos_adecuacion = document.createElement('input');
      campos_adecuacion.type = "text"
      campos_adecuacion.setAttribute('id','input_Diagnostico');
+     campos_adecuacion.setAttribute('value', array_AtencionSeguimiento != null ? array_AtencionSeguimiento['diagnostico'] : '');
      campos_adecuacion.classList.add('campos_adecuacion');
      datos_adecuacion.append(campos_adecuacion); 
  contenido_nueva_adecuacion.append(datos_adecuacion); 
@@ -358,25 +414,11 @@ function ventana_necesidad_Apoyo() {
      var campos_adecuacion = document.createElement('input');
      campos_adecuacion.type = "text"
      campos_adecuacion.setAttribute('id','input_ProfesionalDiagnostica');
+      campos_adecuacion.setAttribute('value', array_AtencionSeguimiento != null ? array_AtencionSeguimiento['area_Profesional'] : '');
      campos_adecuacion.classList.add('campos_adecuacion');
      datos_adecuacion.append(campos_adecuacion); 
  contenido_nueva_adecuacion.append(datos_adecuacion); 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-       // Año de egreso/////////////////////////////////////////////////////////////////////////
- var datos_adecuacion = document.createElement('div');
- datos_adecuacion.classList.add('datos_adecuacion');
-    //label
-     var etiqueta_solicitud_adecuacion = document.createElement('label');
-     etiqueta_solicitud_adecuacion.textContent = "Año de ingreso a la universidad";
-     etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
-    datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
-    //input
-     var campos_adecuacion = document.createElement('input');
-     campos_adecuacion.type = "date"
-     campos_adecuacion.setAttribute('id','input_Año_ingreso_Universidad');
-     campos_adecuacion.classList.add('campos_adecuacion');
-     datos_adecuacion.append(campos_adecuacion); 
- contenido_nueva_adecuacion.append(datos_adecuacion); 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////Section ¿Recibe atención y tratamiento por parte de algún especialista?
           //primer div principal
@@ -403,6 +445,7 @@ function ventana_necesidad_Apoyo() {
                                 radio_buttom.setAttribute('id','checksi_atencion');
                                 radio_buttom.setAttribute('onchange','mostrar_atencion(this.value);');
                                 radio_buttom.setAttribute('value','1');
+                                 radio_buttom.checked =  array_AtencionSeguimiento != null ?  array_AtencionSeguimiento['recibe_atencionyseguimiento'] == 1 ?  true : false : false;
                                 radio_buttom.classList.add('radio_buttom');
                             Check.append(radio_buttom);
                             seleccion_atencion.append(Check);
@@ -419,6 +462,7 @@ function ventana_necesidad_Apoyo() {
                                 radio_buttom.setAttribute('id','check_noatencion');
                                 radio_buttom.setAttribute('onchange','mostrar_atencion(this.value);');
                                 radio_buttom.setAttribute('value','0');
+                                 radio_buttom.checked =  array_AtencionSeguimiento != null ?  array_AtencionSeguimiento['recibe_atencionyseguimiento'] == 1 ?  false : true : true;
                                 radio_buttom.classList.add('radio_buttom');
                             Check.append(radio_buttom);
                             seleccion_atencion.append(Check);
@@ -435,7 +479,8 @@ function ventana_necesidad_Apoyo() {
                         var campos_adecuacion = document.createElement('textarea');
                         campos_adecuacion.type = "text"
                         campos_adecuacion.classList.add('campos_text_area');
-                        campos_adecuacion.setAttribute('id','descripcion_atencion');
+                        campos_adecuacion.setAttribute('id','descripcion_atencion_input');
+                        campos_adecuacion.textContent = array_AtencionSeguimiento != null ? array_AtencionSeguimiento['atencionyseguimiento'] : '';
                         campos_adecuacion.setAttribute('rows','4');
                         campos_adecuacion.setAttribute('cols','30');
                     Segunda_carrera.append(campos_adecuacion);
@@ -469,6 +514,7 @@ contenido_nueva_adecuacion.append(titulocontenedor);
                               radio_buttom.setAttribute('name','seleccion_enfermedad');
                               radio_buttom.setAttribute('id','checksi_enfemerdad');
                               radio_buttom.setAttribute('onchange','mostrar_datos_enfermedad(this.value);');
+                               radio_buttom.checked =  array_Salud != null ? array_Salud['afectacionDesempeno'] == 1 ? true : false : false;
                               radio_buttom.setAttribute('value','1');
                               radio_buttom.classList.add('radio_buttom');
                           Check.append(radio_buttom);
@@ -484,6 +530,7 @@ contenido_nueva_adecuacion.append(titulocontenedor);
                               radio_buttom.setAttribute('type','radio');
                               radio_buttom.setAttribute('name','seleccion_enfermedad');
                               radio_buttom.setAttribute('id','checkno_enfemerdad');
+                              radio_buttom.checked =  array_Salud != null ? array_Salud['afectacionDesempeno'] == 1 ? false : true : true;
                               radio_buttom.setAttribute('onchange','mostrar_datos_enfermedad(this.value);');
                               radio_buttom.setAttribute('value','0');
                               radio_buttom.classList.add('radio_buttom');
@@ -503,6 +550,7 @@ contenido_nueva_adecuacion.append(titulocontenedor);
                       campos_adecuacion.type = "text"
                       campos_adecuacion.classList.add('campos_enfermedad');
                       campos_adecuacion.setAttribute('id','input_Cual_enfermedad');
+                      campos_adecuacion.setAttribute('value', array_Salud != null ? array_Salud['enfermedad'] : '');
                   Segunda_carrera.append(campos_adecuacion);
                     datos_adecuacion.append(Segunda_carrera);
                 contenido_nueva_adecuacion.append(datos_adecuacion); 
@@ -518,11 +566,16 @@ contenido_nueva_adecuacion.append(titulocontenedor);
                         campos_adecuacion.type = "text"
                         campos_adecuacion.classList.add('campos_enfermedad');
                         campos_adecuacion.setAttribute('id','input_Tratamiento_enfermedad');
+                        campos_adecuacion.setAttribute('value', array_Salud != null ? array_Salud['tratamiento'] : '');
                     Segunda_carrera.append(campos_adecuacion);
                 datos_adecuacion.append(Segunda_carrera);
                 contenido_nueva_adecuacion.append(datos_adecuacion); 
     //fin
     cuerpohtml.append(contenido_nueva_adecuacion);
+
+    mostrar_atencion(array_AtencionSeguimiento != null ? array_AtencionSeguimiento['recibe_atencionyseguimiento'] == 1 ? true : false : false);
+    
+    mostrar_datos_enfermedad(array_Salud != null ?  array_Salud['afectacionDesempeno'] == 1 ?  true : false : false);
 }
 function ventana_GrupoFamiliar() { 
     var cuerpohtml = document.getElementById('form_contenedor');
@@ -569,10 +622,6 @@ function ventana_GrupoFamiliar() {
                                 th_tipoPariente.setAttribute('scope','col');
                                 th_tipoPariente.appendChild(document.createTextNode('Ocupación'));
                             tr.append(th_tipoPariente);
-                                /* var th_Discapacidad = document.createElement('th');
-                                th_Discapacidad.setAttribute('scope','col');
-                                th_Discapacidad.appendChild(document.createTextNode('Discapacidad'))
-                            tr.append(th_Discapacidad); */
                                 var th_Cedula = document.createElement('th');                            
                                 th_Cedula.setAttribute('scope','col');
                                 th_Cedula.appendChild(document.createTextNode('Cedula'))
@@ -585,7 +634,7 @@ function ventana_GrupoFamiliar() {
         tabla.append(table);
     
 datos_adecuacion.append(tabla); 
-        
+        //textarea
         var discapacidad_grupo = document.createElement('div');
         discapacidad_grupo.classList.add('Descripcion_discapacidad');
             var etiqueta_solicitud_adecuacion = document.createElement('label');
@@ -596,17 +645,20 @@ datos_adecuacion.append(tabla);
             campos_adecuacion.type = "text"
             campos_adecuacion.classList.add('campos_text_area');
             campos_adecuacion.setAttribute('id','discapacidad_grupo');
+            campos_adecuacion.textContent = array_grupoFamiliar != null ? array_grupoFamiliar['descripcion_De_Discapacidades'] : '';
             campos_adecuacion.setAttribute('rows','4');
             campos_adecuacion.setAttribute('cols','30');
             discapacidad_grupo.append(campos_adecuacion);
         datos_adecuacion.append(discapacidad_grupo);
+  
+        contenido_nueva_adecuacion.append(datos_adecuacion);        
     
-        contenido_nueva_adecuacion.append(datos_adecuacion);
-        
+    cuerpohtml.append(contenido_nueva_adecuacion);
     
- cuerpohtml.append(contenido_nueva_adecuacion);
+    if (array_parientes.length > 0) { 
+        rellenarTablaParientes(array_parientes);
+    }
 }
-
 function ventana_Archivos() { 
     var cuerpohtml = document.getElementById('form_contenedor');
     var contenido_nueva_adecuacion = document.createElement('div');
@@ -620,14 +672,36 @@ function ventana_Archivos() {
  var datos_adecuacion = document.createElement('div');
  datos_adecuacion.classList.add('lista_archivos'); 
     // div agregar
-        var div_boton_agregar_archivo = document.createElement('div');
-        div_boton_agregar_archivo.classList.add('divbtn_agrega_archivo');
-                var campos_adecuacion = document.createElement('a');
-                campos_adecuacion.setAttribute('id','btn_agregar_archivo');
+                var campos_adecuacion = document.createElement('input');
+                campos_adecuacion.setAttribute('id','archivo_input');
+                campos_adecuacion.setAttribute('value','null');
+                campos_adecuacion.setAttribute('type','file');
+                campos_adecuacion.setAttribute('name','archivos');
+                campos_adecuacion.setAttribute('accept','application/pdf');
+                campos_adecuacion.style.cssText = 'width:100%';
+                campos_adecuacion.multiple = false;
                 campos_adecuacion.classList.add('boton_agregar_archivo');
                 campos_adecuacion.textContent = "Agregar Archivo";
                 datos_adecuacion.append(campos_adecuacion); 
-                datos_adecuacion.append(div_boton_agregar_archivo);
+         // input expedido por
+     //label
+        var etiqueta_solicitud_adecuacion = document.createElement('label');
+        etiqueta_solicitud_adecuacion.textContent = "Expedido por: ";
+        etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
+        datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
+        //input
+        var campos_adecuacion = document.createElement('input');
+        campos_adecuacion.type = "text"
+        campos_adecuacion.setAttribute('id','input_ExpedidoPor');
+        campos_adecuacion.classList.add('campos_adecuacion');
+        datos_adecuacion.append(campos_adecuacion); 
+    //btn
+    var etiqueta_solicitud_adecuacion = document.createElement('a');
+        etiqueta_solicitud_adecuacion.textContent = "Agregar Archivo";
+        etiqueta_solicitud_adecuacion.setAttribute('onclick','agregararchivo(this);');
+        etiqueta_solicitud_adecuacion.classList.add('boton_opciones');
+        etiqueta_solicitud_adecuacion.style.cssText = 'width:fit-content; padding:10px; height:auto; margin: 0 auto; margin-top:20px; margin-bottom:20px;';
+        datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
     // Segundo div principal/////////////////////////////////////////////////////////////////////////
     var tabla = document.createElement('div');
     tabla.classList.add('divtabla'); 
@@ -662,8 +736,130 @@ function ventana_Archivos() {
     
 datos_adecuacion.append(tabla); 
         //
+        contenido_nueva_adecuacion.append(datos_adecuacion);
+        
+    cuerpohtml.append(contenido_nueva_adecuacion);
     
-contenido_nueva_adecuacion.append(datos_adecuacion);
-    
- cuerpohtml.append(contenido_nueva_adecuacion);
+    if (array_archivos.length > 0) { 
+        rellenarTablaArchivos(array_archivos);
+    }
 }
+
+async function agregararchivo() {
+    eventoArchivo = document.getElementById('archivo_input');
+    for (let file of eventoArchivo.files) {
+        var ext = file['name'].split('.').pop();
+            if (file instanceof File && (ext == 'pdf' || ext == 'PDF')) {
+                var input_ExpedidoPor = document.getElementById('input_ExpedidoPor').value;
+                if (validad_datos([input_ExpedidoPor], 4) && input_ExpedidoPor.length < 100 && isNaN(input_ExpedidoPor)) {
+                    var promise = getBase64(file);
+                    var my_pdf_file_as_base64 = await promise;
+                    array_archivos.push({ expedidoPor: input_ExpedidoPor, nombre: removeExtension(file['name']), archivo64: my_pdf_file_as_base64.split(',')[1]});
+                        rellenarTablaArchivos(array_archivos);
+                    eventoArchivo.value = '';
+                    document.getElementById('input_ExpedidoPor').value = '';
+                    return;
+                } else { 
+                    toastr['error']("El campo 'expedido por' es requerido.'");
+                    return;
+                }
+            } else { 
+                toastr['error']("Debes agregar un archico de tipo PDF.'");
+                return;
+            }     
+    }
+    toastr['error']("Debes agregar un archivo primero'");
+ }
+    
+function getBase64(file, onLoadCallback) {
+    return new Promise(function(resolve, reject) {
+        var reader = new FileReader();
+        reader.onload = function() { resolve(reader.result); };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}
+
+function removeExtension(filename) {
+    return filename.substring(0, filename.lastIndexOf('.')) || filename;
+  }
+
+
+function rellenarTablaArchivos(listaarchhivos) {  //array_archivos
+    tbody = document.getElementById('cuerpotabla');
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+    listaarchhivos.forEach(archivo => {
+    var tr = document.createElement('tr');
+    tr.style.cssText = 'cursor:pointer'; 
+    tr.setAttribute('onclick', 'eliminarArchivo(' + "'" + archivo['nombre'] + "'" + ')');
+            var td_tipoPariente = document.createElement('td');
+            td_tipoPariente.setAttribute('scope','col');
+            td_tipoPariente.appendChild(document.createTextNode(archivo['nombre']));
+        tr.append(td_tipoPariente);
+            var td_ocupacionPariente = document.createElement('td');
+            td_ocupacionPariente.setAttribute('scope','col');
+            td_ocupacionPariente.appendChild(document.createTextNode(archivo['expedidoPor']));
+        tr.append(td_ocupacionPariente);
+            var td_cedulaPariente = document.createElement('td');
+            td_cedulaPariente.setAttribute('scope','col');
+            td_cedulaPariente.appendChild(document.createTextNode(".pdf"));
+        tr.append(td_cedulaPariente);
+tbody.append(tr);
+});
+}
+
+function eliminarArchivo(nombre) { 
+    array_archivos = array_archivos.filter(archivo => archivo.nombre != nombre);
+    rellenarTablaArchivos(array_archivos);
+    toastr['info']("Archivo eliminado.");
+}
+
+function finalizar() { 
+    toastr['success']('Ya casi estas listo');
+    document.getElementById('Siguiente').hidden = true;
+    data = {
+        carnet: carnet,
+        solicitud: array_DatosSolicitud,
+        institucion: array_DatosAcademicos,
+        necesidad_Apoyo: array_AtencionSeguimiento,
+        saludActual: array_Salud,
+        grupoFamiliar: array_grupoFamiliar,
+        archivos: array_archivos,
+    };
+
+    fetch(urlapi + 'user/persona/estudiante/adecuacion', {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept' : 'application/json',
+            'Authorization': 'Bearer ' + token,
+        },
+        body: JSON.stringify(data),
+    })
+                           
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.status) {
+                toastr['success']('Solicitud creada correctamente');
+                sleep(2000).then(() => {
+                    window.location.href = '/solicitud-adecuacion';
+                })
+                //
+            } else {
+                toastr['info']("Ya posee una solicitud en curso");
+                document.getElementById('Siguiente').hidden = false;
+            }
+        })
+        .catch((error) => {
+            toastr['error']("Error interno");
+            document.getElementById('Siguiente').hidden = false;
+        });
+}
+
+function sleep (time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
+
+  

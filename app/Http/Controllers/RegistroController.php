@@ -42,6 +42,7 @@ class RegistroController extends Controller
             if(array_key_exists("errors", $resultado)){
                 return Redirect::back()->withErrors($resultado['errors'])->withInput();;
             }
+            toastr()->success('Cuenta creada correctamente');
             return redirect()->route('login');
         } catch (BadResponseException $e) {
             $response = $e->getResponse();

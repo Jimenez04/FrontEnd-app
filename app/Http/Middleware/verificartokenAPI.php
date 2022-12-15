@@ -33,10 +33,12 @@ class verificartokenAPI
             }
             session(['login' => false]);
             session(['token' => null]);
+            toastr()->error('Oops! Su sesión no es válida o ha expirado.');
             return redirect()->route('login');
         } catch (\Throwable $th) {
         session(['login' => false]);
         session(['token' => null]);
+        toastr()->error('Oops! Su sesión no es válida o ha expirado.');
         return redirect()->route('login');
         }
     }

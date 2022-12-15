@@ -72,6 +72,7 @@ class InicioSesionController extends Controller
                 session(['roleuser' => $resultado['user']['role_id']]);
                 session(['name' => $resultado['user']['email']]);
                 session(['cedula' => $resultado['user']['persona']['cedula']]);
+                toastr()->success('Inicio exitoso', 'Éxito');
                 if ($userRole == 1) {
                     return redirect()->route('Admin');
                 } elseif ($userRole == 2) {
@@ -91,11 +92,9 @@ class InicioSesionController extends Controller
             'Content-Type' => 'application/json',
             'Authorization' => 'Bearer ' . session('token'),
         ])->get( env('API_URL') . 'usuario/salir');
-
         $resultado = json_decode($response->getBody(), true);
-
         session()->flush();
-
+        toastr()->success('Cerraste sesión', 'Éxito');
         return redirect()->route('login');
        } catch (\Throwable $th) {
         return back();

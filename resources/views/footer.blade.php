@@ -33,7 +33,7 @@
             <div class="Contenedor-informacion">
                 <h3>Contacto</h3>
                 <div class="row2">
-                    <label class="telefono">Teléfono: </label>
+                    <label>Teléfono: </label>
                     <span>2511-9576</span>
                 </div>
 

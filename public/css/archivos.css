@@ -17,25 +17,21 @@
     width: 150px;
     font-weight: normal;
     font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    background-color: #2B6797;
+    font-size: 14px;
     text-decoration: none;
-    color: #FFFFFF;
     text-align: center;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
     cursor: pointer;
-    border-radius: 10px;
-    height: 36px;
-    /* padding: 0 16px; */
-    text-transform: capitalize;
+    height: 46px;
     padding-top: 6px;
-    border: 1px solid #2B6797;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+
 }
 
 .boton_agregar_archivo:hover {
     text-decoration: none;
-    color: white;
+    color: black;
+
 }
 
 .tabla_archivos {
@@ -43,7 +39,7 @@
     border-collapse: collapse;
     width: 90%;
     table-layout: fixed;
-    font-size: 1em;
+    font-size: .9em;
     margin: 0 auto;
     padding: 0;
     font-family: 'Poppins';
@@ -51,12 +47,6 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.tabla_archivos caption {
-    font-size: 18px;
-    text-transform: capitalize;
-    font-weight: 600px;
-    margin: 8px 0px;
-}
 
 .tabla_archivos tr {
     border: 1 px solid #ccc;
@@ -140,92 +130,78 @@
         margin-top: 10px;
     }
 
-    .tabla_archivos {
-        border: 0px;
-    }
-
     .tabla_archivos thead {
         display: none;
     }
 
-    .tabla_archivos tr {
-        margin-bottom: 8px;
-        border-bottom: 4px solid #ccc;
+    .tabla_archivos,
+    .tabla_archivos thead,
+    .tabla_archivos tbody,
+    .tabla_archivos tr,
+    .tabla_archivos th,
+    .tabla_archivos td {
         display: block;
-        background-color: #dddddd62;
     }
 
-    .tabla_archivos td,
-    .tabla_archivos th {
-        letter-spacing: 0;
-        font-size: 14px;
+    .tabla_archivos {
+        border: none
+    }
+
+    .tabla_archivos thead tr {
+        display: none;
+    }
+
+    .tabla_archivos tbody tr {
+        margin: 1em 0;
+
+    }
+
+    .tabla_archivos tr {
+        background-color: #f8f8f8;
+        border-bottom: 4px solid #ccc;
     }
 
     .tabla_archivos td {
-        text-align: right;
-        display: block;
+        border: none;
         border-bottom: 1px solid #ddd;
+        position: relative;
+        padding-left: 45%;
+        text-align: right;
     }
 
-    .tabla_archivos td[data-titulo]::before {
-        content: attr(data-titulo);
+    .tabla_archivos tr td:last-child {
+        border-bottom: 1px double #dddddd;
+    }
+
+    .tabla_archivos tr:last-child td:last-child {
+        border: none;
+    }
+
+    .tabla_archivos td:before {
+        position: absolute;
+       /* top: 6px;*/
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
         font-weight: bold;
-        float: left;
     }
 
-    .adjuntar_Archivo {
-        width: 100%;
-
+    td:nth-of-type(1):before {
+        content: "Nombre";
     }
 
-    .adjuntar_Archivo label {
-        margin-bottom: 14px;
+    td:nth-of-type(2):before {
+        content: "Expedido por";
     }
 
-    .etiqueta_archivos {
-        font-size: .9em;
-
+    td:nth-of-type(3):before {
+        content: "Archivo";
     }
-
-    #campos_archivo {
-        font-size: 14px;
-    }
-
-    .tabla_archivos {
-        box-shadow: none;
-    }
-
 }
 
-@media screen and (max-width:520px) {
-
-
-    .adjuntar_Archivo {
-        width: 100%;
-        max-width: 220px;
-        height: auto;
-    }
-
-    .adjuntar_Archivo label {
-        margin-bottom: 14px;
-    }
-
-    .etiqueta_archivos {
-        font-size: 1em;
-
-    }
-
-    #campos_archivo {
-        font-size: 14px;
-    }
-
-    .tabla_archivos {
-        box-shadow: none;
-    }
-
-}
-
-@media screen and (max-width:400px) {
+@media screen and (max-width:320px) {
 
     .lista_archivos {
         height: 100%;
@@ -236,9 +212,9 @@
     .divbtn_agrega_archivo {
         width: 160px;
         height: 50px;
-         margin-bottom: 0; 
+        margin-bottom: 0;
         display: flex;
-        align-items: center; 
+        align-items: center;
         margin-top: 10px;
         padding-top: 20px;
         padding: 0;
@@ -253,52 +229,6 @@
         margin-top: 10px;
     }
 
-    .tabla_archivos th,
-    .tabla_archivos td {
-        text-align: center;
-    }
-    .tabla_archivos td {
-        letter-spacing: 1px;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
-
-    .tabla_archivos {
-        max-width: 100%;
-        overflow: auto;
-        font-size: 1em;
-        padding: 0;
-    }
-
-    .tabla_archivos thead {
-        display: none;
-    }
-
-    .tabla_archivos tr {
-        margin-bottom: 8px;
-        border: 2px solid #6c757d82;
-        display: block;
-        background-color: #f8f8f8
-    }
-
-    .tabla_archivos td,
-    .tabla_archivos th {
-        letter-spacing: 0;
-        font-size: 14px;
-    }
-
-    .tabla_archivos td {
-        display: flex;
-        flex-direction: column;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .tabla_archivos td[data-titulo]::before {
-        display: flex;
-        flex-direction: column;
-    }
-
     .adjuntar_Archivo {
         width: 100%;
 
@@ -310,6 +240,12 @@
 
     #campos_archivo {
         font-size: 14px;
+    }
+    .tabla_archivos td:before{
+        font-size: 12px;
+    }
+    .tabla_archivos td{
+        font-size: 12px;
     }
 
 }

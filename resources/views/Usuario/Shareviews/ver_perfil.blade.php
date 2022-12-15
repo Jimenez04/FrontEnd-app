@@ -44,7 +44,7 @@
                 <div class="contenedorbtn_solicitudes">
 
                     <div class="divbtnPerfil">
-                        <input class="botonesperfil" value="Editar perfil" type="button">
+                        <input class="botonesperfil" value="Editar perfil" type="button" onclick="location.href='/editar_perfil'">
 
                 </div>
                     <div class="divbtnPerfil">

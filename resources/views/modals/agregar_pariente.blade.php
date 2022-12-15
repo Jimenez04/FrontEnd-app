@@ -71,7 +71,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="datos_modals" id="container-tipo-pariente" style="display: none">
+                            <div class="datos_modals2" id="container-tipo-pariente" style="display: none">
                                 <label class="etiqueta_modals">Tipo Pariente</label>
                                 <input class="campos_modals " value="" id="input_tipo_pariente" type="text"
                                     name="input_tipo_pariente">

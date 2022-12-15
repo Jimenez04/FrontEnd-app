@@ -98,10 +98,13 @@
 
 .ucr-copyright {
     color: white;
-    font-size: 12px;
     padding-top: 22px;
-    font-family: 'Montserrat';
     height: 60px;
+}
+
+.ucr-copyright span {
+    font-family: 'Montserrat';
+    font-size: 12px;
 }
 
 /*Responsive*/
@@ -166,8 +169,7 @@
     .Contenedor-informacion {
         width: 100%;
         height: 100px;
-        margin-top: 10px;
-        margin-bottom: 0px;
+        margin-bottom: 0;
         padding-left: 40px;
     }
 
@@ -178,20 +180,27 @@
     }
 
     .row2 {
-        font-size: 14px;
+        font-size: 12px;
 
     }
-    .row2 .telefono{
+
+    .row2 label {
         padding-left: 40px;
     }
+
     .ucr-copyright {
         margin: 0 auto;
         width: 100%;
-        font-size: 14px;
         padding-top: 20px;
-        padding-left: 44px;
         height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
+    .ucr-copyright span {
+        font-size: 12px;
+        padding-left: 50px;
     }
 }
 
@@ -201,6 +210,7 @@
         height: auto;
         margin: 0;
     }
+
     .Contenedor-centro {
         width: 100%;
         height: 300px;
@@ -212,25 +222,34 @@
 
     }
 
-   
+
     .Contenedor-informacion {
         width: 100%;
         height: 100px;
         margin-top: 10px;
         margin-bottom: 0px;
-        padding-left: 20px;
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .row2 .telefono{
-        padding-left: 20px;
+    .row2 label {
+        padding-left: 10px;
     }
+
+    .row2 span {
+        padding-left: 10px;
+        font-size: 13px;
+    }
+
     .ucr-copyright {
         margin: 0 auto;
         width: 260px;
-        font-size: 14px;
-        padding-top: 20px;
-        padding-left: 10px;
-        height: 80px;
+    }
 
+    .ucr-copyright span {
+        font-size: 12px;
+        padding-left: 20px;
     }
 }

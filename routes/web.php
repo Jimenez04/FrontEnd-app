@@ -46,8 +46,6 @@ Route::post('/new-password',[ResetPasswordController::class,'NuevaPasswordApi'])
 //--------------------------------Pantallas Principales---------------------------------------
 
 Route::get('/principal-est',[Student_MainFunctions_Controller::class,'principalEst'])->name('Student')->middleware('verificartoken');
-Route::get('/home',[InicioSesionController::class,'mi_usuario'])->name('Home')->middleware('verificartoken');
-
 Route::get('/principal_admi',[Admin_Funciones_Controller::class,'principalAdmi'])->name('Admin')->middleware('verificartoken');;
 //todo bien
 //--------------------------------CRUD PERSONA ---------------------------------------

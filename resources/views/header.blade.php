@@ -10,6 +10,8 @@
         <div class="opciones_inicio" id="logueado_menu">
             @if (!session('login'))
                 <nav class="contenedoropciones">
+                    <li><a class="user_logueado" href="{{route('index')}}">Home
+                        <i class="fa fa-home"></i></a></li>
                     <li>
                         <a id="registro" href="/registrarse">Registrarse</a>
                     </li>
@@ -20,8 +22,13 @@
 
             @if (session('login'))
                 <nav class="contenedoropciones">
-                    <li><a class="user_logueado" href="/home">Home
+                    @if (session('roleuser') == 2)
+                    <li><a class="user_logueado" href="{{route('Student')}}">Home
+                     <i class="fa fa-home"></i></a></li>
+                     @elseif (session('roleuser') == 1)
+                    <li><a class="user_logueado" href="{{route('Admin')}}">Home
                         <i class="fa fa-home"></i></a></li>
+                     @endif
 
                     <li><a class="user_logueado" id="usuario">{{ session('name') }}</a>
                         <ul class="submenu_User" id="submenu">

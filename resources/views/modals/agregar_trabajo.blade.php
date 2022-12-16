@@ -35,10 +35,10 @@
                              </div>
                              <div class="botones_modal">
 
-                                 <a style="cursor: pointer;" class="botonCerrarModal" id="cerrar_modal_trabajo"
+                                 <a style="cursor: pointer; color:white" class="botonCerrarModal" id="cerrar_modal_trabajo"
                                      onclick="closeModal(this)">Regresar
                                  </a>
-                                 <a style="cursor: pointer;" class="botonCerrarModal" id="btn_delete_job"
+                                 <a style="cursor: pointer; color:white" class="botonCerrarModal" id="btn_delete_job"
                                      onclick="delete_job(this)">Eliminar
                                  </a>
                                  <input class="botonagregatrabajo" id="btn_add_job"  type="submit" value="Agregar">

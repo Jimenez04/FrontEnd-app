@@ -82,7 +82,7 @@
                             </div>
                              <div class="botones_modal">
 
-                                 <a style="cursor: pointer;" class="botonCerrarModal" id="cerrar_modal_pariente"
+                                 <a style="cursor: pointer;color:white" class="botonCerrarModal" id="cerrar_modal_pariente"
                                      onclick="closeModal(this)">Regresar
                                  </a>
 

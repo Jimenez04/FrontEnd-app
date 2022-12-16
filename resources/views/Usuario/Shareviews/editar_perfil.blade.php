@@ -64,6 +64,7 @@
                                 <input type="text" name="fechaNacimiento"
                                     value="{{ $resultado['persona']['fecha_Nacimiento'] }}" required>
                             </div>
+                            
 
                         </div>
                         <div class="datos_contacto">

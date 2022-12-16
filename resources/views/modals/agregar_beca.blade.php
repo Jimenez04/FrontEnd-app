@@ -121,7 +121,7 @@
                     </div>
                     <div class="botones_modal">
 
-                        <a style="cursor: pointer;" class="botonCerrarModal" id="cerrar_modal_beca"
+                        <a style="cursor: pointer; color:white" class="botonCerrarModal" id="cerrar_modal_beca"
                             onclick="closeModal(this)">Regresar
                         </a>
                         <input class="botonagregatrabajo" id="btn_beca" type="submit" value="Agregar">

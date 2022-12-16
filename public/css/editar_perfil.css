@@ -31,7 +31,7 @@
     border-radius: 10px;
     max-width: 1000px;
     width: 100%;
-    margin: 0 100px;
+    margin: 0 auto;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -41,12 +41,12 @@
         rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-.contenedor_editar_perfil .titulo_user {
+.Contenedor_editar_perfil .titulo_user {
 
     margin-bottom: 20px;
 }
 
-.contenedor_editar_perfil .titulo_user h3 {
+.Contenedor_editar_perfil .titulo_user h3 {
 
     margin-bottom: 4px;
     font-family: 'Poppins', sans-serif;
@@ -56,13 +56,13 @@
     text-align: center;
 }
 
-.contenedor_editar_perfil .datos_usuario {
+.Contenedor_editar_perfil .datos_usuario {
     display: flex;
     align-items: center;
 }
 
-.contenedor_editar_perfil .datos_personales,
-.contenedor_editar_perfil .datos_contacto {
+.Contenedor_editar_perfil .datos_personales,
+.Contenedor_editar_perfil .datos_contacto {
     max-width: 800px;
     display: flex;
     flex-direction: row;
@@ -72,7 +72,7 @@
     margin-top: 20px;
 }
 
-.contenedor_editar_perfil .container_datosperfil {
+.Contenedor_editar_perfil .container_datosperfil {
     display: flex;
     height: 84px;
     flex-wrap: wrap;
@@ -87,7 +87,7 @@
 }
 
 
-.contenedor_editar_perfil .container_datosperfil label {
+.Contenedor_editar_perfil .container_datosperfil label {
     margin-bottom: 6px;
     font-family: 'Poppins';
     font-size: calc(.92em + .2vmin);
@@ -96,7 +96,7 @@
     width: 100%;
 }
 
-.contenedor_editar_perfil .container_datosperfil input {
+.Contenedor_editar_perfil .container_datosperfil input {
     height: 38px;
     font-size: calc(0.88em + .2vmin);
     width: 250px;
@@ -161,19 +161,19 @@
 
     }
 
-    .contenedor_editar_perfil .titulo_user {
+    .Contenedor_editar_perfil .titulo_user {
 
         margin-bottom: 4px;
     }
 
-    .contenedor_editar_perfil .titulo_user h3 {
+    .Contenedor_editar_perfil .titulo_user h3 {
         padding-top: 10px;
         font-size: calc(1.4em + .2vmin);
 
     }
 
-    .contenedor_editar_perfil .datos_personales,
-    .contenedor_editar_perfil .datos_contacto {
+    .Contenedor_editar_perfil .datos_personales,
+    .Contenedor_editar_perfil .datos_contacto {
         max-width: 600px;
         border: unset;
         margin-top: 20px;
@@ -181,7 +181,7 @@
         padding-bottom: 20px;
     }
 
-    .contenedor_editar_perfil .container_datosperfil {
+    .Contenedor_editar_perfil .container_datosperfil {
         flex-direction: row;
         margin-right: 0;
         padding-left: 10px;
@@ -221,35 +221,35 @@
         padding: 100px 36px 100px 36px;
     }
 
-    .contenedor_editar_perfil .datos_usuario {
+    .Contenedor_editar_perfil .datos_usuario {
         border: unset;
     }
 
-    .contenedor_editar_perfil .titulo_user {
+    .Contenedor_editar_perfil .titulo_user {
 
         margin-bottom: 4px;
     }
 
-    .contenedor_editar_perfil .titulo_user h3 {
+    .Contenedor_editar_perfil .titulo_user h3 {
         padding-top: 10px;
         font-size: calc(1.4em + .2vmin);
 
     }
 
-    .contenedor_editar_perfil .datos_personales,
-    .contenedor_editar_perfil .datos_contacto {
+    .Contenedor_editar_perfil .datos_personales,
+    .Contenedor_editar_perfil .datos_contacto {
         max-width: 400px;
         padding-left: 20px;
         border: unset;
 
     }
 
-    .contenedor_editar_perfil .datos_contacto {
+    .Contenedor_editar_perfill .datos_contacto {
         margin-top: 4px;
         height: 400px;
     }
 
-    .contenedor_editar_perfil .container_datosperfil {
+    .Contenedor_editar_perfil .container_datosperfil {
         flex-direction: row;
         margin-right: 0;
         padding-left: 10px;
@@ -257,13 +257,13 @@
         margin-bottom: 12px;
 
     }
-    .contenedor_editar_perfil .datos_contacto .container_datosperfil label {
+    .Contenedor_editar_perfil .datos_contacto .container_datosperfil label {
         margin-bottom: 1px;
         padding-bottom: 4px;
         padding-top: 0;
     }
     
-    .contenedor_editar_perfil .container_datosperfil input {
+    .Contenedor_editar_perfil .container_datosperfil input {
         height: 38px;
         font-size: calc(0.88em + .2vmin);
         width: 250px;
@@ -299,23 +299,23 @@
         padding: 100px 10px 100px 10px;
     }
 
-    .contenedor_editar_perfil .datos_usuario {
+    .Contenedor_editar_perfil .datos_usuario {
         border: unset;
     }
 
-    .contenedor_editar_perfil .titulo_user {
+    .Contenedor_editar_perfil .titulo_user {
 
         margin-bottom: 4px;
     }
 
-    .contenedor_editar_perfil .titulo_user h3 {
+    .Contenedor_editar_perfil .titulo_user h3 {
         padding-top: 10px;
         font-size: calc(1.4em + .2vmin);
 
     }
 
-    .contenedor_editar_perfil .datos_personales,
-    .contenedor_editar_perfil .datos_contacto {
+    .Contenedor_editar_perfil .datos_personales,
+    .Contenedor_editar_perfil .datos_contacto {
         max-width: 300px;
         padding-left: 20px;
         border: unset;
@@ -323,12 +323,12 @@
 
     }
 
-    .contenedor_editar_perfil .datos_contacto {
+    .Contenedor_editar_perfil .datos_contacto {
         margin-top: 4px;
         height: 400px;
     }
 
-    .contenedor_editar_perfil .container_datosperfil {
+    .Contenedor_editar_perfil .container_datosperfil {
         flex-direction: row;
         margin-right: 0;
         padding-left: 10px;
@@ -337,7 +337,7 @@
         width: 240px;
         height: 100px;
     }
-    .contenedor_editar_perfil .datos_contacto .container_datosperfil label {
+    .Contenedor_editar_perfil .datos_contacto .container_datosperfil label {
         margin-bottom: 1px;
         padding-bottom: 4px;
         padding-top: 0;
@@ -345,7 +345,7 @@
         padding-left: 0;
     }
     
-    .contenedor_editar_perfil .container_datosperfil input {
+    .Contenedor_editar_perfil .container_datosperfil input {
 
         font-size: calc(0.84em + .2vmin);
         min-width: 220px;

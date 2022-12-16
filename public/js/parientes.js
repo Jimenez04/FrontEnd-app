@@ -21,9 +21,11 @@ function buscar() {
     cedula_pariente = document.getElementById('cedula_pariente').value;
     if (cedula_pariente.trim() != "" && cedula_pariente.trim() != null && cedula_pariente.trim().length > 8) {
         document.getElementById('btn_buscar').disabled = true;
+        document.getElementById('container-tipo-pariente').setAttribute('Style', 'display:none');
+        document.getElementById('btn_add_pariente').hidden = true;
         busquedaPersona(cedula_pariente);
     } else { 
-        toastr['Warning']("Ingrese una cédula valida y mayor a 8 caracteres");
+        toastr['warning']("Ingrese una cédula valida y mayor a 8 caracteres");
     }
 }
 
@@ -108,13 +110,13 @@ function agregarpersona() {
                         }
                     })
                     .catch((error) => {
-                    document.getElementById('btn_buscar').disabled = false;
-
+                        document.getElementById('btn_buscar').disabled = false;
+                        toastr['error']("Error al agregar.");
                         console.error('Error:', error);
                     });
     } else { 
         document.getElementById('btn_buscar').disabled = false;
-        toastr['error']("Verifica los campos.");
+        toastr['error']("Verifica los campos, mínimo 3 caracteres por campo.");
     }
 }
 
@@ -126,7 +128,7 @@ function leerdatospersona() {
    fecha_Nacimiento_pariente = document.getElementById('fecha_Nacimiento_pariente').value;
    sexo_id = participacion = $('input:radio[name=sexo_id]:checked').val();
    
-    return validad_datos([nombre1, apellido1, apellido2], 2); 
+    return validad_datos([nombre1, apellido1, apellido2], 3); 
 }
 
 function validad_datos(array, largo) { 
@@ -154,10 +156,10 @@ function agregarpariente() {
             toastr['success']("Pariente agregado.");
             limpiarcampos();
         } else {
-            toastr['error']("Verifica los campos.");
+            toastr['error']("El campo 'Ocupación de pariente' debe tener al menos 4 caracteres.");
          }
     } else {
-        toastr['error']("Verifica los campos.");
+        toastr['error']("El campo 'tipo de pariente' al menos debe tener 3 caracteres.");
      }
 }
 
@@ -169,7 +171,8 @@ function rellenarTablaParientes(listaParientes) {
     listaParientes.forEach(pariente => {
         var tr = document.createElement('tr');
         tr.style.cssText = 'cursor:pointer'; 
-        tr.setAttribute('onclick', 'eliminarpariente(' + pariente['persona_cedula'] + ')');
+        tr.setAttribute('onclick', 'eliminarpariente('   +  pariente['persona_cedula']   +  ')'); 
+        tr.setAttribute('title', 'Click para eliminar'); 
                 var td_tipoPariente = document.createElement('td');
                 td_tipoPariente.setAttribute('scope','col');
                 td_tipoPariente.appendChild(document.createTextNode(pariente['tipo_Pariente']));
@@ -187,7 +190,7 @@ function rellenarTablaParientes(listaParientes) {
 }
 
 function eliminarpariente(cedula) { 
-    array_parientes = array_parientes.filter(person => person.cedula != cedula);
+    array_parientes = array_parientes.filter(person => person.persona_cedula != cedula);
     rellenarTablaParientes(array_parientes);
     toastr['info']("Pariente eliminado.");
 }

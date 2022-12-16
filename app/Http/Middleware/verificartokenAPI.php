@@ -15,7 +15,7 @@ class verificartokenAPI
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next, $scope = "false")
     {
         try {
             $requesparcial = $request;
@@ -27,8 +27,13 @@ class verificartokenAPI
                     ])->get( env('API_URL') . 'validate-token');
                     $resultado = json_decode($response->getBody(), true);
                     if($resultado['success']){
-                        session(['login' => true]);
-                        return $next($requesparcial);
+                        if($resultado['scope'] == $scope || $scope == 'false'){
+                            session(['login' => true]);
+                            return $next($requesparcial);
+                        }else{
+                            toastr()->error('Oops! No posee los permisos para este recurso.');
+                            return back();
+                        }
                     }
             }
             session(['login' => false]);

@@ -33,10 +33,12 @@ class ResetPasswordController extends Controller
               if($resultado['status'] == false){
                 return Redirect::back()->withErrors(['mensaje' => $resultado['message']])->withInput();
             }
+                     toastr()->success('Revisa tu correo', 'Éxito');
               return redirect()->route('login')->with('Revisa tu correo');
           } catch (\Exception $e) {
              // return redirect()->route('login')->with('status', 'Los datos no son correctos' , $e->getMessage());
                return response()->json(['error' => $e->getMessage()]);
+               toastr()->error('Error interno');
   
           }
       }
@@ -61,8 +63,8 @@ class ResetPasswordController extends Controller
                 return Redirect::back()->withErrors($resultado['errors'])->withInput();
             }else if($resultado['status'] == false){
                 return Redirect::back()->withErrors(['error' => $resultado['error']])->withInput();
-                
             }
+            toastr()->success('Contraseña cambiada correctamente', 'Éxito');
                 if(session('roleuser') == 1) {
                     return redirect()->route('Admin');
                 } elseif (session('roleuser') == 2) {

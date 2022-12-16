@@ -16,7 +16,7 @@
 
                     <div class="divbtn_nueva_solicitud">
 
-                        <a class="boton_new_adecuacion" href="/nueva-adecuacion">Nueva Solicitud</a>
+                        <a class="boton_new_adecuacion" href="{{route('Nueva_Adecuacion')}}">Nueva Solicitud</a>
                     </div>
 
                     <div class="divtabla">
@@ -42,7 +42,7 @@
 
                     <div class="divbotonVolver">
 
-                        <a class="boton_regresar" id="Regresar" href="/principal-est">Volver</a>
+                        <a class="boton_regresar" id="Regresar" href="{{ url()->previous() }}">Volver</a>
 
                     </div>
 

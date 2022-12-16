@@ -134,6 +134,7 @@ function ventana_InfoSolicitud() {
             datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
             var campos_adecuacion = document.createElement('input');
             campos_adecuacion.setAttribute('id', 'input_RazonSolicitud');
+            campos_adecuacion.setAttribute('title','Mínimo 10 caracteres');
             campos_adecuacion.setAttribute('value', array_DatosSolicitud != null ?  array_DatosSolicitud['razon_Solicitud'] : "");
             campos_adecuacion.type = "text"
             campos_adecuacion.classList.add('campos_adecuacion');
@@ -149,6 +150,7 @@ function ventana_InfoSolicitud() {
             var campos_adecuacion = document.createElement('input');
             campos_adecuacion.type = "text"
             campos_adecuacion.setAttribute('id','input_CarreraEmpadronada');
+            campos_adecuacion.setAttribute('title','Mínimo 4 caracteres');
             campos_adecuacion.setAttribute('value', array_DatosSolicitud != null ?  array_DatosSolicitud['carrera_Empadronada'] : "");
             campos_adecuacion.classList.add('campos_adecuacion');
             datos_adecuacion.append(campos_adecuacion); 
@@ -163,7 +165,8 @@ function ventana_InfoSolicitud() {
             var campos_adecuacion = document.createElement('input');
             campos_adecuacion.type = "date"
             campos_adecuacion.setAttribute('id','input_AnoIngresoCarreraEmpadronada');
-            campos_adecuacion.setAttribute('value', array_DatosSolicitud != null ?  array_DatosSolicitud['ano_ingreso_carrera'] : "");
+            campos_adecuacion.setAttribute('title','Ingresa el año de ingreso a esta carrera');
+            campos_adecuacion.setAttribute('value', array_DatosSolicitud != null ?  array_DatosSolicitud['ano_ingreso_carrera'] : "2010-01-01");
             campos_adecuacion.classList.add('campos_adecuacion');
             datos_adecuacion.append(campos_adecuacion); 
         contenido_nueva_adecuacion.append(datos_adecuacion); 
@@ -175,9 +178,12 @@ function ventana_InfoSolicitud() {
             etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
             datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
             var campos_adecuacion = document.createElement('input');
-            campos_adecuacion.setAttribute('value', array_DatosSolicitud != null ?  array_DatosSolicitud['nivel_carrera'] : "");
-            campos_adecuacion.type = "text"
+            campos_adecuacion.setAttribute('value', array_DatosSolicitud != null ?  array_DatosSolicitud['nivel_carrera'] : "1");
+            campos_adecuacion.type = "number"
             campos_adecuacion.setAttribute('id','input_Niveldecarrera');
+            campos_adecuacion.setAttribute('title','Ingresa tu nivel de carrera');
+            campos_adecuacion.setAttribute('min','1');
+            campos_adecuacion.setAttribute('max','100');
             campos_adecuacion.classList.add('campos_adecuacion');
             datos_adecuacion.append(campos_adecuacion); 
         contenido_nueva_adecuacion.append(datos_adecuacion); 
@@ -232,6 +238,7 @@ function ventana_InfoSolicitud() {
                 Segunda_carrera.append(etiqueta_solicitud_adecuacion);
                     var campos_adecuacion = document.createElement('input');
                     campos_adecuacion.setAttribute('id', "input_NombreSegundaCarrera");
+                    campos_adecuacion.setAttribute('title','Mínimo 4 caracteres');
                     campos_adecuacion.setAttribute('value',array_DatosSolicitud != null ?  array_DatosSolicitud.hasOwnProperty('nombre_segunda_carrera') ?  array_DatosSolicitud['nombre_segunda_carrera'] : '' : '');
                     campos_adecuacion.type = "text"
                     campos_adecuacion.classList.add('campos_adecuacion');
@@ -291,6 +298,7 @@ function ventana_InfoSolicitud() {
                 Traslado_carrera.append(etiqueta_solicitud_adecuacion);
                 var campos_adecuacion = document.createElement('input');
                 campos_adecuacion.type = "text"
+                campos_adecuacion.setAttribute('title','Mínimo 5 caracteres');
                 campos_adecuacion.setAttribute('id', 'input_carrera_anterior');
                 campos_adecuacion.setAttribute('value',array_DatosSolicitud != null ?  array_DatosSolicitud.hasOwnProperty('carrera_empadronado_anterior') ?  array_DatosSolicitud['carrera_empadronado_anterior'] : '' : '');
                 campos_adecuacion.classList.add('campos_adecuacion');
@@ -329,6 +337,7 @@ function ventana_InstitucionProcedencia() {
      var campos_adecuacion = document.createElement('input');
      campos_adecuacion.type = "text"
      campos_adecuacion.setAttribute('id','input_InstitucionProcedencia');
+     campos_adecuacion.setAttribute('title','Mínimo 6 caracteres');
      campos_adecuacion.setAttribute('value',array_DatosAcademicos != null ? array_DatosAcademicos['nombre'] : "");
      campos_adecuacion.classList.add('campos_adecuacion');
      datos_adecuacion.append(campos_adecuacion); 
@@ -346,7 +355,8 @@ function ventana_InstitucionProcedencia() {
      var campos_adecuacion = document.createElement('input');
      campos_adecuacion.type = "date"
         campos_adecuacion.setAttribute('id', 'input_Año_Egreso');
-        campos_adecuacion.setAttribute('value',array_DatosAcademicos != null ? array_DatosAcademicos['ano_egreso'] : "");
+        campos_adecuacion.setAttribute('value',array_DatosAcademicos != null ? array_DatosAcademicos['ano_egreso'] : "2010-01-01");
+        campos_adecuacion.setAttribute('title','Ingresa la fecha de egreso de la institución');
      campos_adecuacion.classList.add('campos_adecuacion');
      datos_adecuacion.append(campos_adecuacion); 
  contenido_nueva_adecuacion.append(datos_adecuacion); 
@@ -363,7 +373,8 @@ function ventana_InstitucionProcedencia() {
      var campos_adecuacion = document.createElement('input');
      campos_adecuacion.type = "date"
     campos_adecuacion.setAttribute('id', 'input_Año_ingreso_Universidad');
-    campos_adecuacion.setAttribute('value', array_DatosAcademicos != null ? array_DatosAcademicos['ano_ingreso_universidad'] : "");
+    campos_adecuacion.setAttribute('title','Ingresa la fecha de ingreso a la universidad');
+    campos_adecuacion.setAttribute('value', array_DatosAcademicos != null ? array_DatosAcademicos['ano_ingreso_universidad'] : "2010-01-01");
      campos_adecuacion.classList.add('campos_adecuacion');
      datos_adecuacion.append(campos_adecuacion); 
  contenido_nueva_adecuacion.append(datos_adecuacion); 
@@ -397,6 +408,7 @@ function ventana_necesidad_Apoyo() {
      var campos_adecuacion = document.createElement('input');
      campos_adecuacion.type = "text"
      campos_adecuacion.setAttribute('id','input_Diagnostico');
+     campos_adecuacion.setAttribute('title','Mínimo 6 caracteres');
      campos_adecuacion.setAttribute('value', array_AtencionSeguimiento != null ? array_AtencionSeguimiento['diagnostico'] : '');
      campos_adecuacion.classList.add('campos_adecuacion');
      datos_adecuacion.append(campos_adecuacion); 
@@ -414,6 +426,7 @@ function ventana_necesidad_Apoyo() {
      var campos_adecuacion = document.createElement('input');
      campos_adecuacion.type = "text"
      campos_adecuacion.setAttribute('id','input_ProfesionalDiagnostica');
+     campos_adecuacion.setAttribute('title','Mínimo 6 caracteres');
       campos_adecuacion.setAttribute('value', array_AtencionSeguimiento != null ? array_AtencionSeguimiento['area_Profesional'] : '');
      campos_adecuacion.classList.add('campos_adecuacion');
      datos_adecuacion.append(campos_adecuacion); 
@@ -479,6 +492,7 @@ function ventana_necesidad_Apoyo() {
                         var campos_adecuacion = document.createElement('textarea');
                         campos_adecuacion.type = "text"
                         campos_adecuacion.classList.add('campos_text_area');
+                        campos_adecuacion.setAttribute('title','Mínimo 6 caracteres');
                         campos_adecuacion.setAttribute('id','descripcion_atencion_input');
                         campos_adecuacion.textContent = array_AtencionSeguimiento != null ? array_AtencionSeguimiento['atencionyseguimiento'] : '';
                         campos_adecuacion.setAttribute('rows','4');
@@ -550,6 +564,7 @@ contenido_nueva_adecuacion.append(titulocontenedor);
                       campos_adecuacion.type = "text"
                       campos_adecuacion.classList.add('campos_enfermedad');
                       campos_adecuacion.setAttribute('id','input_Cual_enfermedad');
+                      campos_adecuacion.setAttribute('title','Mínimo 6 caracteres');
                       campos_adecuacion.setAttribute('value', array_Salud != null ? array_Salud['enfermedad'] : '');
                   Segunda_carrera.append(campos_adecuacion);
                     datos_adecuacion.append(Segunda_carrera);
@@ -565,6 +580,7 @@ contenido_nueva_adecuacion.append(titulocontenedor);
                         var campos_adecuacion = document.createElement('input');
                         campos_adecuacion.type = "text"
                         campos_adecuacion.classList.add('campos_enfermedad');
+                        campos_adecuacion.setAttribute('title','Mínimo 6 caracteres');
                         campos_adecuacion.setAttribute('id','input_Tratamiento_enfermedad');
                         campos_adecuacion.setAttribute('value', array_Salud != null ? array_Salud['tratamiento'] : '');
                     Segunda_carrera.append(campos_adecuacion);
@@ -643,6 +659,8 @@ datos_adecuacion.append(tabla);
             discapacidad_grupo.append(etiqueta_solicitud_adecuacion);
             var campos_adecuacion = document.createElement('textarea');
             campos_adecuacion.type = "text"
+            campos_adecuacion.setAttribute('title','Mínimo 10 caracteres');
+            campos_adecuacion.placeholder = "En caso de no ser necesario, solo indique: “Mi familia no presenta discapacidades”";
             campos_adecuacion.classList.add('campos_text_area');
             campos_adecuacion.setAttribute('id','discapacidad_grupo');
             campos_adecuacion.textContent = array_grupoFamiliar != null ? array_grupoFamiliar['descripcion_De_Discapacidades'] : '';
@@ -693,6 +711,7 @@ function ventana_Archivos() {
         var campos_adecuacion = document.createElement('input');
         campos_adecuacion.type = "text"
         campos_adecuacion.setAttribute('id','input_ExpedidoPor');
+        campos_adecuacion.setAttribute('title','Mínimo 4 caracteres');
         campos_adecuacion.classList.add('campos_adecuacion');
         datos_adecuacion.append(campos_adecuacion); 
     //btn
@@ -760,7 +779,7 @@ async function agregararchivo() {
                     document.getElementById('input_ExpedidoPor').value = '';
                     return;
                 } else { 
-                    toastr['error']("El campo 'expedido por' es requerido.'");
+                    toastr['error']("El campo 'expedido por' es requerido, mínimo 4 caracteres.'");
                     return;
                 }
             } else { 
@@ -793,7 +812,8 @@ function rellenarTablaArchivos(listaarchhivos) {  //array_archivos
     listaarchhivos.forEach(archivo => {
     var tr = document.createElement('tr');
     tr.style.cssText = 'cursor:pointer'; 
-    tr.setAttribute('onclick', 'eliminarArchivo(' + "'" + archivo['nombre'] + "'" + ')');
+        tr.setAttribute('onclick', 'eliminarArchivo(' + "'" + archivo['nombre'] + "'" + ')');
+        tr.setAttribute('title', 'Click para eliminar'); 
             var td_tipoPariente = document.createElement('td');
             td_tipoPariente.setAttribute('scope','col');
             td_tipoPariente.appendChild(document.createTextNode(archivo['nombre']));
@@ -823,6 +843,7 @@ function finalizar() {
     }
     toastr['success']('Ya casi estas listo');
     document.getElementById('Siguiente').hidden = true;
+    document.getElementById('btn_atras').hidden = true;
     data = {
         carnet: carnet,
         solicitud: array_DatosSolicitud,
@@ -854,11 +875,13 @@ function finalizar() {
             } else {
                 toastr['info']("Ya posee una solicitud en curso");
                 document.getElementById('Siguiente').hidden = false;
+                document.getElementById('btn_atras').hidden = false;
             }
         })
         .catch((error) => {
             toastr['error']("Error interno");
             document.getElementById('Siguiente').hidden = false;
+            document.getElementById('btn_atras').hidden = false;
         });
 }
 

@@ -33,8 +33,10 @@ Route::get('/logoutApi', [InicioSesionController::class,'logout'])->name('logout
 
 //--------------------------------Registro---------------------------------------
 
-Route::get('/registrarse',[RegistroController::class,'registro'])->name('registrarse')->middleware('verificarsesionLogin');;
-Route::post('/registroApi', [RegistroController::class,'registroApi'])->name('registro')->middleware('verificarsesionLogin');
+Route::get('/registrarse',[RegistroController::class,'registro'])->name('registrarse')->middleware('verificarsesionLogin');
+Route::post('/registroApi', [RegistroController::class,'registroApi'])->name('registro');
+
+Route::get('admin/usuario/registrar',[RegistroController::class,'registro'])->name('registrar_admin')->middleware('verificartoken:Administrador');
 
 //--------------------------------Olvido Contraseña---------------------------------------
 Route::get('/recuperar',[ResetPasswordController::class,'olvidocontrasena'])->name('recuperarcontra')->middleware('verificarsesionLogin');//muestra la vista
@@ -60,7 +62,7 @@ Route::post('/agrega_trabajo',[Persona_CRUD_Controller::class,'AgregaTrabajo'])-
 Route::get('/mi_perfil',[ViewsUserCRUD_Controller::class,'perfil_usuario'])->name('perfil_usuario')->middleware('verificartoken'); //funciona
 Route::get('/mi_perfil2',[ViewsUserCRUD_Controller::class,'muestraejemplo']);
 Route::get('/editar_perfil',[ViewsUserCRUD_Controller::class,'editar_perfil']);
-Route::get('/lista',[ViewsUserCRUD_Controller::class,'listar_usuarios']);
+Route::get('usuarios/lista',[ViewsUserCRUD_Controller::class,'listar_usuarios'])->name('lista_usuarios')->middleware('verificartoken:Administrador');;
 
 
 

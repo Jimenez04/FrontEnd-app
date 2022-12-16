@@ -72,7 +72,7 @@ class InicioSesionController extends Controller
                 session(['roleuser' => $resultado['user']['role_id']]);
                 session(['name' => $resultado['user']['email']]);
                 session(['cedula' => $resultado['user']['persona']['cedula']]);
-                toastr()->success('Inicio exitoso', 'Éxito');
+                toastr()->success($resultado['user']['persona']['nombre1']. ' ' .$resultado['user']['persona']['apellido1'] , 'Un placer que estes aquí,');
                 if ($userRole == 1) {
                     return redirect()->route('Admin');
                 } elseif ($userRole == 2) {
@@ -94,7 +94,7 @@ class InicioSesionController extends Controller
         ])->get( env('API_URL') . 'usuario/salir');
         $resultado = json_decode($response->getBody(), true);
         session()->flush();
-        toastr()->success('Cerraste sesión', 'Éxito');
+        toastr()->success('Cerraste sesión', 'Adiós');
         return redirect()->route('login');
        } catch (\Throwable $th) {
         return back();

@@ -62,9 +62,8 @@ class ViewsUserCRUD_Controller extends Controller
     {
         $client = new \GuzzleHttp\Client();
 
-
         $response = $client->get(
-            env('API_URL') . 'persona',
+            env('API_URL') . 'admin/persona/estudiante',
             [
                 //manda el token de login en el header
 
@@ -79,13 +78,11 @@ class ViewsUserCRUD_Controller extends Controller
         $listado_usuarios = json_decode($response->getBody(), true);
 
         $listado_usuarios  = $listado_usuarios['data'];
-   
 
-        //  dd($listado_usuarios);
+        // dd($listado_usuarios);
 
         //    return view('Usuario.Admin.lista_usuarios')->with('listado_usuarios', $listado_usuarios);
         return view('Usuario.Admin.lista_usuarios', ['listado_usuarios' => collect($listado_usuarios)->paginate(6)]);
-       
     }
 
 

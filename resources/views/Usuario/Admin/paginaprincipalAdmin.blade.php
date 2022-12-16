@@ -75,7 +75,7 @@
 
 
                     <div class="Card">
-                        <a class="AdecuacionAdmi" href="">
+                        <a class="AdecuacionAdmi" href="{{route('lista_usuarios')}}">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
 

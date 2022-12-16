@@ -146,8 +146,8 @@ function agregarpariente() {
     var input_tipo_pariente = document.getElementById('input_tipo_pariente').value;
     var input_ocupacion_pariente = document.getElementById('input_ocupacion_pariente').value;
     var estado = validad_datos([input_tipo_pariente], 2);
-    if (estado) {
-        if (validad_datos([input_ocupacion_pariente], 4)) {
+    if (estado && input_tipo_pariente.length < 20 ) {
+        if (validad_datos([input_ocupacion_pariente], 4) && input_ocupacion_pariente.length < 50) {
             array_parientes.push({ tipo_Pariente: input_tipo_pariente, ocupacion: input_ocupacion_pariente, persona_cedula: cedula_pariente });
             rellenarTablaParientes(array_parientes);
             document.getElementById('container-tipo-pariente').setAttribute('Style', 'display:none');
@@ -156,10 +156,10 @@ function agregarpariente() {
             toastr['success']("Pariente agregado.");
             limpiarcampos();
         } else {
-            toastr['error']("El campo 'Ocupación de pariente' debe tener al menos 4 caracteres.");
+            toastr['error']("El campo 'Ocupación de pariente' debe tener al menos 4 caracteres y menos de 50.");
          }
     } else {
-        toastr['error']("El campo 'tipo de pariente' al menos debe tener 3 caracteres.");
+        toastr['error']("El campo 'tipo de pariente' al menos debe tener 3 caracteres y menos de 20.");
      }
 }
 

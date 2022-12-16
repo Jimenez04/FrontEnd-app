@@ -119,7 +119,7 @@ async function agregarBeca() {
             .then((response) => response.json())
             .then((data) => {
                 if (data.status) {
-                    alert("Actualizado o creado correctamente.");
+                    toastr['success'](method == "POST"? "Creado correctamente" : "Actualizado correctamente." );
                     $('#modal_beca').fadeOut();
                 } else {
                     alert("Error");
@@ -129,7 +129,7 @@ async function agregarBeca() {
                 console.error('Error:', error);
             });
     } else { 
-        alert("Verifique los campos");
+        toastr['error']("Verifique los campos");
     }
 }
 

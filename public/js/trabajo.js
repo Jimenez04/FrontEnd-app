@@ -50,7 +50,7 @@ function delete_job() {
             .then((response) => response.json())
             .then((data) => {
                 if (data) {
-                    alert("Trabajo eliminado.");
+                    toastr['success']("Trabajo eliminado");
                     document.getElementById("id_trabajo").value = "";
                     document.getElementById("actividad_Que_Desempena").value = "";
                     document.getElementById("lugar_De_Trabajo").value = "";
@@ -58,13 +58,14 @@ function delete_job() {
                     $('#modal_trabajo').fadeOut();
                 } else {
                     alert("Error");
+                    toastr['error']("Error interno" );
                 }
             })
             .catch((error) => {
                 console.error('Error:', error);
             });
     } else {
-        alert("No tiene ningún trabajo");
+        toastr['info']("No tiene ningún trabajo");
      }
 }
 
@@ -101,10 +102,10 @@ var data = "";
                             .then((response) => response.json())
                             .then((data) => {
                                 if (data.status) {
-                                    alert("Actualizado o creado correctamente.");
+                                    toastr['success'](method == "POST"? "Creado correctamente" : "Actualizado correctamente." );
                                     $('#modal_trabajo').fadeOut();
                                 } else { 
-                                    alert("Error");
+                                    toastr['error']("Error interno" );
                                 }
                             })
                             .catch((error) => {

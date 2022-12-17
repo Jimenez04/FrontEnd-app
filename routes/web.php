@@ -60,7 +60,6 @@ Route::post('/agrega_trabajo',[Persona_CRUD_Controller::class,'AgregaTrabajo'])-
 //vistas CRUD del usuario
 //--------------------------------VISTAS COMPARTIDAS---------------------------------------
 Route::get('/mi_perfil',[ViewsUserCRUD_Controller::class,'perfil_usuario'])->name('perfil_usuario')->middleware('verificartoken'); //funciona
-Route::get('/mi_perfil2',[ViewsUserCRUD_Controller::class,'muestraejemplo']);
 Route::get('/editar_perfil',[ViewsUserCRUD_Controller::class,'editar_perfil']);
 Route::get('usuarios/lista',[ViewsUserCRUD_Controller::class,'listar_usuarios'])->name('lista_usuarios')->middleware('verificartoken:Administrador');;
 
@@ -69,26 +68,6 @@ Route::get('usuarios/lista',[ViewsUserCRUD_Controller::class,'listar_usuarios'])
 //--------------------------------SOLICITUD ADECUACIÓN---------------------------------------
 Route::get('/solicitud-adecuacion',[Solicitud_Adecuacion_Views_Controller::class,'viewAdecuacion'])->name('Adecuacion')->middleware('verificartoken');
 Route::get('/nueva-adecuacion',[Solicitud_Adecuacion_Views_Controller::class,'viewNuevaAdecuacion'])->name('Nueva_Adecuacion')->middleware('verificartoken');
-
-//--------------------------------NECESIDAD Y APOYO ---------------------------------------
-Route::get('/necesidad-apoyo',[Solicitud_Adecuacion_Views_Controller::class,'viewNecesidad'])->name('Necesidad');
-Route::post('/add_necesidad-apoyo',[Solicitud_Adecuacion_Views_Controller::class,'AddNecesidad'])->name('Add_Necesidad');
-
-//--------------------------------INSTITUCIÓN ---------------------------------------
-Route::get('/institucion',[Solicitud_Adecuacion_Views_Controller::class,'viewInstitucion'])->name('Institucion');
-Route::post('/add_institucion',[Solicitud_Adecuacion_Views_Controller::class,'AddInstitucion'])->name('Agrega_Institucion');
-
-
-
-//--------------------------------BECA ---------------------------------------
-Route::get('/beca',[Solicitud_Adecuacion_Views_Controller::class,'viewBeca'])->name('Beca');
-
-//--------------------------------GRUPO FAMILIAR ---------------------------------------
-Route::get('/grupo-familiar',[Solicitud_Adecuacion_Views_Controller::class,'viewGrupoFamiliar'])->name('GrupoFamiliar');
-
-//--------------------------------ARCHIVOS ---------------------------------------
-Route::get('/archivos',[Solicitud_Adecuacion_Views_Controller::class,'viewArchivos'])->name('Archivos');
-Route::get('/agregar-archivos',[Solicitud_Adecuacion_Views_Controller::class,'viewAddArchivos'])->name('Nuevo_Archivo');
 
 //--------------------------------FIN SOLICITUDE DE ADECUACIÓN ---------------------------------------
 

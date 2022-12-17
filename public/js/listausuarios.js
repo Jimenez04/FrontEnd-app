@@ -118,6 +118,5 @@ function limpiarmodal(){
 }
 
 function ir_usuario(user_carnet) { 
-    console.log(user_carnet);
-    toastr['error']("En construcción");
+    window.location.href = route('ver_usuario',user_carnet);
 }

@@ -54,6 +54,7 @@ class Solicitud_Adecuacion_Views_Controller extends Controller
      }
 
      public function viewAdecuacionEspecifica_admin($id){
+        return dd('hey');
         return view('Vistas_Solicitud_Adecuacion.nueva_adecuacion');
      }
 

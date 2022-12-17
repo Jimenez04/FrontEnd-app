@@ -50,8 +50,8 @@ Route::post('/new-password',[ResetPasswordController::class,'NuevaPasswordApi'])
 Route::get('/principal-est',[Student_MainFunctions_Controller::class,'principalEst'])->name('Student')->middleware('verificartoken:Estudiante');
 Route::get('/principal_admi',[Admin_Funciones_Controller::class,'principalAdmi'])->name('Admin')->middleware('verificartoken:Administrador');;
 //todo bien
-//--------------------------------CRUD PERSONA ---------------------------------------
-
+//--------------------------------Administrador->Usuarios ---------------------------------------
+Route::get('admin/usuario/{carnet}',[Admin_Funciones_Controller::class,'ver_usuario'])->name('ver_usuario')->middleware('verificartoken:Administrador');
 
 
 

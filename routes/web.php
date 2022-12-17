@@ -52,6 +52,16 @@ Route::get('/principal_admi',[Admin_Funciones_Controller::class,'principalAdmi']
 //todo bien
 //--------------------------------CRUD PERSONA ---------------------------------------
 
+
+
+
+
+
+
+
+
+
+
 //--------------------------------TRABAJO ---------------------------------------  
 Route::get('/trabajo',[Persona_CRUD_Controller::class,'viewTrabajo'])->name('Trabajo');
 Route::get('/obtener_trabajo',[Persona_CRUD_Controller::class,'getTrabajo'])->name('get_Trabajo');
@@ -66,8 +76,13 @@ Route::get('usuarios/lista',[ViewsUserCRUD_Controller::class,'listar_usuarios'])
 
 
 //--------------------------------SOLICITUD ADECUACIÓN---------------------------------------
-Route::get('/solicitud-adecuacion',[Solicitud_Adecuacion_Views_Controller::class,'viewAdecuacion'])->name('Adecuacion')->middleware('verificartoken');
+Route::get('/solicitud-adecuacion',[Solicitud_Adecuacion_Views_Controller::class,'viewAdecuacion'])->name('Adecuacion')->middleware('verificartoken:Estudiante');
 Route::get('/nueva-adecuacion',[Solicitud_Adecuacion_Views_Controller::class,'viewNuevaAdecuacion'])->name('Nueva_Adecuacion')->middleware('verificartoken');
+
+//user
+Route::get('/user/adecuacion/{id}',[Solicitud_Adecuacion_Views_Controller::class,'viewAdecuacionEspecifica_user'])->name('verAdecuacion_user')->middleware('verificartoken');
+//admin
+Route::get('/admin/adecuacion/{id}',[Solicitud_Adecuacion_Views_Controller::class,'viewAdecuacionEspecifica_admin'])->name('verAdecuacion_admin')->middleware('verificartoken');
 
 //--------------------------------FIN SOLICITUDE DE ADECUACIÓN ---------------------------------------
 

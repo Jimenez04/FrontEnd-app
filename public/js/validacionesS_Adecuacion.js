@@ -51,7 +51,7 @@ function validarcampos_DatosSolicitud() {
                     delete datos.nombre_segunda_carrera;
                 }
                 array_DatosSolicitud = datos;
-                    return true;
+                return true;
             } else { 
                 toastr['error']("Revisa tu nivel de carrera actual, debe ser un número entre 1 y 100");
             }
@@ -65,6 +65,8 @@ function validarcampos_DatosSolicitud() {
 }
  
 function validarCampos_DatosAcademicos() { 
+   // return true;
+
     var nombre = document.getElementById('input_InstitucionProcedencia').value;
     var ano_egreso = document.getElementById('input_Año_Egreso').value;
     var ano_ingreso_universidad = document.getElementById('input_Año_ingreso_Universidad').value;
@@ -94,6 +96,7 @@ function validarCampos_DatosAcademicos() {
 }
 
 function validarCampos_Necesidad_Y_Apoyo() { 
+    // return true;
     var diagnostico = document.getElementById('input_Diagnostico').value;
     var area_Profesional = document.getElementById('input_ProfesionalDiagnostica').value;
     var recibe_atencionyseguimiento = $('input:radio[name=seleccion_atencion]:checked').val();
@@ -130,11 +133,16 @@ function validarCampos_Necesidad_Y_Apoyo() {
         }
     } else { 
         array_AtencionSeguimiento = null;
-        return validarCampos_Salud();
+        toastr['error']("Es obligatorio agregar una necesidad y apoyo");
+        array_Salud = null;
+        return false
+        // array_AtencionSeguimiento = null;
+        // return validarCampos_Salud();
     }
 }
 
 function validarCampos_Salud() { 
+   // return true;
 var afectacionDesempeno = $('input:radio[name=seleccion_enfermedad]:checked').val();
 var enfermedad = document.getElementById('input_Cual_enfermedad').value;
     var tratamiento = document.getElementById('input_Tratamiento_enfermedad').value;
@@ -168,6 +176,7 @@ var enfermedad = document.getElementById('input_Cual_enfermedad').value;
 }
 
 function validarCampos_GrupoFamiliar() { 
+   // return true;
     var descripcion_De_Discapacidades = document.getElementById('discapacidad_grupo').value;
     if (array_parientes.length > 0) {
         var estado = validad_datos_mensaje([descripcion_De_Discapacidades], 10, "Descripción de discapacidades de grupo familiar");

@@ -30,6 +30,35 @@ class Solicitud_Adecuacion_Views_Controller extends Controller
      {
          return view('Vistas_Solicitud_Adecuacion.nueva_adecuacion');
      }
+    
+     public function viewAdecuacionEspecifica_user($id){
+        try {
+            $response = Http::withHeaders([
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . session('token'),
+            ])->get( env('API_URL') . 'user/persona/estudiante/adecuacion/'.$id, [
+            ]);
+            $resultado = json_decode($response->getBody(), true);
+            if($resultado['status']){
+                $resultado = $resultado['data'];
+                return dd($resultado);
+                return view('Vistas_Solicitud_Adecuacion.verAdecuacion_user', compact('resultado'));
+            }else{
+                toastr()->error("La solicitud no existe");
+                return redirect()->back();
+            }
+        } catch (\Throwable $e) {
+            return redirect()->back();
+        }
+     }
+
+     public function viewAdecuacionEspecifica_admin($id){
+        return view('Vistas_Solicitud_Adecuacion.nueva_adecuacion');
+     }
+
+
+////////////////////////////////////////////
      //VISTA NECESIDAD
      public function viewNecesidad()
      {

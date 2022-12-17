@@ -170,9 +170,6 @@ function rellenarTablaParientes(listaParientes) {
         }
     listaParientes.forEach(pariente => {
         var tr = document.createElement('tr');
-        tr.style.cssText = 'cursor:pointer'; 
-        tr.setAttribute('onclick', 'eliminarpariente('   +  pariente['persona_cedula']   +  ')'); 
-        tr.setAttribute('title', 'Click para eliminar'); 
                 var td_tipoPariente = document.createElement('td');
                 td_tipoPariente.setAttribute('scope','col');
                 td_tipoPariente.appendChild(document.createTextNode(pariente['tipo_Pariente']));
@@ -185,6 +182,16 @@ function rellenarTablaParientes(listaParientes) {
                 td_cedulaPariente.setAttribute('scope','col');
                 td_cedulaPariente.appendChild(document.createTextNode(pariente['persona_cedula']));
             tr.append(td_cedulaPariente);
+            var accion = document.createElement('a');
+                accion.setAttribute('onclick', 'eliminarpariente('   +  pariente['persona_cedula']   +  ')'); 
+                accion.setAttribute('title', 'Click para eliminar');
+                accion.classList.add('btn_eliminar');
+                accion.textContent = 'Eliminar';
+                accion.style.cssText = 'cursor:pointer';  
+            var td_accion = document.createElement('td');
+                td_accion.setAttribute('scope','col');
+                td_accion.appendChild(accion);
+            tr.append(td_accion);
     tbody.append(tr);
     });
 }

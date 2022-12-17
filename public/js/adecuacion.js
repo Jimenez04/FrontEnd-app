@@ -14,6 +14,7 @@ var estadoventana;
 function siguiente() { 
     contador++;
     estadoventana = true;
+    verificarterminos();
     accion_btn_atras();
     accion_btn_siguiente();
     cambio_Ventanas(); 
@@ -42,6 +43,7 @@ function atras() {
     if (contador > 1) {
         contador--;
     }
+    verificarterminos();
     estadoventana = false;
     accion_btn_atras();
     accion_btn_siguiente();
@@ -59,6 +61,15 @@ async function removerhijos() {
         }
 }
 
+function verificarterminos() { 
+    if (!terminosycondiciones) { 
+        toastr['error']('Ops! error interno');
+        sleep(2000).then(() => {
+            window.location.href = route('Adecuacion');
+        })
+    }
+}
+
 document.addEventListener("DOMContentLoaded", async function(){
     cambio_Ventanas();
 });
@@ -69,18 +80,23 @@ function cambio_Ventanas() {
         switch (contador) {
             case 1:
                 ventana_InfoSolicitud();
+                document.getElementById('progreso').style.width = '0%';
                 break;
             case 2:
                 ventana_InstitucionProcedencia();
+                document.getElementById('progreso').style.width = '20%';
                 break;
             case 3:
                 ventana_necesidad_Apoyo();
+                document.getElementById('progreso').style.width = '40%';
                 break;
             case 4:
                 ventana_GrupoFamiliar();
+                document.getElementById('progreso').style.width = '60%';
                 break;
             case 5:
-                ventana_Archivos()
+                ventana_Archivos();
+                document.getElementById('progreso').style.width = '80%';
                 break;
             default:
                 break;
@@ -565,7 +581,7 @@ contenido_nueva_adecuacion.append(titulocontenedor);
                       campos_adecuacion.classList.add('campos_enfermedad');
                       campos_adecuacion.setAttribute('id','input_Cual_enfermedad');
                       campos_adecuacion.setAttribute('title','Mínimo 6 caracteres');
-                      campos_adecuacion.setAttribute('value', array_Salud != null ? array_Salud['enfermedad'] : '');
+                      campos_adecuacion.setAttribute('value', array_Salud != null && array_Salud.hasOwnProperty('enfermedad')  ? array_Salud['enfermedad'] : '');
                   Segunda_carrera.append(campos_adecuacion);
                     datos_adecuacion.append(Segunda_carrera);
                 contenido_nueva_adecuacion.append(datos_adecuacion); 
@@ -582,7 +598,7 @@ contenido_nueva_adecuacion.append(titulocontenedor);
                         campos_adecuacion.classList.add('campos_enfermedad');
                         campos_adecuacion.setAttribute('title','Mínimo 6 caracteres');
                         campos_adecuacion.setAttribute('id','input_Tratamiento_enfermedad');
-                        campos_adecuacion.setAttribute('value', array_Salud != null ? array_Salud['tratamiento'] : '');
+                        campos_adecuacion.setAttribute('value', array_Salud != null && array_Salud.hasOwnProperty('tratamiento') ? array_Salud['tratamiento'] : '');
                     Segunda_carrera.append(campos_adecuacion);
                 datos_adecuacion.append(Segunda_carrera);
                 contenido_nueva_adecuacion.append(datos_adecuacion); 
@@ -642,6 +658,10 @@ function ventana_GrupoFamiliar() {
                                 th_Cedula.setAttribute('scope','col');
                                 th_Cedula.appendChild(document.createTextNode('Cedula'))
                             tr.append(th_Cedula)
+                                var th_Archivo = document.createElement('th');                            
+                                th_Archivo.setAttribute('scope','col');
+                                th_Archivo.appendChild(document.createTextNode('Acciones'));
+                            tr.append(th_Archivo);
                     thead.append(tr);
             table.append(thead);
             var tbody = document.createElement('tbody');
@@ -741,8 +761,12 @@ function ventana_Archivos() {
                             tr.append(th_Expedido);
                                 var th_Archivo = document.createElement('th');                            
                                 th_Archivo.setAttribute('scope','col');
-                                th_Archivo.appendChild(document.createTextNode('Archivo'))
-                            tr.append(th_Archivo)
+                                th_Archivo.appendChild(document.createTextNode('Archivo'));
+                            tr.append(th_Archivo);
+                                var th_Archivo = document.createElement('th');                            
+                                th_Archivo.setAttribute('scope','col');
+                                th_Archivo.appendChild(document.createTextNode('Acciones'));
+                            tr.append(th_Archivo);
                     thead.append(tr);
             table.append(thead);
             
@@ -775,6 +799,7 @@ async function agregararchivo() {
                     var my_pdf_file_as_base64 = await promise;
                     array_archivos.push({ expedidoPor: input_ExpedidoPor, nombre: removeExtension(file['name']), archivo64: my_pdf_file_as_base64.split(',')[1]});
                         rellenarTablaArchivos(array_archivos);
+                        document.getElementById('progreso').style.width = '100%';
                     eventoArchivo.value = '';
                     document.getElementById('input_ExpedidoPor').value = '';
                     return;
@@ -811,9 +836,6 @@ function rellenarTablaArchivos(listaarchhivos) {  //array_archivos
     }
     listaarchhivos.forEach(archivo => {
     var tr = document.createElement('tr');
-    tr.style.cssText = 'cursor:pointer'; 
-        tr.setAttribute('onclick', 'eliminarArchivo(' + "'" + archivo['nombre'] + "'" + ')');
-        tr.setAttribute('title', 'Click para eliminar'); 
             var td_tipoPariente = document.createElement('td');
             td_tipoPariente.setAttribute('scope','col');
             td_tipoPariente.appendChild(document.createTextNode(archivo['nombre']));
@@ -826,6 +848,18 @@ function rellenarTablaArchivos(listaarchhivos) {  //array_archivos
             td_cedulaPariente.setAttribute('scope','col');
             td_cedulaPariente.appendChild(document.createTextNode(".pdf"));
         tr.append(td_cedulaPariente);
+         //
+                var accion = document.createElement('a');
+                accion.setAttribute('onclick', 'eliminarArchivo(' + "'" + archivo['nombre'] + "'" + ')');
+                accion.setAttribute('title', 'Click para eliminar'); 
+                accion.textContent = 'Eliminar';
+                accion.classList.add('btn_eliminar');
+                accion.style.cssText = 'cursor:pointer';  
+            var td_accion = document.createElement('td');
+            td_accion.setAttribute('scope','col');
+            td_accion.appendChild(accion);
+        tr.append(td_accion);
+     //
 tbody.append(tr);
 });
 }
@@ -834,6 +868,9 @@ function eliminarArchivo(nombre) {
     array_archivos = array_archivos.filter(archivo => archivo.nombre != nombre);
     rellenarTablaArchivos(array_archivos);
     toastr['info']("Archivo eliminado.");
+    if (array_archivos.length < 1) { 
+        document.getElementById('progreso').style.width = '80%';
+    }
 }
 
 function finalizar() { 

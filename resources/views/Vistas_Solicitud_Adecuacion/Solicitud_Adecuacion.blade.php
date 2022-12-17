@@ -30,7 +30,7 @@
                             </thead>
                             <tbody>
                                 @foreach ( $datos as  $item)
-                                <tr style="cursor:pointer " onclick="window.location='/{{$item['id']}}';" >
+                                <tr style="cursor:pointer " onclick="window.location= '{{route('verAdecuacion_user', $item['id']) }}' " >
                                         <td data-label="N° Solicitud"scope="row"> {{ $item['numero_solicitud']}} </th>
                                         <td data-label="Estado">{{$item['estado']}}</td>
                                         <td data-label="Fecha">{{$item['fecha']}}</td>

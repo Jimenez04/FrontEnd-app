@@ -1,0 +1,142 @@
+.Principal_Informacion_Adecuacion {
+    min-height: 100vh;
+    background-color: #ECECEC;
+    margin: 0 auto;
+    padding: 100px;
+}
+
+.container_Informacion_Adecuacion {
+    background-color: white;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 80px;
+    margin-bottom: 20vh;
+    height: 80vh;
+    max-height: 1400px;
+    max-height: 1000px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 20px 20px 40px 20px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.informacion_solicitud {
+    font-family: 'Poppins', sans-serif;
+}
+
+.informacion_solicitud h3 {
+    text-align: center;
+    padding-top: 4px;
+    padding-bottom: 20px;
+    font-family: 'EB Garamond', sans-serif;
+}
+.container_informacion_solicitud{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+}
+
+.informacion_adecuacion {
+    height: auto;
+    display: flex;
+    flex-direction: column
+}
+
+.informacion_adecuacion p {
+    word-spacing: 0.2em;
+    font-size: calc(1.1em + 0.2vmin);
+}
+
+.detalle_solicitud {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.detalle_solicitud label {
+    font-size: calc(1.1em + 0.2vmin);
+    width: 200px;
+    word-spacing: 0.2em;
+}
+
+
+
+@media screen and (max-width:800px) {
+    .Principal_Informacion_Adecuacion {
+        padding: 100px 20px;
+    }
+
+    .container_Informacion_Adecuacion {
+        max-width: 500px;
+        border: none;
+    }
+    .informacion_adecuacion p {
+        word-spacing: 0.16em;
+        font-size: calc(1em + 0.2vmin);
+    }
+    .informacion_solicitud h2 {
+        padding-top: 4px;
+        padding-bottom: 20px;
+    }
+
+    .detalle_solicitud {
+        height: 60px;
+        width: auto;
+        gap: 6px;
+
+    }
+
+    .detalle_solicitud label {
+        word-spacing: 0.16em;
+        font-size: calc(1em + 0.2vmin);
+    }
+
+    .detalle_solicitud input {
+        font-size: calc(0.90em + 0.2vmin);
+        padding-left: 4px;
+    }
+}
+
+@media screen and (max-width:520px) {
+    .Principal_Informacion_Adecuacion {
+        padding: 100px 0;
+    }
+
+    .container_Informacion_Adecuacion {
+        max-width: 100%;
+    }
+
+    .informacion_solicitud h2 {
+        padding-top: 4px;
+        padding-bottom: 20px;
+    }
+
+    .detalle_solicitud {
+        height: 60px;
+        width: auto;
+        gap: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .detalle_solicitud label {
+        font-size: calc(0.88em+ 0.2vmin);
+        width: 250px;
+    }
+
+    .detalle_solicitud input {
+        font-size: calc(0.86em + 0.2vmin);
+        padding-left: 4px;
+        height: 30px;
+        width: 100%;
+        max-width: 300px;
+    }
+}

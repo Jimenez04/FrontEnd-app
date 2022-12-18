@@ -35,9 +35,8 @@
     <link rel="stylesheet" href="{{ asset('css/lista.css') }}">
     <link rel="stylesheet" href="{{ asset('css/solicitud_adecuacion.css') }}">
     <link rel="stylesheet" href="{{ asset('css/nueva_adecuacion.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/necesidad_apoyo.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/informacion_solicitud.css') }}">
     <link rel="stylesheet" href="{{ asset('css/botones.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/institucion_procedencia.css') }}">
     <link rel="stylesheet" href="{{ asset('css/trabajo.css') }}">
     <link rel="stylesheet" href="{{ asset('css/beca.css') }}">
     <link rel="stylesheet" href="{{ asset('css/grupo_familiar.css') }}">

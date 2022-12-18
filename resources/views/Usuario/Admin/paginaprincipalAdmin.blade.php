@@ -21,7 +21,7 @@
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
 
-                                    <img height="56px" src="{{ URL::asset('/img/apunte.png') }}">
+                                    <img height="56px" src="{{ URL::asset('/img/hand_handshake.png') }}">
 
                                 </div>
                                 <div class="contenedortext">
@@ -40,7 +40,7 @@
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
 
-                                    <img height="56px" src="{{ URL::asset('/img/documentos.png') }}">
+                                    <img height="56px" src="{{ URL::asset('/img/books.png') }}">
 
                                 </div>
                                 <div class="contenedortext">

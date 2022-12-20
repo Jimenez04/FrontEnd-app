@@ -69,7 +69,7 @@
                         <button type="button" class="botones_est" id="beca_modal" onclick="openModal_Beca(this)">Añadir
                             Beca</button>
 
-                        <button type="button" onclick="(this)" class="botones_est"
+                        <button type="button" onclick="openModal_Contacto(this)" class="botones_est"
                         id="trabajo_modal">Añadir
                         Teléfono</button>
 
@@ -84,15 +84,15 @@
             </div>
             <input type="hidden" name="" id="url" value="{{env('API_URL')}}">
             <input type="hidden" name="" id="token" value="{{session('token')}}">
-            <input type="hidden" name="" id="cedula" value="{{session('cedula')}}">
+            <input type="hidden" name="cedula" id="cedula" value="{{session('cedula')}}">
             <input type="hidden" name="" id="carnet" value="{{session('carnet')}}">
         @endif
 
         @include('modals.agregar_trabajo')
         @include('modals.agregar_beca')
-        {{-- @include('modals.contacto') --}}
+        @include('modals.contacto')
     </div>
 
+    <script src="{{ asset('js/modal_Contacto.js') }}"></script>
 @endsection
 
-{{-- <script src="{{ asset('js/addContacto.js') }}"></script> --}}

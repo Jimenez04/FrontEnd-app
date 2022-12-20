@@ -190,14 +190,14 @@ function ventana_InfoSolicitud() {
         var datos_adecuacion = document.createElement('div');
         datos_adecuacion.classList.add('datos_adecuacion');
             var etiqueta_solicitud_adecuacion = document.createElement('label');
-            etiqueta_solicitud_adecuacion.textContent = "Nivel de carrera";
+            etiqueta_solicitud_adecuacion.textContent = "Procentaje de carrera actual";
             etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
             datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
             var campos_adecuacion = document.createElement('input');
             campos_adecuacion.setAttribute('value', array_DatosSolicitud != null ?  array_DatosSolicitud['nivel_carrera'] : "1");
             campos_adecuacion.type = "number"
             campos_adecuacion.setAttribute('id','input_Niveldecarrera');
-            campos_adecuacion.setAttribute('title','Ingresa tu nivel de carrera');
+            campos_adecuacion.setAttribute('title','Procentaje de carrera actual');
             campos_adecuacion.setAttribute('min','1');
             campos_adecuacion.setAttribute('max','100');
             campos_adecuacion.classList.add('campos_adecuacion');
@@ -409,7 +409,7 @@ function ventana_necesidad_Apoyo() {
     contenido_nueva_adecuacion.classList.add('contenido_nueva_adecuacion');
  //Titulo//////////////////////////////////////////////////////////////////////////////////
  var titulocontenedor = document.createElement('h3');
- titulocontenedor.textContent = "Necesidad Y Apoyo";
+ titulocontenedor.textContent = "Necesidad y Apoyo";
  contenido_nueva_adecuacion.append(titulocontenedor); 
  ////////////////////////////////////////////////////////////////////////////////////
  // Dianostico/////////////////////////////////////////////////////////////////////////
@@ -792,7 +792,7 @@ async function agregararchivo() {
     eventoArchivo = document.getElementById('archivo_input');
     for (let file of eventoArchivo.files) {
         var ext = file['name'].split('.').pop();
-            if (file instanceof File && (ext == 'pdf' || ext == 'PDF')) {
+            if (file instanceof File && (ext == 'pdf' || ext == 'PDF') && file.size > 10000) {
                 var input_ExpedidoPor = document.getElementById('input_ExpedidoPor').value;
                 if (validad_datos([input_ExpedidoPor], 4) && input_ExpedidoPor.length < 100 && isNaN(input_ExpedidoPor)) {
                     var promise = getBase64(file);
@@ -808,7 +808,7 @@ async function agregararchivo() {
                     return;
                 }
             } else { 
-                toastr['error']("Debes agregar un archico de tipo PDF.'");
+                toastr['error']("Debes agregar un archivo de tipo PDF menor a 10MB.'");
                 return;
             }     
     }

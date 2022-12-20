@@ -68,6 +68,11 @@
 
                         <button type="button" class="botones_est" id="beca_modal" onclick="openModal_Beca(this)">Añadir
                             Beca</button>
+
+                        <button type="button" onclick="(this)" class="botones_est"
+                        id="trabajo_modal">Añadir
+                        Teléfono</button>
+
                         <button type="button" onclick="openModal_Trabajo(this)" class="botones_est"
                             id="trabajo_modal">Añadir
                             Trabajo</button>
@@ -85,6 +90,9 @@
 
         @include('modals.agregar_trabajo')
         @include('modals.agregar_beca')
+        {{-- @include('modals.contacto') --}}
     </div>
 
 @endsection
+
+{{-- <script src="{{ asset('js/addContacto.js') }}"></script> --}}

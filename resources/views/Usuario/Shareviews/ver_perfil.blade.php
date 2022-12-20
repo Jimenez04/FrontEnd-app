@@ -1,3 +1,6 @@
+<?php
+    use Carbon\Carbon;
+?>   
 @extends('plantilla')
 @section('title', 'Perfil')
 @section('content')
@@ -57,9 +60,9 @@
 
                         <div class="container_datosperfil">
 
-                            <label for="sexo">sexo</label>
+                            <label for="sexo">Sexo</label>
                             <br>
-                            <input type="text" name="sexo" value="{{ $resultado['persona']['sexo_id'] }}" readonly>
+                            <input type="text" name="sexo" value="{{ $resultado['persona']['sexo_id'] == 1 ? "Masculino" : "Femenino"}}" readonly>
                         </div>
 
 
@@ -68,14 +71,15 @@
                             <label for="fechaNacimiento">Fecha de nacimiento</label>
                             <br>
                             <input type="text" name="fechaNacimiento"
-                                value="{{ $resultado['persona']['fecha_Nacimiento'] }}" readonly>
+                            value="{{ Carbon::parse($resultado['persona']['fecha_Nacimiento'])->format('d-m-Y');}}" readonly>
                         </div>
 
                         <div class="container_datosperfil">
 
                             <label for="fechaNacimiento">Edad actual</label>
                             <br>
-                            <input type="text" name="fechaNacimiento" value="{{ $resultado['persona']['fecha_Nacimiento'] }}"
+                            <input type="text" name="fechaNacimiento"
+                            value="{{$edad = Carbon::parse($resultado['persona']['fecha_Nacimiento'])->age;  }}"
                                 readonly>
                         </div>
 
@@ -83,7 +87,9 @@
 
                             <label for="creacion_de_cuenta">Cuenta creada el: </label>
                             <br>
-                            <input type="text" name="fechaNacimiento" value="{{ $resultado['persona']['created_at'] }}"
+                            <input type="text" name="fechaNacimiento" 
+                            value="{{Carbon::parse($resultado['persona']['created_at'])->format('d-m-Y');}}"
+
                                 readonly>
                         </div>
                     </div>
@@ -96,7 +102,7 @@
 
                         <div class="container_datosperfil">
 
-                            <label for="email">Correo</label>
+                            <label for="email">Correo Principal</label>
                             <br>
                             <input type="email" name="correo" readonly
                                 value="{{ $resultado['persona']['email'][0]['email'] }}">
@@ -106,11 +112,19 @@
 
                         <div class="container_datosperfil">
 
-                            <label for="telefono">Teléfono</label>
+                            <label for="telefono">Teléfono/s</label>
                             <br>
-                            <input type="tel" name="Telefono"
-                                value="{{ array_key_exists('numero', $resultado['persona']['contacto']) ? $resultado['persona']['contacto']['numero'] : 'No contiene' }}"
+                            @if ($resultado['persona']['contacto'] == null)
+                                <input type="tel" name="Telefono"
+                                value="No aplica"
                                 readonly>
+                            @endif
+                            @foreach ( $resultado['persona']['contacto'] as $item )
+                                <input type="tel" name="Telefono"
+                                value="{{ $item['numero']}}"
+                                readonly>
+                            @endforeach
+                           
                         </div>
 
                     </div>

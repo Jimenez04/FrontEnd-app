@@ -19,32 +19,32 @@
 
                     <div class="alertas">
                         @if (session('status'))
-                            {{ session('status') }}
+                        {{ session('status') }}
+                    @endif
+                    <div>
+                        @if ($errors != null)
+                                   {{$errors->first('email')}}
+                                   <br>
+                                   {{$errors->first('password')}}
                         @endif
-                        <div>
-                            @if ($errors != null)
-                                {{ $errors->first('email') }}
-                                {{ $errors->first('password') }}
-                            @endif
-
-                            @if ($mensaje != null)
-                                {{ $mensaje }}
-                            @endif
-                        </div>
+                    </div>
 
                     </div>
 
                     <div class="containerCorreo">
 
                         <input type="email" name="email" id="email" placeholder="Correo Institucional"
-                            value="{{ old('email') }}" title="Digita tu correo" required>
-
+                            value="{{ old('email') }}" title="Digita tu correo" 
+                            required
+                            >
+                          
 
                     </div>
 
                     <div class="containerPassword">
-                        <input type="password" id="password" name="password" placeholder="Contraseña"
-                            title="La constraseña es requerida" required>
+                        <input type="password" id="password" name="password" placeholder="Contraseña" title="La constraseña es requerida" 
+                        required
+                        >
                         <!--required-->
 
                     </div>

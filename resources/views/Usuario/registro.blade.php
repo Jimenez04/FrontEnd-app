@@ -15,7 +15,17 @@
 
                     <div class="mensajes">
                         @if (session('errors'))
-                            {{ session('errors') }}
+                            - {{$errors->first('cedula')}}
+                            - {{$errors->first('cedula')}}
+                            - {{$errors->first('cedula')}}
+                            - {{$errors->first('cedula')}}
+                            - {{$errors->first('cedula')}}
+                            - {{$errors->first('cedula')}}
+                            - {{$errors->first('cedula')}}
+                            - {{$errors->first('cedula')}}
+                            - {{$errors->first('cedula')}}
+                            <br>
+                           
                         @endif
                     </div>
                   
@@ -25,7 +35,7 @@
                         <div class="Cedula-Carnet">
                             <div class="Cedula">
                                 <label>Cedula</label>
-                                <input class="campos" type="text" name="cedula" value="{{ old('cedula') }}" title="Digite su cédula, 9 caracteres mínimo"required>
+                                <input class="campos" type="text" name="cedula" value="{{ old('cedula') }}" title="Digite su cédula, 9 caracteres mínimo">
                                 
                             </div>
                             <div class="Carnet">

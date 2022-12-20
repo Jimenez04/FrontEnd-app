@@ -41,7 +41,7 @@ class Solicitud_Adecuacion_Views_Controller extends Controller
             $resultado = json_decode($response->getBody(), true);
             if ($resultado['status']) {
                 $resultado = $resultado['data'];
-                // return dd($resultado);
+                //  return dd($resultado);
                 return view('Vistas_Solicitud_Adecuacion.verAdecuacion_user', compact('resultado'));
             } else {
                 toastr()->error("La solicitud no existe");

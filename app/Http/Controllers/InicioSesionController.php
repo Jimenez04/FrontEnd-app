@@ -37,11 +37,15 @@ class InicioSesionController extends Controller
                     'password_' => $password,
                 ]);
             $resultado = json_decode($response->getBody(), true);
-
-            if (array_key_exists("errors", $resultado) || array_key_exists("error", $resultado)) {
-                return redirect()->route('login', ['mensaje' => "Email o contraseña invalidos"])->withInput();
+            
+            if(array_key_exists("errors", $resultado) || array_key_exists("error", $resultado)){
+                toastr()->error( 'Email o contraseña invalidos' );
+                 return redirect()->route('login', ['mensaje' => "Email o contraseña invalidos"])->withInput();
             }
-            if (!$resultado['status'] && array_key_exists("message", $resultado)) {
+            if(!$resultado['status'] && array_key_exists("message", $resultado)){
+                foreach ($resultado['message'] as $item) {
+                    toastr()->error( $item, "Mensaje" );
+                }
                 return redirect()->route('login', ['mensaje' => $resultado['message']])->withInput();
             }
 

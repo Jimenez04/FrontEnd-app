@@ -2,7 +2,6 @@
 
 @section('title', 'Inicio Sesión')
 
-
 @section('content')
 
 
@@ -10,7 +9,7 @@
 
         <form action="{{ route('sesion.validacion') }}" method="post" enctype="multipart/form-data">
             @csrf
-            
+
             <div class="contenedor-login">
                 <div class="container-todo">
                     <div class="Titulo">
@@ -41,7 +40,7 @@
                           
 
                     </div>
-                  
+
                     <div class="containerPassword">
                         <input type="password" id="password" name="password" placeholder="Contraseña" title="La constraseña es requerida" 
                         required
@@ -56,10 +55,10 @@
 
                     <div class="contenedor_opciones_user">
                         <div class="Registrarse">
-                            <a class="Registro" href="{{route('registrarse')}}">Registrarse</a>
+                            <a class="Registro" href="{{ route('registrarse') }}">Registrarse</a>
                         </div>
                         <div class="Recuperarcontrasena">
-                            <a class="OlvidoPassword" href="{{route('recuperarcontra')}}">Recuperar contraseña</a>
+                            <a class="OlvidoPassword" href="{{ route('recuperarcontra') }}">Recuperar contraseña</a>
                         </div>
                     </div>
 

@@ -3,7 +3,7 @@
 .cabecera_UCR {
     width: 100%;
     background-color: white;
-    position: absolute;
+    position: relative;
     top: 0px;
     height: 68px;
 
@@ -127,6 +127,7 @@
     .cabecera_UCR {
         height: 80px;
         margin: 0;
+        z-index: 1!important;
     }
 
     .contenedorHeaderUCR {

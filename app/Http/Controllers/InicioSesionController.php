@@ -14,7 +14,7 @@ class InicioSesionController extends Controller
         return redirect()->route('login');
     }
 
-   
+
     //Muestra la vista del Login
     public function login($mensaje = null)
     {
@@ -32,10 +32,10 @@ class InicioSesionController extends Controller
             $response = Http::withHeaders([
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json'
-            ])->post( env('API_URL') . 'login', [
-                'email' => $email,
-                'password_' => $password,
-            ]);
+            ])->post(env('API_URL') . 'login', [
+                    'email' => $email,
+                    'password_' => $password,
+                ]);
             $resultado = json_decode($response->getBody(), true);
             
             if(array_key_exists("errors", $resultado) || array_key_exists("error", $resultado)){
@@ -48,7 +48,7 @@ class InicioSesionController extends Controller
                 }
                 return redirect()->route('login', ['mensaje' => $resultado['message']])->withInput();
             }
-           
+
             $resultado = json_decode($response->getBody(), true);
             session(['token' => $resultado['token']]);
 
@@ -62,46 +62,46 @@ class InicioSesionController extends Controller
     }
     public function mi_usuario()
     {
-       try {
-                $response = Http::withHeaders([
-                    'Accept' => 'application/json',
-                    'Content-Type' => 'application/json',
-                    'Authorization' => 'Bearer ' . session('token'),
-                ])->get( env('API_URL') . 'obtener-usuario');
-                
-                $resultado = json_decode($response->getBody(), true);
+        try {
+            $response = Http::withHeaders([
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . session('token'),
+            ])->get(env('API_URL') . 'obtener-usuario');
 
-                //obtengo el rol del usuario logueado
-                $userRole = $resultado['user']['role_id'];
-                session(['roleuser' => $resultado['user']['role_id']]);
-                session(['name' => $resultado['user']['email']]);
-                session(['cedula' => $resultado['user']['persona']['cedula']]);
-                toastr()->success($resultado['user']['persona']['nombre1']. ' ' .$resultado['user']['persona']['apellido1'] , 'Un placer que estes aquí,');
-                if ($userRole == 1) {
-                    return redirect()->route('Admin');
-                } elseif ($userRole == 2) {
-                    session(['carnet' => $resultado['user']['persona']['estudiante']['carnet']]);
-                    return redirect()->route('Student');
-                }
+            $resultado = json_decode($response->getBody(), true);
+
+            //obtengo el rol del usuario logueado
+            $userRole = $resultado['user']['role_id'];
+            session(['roleuser' => $resultado['user']['role_id']]);
+            session(['name' => $resultado['user']['email']]);
+            session(['cedula' => $resultado['user']['persona']['cedula']]);
+            toastr()->success($resultado['user']['persona']['nombre1'] . ' ' . $resultado['user']['persona']['apellido1'], 'Un placer que estes aquí,');
+            if ($userRole == 1) {
+                return redirect()->route('Admin');
+            } elseif ($userRole == 2) {
+                session(['carnet' => $resultado['user']['persona']['estudiante']['carnet']]);
+                return redirect()->route('Student');
+            }
         } catch (\Throwable $th) {
             return redirect()->route('login');
-       }
+        }
     }
 
     public function logout()
     {
-       try {
-        $response = Http::withHeaders([
-            'Accept' => 'application/json',
-            'Content-Type' => 'application/json',
-            'Authorization' => 'Bearer ' . session('token'),
-        ])->get( env('API_URL') . 'usuario/salir');
-        $resultado = json_decode($response->getBody(), true);
-        session()->flush();
-        toastr()->success('Cerraste sesión', 'Adiós');
-        return redirect()->route('login');
-       } catch (\Throwable $th) {
-        return back();
-       }
+        try {
+            $response = Http::withHeaders([
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . session('token'),
+            ])->get(env('API_URL') . 'usuario/salir');
+            $resultado = json_decode($response->getBody(), true);
+            session()->flush();
+            toastr()->success('Cerraste sesión', 'Adiós');
+            return redirect()->route('login');
+        } catch (\Throwable $th) {
+            return back();
+        }
     }
 }

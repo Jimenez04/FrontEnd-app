@@ -190,7 +190,7 @@ function ventana_InfoSolicitud() {
         var datos_adecuacion = document.createElement('div');
         datos_adecuacion.classList.add('datos_adecuacion');
             var etiqueta_solicitud_adecuacion = document.createElement('label');
-            etiqueta_solicitud_adecuacion.textContent = "Nivel de carrera";
+            etiqueta_solicitud_adecuacion.textContent = "Procentaje de carrera actual";
             etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
             datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
             var campos_adecuacion = document.createElement('input');
@@ -409,7 +409,7 @@ function ventana_necesidad_Apoyo() {
     contenido_nueva_adecuacion.classList.add('contenido_nueva_adecuacion');
  //Titulo//////////////////////////////////////////////////////////////////////////////////
  var titulocontenedor = document.createElement('h3');
- titulocontenedor.textContent = "Necesidad Y Apoyo";
+ titulocontenedor.textContent = "Necesidad y Apoyo";
  contenido_nueva_adecuacion.append(titulocontenedor); 
  ////////////////////////////////////////////////////////////////////////////////////
  // Dianostico/////////////////////////////////////////////////////////////////////////

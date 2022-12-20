@@ -122,6 +122,9 @@ function validarCampos_Necesidad_Y_Apoyo() {
                     recibe_atencionyseguimiento: recibe_atencionyseguimiento,
                     atencionyseguimiento: atencionyseguimiento,
                 });
+                if (recibe_atencionyseguimiento == 0) { 
+                    delete array_AtencionSeguimiento.atencionyseguimiento;
+                }
                     return validarCampos_Salud();
             } else { 
                 toastr['error']( !estado['estado'] ? estado['mensaje'] : "Revisa el nombre del profesional");

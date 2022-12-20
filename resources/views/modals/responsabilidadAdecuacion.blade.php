@@ -1,3 +1,11 @@
+<style>
+    #modal_consentimiento{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+</style>
 <div class="modal" id="modal_consentimiento">
 
     <div class="modal_contenido">
@@ -13,15 +21,19 @@
         <div class="modal_body">
             <div class="form">
                 <div class="modal-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium nemo autem esse blanditiis
-                    optio commodi veritatis fugit temporibus, quas laudantium rem ea, at perspiciatis molestiae,
-                    asperiores officiis? Iure, cumque facilis?
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias quisquam cupiditate delectus nulla
-                    mollitia, culpa quod, modi, suscipit exercitationem ipsam obcaecati quaerat deleniti dolor doloribus
-                    dolore voluptatum ad in! Quasi!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error id, dignissimos sed ratione quod nisi
-                    debitis voluptate quisquam veritatis dicta pariatur est tenetur quis qui porro totam! Maxime,
-                    repellat voluptatem?
+                    <p id="info_estudiante">
+                        Yo <b>{{$resultado['persona']['nombre1'] . " " . $resultado['persona']['nombre2'] . " " . $resultado['persona']['apellido1'] . " " . $resultado['persona']['apellido2']}}</b>, con cédula <b>{{ $resultado['persona']['cedula']}}</b>, estudiante actual de la Universidad de Costa Rica, sede Guanacaste y en recinto Liberia, con número de carne:  <b>{{ $resultado['persona']['estudiante']['carnet']}}</b>, declaro firmemente, que toda la documentación e información que suministrare será totalmente verídica, así mismo, doy consentimiento a que esta información sea usada y valorada por la Oficina de Orientación de este recinto.
+                    </p>
+                    
+
+                    <b>Aspectos para considerar</b> 
+                    <p>
+                        -	Todos los campos de este formulario son de carácter obligatorio.
+                        -	Se deberá aportar información verifica sobre su persona.
+                        -	Adjuntar dictamen médico.
+                        -	Adjuntar diagnostico o valoración académica.
+                    </p>
+                    
                 </div>
                 <div class="botones_modal btn btn-secondary">
                     <a style="cursor: pointer; color:white" class="botonCerrarModal"

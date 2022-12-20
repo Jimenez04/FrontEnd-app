@@ -27,7 +27,17 @@ class Solicitud_Adecuacion_Views_Controller extends Controller
     //VISTA NUEVA ADECUACION
     public function viewNuevaAdecuacion()
     {
-        return view('Vistas_Solicitud_Adecuacion.nueva_adecuacion');
+        $response = Http::withHeaders([
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json',
+            'Authorization' => 'Bearer ' . session('token'),
+        ])->get(env('API_URL') . 'obtener-usuario');
+
+        $resultado = json_decode($response->getBody(), true);
+
+        $resultado = $resultado['user'];
+
+        return view('Vistas_Solicitud_Adecuacion.nueva_adecuacion', compact('resultado'));
     }
 
     public function viewAdecuacionEspecifica_user($id)

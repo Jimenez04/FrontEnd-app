@@ -12,33 +12,38 @@
         </div>
 
         <div class="modal_body">
-
-
-            <form  action="javascript:agregarBeca(this)" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form_beca">
                     <div class="contenido_beca_modal">
 
                         <label class="etiqueta_modals">Número</label>
-                        <input class="campos_modals " value="" id="numero" type="text" name="nombre1_pariente">
+                        <input class="campos_modals " value="" id="numero" required type="tel" name="telefono">
+                        <a style="cursor: pointer; color:white" class="botonCerrarModal" id="cerrar_modal_beca"
+                        onclick="agregartelefono(this)">Agregar
+                        </a>
+<br>
+<br>
+                        <table class="tabla_grupo_familiar">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Número</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cuerpo_tabla">
 
-                        <table>
-                            
+                            </tbody>
                         </table>
-
+<br>
+<br>
                     </div>
                     <div class="botones_modal">
-
                         <a style="cursor: pointer; color:white" class="botonCerrarModal" id="cerrar_modal_beca"
                             onclick="cerrarModal_Contacto(this)">Regresar
                         </a>
-                        <input class="botonagregatrabajo" id="btn_beca" type="submit" value="Agregar">
                     </div>
                 </div>
-            </form>
-
         </div>
 
     </div>
 </div>
-<script src="{{ asset('js/beca.js') }}"></script>

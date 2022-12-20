@@ -2,7 +2,6 @@
 
 @section('title', 'Inicio Sesión')
 
-
 @section('content')
 
 
@@ -10,7 +9,7 @@
 
         <form action="{{ route('sesion.validacion') }}" method="post" enctype="multipart/form-data">
             @csrf
-            
+
             <div class="contenedor-login">
                 <div class="container-todo">
                     <div class="Titulo">
@@ -20,18 +19,18 @@
 
                     <div class="alertas">
                         @if (session('status'))
-                        {{ session('status') }}
-                    @endif
-                    <div>
-                        @if ($errors != null)
-                                   {{$errors->first('email')}}
-                                   {{$errors->first('password')}}
+                            {{ session('status') }}
                         @endif
-                       
-                        @if ($mensaje != null)
-                                  {{$mensaje}}
-                        @endif
-                    </div>
+                        <div>
+                            @if ($errors != null)
+                                {{ $errors->first('email') }}
+                                {{ $errors->first('password') }}
+                            @endif
+
+                            @if ($mensaje != null)
+                                {{ $mensaje }}
+                            @endif
+                        </div>
 
                     </div>
 
@@ -39,12 +38,13 @@
 
                         <input type="email" name="email" id="email" placeholder="Correo Institucional"
                             value="{{ old('email') }}" title="Digita tu correo" required>
-                          
+
 
                     </div>
-                  
+
                     <div class="containerPassword">
-                        <input type="password" id="password" name="password" placeholder="Contraseña" title="La constraseña es requerida" required>
+                        <input type="password" id="password" name="password" placeholder="Contraseña"
+                            title="La constraseña es requerida" required>
                         <!--required-->
 
                     </div>
@@ -55,10 +55,10 @@
 
                     <div class="contenedor_opciones_user">
                         <div class="Registrarse">
-                            <a class="Registro" href="{{route('registrarse')}}">Registrarse</a>
+                            <a class="Registro" href="{{ route('registrarse') }}">Registrarse</a>
                         </div>
                         <div class="Recuperarcontrasena">
-                            <a class="OlvidoPassword" href="{{route('recuperarcontra')}}">Recuperar contraseña</a>
+                            <a class="OlvidoPassword" href="{{ route('recuperarcontra') }}">Recuperar contraseña</a>
                         </div>
                     </div>
 

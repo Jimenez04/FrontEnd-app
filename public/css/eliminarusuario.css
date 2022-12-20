@@ -23,3 +23,9 @@ gap: 10px !important;
     padding-left: 0;
     padding-right: 0;
 }
+
+#modal_consentimiento{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}

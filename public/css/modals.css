@@ -1,3 +1,5 @@
+
+
 .modal {
     position: fixed;
     display: none;
@@ -12,7 +14,7 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     z-index: 1;
     overflow: auto;
-
+    
 }
 
 .modal_contenido {
@@ -51,7 +53,7 @@
 .modal_body h2 {
     margin-bottom: 28px;
     margin-top: 24px;
-    font-family: 'EB Garamond';
+    font-family: "EB Garamond";
     font-weight: 600;
 }
 
@@ -66,7 +68,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
 
 .contenido {
@@ -78,14 +80,13 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px
+    margin-bottom: 10px;
 }
 
 .contenido_beca_modal {
     margin-bottom: 20px;
     max-width: 400px;
 }
-
 
 /*--------------ESTILOS MODAL CONTENEDORES, LABELS Y CAMPOS DE TEXTO------------*/
 
@@ -99,7 +100,7 @@
     margin-top: 12px;
     padding-top: 10px;
     padding-left: 10px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .campos_modals {
@@ -108,10 +109,9 @@
     border-radius: 2px;
     border: 1.5px solid #0000006e;
     font-size: 16px;
-    font-family: 'Poppins';
+    font-family: "Poppins";
     text-align: center;
     margin-left: 2%;
-
 }
 .datos_modals2 {
     display: grid;
@@ -122,7 +122,7 @@
     margin-top: 12px;
     padding-top: 10px;
     padding-left: 10px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 #cierra_modal {
@@ -137,6 +137,7 @@
 
 /*--------------BOTONES MODAL------------*/
 .botones_modal {
+    /* 
     display: flex;
     margin-top: 30px;
     flex-direction: row;
@@ -144,18 +145,22 @@
     align-items: center;
     gap: 50px;
     height: 50px;
-    justify-content: space-evenly;
+    justify-content: space-evenly; */
+
+    display: grid !important;
+    align-items: center;
+    grid-template-columns: 150px 150px;
+    place-content: center;
 }
 
 .botonagregatrabajo,
 .botonCerrarModal {
-
     width: 120px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 15px;
-    background-color: #00C0F3;
+    background-color: #00c0f3;
     text-decoration: none;
-    color: #FFFFFF;
+    color: #ffffff;
     text-align: center;
     letter-spacing: 0.5px;
     cursor: pointer;
@@ -163,12 +168,21 @@
     height: 38px;
     padding: 0 16px;
     text-transform: capitalize;
-    border: 1px solid #00C0F3;
+    border: 1px solid #00c0f3;
+}
+
+#btn_consentimiento{
+    padding: 8px 20px;
+    font-size: 15px;
+    width: 120px;
+    height: 38px;
+    place-self: center;
 }
 
 .botonCerrarModal {
     padding: 8px 20px;
-    color: #FFFFFF;
+    color: #ffffff;
+    place-self: center;
 }
 
 .botonCerrarModal:hover {
@@ -184,7 +198,7 @@
     margin-top: 14px;
     padding-top: 10px;
     padding-left: 10px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     justify-content: center;
 }
 
@@ -192,12 +206,12 @@
     width: 200px;
     background-color: #fff;
     color: black;
-    transition: .3s ease;
+    transition: 0.3s ease;
     padding: 6px;
     font-size: 16px;
     border: 2px solid #ddd;
     height: 40px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .busqueda_contenedor {
@@ -217,11 +231,9 @@
 
 .busqueda_contenedor button:hover {
     background: #ccc;
-
 }
 
-@media screen and (max-width:580px) {
-
+@media screen and (max-width: 580px) {
     .modal_contenido {
         padding: 1em;
     }

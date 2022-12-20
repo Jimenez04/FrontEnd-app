@@ -8,8 +8,6 @@
     width: 100%;
     background-color: #ECECEC;
     min-height: 100vh;
-    margin-top: 20px;
-    padding: 60px 80px;
     display: flex;
     flex-direction: column;
 }

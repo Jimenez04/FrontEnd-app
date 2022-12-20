@@ -21,7 +21,7 @@
 
                     <!--Solicitud de adecuacion-->
                     <div class="Card">
-                        <a class="Adecuacion" href="{{route('Adecuacion')}}"> 
+                        <a class="Adecuacion" href="{{ route('Adecuacion') }}">
 
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
@@ -71,16 +71,16 @@
                         <button type="button" onclick="openModal_Trabajo(this)" class="botones_est"
                             id="trabajo_modal">Añadir
                             Trabajo</button>
-                            {{-- <button type="button" onclick="openModal_NuevoPariente(this);" class="botones_est"
+                        {{-- <button type="button" onclick="openModal_NuevoPariente(this);" class="botones_est"
                             id="pariente_modal">Añadir
                             Pariente</button> --}}
                     </div>
                 </div>
             </div>
-            <input type="hidden" name="" id="url" value="{{env('API_URL')}}">
-            <input type="hidden" name="" id="token" value="{{session('token')}}">
-            <input type="hidden" name="" id="cedula" value="{{session('cedula')}}">
-            <input type="hidden" name="" id="carnet" value="{{session('carnet')}}">
+            <input type="hidden" name="" id="url" value="{{ env('API_URL') }}">
+            <input type="hidden" name="" id="token" value="{{ session('token') }}">
+            <input type="hidden" name="" id="cedula" value="{{ session('cedula') }}">
+            <input type="hidden" name="" id="carnet" value="{{ session('carnet') }}">
         @endif
 
         @include('modals.agregar_trabajo')

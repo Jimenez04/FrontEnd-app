@@ -197,7 +197,7 @@ function ventana_InfoSolicitud() {
             campos_adecuacion.setAttribute('value', array_DatosSolicitud != null ?  array_DatosSolicitud['nivel_carrera'] : "1");
             campos_adecuacion.type = "number"
             campos_adecuacion.setAttribute('id','input_Niveldecarrera');
-            campos_adecuacion.setAttribute('title','Ingresa tu nivel de carrera');
+            campos_adecuacion.setAttribute('title','Procentaje de carrera actual');
             campos_adecuacion.setAttribute('min','1');
             campos_adecuacion.setAttribute('max','100');
             campos_adecuacion.classList.add('campos_adecuacion');
@@ -792,7 +792,7 @@ async function agregararchivo() {
     eventoArchivo = document.getElementById('archivo_input');
     for (let file of eventoArchivo.files) {
         var ext = file['name'].split('.').pop();
-            if (file instanceof File && (ext == 'pdf' || ext == 'PDF')) {
+            if (file instanceof File && (ext == 'pdf' || ext == 'PDF') && file.size > 10000) {
                 var input_ExpedidoPor = document.getElementById('input_ExpedidoPor').value;
                 if (validad_datos([input_ExpedidoPor], 4) && input_ExpedidoPor.length < 100 && isNaN(input_ExpedidoPor)) {
                     var promise = getBase64(file);
@@ -808,7 +808,7 @@ async function agregararchivo() {
                     return;
                 }
             } else { 
-                toastr['error']("Debes agregar un archico de tipo PDF.'");
+                toastr['error']("Debes agregar un archivo de tipo PDF menor a 10MB.'");
                 return;
             }     
     }

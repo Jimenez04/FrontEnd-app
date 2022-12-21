@@ -30,7 +30,7 @@ function validarcampos_DatosSolicitud() {
                 }
                 if (realizo_Traslado_Carrera == 1) {
                     estado = validad_datos_mensaje([carrera_empadronado_anterior], 5, "Carrera empadronada anterior");
-                        if (!estado['estado'] && !isNaN(carrera_empadronado_anterior)) {
+                        if (!estado['estado'] || !isNaN(carrera_empadronado_anterior)) {
                             toastr['error']( !estado['estado'] ? estado['mensaje'] :"Revisa tu carrera empadronada anterior");
                             return false;
                         }
@@ -109,7 +109,7 @@ function validarCampos_Necesidad_Y_Apoyo() {
             if (estado['estado'] && area_Profesional.length < 254 && isNaN(area_Profesional)) {
                 if (recibe_atencionyseguimiento == 1) {
                     estado = validad_datos_mensaje([atencionyseguimiento], 6, "Atención y Seguimiento");
-                    if (!estado['estado'] && !isNaN(atencionyseguimiento)) {
+                    if (!estado['estado'] || !isNaN(atencionyseguimiento)) {
                         toastr['error']( !estado['estado'] ? estado['mensaje'] : "Revisa el campo de 'tipo de atención y seguimiento'");
                         return false;
                     } 
@@ -153,7 +153,7 @@ var enfermedad = document.getElementById('input_Cual_enfermedad').value;
         var estado = validad_datos_mensaje([enfermedad], 6, "¿Cúal enfermedad?");
         if (estado['estado'] && enfermedad.length < 254 && isNaN(enfermedad)) {
             var estado = validad_datos_mensaje([tratamiento], 6, "Tratamiento");
-            if (estado['estado'] && isNaN(tratamiento)) {
+            if (estado['estado'] || isNaN(tratamiento)) {
                 array_Salud = ({
                     afectacionDesempeno: afectacionDesempeno,
                     enfermedad: enfermedad,

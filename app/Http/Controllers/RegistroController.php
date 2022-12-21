@@ -31,6 +31,11 @@ class RegistroController extends Controller
             ])->post( env('API_URL') . 'registrar', $request);
             $resultado = json_decode($response->getBody(), true);
             if(array_key_exists("errors", $resultado)){
+                foreach ($resultado['errors'] as $item) {
+                    foreach ($item as $error) {
+                        toastr()->error($error);
+                    }
+                }
                 return Redirect::back()->withErrors($resultado['errors'])->withInput();;
             }
             toastr()->success('Cuenta creada correctamente');

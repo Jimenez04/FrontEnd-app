@@ -7,44 +7,54 @@
 
     <div class="ContenedorInicioSesion">
 
+
+
         <form action="{{ route('sesion.validacion') }}" method="post" enctype="multipart/form-data">
             @csrf
 
-            <div class="contenedor-login">
+            <div class="contenedor-login" style="height: fit-content; padding-bottom: 15px;">
                 <div class="container-todo">
                     <div class="Titulo">
                         <h3>Sistema Web de Orientación</h3>
 
                     </div>
 
-                    <div class="alertas">
+                    {{-- <div class="alertas">
                         @if (session('status'))
-                        {{ session('status') }}
-                    @endif
-                    <div>
-                        @if ($errors != null)
-                                   {{$errors->first('email')}}
-                                   <br>
-                                   {{$errors->first('password')}}
+                            {{ session('status') }}
                         @endif
-                    </div>
+                        <div>
+                            @if ($errors != null)
+                                {{ $errors->first('email') }}
+                                <br>
+                                {{ $errors->first('password') }}
+                            @endif
+                        </div>
 
-                    </div>
+                    </div> --}}
+
+                    @if ($errors->any())
+                        <div class="alerta alert-danger alert">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
 
                     <div class="containerCorreo">
 
                         <input type="email" name="email" id="email" placeholder="Correo Institucional"
-                            value="{{ old('email') }}" title="Digita tu correo" 
-                            required
-                            >
-                          
+                            value="{{ old('email') }}" title="Digita tu correo" >
+
 
                     </div>
 
                     <div class="containerPassword">
-                        <input type="password" id="password" name="password" placeholder="Contraseña" title="La constraseña es requerida" 
-                        required
-                        >
+                        <input type="password" id="password" name="password" placeholder="Contraseña"
+                            title="La constraseña es requerida" >
                         <!--required-->
 
                     </div>

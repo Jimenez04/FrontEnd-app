@@ -6,6 +6,7 @@ use App\Http\Requests\LoginRequest;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Redirect;
 
 class InicioSesionController extends Controller
 {
@@ -37,16 +38,27 @@ class InicioSesionController extends Controller
                     'password_' => $password,
                 ]);
             $resultado = json_decode($response->getBody(), true);
-            
-            if(array_key_exists("errors", $resultado) || array_key_exists("error", $resultado)){
-                toastr()->error( 'Email o contraseña invalidos' );
-                 return redirect()->route('login', ['mensaje' => "Email o contraseña invalidos"])->withInput();
-            }
-            if(!$resultado['status'] && array_key_exists("message", $resultado)){
-                foreach ($resultado['message'] as $item) {
-                    toastr()->error( $item, "Mensaje" );
+
+            if (array_key_exists("errors", $resultado)) {
+                foreach ($resultado['errors'] as $item) {
+                    foreach ($item as $error) {
+                        toastr()->error($error);
+                    }
                 }
-                return redirect()->route('login', ['mensaje' => $resultado['message']])->withInput();
+                return Redirect::back()->withErrors($resultado['errors'])->withInput();
+
+            }
+
+            if (array_key_exists("error", $resultado)) {
+                toastr()->error('Email o contraseña invalidos');
+               
+                return Redirect::back()->withErrors($resultado['error'])->withInput();
+            }
+            if (!$resultado['status'] && array_key_exists("message", $resultado)) {
+            
+                    toastr()->error($resultado['message'], "Mensaje");
+                
+                return Redirect::back()->withErrors($resultado['message'])->withInput();
             }
 
             $resultado = json_decode($response->getBody(), true);

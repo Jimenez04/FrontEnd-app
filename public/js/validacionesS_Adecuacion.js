@@ -1,4 +1,5 @@
 function validarcampos_DatosSolicitud() {
+    
     datos = [];
     razon_Solicitud = document.getElementById('input_RazonSolicitud').value;
     carrera_Empadronada = document.getElementById('input_CarreraEmpadronada').value;

@@ -20,24 +20,15 @@ class RegistroController extends Controller
     public function registroApi(registro $request)
     {
         try {
-            $request->validated();
-
+            $request = $request->validated();
+            // dd($request['nombre1']);
+            if(trim($request['nombre2']) == "" || $request['nombre2'] == null){
+                unset($request['nombre2']);
+            }
             $response = Http::withHeaders([
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json'
-            ])->post( env('API_URL') . 'registrar', [
-                    'email' =>  $request['email'],
-                    'password_' =>  $request['password_'],
-                    'c_password' =>  $request['c_password'],
-                    'cedula' =>  $request['cedula'],
-                    'nombre1' =>  $request['nombre1'],
-                    'nombre2' =>  $request['nombre2'],
-                    'apellido1' =>  $request['apellido1'],
-                    'apellido2' =>  $request['apellido2'],
-                    'sexo_id' =>  $request['sexo_id'],
-                    'fecha_Nacimiento' =>  $request['fecha_Nacimiento'],
-                    'carnet' =>  $request['carnet'],
-            ]);
+            ])->post( env('API_URL') . 'registrar', $request);
             $resultado = json_decode($response->getBody(), true);
             if(array_key_exists("errors", $resultado)){
                 return Redirect::back()->withErrors($resultado['errors'])->withInput();;

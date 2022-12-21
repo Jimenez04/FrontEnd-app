@@ -793,18 +793,23 @@ async function agregararchivo() {
     for (let file of eventoArchivo.files) {
         var ext = file['name'].split('.').pop();
             if (file instanceof File && (ext == 'pdf' || ext == 'PDF') && file.size > 10000) {
-                var input_ExpedidoPor = document.getElementById('input_ExpedidoPor').value;
-                if (validad_datos([input_ExpedidoPor], 4) && input_ExpedidoPor.length < 100 && isNaN(input_ExpedidoPor)) {
-                    var promise = getBase64(file);
-                    var my_pdf_file_as_base64 = await promise;
-                    array_archivos.push({ expedidoPor: input_ExpedidoPor, nombre: removeExtension(file['name']), archivo64: my_pdf_file_as_base64.split(',')[1]});
+                if (file['name'].length < 41) {
+                    var input_ExpedidoPor = document.getElementById('input_ExpedidoPor').value;
+                    if (validad_datos([input_ExpedidoPor], 4) && input_ExpedidoPor.length < 100 && isNaN(input_ExpedidoPor)) {
+                        var promise = getBase64(file);
+                        var my_pdf_file_as_base64 = await promise;
+                        array_archivos.push({ expedidoPor: input_ExpedidoPor, nombre: removeExtension(file['name']), archivo64: my_pdf_file_as_base64.split(',')[1] });
                         rellenarTablaArchivos(array_archivos);
                         document.getElementById('progreso').style.width = '100%';
-                    eventoArchivo.value = '';
-                    document.getElementById('input_ExpedidoPor').value = '';
-                    return;
+                        eventoArchivo.value = '';
+                        document.getElementById('input_ExpedidoPor').value = '';
+                        return;
+                    } else {
+                        toastr['error']("El campo 'expedido por' es requerido, mínimo 4 caracteres.'");
+                        return;
+                    }
                 } else { 
-                    toastr['error']("El campo 'expedido por' es requerido, mínimo 4 caracteres.'");
+                    toastr['error']("El nombre de archivo no debe ser mayor a 40 caracteres.'");
                     return;
                 }
             } else { 
@@ -879,6 +884,7 @@ function finalizar() {
         return;
     }
     toastr['success']('Ya casi estas listo');
+    toastr['info']('No recargues el navegador hasta que termine el proceso.');
     document.getElementById('Siguiente').hidden = true;
     document.getElementById('btn_atras').hidden = true;
     data = {
@@ -925,5 +931,3 @@ function finalizar() {
 function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
   }
-
-  

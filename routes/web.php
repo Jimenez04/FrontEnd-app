@@ -70,7 +70,7 @@ Route::post('/agrega_trabajo',[Persona_CRUD_Controller::class,'AgregaTrabajo'])-
 //vistas CRUD del usuario
 //--------------------------------VISTAS COMPARTIDAS---------------------------------------
 Route::get('/mi_perfil',[ViewsUserCRUD_Controller::class,'perfil_usuario'])->name('perfil_usuario')->middleware('verificartoken'); //funciona
-Route::get('/editar_perfil',[ViewsUserCRUD_Controller::class,'editar_perfil'])->middleware('verificartoken'); ;
+Route::get('/editar_perfil',[ViewsUserCRUD_Controller::class,'editar_perfil'])->name('editar_perfil')->middleware('verificartoken'); ;
 Route::post('user/editar_perfil',[ViewsUserCRUD_Controller::class,'patch_editar_perfil'])->name('user_edit')->middleware('verificartoken'); ;
 Route::get('usuarios/lista',[ViewsUserCRUD_Controller::class,'listar_usuarios'])->name('lista_usuarios')->middleware('verificartoken:Administrador');;
 

@@ -15,6 +15,10 @@ var sexo_id;
 
 function openModal_NuevoPariente() {
     $('#modal_pariente').fadeIn();
+    document.getElementById('container-tipo-pariente').setAttribute('Style', 'display:none');
+    document.getElementById('container-datos-personales').setAttribute('Style', 'display:none');
+    cedula_pariente = document.getElementById('cedula_pariente').value = '';
+    limpiarcampos();
 }
 
 function buscar() { 

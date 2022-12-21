@@ -134,11 +134,12 @@
 
                     <div class="divbtnPerfil">
                         <input class="botonesperfil" value="Editar perfil" type="button"
-                            onclick="location.href='/editar_perfil'">
+                            onclick="location.href=route('editar_perfil');">  
 
                     </div>
+                    @if (session('roleuser') == 2)
                     <div class="divbtnPerfil">
-                        <input class="botonesperfil" value="Solicitudes Adecuacion" type="button">
+                        <input class="botonesperfil" value="Solicitudes Adecuacion" type="button" onclick="location.href=route('Adecuacion');">
 
                     </div>
 
@@ -146,6 +147,7 @@
                         <input class="botonesperfil" value="Solicitudes PAI" type="button">
 
                     </div>
+                    @endif
                 </div>
             </div>
 

@@ -76,12 +76,14 @@
                             <div class="seleccion">
                                 <br>
                                 <div class="sexo_m">
-                                    <input class="checkbox"  type="checkbox" name="sexo_id" id="check_male" value="1"
+                                    <input  class="checkbox" type="radio" name="sexo_id" id="check_male" value="1"
+                                    {{ old('sexo_id') == '1' ? 'checked' : '' }}
                                         onclick="Seleccionar(this)">
                                     <label class="checkbox_label">Hombre</label>
                                 </div>
                                 <div class="sexo_f">
-                                    <input class="checkbox" type="checkbox" name="sexo_id" id="check_female" value="2" 
+                                    <input  class="checkbox" type="radio" name="sexo_id" id="check_female" value="2" 
+                                    {{ old('sexo_id') == '2' ? 'checked' : '' }}
                                         onclick="Seleccionar(this)">
                                     <label class="checkbox_label">Mujer</label>
                                 </div>

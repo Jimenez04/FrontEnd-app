@@ -21,7 +21,6 @@ class RegistroController extends Controller
     {
         try {
             $request = $request->validated();
-            // dd($request['nombre1']);
             if(trim($request['nombre2']) == "" || $request['nombre2'] == null){
                 unset($request['nombre2']);
             }

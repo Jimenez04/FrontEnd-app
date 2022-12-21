@@ -19,6 +19,7 @@ function consultartrabajos(){
               })
               .then((response) => response.json())
               .then((data) => {
+                  console.log();
                   if (data.data != null) {
                       document.getElementById("actividad_Que_Desempena").value = data.data.actividad_Que_Desempena;
                       document.getElementById("lugar_De_Trabajo").value = data.data.lugar_De_Trabajo;
@@ -56,6 +57,8 @@ function delete_job() {
                     document.getElementById("lugar_De_Trabajo").value = "";
                     document.getElementById("horario_Laboral").value = "";
                     $('#modal_trabajo').fadeOut();
+                    document.getElementById("btn_add_job").value = "Agregar";
+                    
                 } else {
                     alert("Error");
                     toastr['error']("Error interno" );
@@ -79,36 +82,64 @@ var url;
 var method;
 var data = ""; 
     var cedula = document.getElementById("cedula").value;
-    if (btn_form == 'Actualizar') { 
-        url = urlapi + 'user/editar/trabajo';
-         method = 'PATCH';
-         data = {  cedula: cedula, id: id_trabajo ,actividad_Que_Desempena: actividad_Que_Desempena , lugar_De_Trabajo: lugar_De_Trabajo, horario_Laboral: horario_Laboral  };
+    
+    var estado = validad_datos_mensaje([actividad_Que_Desempena], 4, "Actividad que desempeña");
+    if (estado['estado'] && actividad_Que_Desempena.length < 80 && isNaN(actividad_Que_Desempena)) {
+
+        estado = validad_datos_mensaje([lugar_De_Trabajo], 4, "Lugar De Trabajo");
+        if (estado['estado'] && lugar_De_Trabajo.length < 40 && isNaN(lugar_De_Trabajo)) {
+            estado = validad_datos_mensaje([horario_Laboral], 4, "Horario Laboral");
+            if (estado['estado'] && horario_Laboral.length < 50 && isNaN(horario_Laboral)) {
+                if (btn_form == 'Actualizar') {
+                    url = urlapi + 'user/editar/trabajo';
+                    method = 'PATCH';
+                    data = { cedula: cedula, id: id_trabajo, actividad_Que_Desempena: actividad_Que_Desempena, lugar_De_Trabajo: lugar_De_Trabajo, horario_Laboral: horario_Laboral };
+                } else {
+                    url = urlapi + 'user/trabajo/agregar'
+                    data = { cedula: cedula, actividad_Que_Desempena: actividad_Que_Desempena, lugar_De_Trabajo: lugar_De_Trabajo, horario_Laboral: horario_Laboral };
+                    method = 'POST';
+                }
+                //verificar campos
+                fetch(url, {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'Authorization': 'Bearer ' + token,
+                    },
+                    body: JSON.stringify(data),
+                })
+                        
+                    .then((response) => response.json())
+                    .then((data) => {
+                        if (data.status) {
+                            toastr['success'](method == "POST" ? "Creado correctamente" : "Actualizado correctamente.");
+                            $('#modal_trabajo').fadeOut();
+                        } else {
+                            toastr['error']("Error interno");
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+            } else { 
+                toastr['error']( !estado['estado'] ? estado['mensaje'] :  "Revisa el campo horario laboral,  debe tener al menos 4 caracteres");
+            }
+        } else { 
+            toastr['error']( !estado['estado'] ? estado['mensaje'] :  "Revisa el campo lugar de trabajo,  debe tener al menos 4 caracteres");
+        }
     } else { 
-        url = urlapi + 'user/trabajo/agregar'
-        data = { cedula: cedula, actividad_Que_Desempena: actividad_Que_Desempena, lugar_De_Trabajo: lugar_De_Trabajo, horario_Laboral: horario_Laboral };
-        method = 'POST';
+        toastr['error']( !estado['estado'] ? estado['mensaje'] :  "Revisa tu actividad que desempeñas,  debe tener al menos 4 caracteres");
     }
-                    //verificar campos
-                        fetch( url, {
-                            method: method,
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Accept' : 'application/json',
-                                'Authorization' : 'Bearer ' + token,
-                            },
-                            body: JSON.stringify(data),
-                            })
-                           
-                            .then((response) => response.json())
-                            .then((data) => {
-                                if (data.status) {
-                                    toastr['success'](method == "POST"? "Creado correctamente" : "Actualizado correctamente." );
-                                    $('#modal_trabajo').fadeOut();
-                                } else { 
-                                    toastr['error']("Error interno" );
-                                }
-                            })
-                            .catch((error) => {
-                                console.error('Error:', error);
-                            });
+}
+
+function validad_datos_mensaje(array, largo, nombrevariable) { 
+    var validacion = true;
+    array.forEach(element => {
+        if ((element.trim() == " " || element == null) || element.trim().length < largo) {
+            validacion = false;
+        }
+        });
+    if (!validacion) return { estado: false, mensaje: "El campo '" + nombrevariable + "' debe tener al menos " + largo + " caracteres"};
+    return { estado : true};
 }

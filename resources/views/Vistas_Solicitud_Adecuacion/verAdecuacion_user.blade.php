@@ -8,15 +8,17 @@
         <div class="container_Informacion_Adecuacion">
 
             <div class="Informacion_solicitud">
-
-                <h3 style="text-align: center;">Información Solicitud de Adecuación</h3>
+                <div class="row adecuacion">
+                    <h4 class="col">Información sobre su solicitud de adecuación</h4>
+                    <a href="#" class="col-md-auto">Descargar archivos</a>
+                </div>
                 <div class="container_informacion_solicitud" id="container_informacion_solictud">
                     <div class="informacion_adecuacion">
                         <table class="table table-bordered tabla_adecuacion">
                             <thead>
                                 <tr>
                                     <th scope="col">Solicitud</th>
-                                    <th scope="col">Razon</th>
+                                    <th scope="col">Razón</th>
                                     <th scope="col">Estado</th>
                                 </tr>
                             </thead>
@@ -34,7 +36,8 @@
 
                             </tbody>
                         </table>
-                        <h4 style="text-align: center;">Información general</h4>
+
+                        <h4 class="subtitulo-informacion">Información general</h4>
                         <table class="table table-bordered table-striped">
                             <tr>
                                 <th>Carnet</th>
@@ -43,7 +46,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <th>Carrera Empadronada</th>
+                                <th>Carrera empadronada</th>
                                 <td colspan="2">
                                     {{ $resultado['carrera_Empadronada'] }}
                                 </td>
@@ -83,12 +86,122 @@
                                 </td>
                             </tr>
                         </table>
-                        {{-- <p>Número de solicitud: {{ $resultado['numero_solicitud'] }}</p>
-                        <p>Razon de solicitud: {{ $resultado['razon_Solicitud'] }}</p>
-                        <p>Estado de solicitud: {{ $resultado['estado'] }}</p> --}}
+
+                        <h4 class="subtitulo-informacion">Información sobre salud</h4>
+                        <table class="table tabla_adecuacion">
+                            <thead>
+                                <tr>
+                                    <th>Enfermedad</th>
+                                    <th>Tratamiento</th>
+                                    <th>¿Afecta en su desepeño?</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        {{ $resultado['salud_actuals']['enfermedad'] != null ? $resultado['salud_actuals']['enfermedad'] : 'No aplica' }}
+                                    </td>
+                                    <td>
+                                        {{ $resultado['salud_actuals']['tratamiento'] != null ? $resultado['salud_actuals']['tratamiento'] : 'No aplica' }}
+                                    </td>
+                                    <td>
+                                        @if ($resultado['salud_actuals']['afectacionDesempeno'] != null)
+                                            Sí
+                                        @else
+                                            No
+                                        @endif
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4 class="subtitulo-informacion">Necesidad y apoyo</h4>
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Diagnóstico</th>
+                                <td colspan="2">
+                                    {{ $resultado['necesidad__y__apoyos']['diagnostico'] }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Área profesional</th>
+                                <td colspan="2">
+                                    {{ $resultado['necesidad__y__apoyos']['area_Profesional'] }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>¿Recibe atención y seguimiento?</th>
+                                <td colspan="2">
+                                    @if ($resultado['necesidad__y__apoyos']['recibe_atencionyseguimiento'] == 0)
+                                        No
+                                    @else
+                                        Sí
+                                    @endif
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Atención y seguimiento</th>
+                                <td colspan="2">
+                                    {{ $resultado['necesidad__y__apoyos']['atencionyseguimiento'] }}
+                                </td>
+                            </tr>
+                        </table>
                     </div>
 
-                    {{-- <div class="detalle_solicitud">
+                    <h4 class="subtitulo-informacion">Información académica</h4>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Información académica</th>
+                            <td colspan="2">
+                                {{ $resultado['institucion__procedencias']['nombre'] }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Año de egreso</th>
+                            <td colspan="2">
+                                {{ $carbon::parse($resultado['institucion__procedencias']['ano_egreso'])->format('m/d/Y') }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Año de ingreso a la universidad</th>
+                            <td colspan="2">
+                                {{ $carbon::parse($resultado['institucion__procedencias']['ano_ingreso_universidad'])->format('m/d/Y') }}
+                            </td>
+                        </tr>
+                    </table>
+
+                    <h4 class="subtitulo-informacion">Información del grupo familiar</h4>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Descripción de discapacidades</th>
+                            <td colspan="2">
+                                {{ $resultado['grupo__familiars']['descripcion_De_Discapacidades'] }}
+                            </td>
+                        </tr>
+                    </table>
+
+                    <h4 class="subtitulo-informacion">Parientes</h4>
+                    <table class="table">
+                        <thead class="thead-solicitud">
+                            <tr>
+                                <th scope="col">Cédula</th>
+                                <th scope="col">Parentesco</th>
+                                <th scope="col">Ocupación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($resultado['grupo__familiars']['pariente'] as $pariente)
+                                <tr>
+                                    <th scope="row">{{ $pariente['persona_cedula'] }}</th>
+                                    <td>{{ $pariente['tipo_Pariente'] }}</td>
+                                    <td>{{ $pariente['ocupacion'] }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+
+                {{-- <div class="detalle_solicitud">
                         <label>Archivos</label>
                         @foreach ($resultado['archivos'] as $archivos)
                             <li>
@@ -97,19 +210,19 @@
                         @endforeach
                     </div> --}}
 
-                </div>
+            </div>
 
 
-                <div class="divbotones_">
+            <div class="divbotones_">
 
-                    <a class="boton_opciones" type="button" value="Atrás" href="{{ URL::previous() }}">Regresar</a>
-
-                </div>
-
+                <a class="boton_opciones" type="button" value="Atrás" href="{{ URL::previous() }}">Regresar</a>
 
             </div>
 
+
         </div>
+
+    </div>
 
     </div>
 @endsection

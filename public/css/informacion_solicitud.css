@@ -7,14 +7,28 @@
     display: grid;
 }
 
+.thead-solicitud{
+    background-color: #2B6797 !important;
+    color: white;
+    
+}
+
+.adecuacion{
+    height: 50px;
+    align-items: center;
+}
+.subtitulo-informacion{
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
 .container_Informacion_Adecuacion {
     background-color: white;
     width: 100%;
     max-width: 1000px;
     margin-top: 80px;
     margin-bottom: 20vh;
-    max-height: 1400px;
-    max-height: 1000px;
     margin: 0 auto;
     margin-top: 40px;
     margin-bottom: 40px;

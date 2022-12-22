@@ -25,9 +25,14 @@ class verificarsesionLogin
                     'Authorization' => 'Bearer ' . session('token'),
                     ])->get( env('API_URL') . 'validate-token');
                     $resultado = json_decode($response->getBody(), true);
-                    if($resultado['success']){
-                        return back();
-                    }
+                        if($resultado['success']){
+                            session(['login' => true]);
+                            if($resultado['scope'] == "Administrador"){
+                                return redirect()->route('Admin');
+                            }else{
+                                return redirect()->route('Student');
+                            }
+                        }
             }
             session(['login' => false]);
             session(['token' => null]);

@@ -12,23 +12,6 @@
                 <div class="contenedorDatosRegistro">
                     <h2>Registro</h2>
 
-
-                    {{--  <div class="mensajes">
-                        @if (session('errors'))
-                            - {{$errors->first('cedula')}}
-                            - {{$errors->first('cedula')}}
-                            - {{$errors->first('cedula')}}
-                            - {{$errors->first('cedula')}}
-                            - {{$errors->first('cedula')}}
-                            - {{$errors->first('cedula')}}
-                            - {{$errors->first('cedula')}}
-                            - {{$errors->first('cedula')}}
-                            - {{$errors->first('cedula')}}
-                            <br>
-                           
-                        @endif
-                    </div> --}}
-
                     @if ($errors->any())
                         <div class="alerta alert-danger alert">
                             <ul>

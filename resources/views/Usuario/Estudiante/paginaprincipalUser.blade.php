@@ -43,14 +43,13 @@
                     <!--Solicitud PAI-->
 
                     <div class="Card">
-                        <a class="Adecuacion" href="">
+                        <a class="Adecuacion" href="{{ route('PAI_user') }}">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
                                     <img alt="LogoPAI" height="56px"
                                         src="{{ URL::asset('img/Plan_Accion_Individual.png') }}">
                                 </div>
                                 <div class="contenedortext">
-
                                     <label>Plan De Acción Individual</label>
                                 </div>
                             </div>
@@ -76,9 +75,6 @@
                         <button type="button" onclick="openModal_Trabajo(this)" class="botones_est"
                             id="trabajo_modal">Añadir
                             Trabajo</button>
-                        {{-- <button type="button" onclick="openModal_NuevoPariente(this);" class="botones_est"
-                            id="pariente_modal">Añadir
-                            Pariente</button> --}}
                     </div>
                 </div>
             </div>

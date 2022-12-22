@@ -10,6 +10,7 @@ use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\ViewsUserCRUD_Controller;
 use App\Http\Controllers\Solicitud_Adecuacion_Views_Controller;
+use App\Http\Controllers\solicitudPAIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,6 +87,17 @@ Route::get('/user/adecuacion/{id}',[Solicitud_Adecuacion_Views_Controller::class
 Route::get('/admin/adecuacion/{id}',[Solicitud_Adecuacion_Views_Controller::class,'viewAdecuacionEspecifica_admin'])->name('verAdecuacion_admin')->middleware('verificartoken');
 
 //--------------------------------FIN SOLICITUDE DE ADECUACIÓN ---------------------------------------
+//--------------------------------PAI---------------------------------------
+Route::get('/user/solicitud/pai',[solicitudPAIController::class,'view_PAI_User'])->name('PAI_user')->middleware('verificartoken:Estudiante');
+Route::get('/user/solicitud/pai/nueva',[solicitudPAIController::class,'view_PAI_User_new'])->name('PAI_User_new')->middleware('verificartoken:Estudiante');
+Route::post('/user/solicitud/pai/store',[solicitudPAIController::class,'store'])->name('PAI.store')->middleware('verificartoken');
+// //user
+Route::get('/user/solicitud/pai/{id}',[solicitudPAIController::class,'view_PAI_User_By_id'])->name('ver_Pai_User')->middleware('verificartoken');
+
+// //admin
+// Route::get('/admin/adecuacion/{id}',[Solicitud_Adecuacion_Views_Controller::class,'viewAdecuacionEspecifica_admin'])->name('verAdecuacion_admin')->middleware('verificartoken');
+
+//--------------------------------FIN PAI ---------------------------------------
 
 //--------------------------------Vistas Bitacora---------------------------------------
 Route::get('/bitacora',[BitacoraViewsController::class,'bitacora']);

@@ -912,6 +912,10 @@ function finalizar() {
             if (data.status) {
                 toastr['success']('Solicitud creada correctamente');
                 sleep(2000).then(() => {
+                    if (document.getElementById('tipousuario').value == 1) { 
+                        window.location.href = route('lista_usuarios');
+                        return;
+                    }
                     window.location.href = route('Adecuacion');
                 })
                 //

@@ -38,6 +38,7 @@
             <input type="hidden" name="" id="token" value="{{session('token')}}">
             <input type="hidden" name="" id="cedula" value="{{session('cedula')}}">
             <input type="hidden" name="" id="carnet" value="{{session('carnet')}}">
+            <input type="hidden" name="" id="tipousuario" value="{{session('roleuser')}}">
     
 @include('modals.agregar_pariente')
 @include('modals.responsabilidadAdecuacion')

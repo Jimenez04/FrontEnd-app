@@ -133,21 +133,25 @@
                 <div class="contenedorbtn_solicitudes">
 
                     <div class="divbtnPerfil">
-                        <input class="botonesperfil" value="Editar perfil" type="button"
-                            onclick="location.href=route('editar_perfil');">  
-
-                    </div>
-                    @if (session('roleuser') == 2)
-                    <div class="divbtnPerfil">
-                        <input class="botonesperfil" value="Solicitudes Adecuacion" type="button" onclick="location.href=route('Adecuacion');">
-
+                        <input class="botonesperfil" value="Atras" type="button"
+                            onclick="location.href=route('lista_usuarios');">  
                     </div>
 
                     <div class="divbtnPerfil">
-                        <input class="botonesperfil" value="Solicitudes PAI" type="button" onclick="location.href=route('PAI_user');">
-
+                            <a class="botonesperfil" value="Editar Usuario" type="button" href="{{route('Admin.User.editar_perfil', $resultado['carnet'])}}">Editar Usuario</a>
                     </div>
-                    @endif
+                    
+                    <div class="divbtnPerfil">
+                        <input class="botonesperfil" value="Solicitudes Adecuacion" type="button" onclick="location.href=route('');">
+                    </div>
+
+                    <div class="divbtnPerfil">
+                        <input class="botonesperfil" value="Solicitudes PAI" type="button">
+                    </div>
+
+                    <div class="divbtnPerfil">
+                        <input class="botonesperfil" value="Bitácora" type="button" onclick="location.href=route('');">
+                    </div>
                 </div>
             </div>
 

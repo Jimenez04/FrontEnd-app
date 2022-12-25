@@ -22,8 +22,8 @@ class Admin_Funciones_Controller extends Controller
             $resultado = json_decode($response->getBody(), true);
             if($resultado['success']){
                 $resultado = $resultado['data'];
-                return dd($resultado);
-                return view('Vistas_Solicitud_Adecuacion.verAdecuacion_user', compact('resultado'));
+                //return dd($resultado);
+                return view('Usuario.Admin.Usuarios.show', compact('resultado'));
             }else{
                 toastr()->error("El estudiante no existe");
                 return redirect()->back();

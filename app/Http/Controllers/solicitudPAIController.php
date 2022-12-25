@@ -37,9 +37,8 @@ class solicitudPAIController extends Controller
             ])->get(env('API_URL') . 'user/persona/estudiante/pai/' . $id, []);
             $resultado = json_decode($response->getBody(), true);
             if ($resultado['status']) {
-                $solicitud = $resultado['data'];
-                // return dd($solicitud);
-                return view('Vistas_Solicitud_PAI.show', compact('solicitud'));
+                $resultado = $resultado['data'];
+                return view('Vistas_Solicitud_PAI.show', compact('resultado'));
             } else {
                 toastr()->error("La solicitud no existe");
                 return redirect()->back();

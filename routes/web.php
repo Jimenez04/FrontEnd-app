@@ -71,20 +71,24 @@ Route::post('/agrega_trabajo',[Persona_CRUD_Controller::class,'AgregaTrabajo'])-
 //vistas CRUD del usuario
 //--------------------------------VISTAS COMPARTIDAS---------------------------------------
 Route::get('/mi_perfil',[ViewsUserCRUD_Controller::class,'perfil_usuario'])->name('perfil_usuario')->middleware('verificartoken'); //funciona
-Route::get('/editar_perfil',[ViewsUserCRUD_Controller::class,'editar_perfil'])->name('editar_perfil')->middleware('verificartoken'); ;
+Route::get('/editar_perfil',[ViewsUserCRUD_Controller::class,'editar_perfil'])->name('editar_perfil')->middleware('verificartoken'); 
+Route::get('admin/user/editar_perfil/{carnet}',[ViewsUserCRUD_Controller::class,'editar_perfil_admin'])->name('Admin.User.editar_perfil')->middleware('verificartoken:Administrador'); 
 Route::post('user/editar_perfil',[ViewsUserCRUD_Controller::class,'patch_editar_perfil'])->name('user_edit')->middleware('verificartoken'); ;
-Route::get('usuarios/lista',[ViewsUserCRUD_Controller::class,'listar_usuarios'])->name('lista_usuarios')->middleware('verificartoken:Administrador');;
+Route::get('usuarios/lista',[ViewsUserCRUD_Controller::class,'listar_usuarios'])->name('lista_usuarios')->middleware('verificartoken:Administrador');
 
 
 
 //--------------------------------SOLICITUD ADECUACIÓN---------------------------------------
+Route::get('admin/solicitud-adecuacion',[Solicitud_Adecuacion_Views_Controller::class,'index'])->name('Admin.Adecuacion')->middleware('verificartoken:Administrador');
 Route::get('/solicitud-adecuacion',[Solicitud_Adecuacion_Views_Controller::class,'viewAdecuacion'])->name('Adecuacion')->middleware('verificartoken:Estudiante');
-Route::get('/nueva-adecuacion',[Solicitud_Adecuacion_Views_Controller::class,'viewNuevaAdecuacion'])->name('Nueva_Adecuacion')->middleware('verificartoken');
+//create
+Route::get('/nueva-adecuacion',[Solicitud_Adecuacion_Views_Controller::class,'viewNuevaAdecuacion'])->name('Nueva_Adecuacion')->middleware('verificartoken:Estudiante');
+Route::get('admin/user/nueva-adecuacion',[Solicitud_Adecuacion_Views_Controller::class,'viewNuevaAdecuacion_admin'])->name('Nueva_Adecuacion_Admin')->middleware('verificartoken:Administrador');
 
 //user
-Route::get('/user/adecuacion/{id}',[Solicitud_Adecuacion_Views_Controller::class,'viewAdecuacionEspecifica_user'])->name('verAdecuacion_user')->middleware('verificartoken');
+Route::get('/user/adecuacion/{id}',[Solicitud_Adecuacion_Views_Controller::class,'viewAdecuacionEspecifica_user'])->name('verAdecuacion_user')->middleware('verificartoken:Estudiante');
 //admin
-Route::get('/admin/adecuacion/{id}',[Solicitud_Adecuacion_Views_Controller::class,'viewAdecuacionEspecifica_admin'])->name('verAdecuacion_admin')->middleware('verificartoken');
+Route::get('/admin/adecuacion/{id}',[Solicitud_Adecuacion_Views_Controller::class,'viewAdecuacionEspecifica_admin'])->name('verAdecuacion_admin')->middleware('verificartoken:Administrador');
 
 //--------------------------------FIN SOLICITUDE DE ADECUACIÓN ---------------------------------------
 //--------------------------------PAI---------------------------------------

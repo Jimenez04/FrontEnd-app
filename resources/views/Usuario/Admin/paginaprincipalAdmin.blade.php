@@ -17,7 +17,7 @@
                 <div class="GestionDeSolicitudes">
 
                     <div class="Card">
-                        <a class="AdecuacionAdmi" href="">
+                        <a class="AdecuacionAdmi" href="{{ route('Admin.Adecuacion') }}">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
 

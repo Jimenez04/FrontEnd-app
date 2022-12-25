@@ -38,12 +38,9 @@ class ViewsUserCRUD_Controller extends Controller
     public function editar_perfil()
     {
         $client = new \GuzzleHttp\Client();
-
-
         $response = $client->get(
             env('API_URL') . 'user/persona/estudiante/',
             [
-                
                 'headers' => [
                     'Authorization' => 'Bearer ' . session('token'),
                     'Accept' => 'application/json',
@@ -55,6 +52,25 @@ class ViewsUserCRUD_Controller extends Controller
         $resultado = json_decode($response->getBody(), true);
         $resultado = $resultado['data'];
         return view('Usuario.Shareviews.editar_perfil', compact('resultado'));
+    }
+    public function editar_perfil_admin($carnet = null)
+    {
+        $ruta = $carnet != null ? env('API_URL') . 'user/persona/estudiante/' . $carnet : env('API_URL') . 'user/persona/estudiante/';
+        $client = new \GuzzleHttp\Client();
+        $response = $client->get(
+            $ruta,
+            [
+                'headers' => [
+                    'Authorization' => 'Bearer ' . session('token'),
+                    'Accept' => 'application/json',
+                    'Content-Type' => 'application/json'
+
+                ],
+            ]
+        );
+        $resultado = json_decode($response->getBody(), true);
+        $resultado = $resultado['data'];
+        return view('Usuario.Admin.Usuarios.edit', compact('resultado'));
     }
 
     
@@ -69,7 +85,10 @@ class ViewsUserCRUD_Controller extends Controller
         $resultado = json_decode($response->getBody(), true);
             if($resultado['status']){
                 toastr()->success($resultado['message'],"Éxito");
-                return redirect()->route('perfil_usuario');
+                if($request->cedula == session('cedula')){
+                    return redirect()->route('perfil_usuario');
+                }
+                return redirect()->route('lista_usuarios');
             }
             if(array_key_exists('error',$resultado)){
                 toastr()->error($resultado['error']);
@@ -100,9 +119,6 @@ class ViewsUserCRUD_Controller extends Controller
 
         $listado_usuarios  = $listado_usuarios['data'];
 
-        // dd($listado_usuarios);
-
-        //    return view('Usuario.Admin.lista_usuarios')->with('listado_usuarios', $listado_usuarios);
         return view('Usuario.Admin.lista_usuarios', ['listado_usuarios' => collect($listado_usuarios)->paginate(6)]);
     }
 

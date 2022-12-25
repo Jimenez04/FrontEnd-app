@@ -888,7 +888,7 @@ function finalizar() {
     document.getElementById('Siguiente').hidden = true;
     document.getElementById('btn_atras').hidden = true;
     data = {
-        carnet: carnet,
+        cedula: document.getElementById('cedula').value,
         solicitud: array_DatosSolicitud,
         institucion: array_DatosAcademicos,
         necesidad_Apoyo: array_AtencionSeguimiento,

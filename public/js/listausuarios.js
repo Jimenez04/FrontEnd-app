@@ -47,8 +47,6 @@ function verificarUsuario(object) {
 function eliminarUsuario(id, carnet) { 
     toastr['info']("Realizando acción", 'Un momento');
 
-    
-
     fetch(urlapi + 'user/persona/estudiante/'+carnet, {
         method: 'get',
         headers: {
@@ -90,7 +88,11 @@ function confirmar_eliminar(carnet ,id) {
         .then((data) => {
             if (data.message == "Eliminado con exito") {
                 toastr['success'](data.message);
-                $(document.getElementById(carnet)).closest('tr').remove();
+
+                sleep(1500).then(() => {
+                    window.location.href = route('lista_usuarios');
+                })
+
                 $('#modal_usuario').fadeOut();
                 limpiarmodal();
                 return;
@@ -104,6 +106,9 @@ function confirmar_eliminar(carnet ,id) {
         });
 
 }
+function sleep (time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
 
 function cerrarmodal_user() { 
     $('#modal_usuario').fadeOut();

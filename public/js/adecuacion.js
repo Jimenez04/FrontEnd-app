@@ -913,7 +913,7 @@ function finalizar() {
                 toastr['success']('Solicitud creada correctamente');
                 sleep(2000).then(() => {
                     if (document.getElementById('tipousuario').value == 1) { 
-                        window.location.href = route('lista_usuarios');
+                        window.location.href = route('Admin.Adecuacion');
                         return;
                     }
                     window.location.href = route('Adecuacion');

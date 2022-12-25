@@ -25,7 +25,7 @@
 
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
-                                    <img alt="LogoAdecuacion" height="56px" src="{{ URL::asset('img/love.png') }}">
+                                    <img alt="LogoAdecuacion" height="56px" src="{{ URL::asset('/img/hand_handshake.png') }}">
                                 </div>
                                 <div class="contenedortext">
                                     <label>Solicitud De Adecuación
@@ -47,7 +47,7 @@
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
                                     <img alt="LogoPAI" height="56px"
-                                        src="{{ URL::asset('img/Plan_Accion_Individual.png') }}">
+                                        src="{{ URL::asset('/img/books.png') }}">
                                 </div>
                                 <div class="contenedortext">
                                     <label>Plan De Acción Individual</label>

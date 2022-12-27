@@ -143,17 +143,17 @@ function ventana_InfoSolicitud() {
     //
     //Input Razon solicitud
         var datos_adecuacion = document.createElement('div');
-        datos_adecuacion.classList.add('datos_adecuacion');
+        datos_adecuacion.classList.add('datos_solicitud');
             var etiqueta_solicitud_adecuacion = document.createElement('label');
-            etiqueta_solicitud_adecuacion.textContent = "Razon solicitud";
+            etiqueta_solicitud_adecuacion.textContent = "Razon de solicitud";
             etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
             datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
-            var campos_adecuacion = document.createElement('input');
+            var campos_adecuacion = document.createElement('textarea');
             campos_adecuacion.setAttribute('id', 'input_RazonSolicitud');
             campos_adecuacion.setAttribute('title','Mínimo 10 caracteres');
             campos_adecuacion.setAttribute('value', array_DatosSolicitud != null ?  array_DatosSolicitud['razon_Solicitud'] : "");
             campos_adecuacion.type = "text"
-            campos_adecuacion.classList.add('campos_adecuacion');
+            campos_adecuacion.classList.add('inputrazon');
             datos_adecuacion.append(campos_adecuacion); 
         contenido_nueva_adecuacion.append(datos_adecuacion); 
     //Input Carrera Empradronada
@@ -182,8 +182,8 @@ function ventana_InfoSolicitud() {
             campos_adecuacion.type = "date"
             campos_adecuacion.setAttribute('id','input_AnoIngresoCarreraEmpadronada');
             campos_adecuacion.setAttribute('title','Ingresa el año de ingreso a esta carrera');
-            campos_adecuacion.setAttribute('value', array_DatosSolicitud != null ?  array_DatosSolicitud['ano_ingreso_carrera'] : "2010-01-01");
-            campos_adecuacion.classList.add('campos_adecuacion');
+            campos_adecuacion.setAttribute('value', array_DatosSolicitud != null ?  array_DatosSolicitud['ano_ingreso_carrera'] : "2016-01-01");
+            campos_adecuacion.classList.add('campos_secundarios');
             datos_adecuacion.append(campos_adecuacion); 
         contenido_nueva_adecuacion.append(datos_adecuacion); 
     //Input Nivel de carrera
@@ -200,7 +200,7 @@ function ventana_InfoSolicitud() {
             campos_adecuacion.setAttribute('title','Procentaje de carrera actual');
             campos_adecuacion.setAttribute('min','1');
             campos_adecuacion.setAttribute('max','100');
-            campos_adecuacion.classList.add('campos_adecuacion');
+            campos_adecuacion.classList.add('campos_secundarios');
             datos_adecuacion.append(campos_adecuacion); 
         contenido_nueva_adecuacion.append(datos_adecuacion); 
         //Input Lleva una segunda carrera
@@ -267,7 +267,7 @@ function ventana_InfoSolicitud() {
     var Traslado = document.createElement('div');
     Traslado.classList.add('Traslado');
         var etiqueta_solicitud_adecuacion = document.createElement('label');
-        etiqueta_solicitud_adecuacion.textContent = "¿Realizo traslado de carrera? ";
+        etiqueta_solicitud_adecuacion.textContent = "¿Realizó traslado de carrera? ";
         etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
         Traslado.append(etiqueta_solicitud_adecuacion); 
             var seleccion_traslado = document.createElement('div');
@@ -346,7 +346,7 @@ function ventana_InstitucionProcedencia() {
  datos_adecuacion.classList.add('datos_adecuacion');
     //label
      var etiqueta_solicitud_adecuacion = document.createElement('label');
-     etiqueta_solicitud_adecuacion.textContent = "Nombre de la Institución de procedencia";
+     etiqueta_solicitud_adecuacion.textContent = "Institución de procedencia";
      etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
     datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
     //input
@@ -371,9 +371,9 @@ function ventana_InstitucionProcedencia() {
      var campos_adecuacion = document.createElement('input');
      campos_adecuacion.type = "date"
         campos_adecuacion.setAttribute('id', 'input_Año_Egreso');
-        campos_adecuacion.setAttribute('value',array_DatosAcademicos != null ? array_DatosAcademicos['ano_egreso'] : "2010-01-01");
+        campos_adecuacion.setAttribute('value',array_DatosAcademicos != null ? array_DatosAcademicos['ano_egreso'] : "2016-01-01");
         campos_adecuacion.setAttribute('title','Ingresa la fecha de egreso de la institución');
-     campos_adecuacion.classList.add('campos_adecuacion');
+     campos_adecuacion.classList.add('campos_secundarios');
      datos_adecuacion.append(campos_adecuacion); 
  contenido_nueva_adecuacion.append(datos_adecuacion); 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -391,7 +391,7 @@ function ventana_InstitucionProcedencia() {
     campos_adecuacion.setAttribute('id', 'input_Año_ingreso_Universidad');
     campos_adecuacion.setAttribute('title','Ingresa la fecha de ingreso a la universidad');
     campos_adecuacion.setAttribute('value', array_DatosAcademicos != null ? array_DatosAcademicos['ano_ingreso_universidad'] : "2010-01-01");
-     campos_adecuacion.classList.add('campos_adecuacion');
+     campos_adecuacion.classList.add('campos_secundarios');
      datos_adecuacion.append(campos_adecuacion); 
  contenido_nueva_adecuacion.append(datos_adecuacion); 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -511,8 +511,6 @@ function ventana_necesidad_Apoyo() {
                         campos_adecuacion.setAttribute('title','Mínimo 6 caracteres');
                         campos_adecuacion.setAttribute('id','descripcion_atencion_input');
                         campos_adecuacion.textContent = array_AtencionSeguimiento != null ? array_AtencionSeguimiento['atencionyseguimiento'] : '';
-                        campos_adecuacion.setAttribute('rows','4');
-                        campos_adecuacion.setAttribute('cols','30');
                     Segunda_carrera.append(campos_adecuacion);
             datos_adecuacion.append(Segunda_carrera);
     contenido_nueva_adecuacion.append(datos_adecuacion); 
@@ -526,8 +524,8 @@ contenido_nueva_adecuacion.append(titulocontenedor);
           datos_adecuacion.classList.add('Atencion');
           //label titulo
               var etiqueta_solicitud_adecuacion = document.createElement('label');
-              etiqueta_solicitud_adecuacion.textContent = "¿Padece de alguna enfermedad que afecta su    desempeño?";
-              etiqueta_solicitud_adecuacion.classList.add('etiqueta_atencion');
+              etiqueta_solicitud_adecuacion.textContent = "¿Padece de alguna enfermedad que afecta su desempeño?";
+              etiqueta_solicitud_adecuacion.classList.add('etiqueta_padece');
   datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
   //segundo div principal
                   var seleccion_atencion = document.createElement('div');
@@ -573,7 +571,7 @@ contenido_nueva_adecuacion.append(titulocontenedor);
                   Segunda_carrera.classList.add('datos_enfermedad');
                   Segunda_carrera.setAttribute('id', 'campos_info_enfermedad' );
                       var etiqueta_solicitud_adecuacion = document.createElement('label');
-                      etiqueta_solicitud_adecuacion.textContent = "¿Cúal?";
+                      etiqueta_solicitud_adecuacion.textContent = "Indique la enfermedad?";
                       etiqueta_solicitud_adecuacion.classList.add('etiqueta_padecimiento');
                   Segunda_carrera.append(etiqueta_solicitud_adecuacion);
                       var campos_adecuacion = document.createElement('input');
@@ -595,7 +593,7 @@ contenido_nueva_adecuacion.append(titulocontenedor);
                     Segunda_carrera.append(etiqueta_solicitud_adecuacion);
                         var campos_adecuacion = document.createElement('input');
                         campos_adecuacion.type = "text"
-                        campos_adecuacion.classList.add('campos_enfermedad');
+                        campos_adecuacion.classList.add('campo_enfermedad');
                         campos_adecuacion.setAttribute('title','Mínimo 6 caracteres');
                         campos_adecuacion.setAttribute('id','input_Tratamiento_enfermedad');
                         campos_adecuacion.setAttribute('value', array_Salud != null && array_Salud.hasOwnProperty('tratamiento') ? array_Salud['tratamiento'] : '');

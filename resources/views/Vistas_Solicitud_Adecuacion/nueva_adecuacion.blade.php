@@ -20,10 +20,10 @@
                             </div>
                         <div class="divbotones_">
 
-                            <a class="boton_opciones" id="Cancelar" type="submit" value="Cancelar" href="{{ URL::previous() }}">Cancelar</a>
-                            <a  hidden class="boton_opciones" id="btn_atras" onclick="atras(this)">Atras</a>
-                            <a  class="boton_opciones" id="btn_Siguiente" onclick="siguiente(this)">Siguiente</a>
-                            <a  hidden class="boton_opciones" id="Siguiente" onclick="finalizar(this)">Finalizar</a>
+                            <a class="boton_opciones btn_negativos" id="Cancelar" type="submit" value="Cancelar" href="{{ URL::previous() }}">Cancelar</a>
+                            <a  hidden class="boton_opciones btn_negativos" id="btn_atras" onclick="atras(this)">Atras</a>
+                            <a  class="boton_opciones btn_positivos" id="btn_Siguiente" onclick="siguiente(this)">Siguiente</a>
+                            <a  hidden class="boton_opciones btn_positivos" id="Siguiente" onclick="finalizar(this)">Finalizar</a>
                         </div>
                     </form>
 

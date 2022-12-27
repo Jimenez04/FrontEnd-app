@@ -11,6 +11,49 @@
     display: flex;
     flex-direction: column;
 }
+#campos_info_enfermedad{ height: 45px;
+    margin: 10px 0 10px 0;}
+
+#campos_info_tratamiento{ height: 45px;
+    margin: 20px 0 20px 0;}
+
+#campos_info_enfermedad .etiqueta_padecimiento{
+    width:50%;
+    padding-left: 16px;
+} 
+
+#descripcion_atencion .campos_text_area{
+    width: 52%;
+    resize: none;
+    height: 5rem;
+    border-radius: 5px;
+    margin-left: 5px;
+    border: 1.5px solid #0000006e;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 0 5px 0 5px;
+    text-align: start;
+}
+#campos_info_tratamiento .etiqueta_padecimiento{
+    width:50%;
+    padding-left: 16px;
+} 
+
+#campos_info_enfermedad .campos_enfermedad{
+    width: 47%;
+    border: 1.5px solid #0000006e;
+    border-radius: 5px;
+    text-align: center;
+    height: 2.4rem; 
+} 
+#campos_info_tratamiento .campo_enfermedad{
+    width: 47%;
+    text-align: center;
+    border: 1.5px solid #0000006e;
+    border-radius: 5px;
+    height: 2.4rem; 
+} 
+
 
 .container_Nueva_Adecuacion {
     width: 100%;
@@ -56,18 +99,20 @@
     font-weight: 600;
 
 }
-
+#form_contenedor .Atencion{
+    margin-top:25px !important;
+}
 .Llenado_solicitud h5 {
     padding-bottom: 10px;
     text-align: center;
     color: #005da4;
     font-weight: 600;
-    padding-top: 10px;
+    padding-top: 30px;
 
-}
+}s
 
 .contenido_nueva_adecuacion {
-    width: 500px;
+    width: 650px;
     margin: 0 auto;
     border: 2px solid #383d4194;
     padding: 10px;
@@ -83,8 +128,17 @@
     margin-bottom: 10px;
     margin-top: 20px;
     padding-top: 10px;
+    font-family: 'Poppins', sans-serif;
+} 
+.datos_solicitud{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding-top: 10px;
     padding-left: 16px;
-    padding-right: 12px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -97,17 +151,34 @@
 
 .campos_adecuacion {
     /*  margin-left: 2%;*/
-    outline: none;
     height: 2.4em;
-    border-radius: 2px;
-    min-width: 150px;
-    max-width: 300px;
+    border-radius: 5px;
+    width: 50%;
     border: 1.5px solid #0000006e;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
+    text-align: center;
+}
+
+.inputrazon{
+    width: 50%;
+    resize: none;
+    height: 5rem;
+    border: 1.5px solid #0000006e;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 0 5px 0 5px;
+    text-align: start;
+}
+.campos_secundarios{
+    height: 2.4em;
+    text-align: center;
+    border-radius: 5px;
+    border: 1.5px solid #0000006e;
+    font-family: 'Poppins', sans-serif;
     padding-left: 4px;
     padding-right: 8px;
-    text-align: center;
+    font-size: 16px;
 }
 
 .Carrera_simultanea,

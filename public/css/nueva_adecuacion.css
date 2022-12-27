@@ -4,6 +4,33 @@
     box-sizing: border-box;
 }
 
+.pai{
+    /* align-items: center;
+    gap: 50px; */
+
+    align-items: center;
+    gap: 10px;
+    display: grid !important;
+    grid-template-columns: 1.5fr 1fr;
+    height: auto !important;
+}
+
+
+.pai-contenedor{
+    display: flex;
+    flex-direction: column;
+}
+
+.pai-input{
+    width: auto !important;
+}
+
+.pai-area{
+    height: 200px !important;
+    resize: none ;
+
+}
+
 .Principal_New_Adecuacion {
     width: 100%;
     background-color: #ECECEC;
@@ -21,6 +48,8 @@
     width:50%;
     padding-left: 16px;
 } 
+
+
 
 #descripcion_atencion .campos_text_area{
     width: 52%;

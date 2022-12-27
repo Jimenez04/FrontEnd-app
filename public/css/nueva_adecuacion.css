@@ -75,6 +75,9 @@
     text-align: center;
     height: 2.4rem; 
 } 
+#descripcion_atencion .etiqueta_solicitud_adecuacion{
+    padding-left: 16px;
+}
 #campos_info_tratamiento .campo_enfermedad{
     width: 47%;
     text-align: center;
@@ -167,7 +170,6 @@
     margin-bottom: 10px;
     margin-top: 20px;
     padding-top: 10px;
-    padding-left: 16px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -182,7 +184,7 @@
     /*  margin-left: 2%;*/
     height: 2.4em;
     border-radius: 5px;
-    width: 50%;
+    width: 290px;
     border: 1.5px solid #0000006e;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
@@ -190,7 +192,7 @@
 }
 
 .inputrazon{
-    width: 50%;
+    width: 290px;
     resize: none;
     height: 5rem;
     border: 1.5px solid #0000006e;
@@ -219,7 +221,6 @@
     padding-bottom: 10px;
     margin-top: 10px;
     width: 100%;
-    padding-left: 16px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -239,7 +240,6 @@
     margin-top: 4px;
     width: 100%;
     flex-direction: row;
-    padding-left: 4px;
 }
 
 

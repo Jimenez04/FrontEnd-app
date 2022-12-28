@@ -310,7 +310,8 @@
     }
 
     .botones_est {
-        height: 50px;
+        width: 100%;
+        height: 60px;
         font-size: calc(1em + 0.2vmin);
     }
 

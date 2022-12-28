@@ -116,6 +116,11 @@
     color: #FFFFFF !important;
     border-color: #1a73e8;
 }  
+.boton_eliminar_modal{
+    background-color: orangered;
+    color: #FFFFFF !important;
+    border-color: orangered;
+} 
 
 .boton_negativo_modal{
     background-color: #00c0f3;

@@ -44,7 +44,7 @@ use Carbon\Carbon;
 
                     <div class="divbotonVolver">
 
-                        <a class="boton_regresar" id="Regresar" href="">Volver</a>
+                        <a class="boton_regresar" id="Regresar" href="{{route('Admin')}}">Volver</a>
 
                     </div>
                 </div>

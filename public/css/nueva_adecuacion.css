@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.pai{
+.pai {
     /* align-items: center;
     gap: 50px; */
 
@@ -15,60 +15,60 @@
     height: auto !important;
 }
 
-
-.pai-contenedor{
+.pai-contenedor {
     display: flex;
     flex-direction: column;
 }
 
-.pai-input{
+.pai-input {
     width: auto !important;
 }
 
-.pai-area{
+.pai-area {
     height: 200px !important;
-    resize: none ;
-
+    resize: none;
 }
 
 .Principal_New_Adecuacion {
     width: 100%;
-    background-color: #ECECEC;
+    background-color: #ececec;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
-#campos_info_enfermedad{ height: 45px;
-    margin: 10px 0 10px 0;}
+#campos_info_enfermedad {
+    height: 45px;
+    margin: 10px 0 10px 0;
+}
 
-#campos_info_tratamiento{ height: 45px;
-    margin: 20px 0 20px 0;}
+#campos_info_tratamiento {
+    height: 45px;
+    margin: 20px 0 20px 0;
+}
 
-#campos_info_enfermedad .etiqueta_padecimiento{
-    width:50%;
+#campos_info_enfermedad .etiqueta_padecimiento {
+    width: 50%;
     padding-left: 16px;
-} 
+}
 
-
-
-#descripcion_atencion .campos_text_area{
+#descripcion_atencion .campos_text_area {
     width: 52%;
     resize: none;
     height: 5rem;
     border-radius: 5px;
     margin-left: 5px;
     border: 1.5px solid #0000006e;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 16px;
     padding: 0 5px 0 5px;
     text-align: start;
 }
-#campos_info_tratamiento .etiqueta_padecimiento{
-    width:50%;
+#campos_info_tratamiento .etiqueta_padecimiento {
+    width: 50%;
     padding-left: 16px;
-} 
+}
 
-#campos_info_enfermedad .campos_enfermedad{
+#campos_info_enfermedad .campos_enfermedad {
     width: 47%;
     border: 1.5px solid #0000006e;
     border-radius: 5px;
@@ -83,9 +83,8 @@
     text-align: center;
     border: 1.5px solid #0000006e;
     border-radius: 5px;
-    height: 2.4rem; 
-} 
-
+    height: 2.4rem;
+}
 
 .container_Nueva_Adecuacion {
     width: 100%;
@@ -109,10 +108,11 @@
     width: 100%;
     height: 50%;
     padding-top: 4px;
-    font-family: 'EB Garamond', sans-serif;
+    font-family: "EB Garamond", sans-serif;
     margin: 0 auto;
     background-color: white;
-    box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px, rgb(0 0 0 / 30%) 0px 7px 13px -3px, rgb(0 0 0 / 20%) 0px -3px 0px inset;
+    box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px, rgb(0 0 0 / 30%) 0px 7px 13px -3px,
+        rgb(0 0 0 / 20%) 0px -3px 0px inset;
     border-radius: 8px;
     padding-top: 20px;
     padding-left: 20px;
@@ -120,7 +120,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .Llenado_solicitud h3 {
@@ -129,10 +128,9 @@
     text-align: center;
     color: #005da4;
     font-weight: 600;
-
 }
-#form_contenedor .Atencion{
-    margin-top:25px !important;
+#form_contenedor .Atencion {
+    margin-top: 25px !important;
 }
 .Llenado_solicitud h5 {
     padding-bottom: 10px;
@@ -140,10 +138,8 @@
     color: #005da4;
     font-weight: 600;
     padding-top: 30px;
-
-}s
-
-.contenido_nueva_adecuacion {
+}
+s .contenido_nueva_adecuacion {
     width: 650px;
     margin: 0 auto;
     border: 2px solid #383d4194;
@@ -160,9 +156,9 @@
     margin-bottom: 10px;
     margin-top: 20px;
     padding-top: 10px;
-    font-family: 'Poppins', sans-serif;
-} 
-.datos_solicitud{
+    font-family: "Poppins", sans-serif;
+}
+.datos_solicitud {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -170,6 +166,7 @@
     margin-bottom: 10px;
     margin-top: 20px;
     padding-top: 10px;
+    padding-left: 16px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -186,27 +183,27 @@
     border-radius: 5px;
     width: 290px;
     border: 1.5px solid #0000006e;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 16px;
     text-align: center;
 }
 
 .inputrazon{
-    width: 290px;
+    width: 50%;
     resize: none;
     height: 5rem;
     border: 1.5px solid #0000006e;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 16px;
     padding: 0 5px 0 5px;
     text-align: start;
 }
-.campos_secundarios{
+.campos_secundarios {
     height: 2.4em;
     text-align: center;
     border-radius: 5px;
     border: 1.5px solid #0000006e;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     padding-left: 4px;
     padding-right: 8px;
     font-size: 16px;
@@ -221,9 +218,9 @@
     padding-bottom: 10px;
     margin-top: 10px;
     width: 100%;
+    padding-left: 16px;
     font-family: 'Poppins', sans-serif;
 }
-
 
 .seleccion_carrera_simultanea,
 .seleccion_traslado {
@@ -242,7 +239,6 @@
     flex-direction: row;
 }
 
-
 .Check {
     margin-right: 4px;
     margin-top: 4px;
@@ -253,7 +249,7 @@
 
 .label_radio {
     font-size: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .radio_buttom {
@@ -263,8 +259,7 @@
 }
 
 /*RESPONSIVE NUEVA ADECUACION*/
-@media screen and (max-width:800px) {
-
+@media screen and (max-width: 800px) {
     .Principal_New_Adecuacion {
         padding: 20px 40px;
     }
@@ -284,22 +279,19 @@
         padding-left: 12px;
         padding-right: 12px;
         max-width: 600px;
-
     }
 
     .Llenado_solicitud h3 {
         font-size: 20px;
-
     }
 
     .Llenado_solicitud h5 {
         font-size: 16px;
-
     }
 
     .contenido_nueva_adecuacion {
         width: 380px;
-        }
+    }
 
     .etiqueta_solicitud_adecuacion {
         font-size: 1em;
@@ -336,7 +328,6 @@
 
     .Segunda_carrera,
     .Traslado_carrera {
-
         flex-direction: column;
     }
 
@@ -351,8 +342,7 @@
     }
 }
 
-@media screen and (max-width:520px) {
-
+@media screen and (max-width: 520px) {
     .Principal_New_Adecuacion {
         padding: 10px 0 100px 0;
     }
@@ -378,16 +368,14 @@
         font-size: 18px;
         padding-left: 10px;
         padding-right: 10px;
-
     }
 
     .Llenado_solicitud h5 {
         font-size: 16px;
-
     }
 
     .contenido_nueva_adecuacion {
-       width: 300px;
+        width: 300px;
     }
 
     .etiqueta_solicitud_adecuacion {
@@ -419,7 +407,6 @@
 
     .Segunda_carrera,
     .Traslado_carrera {
-
         flex-direction: column;
     }
 
@@ -434,8 +421,7 @@
     }
 }
 
-@media screen and (max-width:380px) {
-
+@media screen and (max-width: 380px) {
     .Principal_New_Adecuacion {
         padding: 20px 0 60px 0;
     }
@@ -443,14 +429,12 @@
     .container_Nueva_Adecuacion {
         margin-top: 80px;
         width: 100%;
-
     }
 
     .Nueva_Adecuacion {
         width: 100%;
         max-width: 300px;
         padding: 0;
-
     }
 
     .Llenado_solicitud {
@@ -466,7 +450,6 @@
         font-size: 18px;
         padding-left: 10px;
         padding-right: 10px;
-
     }
 
     .Llenado_solicitud h5 {
@@ -504,6 +487,6 @@
         height: 32px;
         font-size: 12px;
         padding-left: 4px;
-       width: 200px;
+        width: 200px;
     }
 }

@@ -57,7 +57,7 @@
             </div>
         </div>
     </div>
-    <input type="hidden" name="" id="url" value="{{env('API_URL')}}">
+            <input type="hidden" name="" id="url" value="{{env('API_URL')}}">
             <input type="hidden" name="" id="token" value="{{session('token')}}">
             <input type="hidden" name="" id="cedula" value="{{session('cedula')}}">
     @include('modals.eliminarUsuario')

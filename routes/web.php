@@ -104,4 +104,4 @@ Route::get('/user/solicitud/pai/{id}',[solicitudPAIController::class,'view_PAI_U
 //--------------------------------FIN PAI ---------------------------------------
 
 //--------------------------------Vistas Bitacora---------------------------------------
-Route::get('/bitacora',[BitacoraViewsController::class,'bitacora']);
+Route::get('admin/bitacora/{id}/{ruta}/{idretorno}',[BitacoraViewsController::class,'index'])->name('adecuacion_index')->middleware('verificartoken:Administrador');

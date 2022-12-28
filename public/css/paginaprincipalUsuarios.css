@@ -170,7 +170,7 @@
 }
 
 .divbotones_est {
-    height: 60px;
+    height: 100%;
     padding: 20px;
     width: 100%;
     max-width: 1200px;
@@ -198,6 +198,12 @@
     border: 1px solid #2B6797;
     margin-left: 40px;
     margin-right: 40px;
+}
+.botones_est:hover{
+    background-color: #2b6797c9;
+    height:51px;
+   text-decoration: none !important; 
+
 }
 
 .datos_generales_est hr {

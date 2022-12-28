@@ -79,6 +79,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     background-color: #1a73e8;
+    border: 1px solid #1a73e8;
     text-decoration: none;
     color: #FFFFFF;
     text-align: center;
@@ -88,9 +89,7 @@
     height: 36px;
     text-transform: capitalize;
     padding-top: 6px;
-    border: 1px solid #2B6797;
     margin-bottom: 6px;
-
 }
 
 .boton_new_adecuacion:hover {

@@ -736,7 +736,7 @@ function ventana_Archivos() {
     var etiqueta_solicitud_adecuacion = document.createElement('a');
         etiqueta_solicitud_adecuacion.textContent = "Agregar Archivo";
         etiqueta_solicitud_adecuacion.setAttribute('onclick','agregararchivo(this);');
-        etiqueta_solicitud_adecuacion.classList.add('boton_opciones');
+        etiqueta_solicitud_adecuacion.classList.add('boton_opciones','btn_positivos');
         etiqueta_solicitud_adecuacion.style.cssText = 'width:fit-content; padding:10px; height:auto; margin: 0 auto; margin-top:20px; margin-bottom:20px;';
         datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
     // Segundo div principal/////////////////////////////////////////////////////////////////////////

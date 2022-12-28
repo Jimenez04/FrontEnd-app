@@ -71,12 +71,13 @@
 .btn_negativos{
     background-color: #00c0f3;
     border-color: #00c0f3;
-    transition: 0.3s;
+    transition: 0.1s;
     color: #FFFFFF !important;
 }
 
 .boton_opciones:hover {
     border-color: #b6e5d4;
+    transition: 0.1s;
     height: 42px;
     box-shadow: 0 1px 1px #70d4b0;
 } 
@@ -93,13 +94,47 @@
     padding-top: 50px;
     font-family: 'Poppins', sans-serif;
 }
-
-.boton_regresar {
-    width: 100px;
+/* Hover de los botones de los modales*/
+.btn_modal{
+    width: 120px;
     font-weight: normal;
     font-size: 15px;
-    border: 2px solid #232121d1;
-    background-color: #007bff;
+    border: 2px solid;
+    text-decoration: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 40px;
+    text-transform: capitalize;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+.boton_positivo_modal{
+    background-color: #1a73e8;
+    color: #FFFFFF !important;
+    border-color: #1a73e8;
+}  
+
+.boton_negativo_modal{
+    background-color: #00c0f3;
+    border-color: #00c0f3;
+    transition: 0.1s;
+    color: #FFFFFF !important;
+}
+.btn_modal:hover{
+    border-color: #b6e5d4;
+    transition: 0.1ms;
+    padding:5px;
+    box-shadow: 0 1px 1px #70d4b0;
+}
+.boton_regresar {
+    width: 120px;
+    font-weight: normal;
+    font-size: 15px;
+    border: 2px solid #1a73e8;
+     background-color: #1a73e8;
     text-decoration: none;
     color: white !important;
     text-align: center;
@@ -114,9 +149,11 @@
 }
 
 .boton_regresar:hover {
-    text-decoration: none;
-    background-color: #ddd;
-    color: black;
+    border-color: #b6e5d4;
+    transition: 0.1s;
+    text-decoration: none !important;
+    height: 35px;
+    box-shadow: 0 1px 1px #70d4b0;
 
 }
 

@@ -35,7 +35,7 @@
                     </p>
                     
                 </div>
-                <div class="botones_modal btn btn-secondary">
+                <div class="botones_modal2">
                     <a style="cursor: pointer; color:white" class="botonCerrarModal"
                         href="{{ url()->previous() }}">Cancelar
                     </a>

@@ -78,7 +78,7 @@
     font-weight: normal;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
-    background-color: #2B6797;
+    background-color: #1a73e8;
     text-decoration: none;
     color: #FFFFFF;
     text-align: center;
@@ -86,7 +86,6 @@
     cursor: pointer;
     border-radius: 10px;
     height: 36px;
-    /* padding: 0 16px; */
     text-transform: capitalize;
     padding-top: 6px;
     border: 1px solid #2B6797;
@@ -95,8 +94,12 @@
 }
 
 .boton_new_adecuacion:hover {
-    text-decoration: none;
-    color: white;
+    border-color: #b6e5d4;
+    transition: 0.1s;
+    color: #FFFFFF;
+    text-decoration: none !important;
+    width:149px;
+    box-shadow: 0 1px 1px #70d4b0;
 }
 
 .divtabla {

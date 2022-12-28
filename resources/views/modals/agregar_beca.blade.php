@@ -121,10 +121,10 @@
                     </div>
                     <div class="botones_modal">
 
-                        <a style="cursor: pointer; color:white" class="botonCerrarModal" id="cerrar_modal_beca"
+                        <a style="cursor: pointer; color:white" class="btn_modal boton_negativo_modal" id="cerrar_modal_beca"
                             onclick="closeModal(this)">Regresar
                         </a>
-                        <input class="botonagregatrabajo" id="btn_beca" type="submit" value="Agregar">
+                        <input class="btn_modal boton_positivo_modal" id="btn_beca" type="submit" value="Agregar">
                     </div>
                 </div>
             </form>

@@ -22,7 +22,7 @@ class Admin_Funciones_Controller extends Controller
             $resultado = json_decode($response->getBody(), true);
             if($resultado['success']){
                 $resultado = $resultado['data'];
-                //return dd($resultado);
+                // return dd($resultado);
                 return view('Usuario.Admin.Usuarios.show', compact('resultado'));
             }else{
                 toastr()->error("El estudiante no existe");

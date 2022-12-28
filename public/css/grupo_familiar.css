@@ -8,31 +8,30 @@
     width: 180px;
     height: 80px;
     margin-bottom: 10px;
-    display: flex;
-    align-items: center;
     margin-left: 26px;
 }
 
 .boton_agregar_familiar {
-    width: 150px;
+    width: 180px;
     font-weight: normal;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
-    background-color: #2B6797;
+    background-color: #1a73e8;
     text-decoration: none;
     color: #FFFFFF;
     text-align: center;
     letter-spacing: 0.5px;
     cursor: pointer;
     border-radius: 10px;
-    height: 36px;
+    height: 47px;
     text-transform: capitalize;
-    border: 1px solid #2B6797;
+    border: 1px solid #1a73e8;
 }
 
 .boton_agregar_familiar:hover {
     text-decoration: none;
-    color: white;
+    border-color: #FFFFFF;
+    box-shadow: 0 1px 1px #70d4b0;
 }
 
 .tabla_grupo_familiar {
@@ -85,26 +84,31 @@
 
 .Descripcion_discapacidad {
     width: 100%;
-    height: 150px;
-    flex-direction: row;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     margin-bottom: 16px;
     margin-top: 14px;
     padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 20px;
     font-family: 'Poppins', sans-serif;
+} 
+.Descripcion_discapacidad .etiqueta_solicitud_adecuacion{
+    color: #005da4;
+    font-weight: revert;
+    font-size: 25px;
 }
 
+
 .Descripcion_discapacidad label {
-    padding-left: 20px;
     width: auto;
 }
 
 .Descripcion_discapacidad textarea {
-    padding-left: 6px;
-    margin-left: 20px;
-    width: 300px;
+    resize: none;
+    padding: 0px 5px 0 7px;
+    height: 180px;
+    width: 400px;
 }
 
 @media screen and (max-width:720px) {

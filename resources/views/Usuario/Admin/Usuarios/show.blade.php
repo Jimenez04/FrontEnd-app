@@ -150,7 +150,7 @@
                     </div>
 
                     <div class="divbtnPerfil">
-                        <input class="botonesperfil" value="Bitácora" type="button" onclick="location.href=route('');">
+                        <button class="btn btn-primary" onclick=" window.location.href = route('adecuacion_index', [ '{{$resultado['id_bitacora']}}', 'ver_usuario','{{$resultado['carnet']}}'] ); " >Bitacora</button>
                     </div>
                 </div>
             </div>

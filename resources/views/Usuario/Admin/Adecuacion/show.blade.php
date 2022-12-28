@@ -12,7 +12,7 @@
                     <button class="btn btn-primary" onclick="OpenModalEstado( '{{  $resultado['revision__solicitud']['estado'] }}' )">Estado</button>
                     <button class="btn btn-primary">Observaciones</button>
                     <button class="btn btn-primary">Recomendaciones</button>
-                    <button class="btn btn-primary">Bitacora</button>
+                    <button class="btn btn-primary" onclick=" window.location.href = route('adecuacion_index', [ '{{$resultado['id_bitacora']}}', 'verAdecuacion_admin','{{$resultado['id']}}'] ); " >Bitacora</button>
                 </div>
                 <div class="row adecuacion">
                     <h4 class="col">Información sobre su solicitud de adecuación</h4>
@@ -211,7 +211,7 @@
 
             <div class="divbotones_">
 
-                <a class="boton_opciones" type="button" value="Atrás" href="{{ URL::previous() }}">Regresar</a>
+                <a class="boton_opciones" type="button" value="Atrás" href="{{ route('Admin.Adecuacion') }}">Regresar</a>
 
             </div>
 

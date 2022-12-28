@@ -502,7 +502,7 @@ function ventana_necesidad_Apoyo() {
                     Segunda_carrera.classList.add('Descripcion');
                     Segunda_carrera.setAttribute('id', 'descripcion_atencion' );
                         var etiqueta_solicitud_adecuacion = document.createElement('label');
-                        etiqueta_solicitud_adecuacion.textContent = "Tipo de atención o seguimiento";
+                        etiqueta_solicitud_adecuacion.textContent = "Especifique:";
                         etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
                     Segunda_carrera.append(etiqueta_solicitud_adecuacion);
                         var campos_adecuacion = document.createElement('textarea');
@@ -588,7 +588,7 @@ contenido_nueva_adecuacion.append(titulocontenedor);
                     Segunda_carrera.classList.add('datos_enfermedad');
                     Segunda_carrera.setAttribute('id', 'campos_info_tratamiento' );
                         var etiqueta_solicitud_adecuacion = document.createElement('label');
-                        etiqueta_solicitud_adecuacion.textContent = "Tratamiento médico utilizado";
+                        etiqueta_solicitud_adecuacion.textContent = "Tratamiento utilizado";
                         etiqueta_solicitud_adecuacion.classList.add('etiqueta_padecimiento');
                     Segunda_carrera.append(etiqueta_solicitud_adecuacion);
                         var campos_adecuacion = document.createElement('input');
@@ -629,7 +629,7 @@ function ventana_GrupoFamiliar() {
                 campos_adecuacion.setAttribute('id','btn_agregar_Pariente');
                 campos_adecuacion.setAttribute('onclick','openModal_NuevoPariente(this);');
                 campos_adecuacion.classList.add('boton_agregar_familiar');
-                campos_adecuacion.textContent = "Agregar Familiar";
+                campos_adecuacion.textContent = "Agregar un Familiar";
                 datos_adecuacion.style.cssText = 'display: flex; flex-wrap: wrap; width: 100%; margin-left:0;'; 
                 div_boton.append(campos_adecuacion);
                 datos_adecuacion.append(div_boton); 

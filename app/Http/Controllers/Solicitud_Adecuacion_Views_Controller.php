@@ -108,6 +108,55 @@ class Solicitud_Adecuacion_Views_Controller extends Controller
         }
     }
 
+    public function view_recomendaciones($numSolicitud, $id)
+    {
+        try {
+            $response = Http::withHeaders([
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . session('token'),
+            ])->get(env('API_URL') . 'user/admin/persona/estudiante/adecuacion/'. $numSolicitud . '/recomendacion/');
+            $resultado = json_decode($response->getBody(), true);
+            //  dd($resultado); 
+
+             if (array_key_exists("errors", $resultado)) {
+                toastr()->error("La solicitud no existe");
+                return redirect()->back();
+             }
+            if ($resultado['success']) {
+                $resultado = $resultado['data'];
+                return view('Usuario.Admin.Adecuacion.Recomendaciones.index', compact(['resultado','numSolicitud','id']));
+            }
+            toastr()->error("La solicitud no existe");
+            return redirect()->back();
+        } catch (\Throwable $e) {
+            return redirect()->back();
+        }
+    }
+    public function view_observaciones($numSolicitud, $id)
+    {
+        try {
+            $response = Http::withHeaders([
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . session('token'),
+            ])->get(env('API_URL') . 'user/admin/persona/estudiante/adecuacion/'. $numSolicitud . '/observacion/');
+            $resultado = json_decode($response->getBody(), true);
+            // dd($resultado); 
+            if (array_key_exists("errors", $resultado)) {
+                toastr()->error("La solicitud no existe");
+                return redirect()->back();
+             }
+            if ($resultado['success']) {
+                $resultado = $resultado['data'];
+                return view('Usuario.Admin.Adecuacion.Observaciones.index', compact(['resultado','numSolicitud','id']));
+            }
+            toastr()->error("La solicitud no existe");
+            return redirect()->back();
+        } catch (\Throwable $e) {
+            return redirect()->back();
+        }
+    }
 
     ////////////////////////////////////////////
 }

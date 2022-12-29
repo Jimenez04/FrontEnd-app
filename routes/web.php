@@ -90,6 +90,10 @@ Route::get('/user/adecuacion/{id}',[Solicitud_Adecuacion_Views_Controller::class
 //admin
 Route::get('/admin/adecuacion/{id}',[Solicitud_Adecuacion_Views_Controller::class,'viewAdecuacionEspecifica_admin'])->name('verAdecuacion_admin')->middleware('verificartoken:Administrador');
 
+//--------------------------------Vistas Observaciones
+Route::get('admin/adecuacion/{numSolicitud}/{id}/observaciones',[Solicitud_Adecuacion_Views_Controller::class,'view_observaciones'])->name('adecuacion_observaciones_index')->middleware('verificartoken:Administrador');
+//--------------------------------Vistas Recomendaciones
+Route::get('admin/adecuacion/{numSolicitud}/{id}/recomendaciones',[Solicitud_Adecuacion_Views_Controller::class,'view_recomendaciones'])->name('adecuacion_recomendaciones_index')->middleware('verificartoken:Administrador');
 //--------------------------------FIN SOLICITUDE DE ADECUACIÓN ---------------------------------------
 //--------------------------------PAI---------------------------------------
 Route::get('/user/solicitud/pai',[solicitudPAIController::class,'view_PAI_User'])->name('PAI_user')->middleware('verificartoken:Estudiante');
@@ -99,7 +103,6 @@ Route::post('/user/solicitud/pai/store',[solicitudPAIController::class,'store'])
 Route::get('/user/solicitud/pai/{id}',[solicitudPAIController::class,'view_PAI_User_By_id'])->name('ver_Pai_User')->middleware('verificartoken');
 
 // //admin
-// Route::get('/admin/adecuacion/{id}',[Solicitud_Adecuacion_Views_Controller::class,'viewAdecuacionEspecifica_admin'])->name('verAdecuacion_admin')->middleware('verificartoken');
 
 //--------------------------------FIN PAI ---------------------------------------
 

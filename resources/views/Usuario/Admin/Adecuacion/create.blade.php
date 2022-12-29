@@ -18,6 +18,10 @@
                         <input type="text" id="cedula" title="Ingrese la cédula del estudiante" placeholder="123456789">
                         <button style="width: 10%" id="btn_buscar_estudiane" onclick="buscarestudiante()" type=""><i class="fa fa-search"></i></button>
                     </div>
+                    <div>
+                        <label for="" id="nombre_Estudiante"></label>
+                        <label for="" id="carnet_Estudiante"></label>
+                    </div>
                     <form onSubmit="return false;" method="post" enctype="multipart/form-data" >
                         @csrf
                         <h3>Nueva Solicitud de Adecuación</h3>

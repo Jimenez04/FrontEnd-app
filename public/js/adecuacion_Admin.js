@@ -13,6 +13,8 @@ function buscarestudiante() {
 }
 
 function verificarEstudiante(cedulaEstudiante) { 
+    document.getElementById('nombre_Estudiante').textContent = '';
+    document.getElementById('carnet_Estudiante').textContent = '';
     fetch(urlapi + 'admin/estudiante/existe/'+ cedulaEstudiante , {
         method: 'get',
         headers: {
@@ -30,6 +32,9 @@ function verificarEstudiante(cedulaEstudiante) {
                 document.getElementById('btn_buscar_estudiane').readOnly = true;
                 terminosycondiciones = true;
                 document.getElementById('btn_Siguiente').style.display = "block";
+                document.getElementById('btn_buscar_estudiane').disabled = true;
+                document.getElementById('nombre_Estudiante').textContent = data.data.nombre;
+                document.getElementById('carnet_Estudiante').textContent = data.data.carnet;
             } else { 
                 toastr['info']("El estudiante no existe en el sistema.");
                 terminosycondiciones = false;

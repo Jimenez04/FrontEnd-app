@@ -53,7 +53,7 @@
                         </a>
                     </div>
 
-                    <div class="Card">
+                   {{--  <div class="Card">
                         <a class="AdecuacionAdmi" href="">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
@@ -71,7 +71,7 @@
                             </div>
                         </a>
 
-                    </div>
+                    </div> --}}
 
 
                     <div class="Card">
@@ -92,7 +92,7 @@
                         </a>
                     </div>
 
-                    <div class="Card">
+                   {{--  <div class="Card">
                         <a class="AdecuacionAdmi" href="">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
@@ -108,7 +108,7 @@
                                 <span>Administre la información de las solicitudes</span>
                             </div>
                         </a>
-                    </div>
+                    </div> --}}
 
                     <div class="Card">
                         <a class="AdecuacionAdmi" href="{{ route('perfil_usuario') }}">

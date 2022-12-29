@@ -10,8 +10,8 @@
             <div class="Informacion_solicitud">
                 <div style="display: flex; justify-content:center; gap:1rem">
                     <button class="btn btn-primary" onclick="OpenModalEstado( '{{  $resultado['revision__solicitud']['estado'] }}' )">Estado</button>
-                    <button class="btn btn-primary">Observaciones</button>
-                    <button class="btn btn-primary">Recomendaciones</button>
+                    <button class="btn btn-primary" onclick=" window.location.href = route('adecuacion_observaciones_index', ['{{$resultado['numero_solicitud']}}','{{$resultado['id']}}'] ); ">Observaciones</button>
+                    <button class="btn btn-primary" onclick=" window.location.href = route('adecuacion_recomendaciones_index', ['{{$resultado['numero_solicitud']}}','{{$resultado['id']}}'] ); " >Recomendaciones</button>
                     <button class="btn btn-primary" onclick=" window.location.href = route('adecuacion_index', [ '{{$resultado['id_bitacora']}}', 'verAdecuacion_admin','{{$resultado['id']}}'] ); " >Bitacora</button>
                 </div>
                 <div class="row adecuacion">

@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="Card">
-                        <a class="PAIAdmi" href="">
+                        <a class="PAIAdmi" href="{{route('Admin.pai')}}">
                             <div class="Contenedor_arriba">
                                 <div class="Logos">
 

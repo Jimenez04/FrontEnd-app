@@ -142,7 +142,7 @@
                     </div>
                     
                     <div class="divbtnPerfil">
-                        <input class="botonesperfil" value="Solicitudes Adecuacion" type="button" onclick="location.href=route('');">
+                        <input class="botonesperfil" value="Solicitudes Adecuacion" type="button" onclick="location.href=route('Admin.Adecuacion','{{$resultado['carnet']}}');">
                     </div>
 
                     <div class="divbtnPerfil">

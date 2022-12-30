@@ -9,18 +9,19 @@ use Illuminate\Support\Facades\Redirect;
 class Solicitud_Adecuacion_Views_Controller extends Controller
 {
     //VISTA DE ADECUAICONES
-    public function index()
+    public function index($carnet = null)
     {
         try {
+            $ruta = $carnet != null ? 'user/admin/persona/estudiante/adecuacion/'. $carnet : 'user/persona/estudiante/adecuacion';
             $response = Http::withHeaders([
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Bearer ' . session('token'),
-            ])->get(env('API_URL') . 'user/persona/estudiante/adecuacion');
+            ])->get(env('API_URL') . $ruta);
 
             $resultado = json_decode($response->getBody(), true);
             $datos = $resultado['data'];
-            return view('Usuario.Admin.Adecuacion.index', compact('datos'));
+            return view('Usuario.Admin.Adecuacion.index', compact(['datos', 'carnet']));
         } catch (\Throwable $th) {
              return Redirect::back();
         }
@@ -87,7 +88,7 @@ class Solicitud_Adecuacion_Views_Controller extends Controller
         }
     }
 
-    public function viewAdecuacionEspecifica_admin($id)
+    public function viewAdecuacionEspecifica_admin($id, $carnet = null)
     {
         try {
             $response = Http::withHeaders([
@@ -98,7 +99,7 @@ class Solicitud_Adecuacion_Views_Controller extends Controller
             $resultado = json_decode($response->getBody(), true);
             if ($resultado['status']) {
                 $resultado = $resultado['data'];
-                return view('Usuario.Admin.Adecuacion.show', compact('resultado'));
+                return view('Usuario.Admin.Adecuacion.show', compact(['resultado','carnet']));
             } else {
                 toastr()->error("La solicitud no existe");
                 return redirect()->back();
@@ -154,6 +155,28 @@ class Solicitud_Adecuacion_Views_Controller extends Controller
             toastr()->error("La solicitud no existe");
             return redirect()->back();
         } catch (\Throwable $e) {
+            return redirect()->back();
+        }
+    }
+
+    public function view_adecuacion_carnet($carnet)
+    {
+        try {
+            $response = Http::withHeaders([
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . session('token'),
+            ])->get(env('API_URL') . 'user/admin/persona/estudiante/adecuacion/'. $carnet);
+            $resultado = json_decode($response->getBody(), true);
+            if ($resultado['status']) {
+                $datos = $resultado['data'];
+                return view('Usuario.Admin.Adecuacion.index', compact('datos'));
+            } else {
+                toastr()->error("La solicitud no existe");
+                return redirect()->back();
+            }
+        } catch (\Throwable $e) {
+            toastr()->error("No posee solicitudes para mostrar");
             return redirect()->back();
         }
     }

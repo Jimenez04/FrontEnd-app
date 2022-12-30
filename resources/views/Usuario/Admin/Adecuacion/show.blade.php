@@ -211,7 +211,7 @@
 
             <div class="divbotones_">
 
-                <a class="boton_opciones" type="button" value="Atrás" href="{{ route('Admin.Adecuacion') }}">Regresar</a>
+                <a class="boton_opciones" type="button" value="Atrás" href="{{ $carnet == null ? route('Admin.Adecuacion') : route('Admin.Adecuacion', $carnet)}}">Regresar</a>
 
             </div>
 

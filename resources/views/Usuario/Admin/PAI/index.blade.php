@@ -15,7 +15,9 @@
 
                     <div class="divbtn_nueva_solicitud">
 
-                        <a class="boton_new_adecuacion" href="{{route('PAI_User_new')}}">Nueva Solicitud</a>
+                        <a class="boton_new_adecuacion" href="
+                        {{route('Admin.pai.new')}}
+                        ">Nueva Solicitud</a>
                     </div>
 
                     <div class="divtabla">
@@ -29,10 +31,10 @@
                             </thead>
                             <tbody>
                                 @foreach ( $datos as  $item)
-                                <tr style="cursor:pointer " onclick="window.location= '{{route('ver_Pai_User', $item['id']) }}' " >
+                                <tr style="cursor:pointer " onclick="window.location= '{{route('Admin.pai.show', $item['id']) }}' " >
                                         <td data-label="N° Solicitud"scope="row"> {{ $item['numero_Solicitud']}} </th>
                                         <td data-label="Estado">{{$item['estado']}}</td>
-                                        <td data-label="Fecha">{{$item['nombre_Curso']}}</td>
+                                        <td data-label="Fecha">{{$item['curso__rezago']['nombre_Curso']}}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -41,7 +43,7 @@
 
                     <div class="divbotonVolver">
 
-                        <a class="boton_regresar" id="Regresar" href="{{ route('Student') }}">Volver</a>
+                        <a class="boton_regresar" id="Regresar" href="{{ route('Admin') }}">Volver</a>
 
                     </div>
 
@@ -58,7 +60,6 @@
 <script>
     jQuery(document).ready(function($) {
     $(".clickable-row").click(function() {
-        alert('hey');
         window.location = $(this).data("href");
     });
 });

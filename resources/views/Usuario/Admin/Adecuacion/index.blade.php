@@ -32,7 +32,7 @@ use Carbon\Carbon;
                             </thead>
                             <tbody>
                                 @foreach ( $datos as  $item)
-                                <tr style="cursor:pointer " onclick="window.location= '{{route('verAdecuacion_admin', $item['id'])}}' " >
+                                <tr style="cursor:pointer " onclick="window.location= '{{route('verAdecuacion_admin', [$item['id'],$carnet])}}' " >
                                         <td data-label="N° Solicitud"scope="row"> {{ $item['numero_solicitud']}} </th>
                                         <td data-label="Estado">{{$item['revision__solicitud']['estado']}}</td>
                                         <td data-label="Fecha">{{Carbon::parse($item['revision__solicitud']['fecha'])->format('d-m-Y')}}</td> 
@@ -44,7 +44,7 @@ use Carbon\Carbon;
 
                     <div class="divbotonVolver">
 
-                        <a class="boton_regresar" id="Regresar" href="{{route('Admin')}}">Volver</a>
+                        <a class="boton_regresar" id="Regresar" href="{{$carnet == null ? route('Admin') :  route('ver_usuario',$carnet)}}">Volver</a>
 
                     </div>
                 </div>

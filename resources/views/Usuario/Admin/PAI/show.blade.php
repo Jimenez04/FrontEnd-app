@@ -7,11 +7,17 @@
             <div class="Informacion_solicitud">
                 <div class="row adecuacion">
                     <h4 class="col">Información sobre su solicitud de adecuación</h4>
-                    <a id="btn_descarga" style="cursor: pointer; color:blue" onclick="descargaarchivoPAI('{{$datos['numero_Solicitud']}}')" class="col-md-auto">Descargar archivos</a>
-
-                    <button class="btn btn-secondary"> Dar seguimiento</button>
+                    <a id="btn_descarga" style="cursor: pointer; color:blue"
+                        onclick="descargaarchivoPAI('{{ $datos['numero_Solicitud'] }}')" class="col-md-auto">Descargar
+                        archivos
+                    </a>
                 </div>
-                <div class="informacion_adecuacion">
+                <div class="grid grid-columna-3" style="gap: 10px">
+                    <button class="btn btn-secondary place-center">Seguimiento</button>
+                    <button class="btn btn-secondary place-center">Bitácora</button>
+                    <button class="btn btn-secondary place-center">Estado</button>
+                </div>
+                <div class="informacion_adecuacion" style="margin-top: 20px">
                     <div class="table">
                         <div class="head">
                             <div class="head-PAI grid-columna-3 grid">
@@ -111,63 +117,51 @@
                             </div>
                         </div>
                     </div>
-
-
                     <main>
                         <section>
-                            <h1 style="font-weight: 700; margin: 15px 0 15px 0; font-size: 18px;">Instrucciones</h1>
-                            <p>
-                                En el siguiente cuadro indique su valoración de cada aspecto según la escala de 1 a 5, en
-                                donde 1 equivale al nivel MÁS BAJO o poco precuente y 5 al nivel MÁS ALTO o muy frecuente.
-                            </p>
+                            <h4>Formulario de valoración académica</h4>
 
-                            <table>
-                                <tr style="background-color: lightgreen;">
-                                    <td colspan="1" style="border-bottom:0 ; text-align: center"> <b>Aspectos a
-                                            considerar</b> </td>
-                                    <td colspan="5" style="text-align: center;">Valoración</td>
-                                </tr>
-                                <tr class="small-row" style="background-color: lightgreen;">
-                                    <td colspan="1" class="sin-borde" style="border-top:0 ;"></td>
-                                    <td colspan="1">1</td>
-                                    <td colspan="1">2</td>
-                                    <td colspan="1">3</td>
-                                    <td colspan="1">4</td>
-                                    <td colspan="1">5</td>
-                                </tr>
-
-                                @foreach ($banco['categorias'] as $item)
-                                    <tr style="background-color: lightblue;">
-                                        <td colspan="1">{{ $item['id'] }}- {{ $item['nombre'] }}:</td>
-                                        <td colspan="1"></td>
-                                        <td colspan="1"></td>
-                                        <td colspan="1"></td>
-                                        <td colspan="1"></td>
-                                        <td colspan="1"></td>
+                            <table class="table table-striped table-bordered table-responsive">
+                                <thead>
+                                    <tr class="small-row" style=" color:#004C6D; font-weight: bold;">
+                                        <td colspan="1" class="sin-borde" style="border-top:0 ;">Valoración</td>
+                                        <td colspan="1">1</td>
+                                        <td colspan="1">2</td>
+                                        <td colspan="1">3</td>
+                                        <td colspan="1">4</td>
+                                        <td colspan="1">5</td>
                                     </tr>
-                                     @foreach ($banco['Preguntas'] as $question)
+
+                                    @foreach ($banco['categorias'] as $item)
+                                        <tr style="background-color: #204D6F; color: white;">
+                                            <td colspan="1">{{ $item['id'] }}- {{ $item['nombre'] }}:</td>
+                                            <td colspan="1"></td>
+                                            <td colspan="1"></td>
+                                            <td colspan="1"></td>
+                                            <td colspan="1"></td>
+                                            <td colspan="1"></td>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($banco['Preguntas'] as $question)
                                         <tr class="pregunta">
-                                            
+
                                             <td colspan="1" style="width: 80%;">{{ $question['pregunta'] }}:</td>
-                                            
-                                            @foreach( $datos['curso__rezago']['formulario__valoracion__academica'] as $itemformulario )
+
+                                            @foreach ($datos['curso__rezago']['formulario__valoracion__academica'] as $itemformulario)
                                                 @if ($itemformulario['pregunta_Id'] == $question['id'])
-                                                        @for ($i = 1; $i < 6; ++$i)
-                                                            @if ($itemformulario['respuesta'] == $i)
-                                                                <td colspan="1" style="width: 4%;" class="center">X</td>
-                                                            @else
-                                                                <td colspan="1" style="width: 4%;" class="center"></td>
-                                                            @endif
+                                                    @for ($i = 1; $i < 6; ++$i)
+                                                        @if ($itemformulario['respuesta'] == $i)
+                                                            <td colspan="1" style="width: 4%;" class="center">X</td>
+                                                        @else
+                                                            <td colspan="1" style="width: 4%;" class="center"></td>
+                                                        @endif
                                                     @endfor
                                                 @endif
-                                                
                                             @endforeach
-
-                                            
-
-
                                         </tr>
                                     @endforeach
+                                </tbody>
                                 @endforeach
                             </table>
                         </section>
@@ -180,8 +174,8 @@
     </div>
 
 
-    <input type="hidden" name="" id="url" value="{{env('API_URL')}}">
-    <input type="hidden" name="" id="token" value="{{session('token')}}">
+    <input type="hidden" name="" id="url" value="{{ env('API_URL') }}">
+    <input type="hidden" name="" id="token" value="{{ session('token') }}">
 
 
 @endsection

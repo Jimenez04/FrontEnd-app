@@ -10,11 +10,15 @@
     grid-template-columns: 1fr 1.1fr;
 }
 
-.fila{
+.place-center {
+place-self: center;
+}
+
+.fila {
     border-bottom: black 1px solid;
 }
 
-.datos{
+.datos {
     place-self: center;
 }
 
@@ -25,14 +29,34 @@
     place-self: center;
     font-weight: 400;
 }
-label{
+label {
     font-weight: 400;
 }
-.etiqueta{
+.etiqueta {
     background-color: #2b6797;
     color: white;
     text-transform: capitalize;
 }
-.adecuacion{
+.adecuacion {
     height: auto !important;
+}
+
+@media screen and (max-width: 820px) {
+    td:nth-of-type(1):before {
+        content: ""!important;
+    }
+
+    td:nth-of-type(2):before {
+        content: ""!important;
+    }
+
+    td:nth-of-type(3):before {
+        content: ""!important;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    td:nth-of-type(3):before {
+        content: ""!important;
+    }
 }

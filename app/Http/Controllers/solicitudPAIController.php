@@ -160,6 +160,7 @@ class solicitudPAIController extends Controller
             $banco = json_decode($response->getBody(), true);
             
             //dd($datos);
+            //dd($banco);
              return view('Usuario.Admin.PAI.show', compact(['datos','banco']));
          } catch (\Throwable $th) {
               return Redirect::back();

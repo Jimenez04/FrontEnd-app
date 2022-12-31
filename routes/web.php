@@ -112,7 +112,10 @@ Route::get('admin/pai/mostrar/{id}',[solicitudPAIController::class,'show_byAdmin
 
 
 
+
+
 //--------------------------------FIN PAI ---------------------------------------
 
 //--------------------------------Vistas Bitacora---------------------------------------
 Route::get('admin/bitacora/{id}/{ruta}/{idretorno}',[BitacoraViewsController::class,'index'])->name('adecuacion_index')->middleware('verificartoken:Administrador');
+Route::get('user/persona/admin/pai/banco/preguntas', [SolicitudesPAIController::class, 'question']);

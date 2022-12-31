@@ -150,7 +150,7 @@ class solicitudPAIController extends Controller
  
              $resultado = json_decode($response->getBody(), true);
              $datos = $resultado['data'];
-              dd($datos);
+              //dd($datos);
              return view('Usuario.Admin.PAI.show', compact('datos'));
          } catch (\Throwable $th) {
               return Redirect::back();

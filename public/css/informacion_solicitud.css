@@ -1,23 +1,23 @@
+
 .Principal_Informacion_Adecuacion {
-    background-color: #ECECEC;
+    background-color: #ececec;
     padding: 100px;
 }
 
-.grid{
+.grid {
     display: grid;
 }
 
-.thead-solicitud{
-    background-color: #2B6797 !important;
+.thead-solicitud {
+    background-color: #2b6797 !important;
     color: white;
-    
 }
 
-.adecuacion{
+.adecuacion {
     height: 50px;
     align-items: center;
 }
-.subtitulo-informacion{
+.subtitulo-informacion {
     text-align: center;
     margin-bottom: 25px;
     margin-top: 20px;
@@ -38,16 +38,16 @@
 }
 
 .informacion_solicitud {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .informacion_solicitud h3 {
     text-align: center;
     padding-top: 4px;
     padding-bottom: 20px;
-    font-family: 'EB Garamond', sans-serif;
+    font-family: "EB Garamond", sans-serif;
 }
-.container_informacion_solicitud{
+.container_informacion_solicitud {
     display: flex;
     flex-direction: column;
     margin-bottom: 80px;
@@ -56,7 +56,7 @@
 .informacion_adecuacion {
     height: auto;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
 }
 
 .informacion_adecuacion p {
@@ -80,9 +80,7 @@
     word-spacing: 0.2em;
 }
 
-
-
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
     .Principal_Informacion_Adecuacion {
         padding: 100px 20px;
     }
@@ -104,7 +102,6 @@
         height: 60px;
         width: auto;
         gap: 6px;
-
     }
 
     .detalle_solicitud label {
@@ -113,12 +110,12 @@
     }
 
     .detalle_solicitud input {
-        font-size: calc(0.90em + 0.2vmin);
+        font-size: calc(0.9em + 0.2vmin);
         padding-left: 4px;
     }
 }
 
-@media screen and (max-width:520px) {
+@media screen and (max-width: 520px) {
     .Principal_Informacion_Adecuacion {
         padding: 100px 0;
     }
@@ -139,7 +136,6 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-
     }
 
     .detalle_solicitud label {

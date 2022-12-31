@@ -3,7 +3,7 @@
 }
 
 .grid-columna-3 {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .grid-columna-2 {
@@ -19,9 +19,7 @@
 }
 
 .head-PAI {
-    background-color: #2b6797;
-    color: white;
-    text-transform: capitalize;
+    text-align: center;
 }
 .columna {
     place-self: center;
@@ -29,4 +27,12 @@
 }
 label{
     font-weight: 400;
+}
+.etiqueta{
+    background-color: #2b6797;
+    color: white;
+    text-transform: capitalize;
+}
+.adecuacion{
+    height: auto !important;
 }

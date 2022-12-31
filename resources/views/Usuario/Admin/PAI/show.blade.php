@@ -13,16 +13,18 @@
                     <div class="table">
                         <div class="head">
                             <div class="head-PAI grid-columna-3 grid">
-                                <div class="columna"><label for=""> Solicitud</label></div>
-                                <div class="columna"><label for=""> Carrera</label></div>
-                                <div class="columna"><label for=""> Semestre</label></div>
-                            </div>
-                        </div>
-                        <div class="cuerpo fila">
-                            <div class=" grid-columna-3 grid">
-                                <div class="datos ">{{ $datos['numero_Solicitud'] }}</div>
-                                <div class="datos ">{{ $datos['nombre_Carrera'] }}</div>
-                                <div class="datos ">{{ $datos['semestre'] }}</div>
+                                <div class="grid table-bordered">
+                                    <label class="etiqueta"> Solicitud</label>
+                                    <label>{{ $datos['numero_Solicitud'] }}</label>
+                                </div>
+                                <div class="grid table-bordered">
+                                    <label class="etiqueta"> Carrera</label>
+                                    <label>{{ $datos['nombre_Carrera'] }}</label>
+                                </div>
+                                <div class="grid table-bordered">
+                                    <label class="etiqueta"> Semestre</label>
+                                    <label>{{ $datos['semestre'] }}</label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -109,7 +111,7 @@
                     </div>
 
 
-                    <main>
+                    {{-- <main>
                         <section>
                             <h1 style="font-weight: 700; margin: 15px 0 15px 0; font-size: 18px;">Instrucciones</h1>
                             <p>
@@ -157,7 +159,7 @@
                                 @endforeach
                             </table>
                         </section>
-                    </main>
+                    </main> --}}
 
 
                 </div>

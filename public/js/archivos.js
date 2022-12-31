@@ -24,6 +24,31 @@ function descargaarchivo(numero_solicitud) {
         });
 }
 
+function descargaarchivoPAI(numero_solicitud) { 
+    document.getElementById('btn_descarga').style.cssText = 'pointer-events:none; cursor:progress;'; 
+    toastr['success']("Estamos preparando sus archivos, espere un momento.");
+    fetch(document.getElementById('url').value + 'user/pai/'+numero_solicitud+'/archivos' , { 
+        method: 'get',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept' : 'application/json',
+            'Authorization' : 'Bearer ' + document.getElementById('token').value,
+        }
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.status) { 
+                archivos = data.data;
+                download();
+                return;
+            }
+            toastr['error']("Ocurrio un error interno.");
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+}
+
 async function download() {
     for (let cont = 0; cont < archivos.length; cont++) {
         iframe = await makeiframe(archivos[cont]);

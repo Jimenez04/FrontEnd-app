@@ -7,7 +7,7 @@
             <div class="Informacion_solicitud">
                 <div class="row adecuacion">
                     <h4 class="col">Información sobre su solicitud de adecuación</h4>
-                    <a href="#" class="col-md-auto">Descargar archivos</a>
+                    <a id="btn_descarga" style="cursor: pointer; color:blue" onclick="descargaarchivoPAI('{{$datos['numero_Solicitud']}}')" class="col-md-auto">Descargar archivos</a>
                 </div>
                 <div class="informacion_adecuacion">
                     <div class="table">
@@ -178,8 +178,10 @@
     </div>
 
 
-
+    <input type="hidden" name="" id="url" value="{{env('API_URL')}}">
+    <input type="hidden" name="" id="token" value="{{session('token')}}">
 
 
 @endsection
 <link rel="stylesheet" href="{{ asset('css/pai-info.css') }}">
+<script src="{{ asset('js/archivos.js') }}"></script>

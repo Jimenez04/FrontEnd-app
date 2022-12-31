@@ -8,6 +8,8 @@
                 <div class="row adecuacion">
                     <h4 class="col">Información sobre su solicitud de adecuación</h4>
                     <a id="btn_descarga" style="cursor: pointer; color:blue" onclick="descargaarchivoPAI('{{$datos['numero_Solicitud']}}')" class="col-md-auto">Descargar archivos</a>
+
+                    <button class="btn btn-secondary"> Dar seguimiento</button>
                 </div>
                 <div class="informacion_adecuacion">
                     <div class="table">

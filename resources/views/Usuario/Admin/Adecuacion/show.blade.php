@@ -16,7 +16,7 @@
                 </div>
                 <div class="row adecuacion">
                     <h4 class="col">Información sobre su solicitud de adecuación</h4>
-                    <a href="#" class="col-md-auto">Descargar archivos</a>
+                    <a id="btn_descarga" style="cursor: pointer; color:blue" onclick="descargaarchivo('{{$resultado['numero_solicitud']}}')" class="col-md-auto">Descargar archivos</a>
                 </div>
                 <div class="container_informacion_solicitud" id="container_informacion_solictud">
                     <div class="informacion_adecuacion">
@@ -228,3 +228,4 @@
     @include('modals.updateStatus')
 @endsection
 <script src="{{ asset('js/funciones_verAdecuacion.js') }}"></script>
+<script src="{{ asset('js/archivos.js') }}"></script>

@@ -150,8 +150,17 @@ class solicitudPAIController extends Controller
  
              $resultado = json_decode($response->getBody(), true);
              $datos = $resultado['data'];
-              //dd($datos);
-             return view('Usuario.Admin.PAI.show', compact('datos'));
+
+             $response = Http::withHeaders([
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . session('token'),
+            ])->get(env('API_URL') . 'user/persona/admin/pai/banco/preguntas');
+
+            $banco = json_decode($response->getBody(), true);
+            
+            //dd($datos);
+             return view('Usuario.Admin.PAI.show', compact(['datos','banco']));
          } catch (\Throwable $th) {
               return Redirect::back();
          }

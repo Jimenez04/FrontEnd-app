@@ -111,7 +111,7 @@
                     </div>
 
 
-                    {{-- <main>
+                    <main>
                         <section>
                             <h1 style="font-weight: 700; margin: 15px 0 15px 0; font-size: 18px;">Instrucciones</h1>
                             <p>
@@ -134,32 +134,42 @@
                                     <td colspan="1">5</td>
                                 </tr>
 
-                                @foreach (Categoria::orderBy('id', 'ASC')->get() as $item)
+                                @foreach ($banco['categorias'] as $item)
                                     <tr style="background-color: lightblue;">
-                                        <td colspan="1">{{ $item->id }}- {{ $item->nombre }}:</td>
+                                        <td colspan="1">{{ $item['id'] }}- {{ $item['nombre'] }}:</td>
                                         <td colspan="1"></td>
                                         <td colspan="1"></td>
                                         <td colspan="1"></td>
                                         <td colspan="1"></td>
                                         <td colspan="1"></td>
                                     </tr>
-                                    @foreach ($item->Preguntas_Valoracion as $question)
+                                     @foreach ($banco['Preguntas'] as $question)
                                         <tr class="pregunta">
-                                            <td colspan="1" style="width: 80%;">{{ $question->pregunta }}:</td>
-
-                                            @for ($i = 1; $i < 6; ++$i)
-                                                @if ($solicitud->Curso_Rezago->Formulario_Valoracion_Academica()->where('pregunta_Id', $question->id)->first()->respuesta == $i)
-                                                    <td colspan="1" style="width: 4%;" class="center">X</td>
-                                                @else
-                                                    <td colspan="1" style="width: 4%;" class="center"></td>
+                                            
+                                            <td colspan="1" style="width: 80%;">{{ $question['pregunta'] }}:</td>
+                                            
+                                            @foreach( $datos['curso__rezago']['formulario__valoracion__academica'] as $itemformulario )
+                                                @if ($itemformulario['pregunta_Id'] == $question['id'])
+                                                        @for ($i = 1; $i < 6; ++$i)
+                                                            @if ($itemformulario['respuesta'] == $i)
+                                                                <td colspan="1" style="width: 4%;" class="center">X</td>
+                                                            @else
+                                                                <td colspan="1" style="width: 4%;" class="center"></td>
+                                                            @endif
+                                                    @endfor
                                                 @endif
-                                            @endfor
+                                                
+                                            @endforeach
+
+                                            
+
+
                                         </tr>
                                     @endforeach
                                 @endforeach
                             </table>
                         </section>
-                    </main> --}}
+                    </main>
 
 
                 </div>

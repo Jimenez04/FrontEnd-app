@@ -105,9 +105,9 @@ Route::post('/admin/solicitud/pai/store',[solicitudPAIController::class,'store_b
 // //user
 Route::get('/user/solicitud/pai/{id}',[solicitudPAIController::class,'view_PAI_User_By_id'])->name('ver_Pai_User')->middleware('verificartoken');
 // //admin
-Route::get('admin/pai',[solicitudPAIController::class,'index'])->name('Admin.pai')->middleware('verificartoken:Administrador');
+Route::get('admin/pai/{carnet?}',[solicitudPAIController::class,'index'])->name('Admin.pai')->middleware('verificartoken:Administrador');
 Route::get('admin/pai/crear',[solicitudPAIController::class,'create_byAdmin'])->name('Admin.pai.new')->middleware('verificartoken:Administrador');
-Route::get('admin/pai/mostrar/{id}',[solicitudPAIController::class,'show_byAdmin'])->name('Admin.pai.show')->middleware('verificartoken:Administrador');
+Route::get('admin/pai/mostrar/{id}/{carnet?}',[solicitudPAIController::class,'show_byAdmin'])->name('Admin.pai.show')->middleware('verificartoken:Administrador');
 
 
 

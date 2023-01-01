@@ -13,9 +13,9 @@
                     </a>
                 </div>
                 <div class="grid grid-columna-3" style="gap: 10px">
+                    <button class="btn btn-secondary place-center" onclick="OpenModalEstado( '{{  $datos['estado'] }}' )">Estado</button>
                     <button class="btn btn-secondary place-center">Seguimiento</button>
-                    <button class="btn btn-secondary place-center">Bitácora</button>
-                    <button class="btn btn-secondary place-center">Estado</button>
+                    <button class="btn btn-secondary place-center" onclick=" window.location.href = route('adecuacion_index', [ '{{$datos['id_bitacora']}}', 'Admin.pai.show','{{$datos['id']}}'] ); " >Bitacora</button>
                 </div>
                 <div class="informacion_adecuacion" style="margin-top: 20px">
                     <div class="table">
@@ -54,7 +54,7 @@
                             </div>
                             <div class="grid grid-columna-2 table-bordered">
                                 <label for="">Estado</label>
-                                <label>{{ $datos['estado'] }}</label>
+                                <label id="estado">{{ $datos['estado'] }}</label>
                             </div>
 
                             <div class="grid grid-columna-2 table-bordered">
@@ -159,6 +159,13 @@
                                                     @endfor
                                                 @endif
                                             @endforeach
+                                            @if ($datos['curso__rezago']['formulario__valoracion__academica'] == null)
+                                                <td colspan="1" style="width: 4%;" class="center"></td>
+                                                <td colspan="1" style="width: 4%;" class="center"></td>
+                                                <td colspan="1" style="width: 4%;" class="center"></td>
+                                                <td colspan="1" style="width: 4%;" class="center"></td>
+                                                <td colspan="1" style="width: 4%;" class="center"></td>
+                                            @endif
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -166,7 +173,7 @@
                             </table>
                         </section>
                     </main>
-
+                    <a class="boton_opciones" type="button" value="Atrás" href="{{ $carnet == null ? route('Admin.pai') : route('Admin.pai', $carnet)}}">Regresar</a>
 
                 </div>
             </div>
@@ -176,8 +183,9 @@
 
     <input type="hidden" name="" id="url" value="{{ env('API_URL') }}">
     <input type="hidden" name="" id="token" value="{{ session('token') }}">
-
+    @include('modals.updateStatusPAI')
 
 @endsection
+<script src="{{ asset('js/funciones_verPAI.js') }}"></script>
 <link rel="stylesheet" href="{{ asset('css/pai-info.css') }}">
 <script src="{{ asset('js/archivos.js') }}"></script>

@@ -8,14 +8,24 @@ document.addEventListener("DOMContentLoaded", async function () {
     token = document.getElementById("token").value; 
     document.getElementById('estados_solicitud').addEventListener('change', function () {
         selector = document.getElementById('estados_solicitud');
-        if (selector.options[selector.selectedIndex].value == 4 ) { 
-            document.getElementById('descripcion_Rechazado').value = '';
-            document.getElementById('container_descripcion_Rechazado').style.display = 'flex';
-            return;
-        }
-        document.getElementById('container_descripcion_Rechazado').style.display = 'none';
-      });
+        estadosTextArea(selector);
+    });
+    selector = document.getElementById('estados_solicitud');
+    estadosTextArea(selector);
 });
+
+function estadosTextArea(selector) { 
+    document.getElementById('mensaje').value = '';
+    document.getElementById('descripcion_Rechazado').value = '';
+    if (selector.options[selector.selectedIndex].value == 4) {
+        document.getElementById('container_descripcion_Rechazado').style.display = 'flex';
+        document.getElementById('container_mensaje').style.display = 'none';
+        return;
+    } else { 
+        document.getElementById('container_mensaje').style.display = 'flex';
+        document.getElementById('container_descripcion_Rechazado').style.display = 'none';
+    }
+}
 
 function OpenModalEstado(estado) {
     if (estado != 'Rechazado' ) { 
@@ -39,6 +49,7 @@ async function actualizarEstado(numero_solicitud) {
     datos = ({
         nuevo_Estado: selector.options[selector.selectedIndex].value,
         descripcion_Rechazado: document.getElementById('descripcion_Rechazado').value,
+        mensaje : document.getElementById('mensaje').value
     });
     if (selector.options[selector.selectedIndex].value == 4) {
         var mensajeRechazo = document.getElementById('descripcion_Rechazado').value;
@@ -46,10 +57,11 @@ async function actualizarEstado(numero_solicitud) {
             toastr['warning']("Ingrese un mensaje de rechazo valido y mayor a 6 caracteres.");
             return;
         }
+        delete datos.mensaje;
     } else { 
         delete datos.descripcion_Rechazado;
     }
-    await fetch(urlapi + 'user/admin/persona/estudiante/adecuacion/'+numero_solicitud+'/estado/actualizar', {
+    await fetch(urlapi + 'user/admin/persona/estudiante/pai/'+numero_solicitud+'/estado/actualizar', { 
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -62,9 +74,10 @@ async function actualizarEstado(numero_solicitud) {
         .then((data) => {
             console.log(data);
             if (data.status) {
+                document.getElementById('mensaje').value = '';
+                document.getElementById('descripcion_Rechazado').value = '';
                 toastr['success'](data.message);
-                td = document.getElementById('columna_estado');
-                td.innerHTML = selector.options[selector.selectedIndex].textContent;
+                document.getElementById('estado').textContent = selector.options[selector.selectedIndex].textContent;
                 closeModalEstado();
             } else {
                 toastr['error'](data.message);

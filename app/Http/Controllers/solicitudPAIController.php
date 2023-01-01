@@ -122,7 +122,7 @@ class solicitudPAIController extends Controller
         }
     }
     //admin
-     public function index()
+     public function index($carnet = null)
      {
          try {
              $response = Http::withHeaders([
@@ -134,12 +134,12 @@ class solicitudPAIController extends Controller
              $resultado = json_decode($response->getBody(), true);
              $datos = $resultado['data'];
             //  dd($datos);
-             return view('Usuario.Admin.PAI.index', compact('datos'));
+             return view('Usuario.Admin.PAI.index', compact(['datos','carnet']));
          } catch (\Throwable $th) {
               return Redirect::back();
          }
      }
-     public function show_byAdmin($id)
+     public function show_byAdmin($id, $carnet = null)
      {
          try {
              $response = Http::withHeaders([
@@ -161,7 +161,7 @@ class solicitudPAIController extends Controller
             
             //dd($datos);
             //dd($banco);
-             return view('Usuario.Admin.PAI.show', compact(['datos','banco']));
+             return view('Usuario.Admin.PAI.show', compact(['datos','banco','carnet']));
          } catch (\Throwable $th) {
               return Redirect::back();
          }

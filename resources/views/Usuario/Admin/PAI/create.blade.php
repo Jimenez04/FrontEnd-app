@@ -59,10 +59,7 @@
                                 <div class="datos_pai razones">
                                     <label class="etiqueta_solicitud_adecuacion">Razones por las cuales no
                                         ha podido aprobar el curso son:</label>
-                                    <textarea type="text" id="resumen_No_Aprobar_El_Curso" name="resumen_No_Aprobar_El_Curso" title="Mínimo 4 caracteres"
-                                        class="inputrazon">
-                                        {{ old('resumen_No_Aprobar_El_Curso') }}
-                                    </textarea>
+                                    <textarea type="text" id="resumen_No_Aprobar_El_Curso" name="resumen_No_Aprobar_El_Curso" title="Mínimo 4 caracteres" class="inputrazon"> {{ old('resumen_No_Aprobar_El_Curso') }} </textarea>
                                 </div>
                                 <div class="datos_pai ">
                                     <label class="etiqueta_solicitud_adecuacion">Número de grupo del

@@ -55,6 +55,8 @@ async function actualizarEstado(numero_solicitud) {
         var mensajeRechazo = document.getElementById('descripcion_Rechazado').value;
         if (mensajeRechazo.trim() == "" || mensajeRechazo.trim() == null || mensajeRechazo.trim().length < 6) {
             toastr['warning']("Ingrese un mensaje de rechazo valido y mayor a 6 caracteres.");
+            document.getElementById('btn_actualizarEstado').style.cssText = 'display:block !important;';
+            document.getElementById('btn_cancelar').style.cssText = 'display:block !important;';
             return;
         }
         delete datos.mensaje;

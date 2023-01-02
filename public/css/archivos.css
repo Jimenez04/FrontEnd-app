@@ -1,3 +1,7 @@
+.overflow-etiqueta{
+    overflow-wrap: anywhere;
+}
+
 .lista_archivos {
     display: flex;
     flex-direction: column;

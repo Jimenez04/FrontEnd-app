@@ -841,6 +841,7 @@ function rellenarTablaArchivos(listaarchhivos) {  //array_archivos
     var tr = document.createElement('tr');
             var td_tipoPariente = document.createElement('td');
             td_tipoPariente.setAttribute('scope','col');
+            td_tipoPariente.style.cssText = 'cursor:pointer';
             td_tipoPariente.appendChild(document.createTextNode(archivo['nombre']));
         tr.append(td_tipoPariente);
             var td_ocupacionPariente = document.createElement('td');

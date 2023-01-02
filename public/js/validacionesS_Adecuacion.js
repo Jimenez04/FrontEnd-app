@@ -1,5 +1,5 @@
 function validarcampos_DatosSolicitud() {
-    return true;
+    //return true;
     datos = [];
     razon_Solicitud = document.getElementById('input_RazonSolicitud').value;
     carrera_Empadronada = document.getElementById('input_CarreraEmpadronada').value;
@@ -66,7 +66,7 @@ function validarcampos_DatosSolicitud() {
 }
  
 function validarCampos_DatosAcademicos() { 
-    return true;
+    //return true;
 
     var nombre = document.getElementById('input_InstitucionProcedencia').value;
     var ano_egreso = document.getElementById('input_Año_Egreso').value;
@@ -97,7 +97,7 @@ function validarCampos_DatosAcademicos() {
 }
 
 function validarCampos_Necesidad_Y_Apoyo() { 
-    return true;
+    //return true;
     var diagnostico = document.getElementById('input_Diagnostico').value;
     var area_Profesional = document.getElementById('input_ProfesionalDiagnostica').value;
     var recibe_atencionyseguimiento = $('input:radio[name=seleccion_atencion]:checked').val();
@@ -146,7 +146,7 @@ function validarCampos_Necesidad_Y_Apoyo() {
 }
 
 function validarCampos_Salud() { 
-   return true;
+  // return true;
 var afectacionDesempeno = $('input:radio[name=seleccion_enfermedad]:checked').val();
 var enfermedad = document.getElementById('input_Cual_enfermedad').value;
     var tratamiento = document.getElementById('input_Tratamiento_enfermedad').value;
@@ -180,7 +180,7 @@ var enfermedad = document.getElementById('input_Cual_enfermedad').value;
 }
 
 function validarCampos_GrupoFamiliar() { 
-   return true;
+  // return true;
     var descripcion_De_Discapacidades = document.getElementById('discapacidad_grupo').value;
     if (array_parientes.length > 0) {
         var estado = validad_datos_mensaje([descripcion_De_Discapacidades], 10, "Descripción de discapacidades de grupo familiar");

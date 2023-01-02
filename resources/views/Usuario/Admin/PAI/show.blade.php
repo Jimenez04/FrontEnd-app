@@ -148,7 +148,6 @@
                                     @foreach ($banco['Preguntas'] as $question)
                                         <tr class="pregunta">
                                             @if ($item['id'] == $question['categoria_Id'])
-
                                             <td colspan="1" style="width: 80%;">{{ $question['pregunta'] }}:</td>
                                                 @foreach ($datos['curso__rezago']['formulario__valoracion__academica'] as $itemformulario)
                                                         @if ($itemformulario['pregunta_Id'] == $question['id'])
@@ -161,13 +160,13 @@
                                                             @endfor
                                                         @endif
                                                 @endforeach
-                                            @endif
-                                            @if ($datos['curso__rezago']['formulario__valoracion__academica'] == null)
-                                                <td colspan="1" style="width: 4%;" class="center"></td>
-                                                <td colspan="1" style="width: 4%;" class="center"></td>
-                                                <td colspan="1" style="width: 4%;" class="center"></td>
-                                                <td colspan="1" style="width: 4%;" class="center"></td>
-                                                <td colspan="1" style="width: 4%;" class="center"></td>
+                                                @if ($datos['curso__rezago']['formulario__valoracion__academica'] == null)
+                                                    <td colspan="1" style="width: 4%;" class="center"></td>
+                                                    <td colspan="1" style="width: 4%;" class="center"></td>
+                                                    <td colspan="1" style="width: 4%;" class="center"></td>
+                                                    <td colspan="1" style="width: 4%;" class="center"></td>
+                                                    <td colspan="1" style="width: 4%;" class="center"></td>
+                                                @endif
                                             @endif
                                         </tr>
                                     @endforeach

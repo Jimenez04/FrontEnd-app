@@ -22,24 +22,24 @@
             <div class="form">
                 <div class="modal-body">
                     <p id="info_estudiante">
-                        Yo <b>{{$resultado['persona']['nombre1'] . " " . $resultado['persona']['nombre2'] . " " . $resultado['persona']['apellido1'] . " " . $resultado['persona']['apellido2']}}</b>, con cédula <b>{{ $resultado['persona']['cedula']}}</b>, estudiante actual de la Universidad de Costa Rica, sede Guanacaste y en recinto Liberia, con número de carne:  <b>{{ $resultado['persona']['estudiante']['carnet']}}</b>, declaro firmemente, que toda la documentación e información que suministrare será totalmente verídica, así mismo, doy consentimiento a que esta información sea usada y valorada por la Oficina de Orientación de este recinto.
+                        Yo <b>{{$resultado['persona']['nombre1'] . " " . $resultado['persona']['nombre2'] . " " . $resultado['persona']['apellido1'] . " " . $resultado['persona']['apellido2']}}</b>, con cédula <b>{{ $resultado['persona']['cedula']}}</b>, estudiante actual de la Universidad de Costa Rica, sede Guanacaste, con número de carne:  <b>{{ $resultado['persona']['estudiante']['carnet']}}</b>, declaro firmemente, que toda la documentación e información que suministrare será totalmente verídica, así mismo, doy consentimiento a que esta información sea usada y valorada por la Oficina de Orientación de este recinto.
                     </p>
                     
 
                     <b>Aspectos para considerar</b> 
-                    <p>
+                    <p style="white-space: pre-line;">
                         -	Todos los campos de este formulario son de carácter obligatorio.
-                        -	Se deberá aportar información verifica sobre su persona.
+                        -	Se deberá aportar información verídica sobre su persona.
                         -	Adjuntar dictamen médico.
                         -	Adjuntar diagnostico o valoración académica.
                     </p>
                     
                 </div>
-                <div class="botones_modal2">
-                    <a style="cursor: pointer; color:white" class="botonCerrarModal"
+                <div style="text-align: center">
+                    <a style="cursor: pointer; color:white" class="btn btn-secondary botonCerrarModal"
                         href="{{ url()->previous() }}">Cancelar
                     </a>
-                    <a class="btn btn-primary" id="btn_consentimiento" onclick="aceptarContinuar()" type="submit"
+                    <a style="color:white; font-size:1rem;" class="btn btn-primary" id="btn_consentimiento" onclick="aceptarContinuar()" type="submit"
                         value="Aceptar y continuar">Aceptar
                     </a>
                 </div>

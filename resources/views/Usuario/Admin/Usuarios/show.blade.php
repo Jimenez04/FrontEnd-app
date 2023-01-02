@@ -133,12 +133,12 @@
                 <div class="contenedorbtn_solicitudes">
 
                     <div class="divbtnPerfil">
-                        <input class="botonesperfil" value="Atras" type="button"
+                        <input class="botonesperfil width1" value="Atras" type="button"
                             onclick="location.href=route('lista_usuarios');">  
                     </div>
 
                     <div class="divbtnPerfil">
-                            <a class="botonesperfil" value="Editar Usuario" type="button" href="{{route('Admin.User.editar_perfil', $resultado['carnet'])}}">Editar Usuario</a>
+                            <a class="botonesperfil flexalign" value="Editar Usuario" type="button" href="{{route('Admin.User.editar_perfil', $resultado['carnet'])}}">Editar Usuario</a>
                     </div>
                     
                     <div class="divbtnPerfil">
@@ -150,7 +150,7 @@
                     </div>
 
                     <div class="divbtnPerfil">
-                        <button class="btn btn-primary" onclick=" window.location.href = route('adecuacion_index', [ '{{$resultado['id_bitacora']}}', 'ver_usuario','{{$resultado['carnet']}}'] ); " >Bitacora</button>
+                        <button class="botonesperfil width1" onclick=" window.location.href = route('adecuacion_index', [ '{{$resultado['id_bitacora']}}', 'ver_usuario','{{$resultado['carnet']}}'] ); " >Bitacora</button>
                     </div>
                 </div>
             </div>

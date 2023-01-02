@@ -23,7 +23,7 @@ function openModal_NuevoPariente() {
 
 function buscar() { 
     cedula_pariente = document.getElementById('cedula_pariente').value;
-    if (cedula_pariente.trim() != "" && cedula_pariente.trim() != null && cedula_pariente.trim().length > 8) {
+    if (cedula_pariente.trim() != "" && cedula_pariente.trim() != null && cedula_pariente.trim().length > 8 && !isNaN(cedula_pariente.trim())) {
         document.getElementById('btn_buscar').disabled = true;
         document.getElementById('container-tipo-pariente').setAttribute('Style', 'display:none');
         document.getElementById('btn_add_pariente').hidden = true;

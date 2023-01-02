@@ -843,10 +843,14 @@ function rellenarTablaArchivos(listaarchhivos) {  //array_archivos
             td_tipoPariente.setAttribute('scope','col');
             td_tipoPariente.style.cssText = 'cursor:pointer';
             td_tipoPariente.appendChild(document.createTextNode(archivo['nombre']));
+            td_tipoPariente.style.cssText = 'overflow-wrap: anywhere;;';
         tr.append(td_tipoPariente);
             var td_ocupacionPariente = document.createElement('td');
             td_ocupacionPariente.setAttribute('scope','col');
             td_ocupacionPariente.appendChild(document.createTextNode(archivo['expedidoPor']));
+            td_ocupacionPariente.style.cssText = 'overflow-wrap: anywhere;;';
+            
+            
         tr.append(td_ocupacionPariente);
             var td_cedulaPariente = document.createElement('td');
             td_cedulaPariente.setAttribute('scope','col');

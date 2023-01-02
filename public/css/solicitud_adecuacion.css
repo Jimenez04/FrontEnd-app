@@ -95,10 +95,10 @@
 .boton_new_adecuacion:hover {
     border-color: #b6e5d4;
     transition: 0.1s;
+    background-color: #4daa57eb;
     color: #FFFFFF;
     text-decoration: none !important;
-    width:149px;
-    box-shadow: 0 1px 1px #70d4b0;
+    box-shadow: 0 1px 1px #70d4b0
 }
 
 .divtabla {

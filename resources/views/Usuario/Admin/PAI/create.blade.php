@@ -87,7 +87,7 @@
                         </div>
                         <div class="divbotones_">
                             <button type="button" class="botones_est"
-                                onclick="window.location= '{{ route('PAI_user') }}'">Cancelar</button>
+                                onclick="window.location= '{{ route('Admin.pai') }}'">Cancelar</button>
                             <button id="btn_continuar" type="submit" class="botones_est" disabled>Continuar</button>
                         </div>
                     </form>

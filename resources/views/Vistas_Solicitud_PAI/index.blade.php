@@ -55,11 +55,4 @@
         </div>
     </div>
 @endsection
-<script>
-    jQuery(document).ready(function($) {
-    $(".clickable-row").click(function() {
-        alert('hey');
-        window.location = $(this).data("href");
-    });
-});
-</script>
+

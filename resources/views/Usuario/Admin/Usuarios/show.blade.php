@@ -146,7 +146,7 @@
                     </div>
 
                     <div class="divbtnPerfil">
-                        <input class="botonesperfil" value="Solicitudes PAI" type="button">
+                        <input class="botonesperfil" value="Solicitudes PAI" type="button" onclick="location.href=route('Admin.pai','{{$resultado['carnet']}}');">
                     </div>
 
                     <div class="divbtnPerfil">

@@ -35,7 +35,7 @@ class RegistroController extends Controller
                         toastr()->error($error);
                     }
                 }
-                return Redirect::back()->withErrors($resultado['errors'])->withInput();;
+                return Redirect::back()->withErrors($resultado['errors'])->withInput();
             }
             toastr()->success('Cuenta creada correctamente');
             if(session('login')){

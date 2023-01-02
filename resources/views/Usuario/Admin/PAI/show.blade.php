@@ -6,7 +6,7 @@
         <div class="container_Informacion_Adecuacion">
             <div class="Informacion_solicitud">
                 <div class="row adecuacion">
-                    <h4 class="col">Información sobre su solicitud de adecuación</h4>
+                    <h4 class="col">Información sobre su solicitud PAI</h4>
                     <a id="btn_descarga" style="cursor: pointer; color:blue"
                         onclick="descargaarchivoPAI('{{ $datos['numero_Solicitud'] }}')" class="col-md-auto">Descargar
                         archivos
@@ -14,7 +14,9 @@
                 </div>
                 <div class="grid grid-columna-3" style="gap: 10px">
                     <button class="btn btn-secondary place-center" onclick="OpenModalEstado( '{{  $datos['estado'] }}' )">Estado</button>
-                    <button class="btn btn-secondary place-center">Seguimiento</button>
+                    @if($datos['estado'] != 'Rechazado' && $datos['estado'] != 'Terminado')
+                    <button class="btn btn-secondary place-center" onclick=" window.location.href = route('Admin.pai.resume',['{{$datos['numero_Solicitud']}}','{{$datos['id']}}', '{{ $carnet}}']); ">Seguimiento</button>
+                    @endif
                     <button class="btn btn-secondary place-center" onclick=" window.location.href = route('adecuacion_index', [ '{{$datos['id_bitacora']}}', 'Admin.pai.show','{{$datos['id']}}'] ); " >Bitacora</button>
                 </div>
                 <div class="informacion_adecuacion" style="margin-top: 20px">
@@ -145,20 +147,21 @@
                                 <tbody>
                                     @foreach ($banco['Preguntas'] as $question)
                                         <tr class="pregunta">
+                                            @if ($item['id'] == $question['categoria_Id'])
 
                                             <td colspan="1" style="width: 80%;">{{ $question['pregunta'] }}:</td>
-
-                                            @foreach ($datos['curso__rezago']['formulario__valoracion__academica'] as $itemformulario)
-                                                @if ($itemformulario['pregunta_Id'] == $question['id'])
-                                                    @for ($i = 1; $i < 6; ++$i)
-                                                        @if ($itemformulario['respuesta'] == $i)
-                                                            <td colspan="1" style="width: 4%;" class="center">X</td>
-                                                        @else
-                                                            <td colspan="1" style="width: 4%;" class="center"></td>
+                                                @foreach ($datos['curso__rezago']['formulario__valoracion__academica'] as $itemformulario)
+                                                        @if ($itemformulario['pregunta_Id'] == $question['id'])
+                                                            @for ($i = 1; $i < 6; ++$i)
+                                                                @if ($itemformulario['respuesta'] == $i)
+                                                                    <td colspan="1" style="width: 4%;" class="center">X</td>
+                                                                @else
+                                                                    <td colspan="1" style="width: 4%;" class="center"></td>
+                                                                @endif
+                                                            @endfor
                                                         @endif
-                                                    @endfor
-                                                @endif
-                                            @endforeach
+                                                @endforeach
+                                            @endif
                                             @if ($datos['curso__rezago']['formulario__valoracion__academica'] == null)
                                                 <td colspan="1" style="width: 4%;" class="center"></td>
                                                 <td colspan="1" style="width: 4%;" class="center"></td>

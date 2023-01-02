@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\addPAI_request;
 use App\Http\Requests\newPAI_Admin_request;
 use App\Http\Requests\newPAI_request;
+use App\Http\Requests\resumePAIrequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Redirect;
@@ -125,15 +126,16 @@ class solicitudPAIController extends Controller
      public function index($carnet = null)
      {
          try {
+            $ruta = $carnet != null ? 'user/admin/persona/estudiante/pai/'. $carnet : 'user/persona/estudiante/pai';
+
              $response = Http::withHeaders([
                  'Accept' => 'application/json',
                  'Content-Type' => 'application/json',
                  'Authorization' => 'Bearer ' . session('token'),
-             ])->get(env('API_URL') . 'user/persona/estudiante/pai');
- 
+             ])->get(env('API_URL') . $ruta);
+                
              $resultado = json_decode($response->getBody(), true);
              $datos = $resultado['data'];
-            //  dd($datos);
              return view('Usuario.Admin.PAI.index', compact(['datos','carnet']));
          } catch (\Throwable $th) {
               return Redirect::back();
@@ -159,19 +161,70 @@ class solicitudPAIController extends Controller
 
             $banco = json_decode($response->getBody(), true);
             
-            //dd($datos);
-            //dd($banco);
              return view('Usuario.Admin.PAI.show', compact(['datos','banco','carnet']));
          } catch (\Throwable $th) {
               return Redirect::back();
          }
      }
-     public function create_byAdmin()
+
+     public function viewcreate_byAdmin()
      {
          try {
             return view('Usuario.Admin.PAI.create');
          } catch (\Throwable $th) {
+            dd($th->getMessage());
               return Redirect::back();
          }
      }
+     
+     public function resume_PAI($numSolicitud, $id, $carnet = null)
+     {
+        $response = Http::withHeaders([
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json',
+            'Authorization' => 'Bearer ' . session('token'),
+        ])->get(env('API_URL') . 'user/persona/admin/pai/banco/preguntas');
+
+        $banco = json_decode($response->getBody(), true);
+        // dd($banco);
+         try {
+            return view('Usuario.Admin.PAI.resume', compact(['banco','numSolicitud','id', 'carnet']));
+         } catch (\Throwable $th) {
+            dd($th->getMessage());
+              return Redirect::back();
+         }
+     }
+    
+     public function resume_PAI_Store($numSolicitud,$id, $carnet = null, resumePAIrequest $request)
+     {
+         try {
+            $response = Http::withHeaders([
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer ' . session('token'),
+            ])->post(env('API_URL') . 'user/persona/admin/pai/'.$numSolicitud.'/continuar', $request->validated());
+            
+            $respuesta = json_decode($response->getBody(), true);
+            
+            if(array_key_exists("errors", $respuesta)){
+                foreach ($respuesta['errors'] as $item) {
+                    foreach ($item as $error) {
+                        toastr()->error($error);
+                    }
+                }
+                return Redirect::back()->withErrors($respuesta['errors'])->withInput();;
+            }
+            if($respuesta['status']){
+                toastr()->success($respuesta['message']);
+                return  $carnet == 'null' ?  redirect()->route('Admin.pai.show',[$id, null]) :  redirect()->route('Admin.pai.show',[$id, $carnet]);
+            }
+            toastr()->error($respuesta['message']);
+            return Redirect::back()->withInput();
+
+         } catch (\Throwable $th) {
+            dd($th->getMessage());
+              return Redirect::back();
+         }
+     }
+
 }

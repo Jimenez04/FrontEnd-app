@@ -28,7 +28,7 @@ function estadosTextArea(selector) {
 }
 
 function OpenModalEstado(estado) {
-    if (estado != 'Rechazado' ) { 
+    if (estado != 'Rechazado' && estado != 'Terminado') { 
         $("#modal_actualizarEstado").fadeIn();
         return;
     }

@@ -154,7 +154,7 @@ var enfermedad = document.getElementById('input_Cual_enfermedad').value;
         var estado = validad_datos_mensaje([enfermedad], 6, "¿Cúal enfermedad?");
         if (estado['estado'] && enfermedad.length < 254 && isNaN(enfermedad)) {
             var estado = validad_datos_mensaje([tratamiento], 6, "Tratamiento");
-            if (estado['estado'] || isNaN(tratamiento)) {
+            if (estado['estado'] && isNaN(tratamiento)) {
                 array_Salud = ({
                     afectacionDesempeno: afectacionDesempeno,
                     enfermedad: enfermedad,

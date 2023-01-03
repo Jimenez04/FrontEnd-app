@@ -137,27 +137,27 @@
     width: 120px;
     font-weight: normal;
     font-size: 15px;
+    border: 2px solid;
+    text-decoration: none !important;
     background-color: #00c0f3;
     border-color: #00c0f3;
-    text-decoration: none;
-    color: white !important;
-    text-align: center;
-    vertical-align: middle;
+    transition: 0.1s;
+    color: #FFFFFF !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     letter-spacing: 0.5px;
     cursor: pointer;
     border-radius: 8px;
-    height: 37px;
-    padding-top: 8px;
+    height: 40px;
     text-transform: capitalize;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 .boton_regresar:hover {
-    border-color: #b6e5d4;
-    transition: 0.1s;
-    text-decoration: none !important;
-    height: 35px;
-    box-shadow: 0 1px 1px #70d4b0;
+    border-color: #f8f8f8;
+    transition: 0.2s;
+    box-shadow: 0 1px 1px #bbf0dd;
 
 }
 

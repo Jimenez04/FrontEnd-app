@@ -44,7 +44,7 @@
 
             </div>
             <div class="ucr-copyright">
-                <span> © 2022-Universidad de Costa Rica</span>
+                <span> © 2023-Universidad de Costa Rica</span>
             </div>
         </div>
     </div>

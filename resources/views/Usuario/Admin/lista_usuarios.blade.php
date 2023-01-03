@@ -9,7 +9,7 @@
             <h2>Lista de Usuarios</h2>
             <div class="contenedor_tabla">
                 <div class="divbtnregistro_admin">
-                    <a class="botonregistro_admi btn btn-primary" href="{{ route('registrar_admin') }}">Nuevo Usuario</a>
+                    <a class="btn btn-primary" href="{{ route('registrar_admin') }}">Nuevo Usuario</a>
                 </div>
 
                 <div class="usertabla">
@@ -37,7 +37,7 @@
                                     <td data-titulo="Acciones">
                                         <button class="btn btn-danger" onclick="eliminarUsuario({{$usuarios['persona']['user']['id']}}, '{{$usuarios['carnet']}}');" style="cursor: pointer;"> Eliminar</button> 
 |
-                                        <button class="btn btn-secondary" style="width: 83px;" id="{{$usuarios['persona']['user']['id']}}" onclick="{{$usuarios['persona']['user']['email_verified_at'] != null ? "bajaUsuario(this);" : "verificarUsuario(this);" }} " value="{{$usuarios['persona']['user']['id']}}"  style="cursor: pointer;">{{$usuarios['persona']['user']['email_verified_at'] != null ? "Anular" : "Validar" }}</button> 
+                                        <button class="btn btn-secondary" style="/* width: 83px; */" id="{{$usuarios['persona']['user']['id']}}" onclick="{{$usuarios['persona']['user']['email_verified_at'] != null ? "bajaUsuario(this);" : "verificarUsuario(this);" }} " value="{{$usuarios['persona']['user']['id']}}"  style="cursor: pointer;">{{$usuarios['persona']['user']['email_verified_at'] != null ? "Anular" : "Validar" }}</button> 
 |
                                         <button class="btn btn-info" onclick="ir_usuario('{{$usuarios['carnet']}}');" style="cursor: pointer;"> Ir</button> 
 

@@ -26,7 +26,7 @@
                         </div>
                 </div>
                 <div class="botones_modal">
-                    <button class="boton_opciones btn_negativos" id="btn_cancelar" onclick="closeModalEstado()">Cancelar neiro</button>
+                    <button class="boton_opciones btn_negativos" id="btn_cancelar" onclick="closeModalEstado()">Cancelar</button>
                     <button class="boton_opciones btn_positivos" id="btn_actualizarEstado" onclick="actualizarEstado( '{{$resultado['numero_solicitud']}}' )">Guardar</button>
                 </div>
             </div>

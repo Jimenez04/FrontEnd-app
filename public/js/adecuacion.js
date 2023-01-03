@@ -435,7 +435,7 @@ function ventana_necesidad_Apoyo() {
  datos_adecuacion.classList.add('datos_adecuacion');
     //label
      var etiqueta_solicitud_adecuacion = document.createElement('label');
-     etiqueta_solicitud_adecuacion.textContent = "Área, profesional que diagnostica";
+     etiqueta_solicitud_adecuacion.textContent = "Especialidad, profesional que diagnostica";
      etiqueta_solicitud_adecuacion.classList.add('etiqueta_solicitud_adecuacion');
     datos_adecuacion.append(etiqueta_solicitud_adecuacion); 
     //input

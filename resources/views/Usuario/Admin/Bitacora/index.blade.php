@@ -59,7 +59,7 @@ use Carbon\Carbon;
 
                     <div class="divbotonVolver">
 
-                        <a class="boton_regresar" id="Regresar" href="{{ route($ruta,$idretorno)}}">Volver</a>
+                        <a class="boton_opciones btn_negativos widthbnt" id="Regresar" href="{{ route($ruta,$idretorno)}}">Volver</a>
 
                     </div>
                 </div>

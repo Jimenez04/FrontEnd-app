@@ -22,12 +22,12 @@
 
                         <div class="input-group" id="container_descripcion_Rechazado" style="display: none">
                                 <span class="input-group-text">Descripción de rechazo</span>
-                                <textarea class="form-control" name="descripcion_Rechazado" id="descripcion_Rechazado" aria-label="With textarea"></textarea>
+                                <textarea class="inputrazon" name="descripcion_Rechazado" id="descripcion_Rechazado" aria-label="With textarea"></textarea>
                         </div>
 
                         <div class="input-group" id="container_mensaje" style="display: none">
                             <span class="input-group-text">Mensaje</span>
-                            <textarea class="form-control" name="mensaje" id="mensaje" aria-label="With textarea"></textarea>
+                            <textarea class="form-control inputrazon" name="mensaje" id="mensaje" aria-label="With textarea"></textarea>
                     </div>
                 </div>
                 <div class="botones_modal">

@@ -117,7 +117,13 @@
     text-transform: capitalize;
     vertical-align: middle;
     border: 1px solid #00C0F3;
-}
+} 
+.botonrecuperar_pw:hover {
+    border-color: #f8f8f8;
+    transition: 0.2s;
+    box-shadow: 0 1px 1px #bbf0dd;
+} 
+
 
 .contenedor-newpw hr {
     width: 76%;

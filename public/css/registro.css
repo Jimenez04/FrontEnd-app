@@ -255,7 +255,13 @@
     text-transform: capitalize;
     vertical-align: middle;
     border: 1px solid #00C0F3;
-}
+} 
+.botonregistro:hover {
+    border-color: #f8f8f8;
+    transition: 0.2s;
+    box-shadow: 0 1px 1px #bbf0dd;
+} 
+
 
 .abajoRegistro hr {
     margin-top: 14px;

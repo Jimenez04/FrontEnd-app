@@ -175,8 +175,9 @@
                             </table>
                         </section>
                     </main>
-                    <a class="boton_opciones" type="button" value="Atrás" href="{{ $carnet == null ? route('Admin.pai') : route('Admin.pai', $carnet)}}">Regresar</a>
-
+                    <div class="centradoboton">
+                     <a class="boton_opciones btn_negativos widthbnt" type="button" value="Atrás" href="{{ $carnet == null ? route('Admin.pai') : route('Admin.pai', $carnet)}}">Regresar</a>
+                    </div>
                 </div>
             </div>
         </div>

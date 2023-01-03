@@ -43,7 +43,7 @@
 
                     <div class="divbotonVolver">
 
-                        <a class="boton_regresar" id="Regresar" href="{{$carnet == null ? route('Admin') :  route('ver_usuario',$carnet)}}">Volver</a>
+                        <a class=" boton_opciones boton_regresar widthbnt" id="Regresar" href="{{$carnet == null ? route('Admin') :  route('ver_usuario',$carnet)}}">Volver</a>
 
                     </div>
 

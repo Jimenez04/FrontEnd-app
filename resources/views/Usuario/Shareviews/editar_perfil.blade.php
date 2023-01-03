@@ -76,10 +76,10 @@
                 </div>
                 <div class="contenedorbtn_editar">
                     <div class="divbtnGuardar">
-                        <a href="{{ route('perfil_usuario') }}" class="btn btn-primary">Cancelar</a>
+                        <a href="{{ route('perfil_usuario') }}" class="boton_opciones btn_negativos widthbnt2">Cancelar</a>
                     </div>
                     <div class="divbtnGuardar">
-                        <button class="botonGuardarcambios" type="submit" value="Guardar cambios">Guardar</button>
+                        <button class="boton_opciones btn_positivos widthbnt2" type="submit" value="Guardar cambios">Guardar</button>
                     </div>
                 </div>
             </div>

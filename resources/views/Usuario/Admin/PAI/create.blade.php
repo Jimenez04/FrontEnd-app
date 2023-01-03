@@ -83,9 +83,9 @@
                             </div>
                         </div>
                         <div class="divbotones_">
-                            <button type="button" class="botones_est"
+                            <button type="button" class="boton_opciones btn_negativos"
                                 onclick="window.location= '{{ route('Admin.pai') }}'">Cancelar</button>
-                            <button id="btn_continuar" type="submit" class="botones_est" disabled>Continuar</button>
+                            <button id="btn_continuar" type="submit" class="boton_opciones btn_positivos" disabled>Continuar</button>
                         </div>
                     </form>
 

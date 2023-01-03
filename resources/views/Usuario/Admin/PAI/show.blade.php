@@ -25,7 +25,7 @@
                             <div class="head-PAI grid-columna-3 grid">
                                 <div class="grid table-bordered">
                                     <label class="etiqueta"> Solicitud</label>
-                                    <label>{{ $datos['numero_Solicitud'] }}</label>
+                                    <label class="overflow-etiqueta">{{ $datos['numero_Solicitud'] }}</label>
                                 </div>
                                 <div class="grid table-bordered">
                                     <label class="etiqueta"> Carrera</label>

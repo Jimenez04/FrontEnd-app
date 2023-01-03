@@ -107,7 +107,7 @@
 .Descripcion_discapacidad textarea {
     resize: none;
     border-radius: 5px;
-    padding: 0px 5px 0 7px;
+    padding: 5px 5px 5px 7px;
     height: 180px;
     width: 400px;
 }

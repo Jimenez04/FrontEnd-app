@@ -18,6 +18,7 @@ function openModal_NuevoPariente() {
     document.getElementById('container-tipo-pariente').setAttribute('Style', 'display:none');
     document.getElementById('container-datos-personales').setAttribute('Style', 'display:none');
     cedula_pariente = document.getElementById('cedula_pariente').value = '';
+    document.getElementById('btn_add_pariente').hidden = true;
     limpiarcampos();
 }
 

@@ -17,22 +17,22 @@
                         <form  action="javascript:continuar(this)" method="post" enctype="multipart/form-data" class="form_trabajo">
                             @csrf
             
-                            <div class="datos_modals">
+                            <div class="datos_modals2">
                                 <label class="etiqueta_modals">Nombre</label>
                                 <input class="campos_modals" name="" id="nombre">
                             </div>
 
-                            <div class="datos_modals">
+                            <div class="datos_modals2">
                                 <label class="etiqueta_modals">Descripción</label>
-                                <textarea class="campos_modals" name="" id="descripcion" cols="30" rows="10"></textarea>
+                                <textarea class="textareamodal" name="" id="descripcion" cols="30" rows="10"></textarea>
                             </div>
 
                             <div class="botones_modal">
 
-                                <a style="cursor: pointer; color:white" class="botonCerrarModal" id="cerrar_modal_trabajo"
+                                <a style="cursor: pointer; color:white" class="boton_opciones btn_negativos" id="cerrar_modal_trabajo"
                                     onclick="closeModalObservacion(this)">Regresar
                                 </a>
-                                <input class="botonagregatrabajo" id="btn_add_OR_Update"  type="submit" value="Agregar">
+                                <input class="boton_opciones btn_positivos" id="btn_add_OR_Update"  type="submit" value="Agregar">
                             </div>
                             
                            </form>

@@ -33,6 +33,7 @@ class ResetPasswordController extends Controller
             //se  obtiene la informacion de la peticion
             $resultado = json_decode($response->getBody(), true);
             if ($resultado['status'] == false) {
+                toastr()->error('Los datos son invalidos');
                 return Redirect::back()->withErrors(['mensaje' => $resultado['message']])->withInput();
             }
             toastr()->success('Revisa tu correo', 'Éxito');

@@ -31,7 +31,7 @@ function verificarEstudiante(cedulaEstudiante) {
                 document.getElementById('cedula').readOnly = true;
                 document.getElementById('btn_buscar_estudiane').readOnly = true;
                 terminosycondiciones = true;
-                document.getElementById('btn_Siguiente').style.display = "block";
+                document.getElementById('btn_Siguiente').style.cssText ="Display:flex; align-items:center;";
                 document.getElementById('btn_buscar_estudiane').disabled = true;
                 document.getElementById('nombre_Estudiante').textContent = data.data.nombre;
                 document.getElementById('carnet_Estudiante').textContent = data.data.carnet;

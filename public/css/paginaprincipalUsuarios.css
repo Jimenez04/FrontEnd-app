@@ -133,7 +133,7 @@
 .info_abajo {
     background-color: white;
     width: 300px;
-    height: 60px;
+    height: fit-content;
     text-align: center;
     padding-top: 8px;
     border: 1px solid rgba(0, 0, 0, .125);

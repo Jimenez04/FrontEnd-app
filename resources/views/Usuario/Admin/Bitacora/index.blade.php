@@ -26,7 +26,7 @@ use Carbon\Carbon;
                     <div class="divtabla">
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                         @foreach ($resultado as $item )
-                            <div class="accordion-item">
+                            <div class="accordion-item border">
                               <h2 class="accordion-header" id="flush-heading{{$item['id']}}">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse{{$item['id']}}" aria-expanded="false" aria-controls="flush-collapse{{$item['id']}}">
                                   {{$item['descripcion']}}

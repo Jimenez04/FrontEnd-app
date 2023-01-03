@@ -31,8 +31,8 @@
                     </div>
                 </div>
                 <div class="botones_modal">
-                    <button class="btn btn-primary" id="btn_cancelar" onclick="closeModalEstado()">Cancelar</button>
-                    <button class="btn btn-primary" id="btn_actualizarEstado" onclick="actualizarEstado( '{{$datos['numero_Solicitud']}}' )">Guardar</button>
+                    <button class="boton_opciones btn_negativos" id="btn_cancelar" onclick="closeModalEstado()">Cancelar</button>
+                    <button class="boton_opciones btn_positivos" id="btn_actualizarEstado" onclick="actualizarEstado( '{{$datos['numero_Solicitud']}}' )">Guardar</button>
                 </div>
             </div>
         </div>

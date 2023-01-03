@@ -1,0 +1,32 @@
+h4{
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: bold;  
+}
+label{
+    font-weight: bold;   
+}
+
+section {
+    margin: 4rem 0 4rem 0;
+}
+table td{
+    vertical-align: middle !important;
+    padding-top: 0.3rem!important;
+    padding-bottom: .3rem !important;
+ }
+table .celda{
+    text-align: center;
+}
+table .celda select{
+   width: 100%;
+}
+.selector{
+    width: 100px;
+    border: 0!important;
+}
+
+.container_resume_pai, .container_selector{
+    margin: 1rem 0 1rem 0 ;
+}
+

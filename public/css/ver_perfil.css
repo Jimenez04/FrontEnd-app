@@ -235,6 +235,14 @@
     margin-bottom: 18px;
 
 }
+.botonesperfil:hover {
+    transition: 0.3s;
+    color: white !important;
+    text-decoration: none !important;
+    background-color: #4a83b2;
+    border: 1px solid #4a83b2;
+    box-shadow: 0 1px 1px #4679a2;
+}
 
 
 @media screen and (max-width:980px) {

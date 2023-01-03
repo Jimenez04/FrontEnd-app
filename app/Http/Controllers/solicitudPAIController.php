@@ -216,7 +216,6 @@ class solicitudPAIController extends Controller
                     }
                 }
                 return Redirect::back()->withErrors($respuesta['errors'])->withInput();
-                ;
             }
             if ($respuesta['status']) {
                 toastr()->success($respuesta['message']);
@@ -226,7 +225,8 @@ class solicitudPAIController extends Controller
             return Redirect::back()->withInput();
 
         } catch (\Throwable $th) {
-            dd($th->getMessage());
+            dd($respuesta);
+
             return Redirect::back();
         }
     }

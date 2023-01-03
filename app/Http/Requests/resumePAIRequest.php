@@ -64,7 +64,7 @@ class resumePAIrequest extends FormRequest
            
             'PAI.nombreoficina.required' => 'El campo “Nombre de oficina” es requerido. ',
             'PAI.nombreoficina.min' => 'El campo "Nombre de oficina" debe tener al menos 5 caracteres.',
-            'PAI.nombreoficina.max' => 'El campo “Nombre de oficina" debe tener menos de 254 caracteres.',
+            'PAI.nombreoficina.max' => 'El campo “Nombre de oficina" debe tener menos de 30 caracteres.',
             'PAI.nombreoficina.string' => 'El campo “Nombre de oficina" debe ser una cadena de caracteres.',
            
 

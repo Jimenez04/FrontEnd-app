@@ -9,7 +9,7 @@
             <h2>Lista de Usuarios</h2>
             <div class="contenedor_tabla">
                 <div class="divbtnregistro_admin">
-                    <a class="botonregistro_admi btn btn-primary" href="{{ route('registrar_admin') }}">Nuevo Usuario</a>
+                    <a class="btn btn-primary" href="{{ route('registrar_admin') }}">Nuevo Usuario</a>
                 </div>
 
                 <div class="usertabla">

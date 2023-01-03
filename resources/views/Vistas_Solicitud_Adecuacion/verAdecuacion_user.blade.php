@@ -215,7 +215,7 @@
 
             <div class="divbotones_">
 
-                <a class="boton_opciones" type="button" value="Atrás" href="{{ URL::previous() }}">Regresar</a>
+                <a class="boton_opciones btn_negativos widthbnt1" type="button" value="Atrás" href="{{ URL::previous() }}">Regresar</a>
 
             </div>
 

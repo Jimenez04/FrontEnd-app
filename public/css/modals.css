@@ -116,7 +116,7 @@
 .campos_modals {
     width: 200px;
     height: 42px;
-    height: 80px;
+   /*  height: 80px; */
     border-radius: 2px;
     border: 1.5px solid #0000006e;
     font-size: 16px;

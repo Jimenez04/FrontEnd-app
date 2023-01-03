@@ -82,14 +82,14 @@
                             </div>
                              <div class="botones_modal">
 
-                                 <a style="cursor: pointer;color:white" class="botonCerrarModal" id="cerrar_modal_pariente"
+                                 <a style="cursor: pointer;color:white" class="boton_opciones btn_negativos" id="cerrar_modal_pariente"
                                      onclick="closeModal(this)">Regresar
                                  </a>
 
-                                 <input class="botonagregatrabajo" hidden id="btn_continuar_add_persona" type="submit"  onclick="agregarpersona(this)"
+                                 <input class="boton_opciones btn_positivos" hidden id="btn_continuar_add_persona" type="submit"  onclick="agregarpersona(this)"
                                      value="Continuar">
 
-                                 <input class="botonagregatrabajo"  id="btn_add_pariente" type="submit" hidden onclick="agregarpariente(this)"
+                                 <input class="boton_opciones btn_positivos"  id="btn_add_pariente" type="submit" hidden onclick="agregarpariente(this)"
                                      value="Agregar">
                              </div>
 

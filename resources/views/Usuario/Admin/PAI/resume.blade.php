@@ -130,8 +130,8 @@
                         </div>
                     </div>
                     <div class="divbotones_">
-                        <a class="boton_opciones  btn_negativo" type="button" value="Atrás" href="{{route('Admin.pai.show', [$id, $carnet]) }}">Regresar</a>
-                        <button id="boton_opciones btn_positivos" type="submit" class="botones_est" 
+                        <a class="boton_opciones" type="button" value="Atrás" href="{{route('Admin.pai.show', [$id, $carnet]) }}">Regresar</a>
+                        <button id="btn_continuar" type="submit" class="botones_est" 
                         >Continuar</button>
                     </div>
                 </form>

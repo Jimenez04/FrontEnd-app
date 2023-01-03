@@ -74,9 +74,9 @@
                             </div>
                         </div>
                         <div class="divbotones_">
-                            <button type="button" class="botones_est"
+                            <button type="button" class="boton_opciones btn_negativos"
                                 onclick="window.location= '{{ route('PAI_user') }}'">Cancelar</button>
-                            <button type="submit" class="botones_est">Continuar</button>
+                            <button type="submit" class="boton_opciones btn_positivos">Continuar</button>
                         </div>
                     </form>
 

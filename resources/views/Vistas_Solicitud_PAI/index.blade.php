@@ -41,7 +41,7 @@
 
                     <div class="divbotonVolver">
 
-                        <a class="boton_regresar" id="Regresar" href="{{ route('Student') }}">Volver</a>
+                        <a class="boton_opciones btn_negativos widthbnt1" id="Regresar" href="{{ route('Student') }}">Volver</a>
 
                     </div>
 

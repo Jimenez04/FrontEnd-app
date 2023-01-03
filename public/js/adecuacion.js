@@ -142,6 +142,7 @@ function ventana_InfoSolicitud() {
     contenido_nueva_adecuacion.append(titulocontenedor); 
     //
     //Input Razon solicitud
+    console.log(array_DatosSolicitud);
         var datos_adecuacion = document.createElement('div');
         datos_adecuacion.classList.add('datos_solicitud');
             var etiqueta_solicitud_adecuacion = document.createElement('label');
@@ -151,7 +152,7 @@ function ventana_InfoSolicitud() {
             var campos_adecuacion = document.createElement('textarea');
             campos_adecuacion.setAttribute('id', 'input_RazonSolicitud');
             campos_adecuacion.setAttribute('title','Mínimo 10 caracteres');
-            campos_adecuacion.setAttribute('value', array_DatosSolicitud != null ?  array_DatosSolicitud['razon_Solicitud'] : "");
+            campos_adecuacion.textContent = array_DatosSolicitud != null ? array_DatosSolicitud['razon_Solicitud'] : "";
             campos_adecuacion.type = "text"
             campos_adecuacion.classList.add('inputrazon');
             datos_adecuacion.append(campos_adecuacion); 
